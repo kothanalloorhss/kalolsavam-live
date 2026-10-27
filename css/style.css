@@ -342,3 +342,61 @@ dialog.stage-modal::backdrop {
   color: var(--ink-soft);
   margin: 0;
 }
+/* Progress dashboard cards in Admin */
+.stats-board {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+  gap: 0.65rem;
+  margin-bottom: 0.25rem;
+}
+.stat-card {
+  background: var(--ivory);
+  color: var(--ink);
+  border: 1px solid var(--gold-500);
+  border-radius: 8px;
+  padding: 0.65rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+.stat-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--ink-soft);
+}
+.stat-val {
+  font-family: var(--font-head);
+  font-size: 1.65rem;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-top: 0.2rem;
+  color: var(--maroon-700);
+}
+
+/* Card color indicators */
+.stat-card.is-ongoing {
+  border-left: 5px solid var(--live);
+  background: #f0faf3;
+}
+.stat-card.is-ongoing .stat-val {
+  color: var(--live);
+}
+.stat-card.is-done {
+  border-left: 5px solid var(--gold-500);
+}
+.stat-card.is-ontime {
+  border-left: 5px solid #137333;
+}
+.stat-card.is-ontime .stat-val {
+  color: #137333;
+}
+.stat-card.is-delayed {
+  border-left: 5px solid var(--bad);
+  background: #fdf2f2;
+}
+.stat-card.is-delayed .stat-val {
+  color: var(--bad);
+}
