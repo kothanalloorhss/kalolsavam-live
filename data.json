@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-27T12:36:31.038Z",
+  "updated_at": "2026-10-27T12:37:27.972Z",
   "banner": {
     "active": true,
     "text": "This is a trial",
@@ -18,13 +18,15 @@
       "delay_minutes": 486
     },
     "2": {
-      "status": "idle",
-      "event_id": null,
-      "event_name": null,
-      "categories": [],
-      "scheduled_start": null,
-      "actual_start": null,
-      "delay_minutes": 0
+      "status": "ongoing",
+      "event_id": "E105",
+      "event_name": "സംസ്കൃത നാടകം",
+      "categories": [
+        "UP"
+      ],
+      "scheduled_start": "13:00",
+      "actual_start": "2026-10-27T12:37:27.972Z",
+      "delay_minutes": 307
     },
     "3": {
       "status": "idle",
@@ -136,6 +138,10 @@
     }
   },
   "ticker": [
+    {
+      "t": "2026-10-27T12:37:27.972Z",
+      "text": "Stage 2: സംസ്കൃത നാടകം has started (307 min late)"
+    },
     {
       "t": "2026-10-27T12:36:31.038Z",
       "text": "Stage 1: ചെണ്ട/ തായമ്പക has started (486 min late)"
