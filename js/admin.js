@@ -4,8 +4,10 @@
   const C = KL.CONFIG, esc = KL.esc;
   const $ = id => document.getElementById(id);
   const TOKEN_KEY = "kl_admin_token";
-  const S = { token: sessionStorage.getItem(TOKEN_KEY), stages: [], schedule: [], data: null,
-              selected: Number(sessionStorage.getItem("kl_stage")) || 1, busy: false, endStage: null };
+  const S = { 
+    token: sessionStorage.getItem(TOKEN_KEY), stages: [], schedule: [], data: null,
+    selected: Number(sessionStorage.getItem("kl_stage")) || 1, busy: false, endStage: null, editResultIdx: null 
+  };
   const stageIds = () => S.stages.map(s => s.stage_id);
   const findEvent = id => S.schedule.find(e => String(e.event_id) === String(id));
 
@@ -41,7 +43,6 @@
       message, content: toB64(JSON.stringify(data, null, 2) + "\n"), sha, branch: C.branch }) });
   }
 
-  // Serialised: one commit at a time. Retries when someone else changed the file in between.
   let chain = Promise.resolve();
   function commit(mutator, message) {
     const job = async () => {
@@ -51,7 +52,7 @@
         next.updated_at = new Date().toISOString();
         const r = await writeRemote(next, sha, message);
         if (r.ok) { S.data = next; return next; }
-        if (r.status === 409 || r.status === 422) continue; // stale SHA, read again
+        if (r.status === 409 || r.status === 422) continue;
         throw await apiError(r);
       }
       throw new Error("Could not save because data.json kept changing. Try again.");
@@ -80,7 +81,7 @@
 
   const trimList = (arr, n) => { if (arr.length > n) arr.length = n; };
   const pushTicker = (d, text) => { d.ticker.unshift({ t: KL.nowISO(), text }); trimList(d.ticker, C.maxTickerStored); };
-  const idleStage = () => ({ status: "idle", event_id: null, event_name: null, categories: [], scheduled_start: null, actual_start: null, delay_minutes: 0 });
+  const idleStage = () => ({ status: "idle", event_id: null, event_name: null, categories: [], scheduled_start: null, actual_start: null, delay_minutes: 0, idle_since: KL.nowISO() });
 
   /* ---------- actions ---------- */
   function startEvent(eventId) {
@@ -120,17 +121,24 @@
   const reopenEvent = id => run(d => { d.completed_events = d.completed_events.filter(x => String(x) !== String(id)); },
                                  `Reopen event ${id}`, "Event moved back to pending.");
 
+  /* ---------- editing announced results ---------- */
+  function updateResult(index, ranks) {
+    run(d => {
+      if (!d.recent_results || !d.recent_results[index]) throw new Error("Result item not found.");
+      d.recent_results[index].first = ranks.first;
+      d.recent_results[index].second = ranks.second;
+      d.recent_results[index].third = ranks.third;
+      pushTicker(d, `Updated Result: ${d.recent_results[index].event_name} -> 1st: ${ranks.first || "—"}, 2nd: ${ranks.second || "—"}, 3rd: ${ranks.third || "—"}`);
+    }, `Update result ${index}`, "Result updated successfully.");
+  }
+
   /* ---------- rendering ---------- */
   function renderProgressCards(day) {
     const wrap = $("dayProgress");
     if (!wrap) return;
 
-    // All events scheduled for the current day across all stages
     const dayEvents = S.schedule.filter(e => e.date === day);
-    if (!dayEvents.length) {
-      wrap.hidden = true;
-      return;
-    }
+    if (!dayEvents.length) { wrap.hidden = true; return; }
     wrap.hidden = false;
 
     const doneSet = new Set((S.data.completed_events || []).map(String));
@@ -141,24 +149,19 @@
     const ongoing = dayEvents.filter(e => ongoingEventIds.has(String(e.event_id)));
     const pending = dayEvents.filter(e => !doneSet.has(String(e.event_id)) && !ongoingEventIds.has(String(e.event_id)));
 
-    // On-Time vs Delayed Calculation
     let onTimeCount = 0;
     let delayedCount = 0;
     const now = KL.now();
 
-    // 1. Ongoing events check
     ongoingStages.forEach(st => {
       if ((st.delay_minutes || 0) <= 5) onTimeCount++;
       else delayedCount++;
     });
 
-    // 2. Pending events check: if scheduled start time is past by > 5 mins without starting
     pending.forEach(e => {
       const sched = KL.atTime(e.date, e.start_time);
       const diffMins = Math.floor((now - sched) / 60000);
-      if (diffMins > 5) {
-        delayedCount++;
-      }
+      if (diffMins > 5) delayedCount++;
     });
 
     $("statTotal").textContent = dayEvents.length;
@@ -188,6 +191,25 @@
       </div></li>`;
   }
 
+  function renderResultsEditor() {
+    const list = $("editResultsList");
+    if (!list) return;
+    const results = S.data.recent_results || [];
+    if (!results.length) {
+      list.innerHTML = `<li class="muted">No results announced yet.</li>`;
+      return;
+    }
+    list.innerHTML = results.map((r, idx) => {
+      return `<li>
+        <div>
+          <span lang="ml" style="font-weight:700;">${esc(r.event_name)}</span> (Stage ${esc(r.stage_id)})<br>
+          <span class="muted" style="font-size:0.9rem">1st: ${esc(r.first || '—')}, 2nd: ${esc(r.second || '—')}, 3rd: ${esc(r.third || '—')}</span>
+        </div>
+        <button class="btn btn-ghost act" style="min-height:2.2rem; padding:0 0.75rem; font-size:0.95rem;" data-act="edit-result" data-idx="${idx}">Edit</button>
+      </li>`;
+    }).join("");
+  }
+
   function render() {
     if (!S.data) return;
     const day = KL.today();
@@ -196,10 +218,9 @@
     const bn = S.data.banner;
     $("bannerState").textContent = bn && bn.active && bn.text ? `Showing: ${bn.text}` : "No banner is showing.";
 
-    // Render the day-wide progress overview
     renderProgressCards(day);
+    renderResultsEditor();
 
-    // Only stages that have events today (or are live) get a chip
     const visible = KL.stagesWithEvents(S.stages, S.schedule, day, S.data);
     if (!visible.length) {
       $("chips").innerHTML = ""; $("stageHead").innerHTML = ""; $("eventList").innerHTML = "";
@@ -209,20 +230,38 @@
     }
     if (!visible.some(s => s.stage_id === S.selected)) S.selected = visible[0].stage_id;
 
+    // Chips rendering + Idle Stage Alert detection
+    const now = KL.now();
     $("chips").innerHTML = visible.map(s => {
-      const live = S.data.stages[s.stage_id] && S.data.stages[s.stage_id].status === "ongoing";
-      return `<button class="stage-chip ${live ? "is-live" : ""}" data-chip="${s.stage_id}" aria-pressed="${s.stage_id === S.selected}"
-        aria-label="Stage ${s.stage_id}${live ? ", live" : ""}">${s.stage_id}</button>`;
+      const st = S.data.stages[s.stage_id];
+      const live = st && st.status === "ongoing";
+      let idleAlert = false;
+      if (st && st.status === "idle" && st.idle_since) {
+        const idleMins = Math.floor((now - new Date(st.idle_since)) / 60000);
+        if (idleMins >= 10) idleAlert = true;
+      }
+      return `<button class="stage-chip ${live ? "is-live" : ""} ${idleAlert ? "is-idle-alert" : ""}" 
+        data-chip="${s.stage_id}" aria-pressed="${s.stage_id === S.selected}"
+        aria-label="Stage ${s.stage_id}${live ? ", live" : ""}${idleAlert ? ", idle over 10 min" : ""}">${s.stage_id}</button>`;
     }).join("");
 
     const stage = visible.find(s => s.stage_id === S.selected);
     const st = S.data.stages[stage.stage_id] || idleStage();
-    const done = new Set(S.data.completed_events.map(String));
+    const done = new Set((S.data.completed_events || []).map(String));
     const todays = KL.eventsFor(S.schedule, day, stage.stage_id);
     const pending = todays.filter(e => !done.has(String(e.event_id)));
     const finished = todays.filter(e => done.has(String(e.event_id)));
 
-    $("stageHead").innerHTML = `<h2>${esc(stage.stage_name)}</h2><p>${esc(stage.venue_location)}</p>`;
+    // Warning banner if current selected stage has been idle >= 10 mins
+    let idleNotice = "";
+    if (st.status === "idle" && st.idle_since) {
+      const idleMins = Math.floor((now - new Date(st.idle_since)) / 60000);
+      if (idleMins >= 10 && pending.length > 0) {
+        idleNotice = `<div class="idle-warning">⚠️ ഈ വേദി ഒഴിഞ്ഞുകിടക്കാൻ തുടങ്ങിയിട്ട് ${idleMins} മിനിറ്റ് കഴിഞ്ഞു. അടുത്ത പ്രോഗ്രാം ആരംഭിക്കുക.</div>`;
+      }
+    }
+
+    $("stageHead").innerHTML = `<h2>${esc(stage.stage_name)}</h2><p>${esc(stage.venue_location)}</p>${idleNotice}`;
     $("eventList").innerHTML = pending.map(e => eventItem(e, st)).join("");
     $("emptyState").hidden = pending.length > 0;
     $("emptyState").textContent = "Every event on this stage is finished.";
@@ -244,16 +283,28 @@
     $("rank1").focus();
   }
 
+  function openEditResultModal(idx) {
+    const r = S.data.recent_results[idx];
+    if (!r) return;
+    S.editResultIdx = idx;
+    $("editResultEvent").textContent = `${r.event_name} (Stage ${r.stage_id})`;
+    $("editRank1").value = r.first || "";
+    $("editRank2").value = r.second || "";
+    $("editRank3").value = r.third || "";
+    $("editResultModal").showModal();
+  }
+
   document.addEventListener("click", e => {
     const chip = e.target.closest("[data-chip]");
     if (chip) { S.selected = Number(chip.dataset.chip); sessionStorage.setItem("kl_stage", S.selected); render(); return; }
     const btn = e.target.closest("[data-act]");
     if (!btn || btn.disabled || S.busy) return;
-    const { act, id, stage } = btn.dataset;
+    const { act, id, stage, idx } = btn.dataset;
     if (act === "start") startEvent(id);
     else if (act === "end") openEndModal(Number(stage));
     else if (act === "cancel" && confirm(`Reset Stage ${stage} to idle? The start notice stays in the ticker.`)) cancelStart(Number(stage));
     else if (act === "reopen") reopenEvent(id);
+    else if (act === "edit-result") openEditResultModal(Number(idx));
   });
 
   $("endForm").addEventListener("submit", e => {
@@ -264,6 +315,15 @@
   });
   $("skipResults").addEventListener("click", () => { $("endModal").close(); endEvent(S.endStage, null); });
   $("cancelEnd").addEventListener("click", () => $("endModal").close());
+
+  // Edit result modal submissions
+  $("editResultForm").addEventListener("submit", e => {
+    e.preventDefault();
+    const ranks = { first: $("editRank1").value.trim(), second: $("editRank2").value.trim(), third: $("editRank3").value.trim() };
+    $("editResultModal").close();
+    if (S.editResultIdx !== null) updateResult(S.editResultIdx, ranks);
+  });
+  $("cancelEditResult").addEventListener("click", () => $("editResultModal").close());
 
   $("bannerForm").addEventListener("submit", e => {
     e.preventDefault();

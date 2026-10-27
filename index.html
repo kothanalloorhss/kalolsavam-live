@@ -12,6 +12,11 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <!-- Offline/Reconnecting Network Banner -->
+  <div id="offlineBar" class="offline-bar" role="status" hidden>
+    <span>⚠️ കണക്ഷൻ ലഭ്യമല്ല. നെറ്റ്‌വർക്ക് വരുമ്പോൾ പേജ് തനിയെ പുതുക്കും.</span>
+  </div>
+
   <!-- branding intro: doors swing open -->
   <div id="splash" class="splash" aria-hidden="true">
     <div class="door door-l"></div>
@@ -39,6 +44,16 @@
   </header>
 
   <main class="wrap">
+    <!-- Category & Status Quick Filter Chips -->
+    <nav class="filter-bar" aria-label="Filter stages">
+      <button class="filter-chip is-active" data-filter="all" type="button">എല്ലാം</button>
+      <button class="filter-chip" data-filter="live" type="button">🔴 Live Now</button>
+      <button class="filter-chip" data-filter="LP" type="button">LP</button>
+      <button class="filter-chip" data-filter="UP" type="button">UP</button>
+      <button class="filter-chip" data-filter="HS" type="button">HS</button>
+      <button class="filter-chip" data-filter="HSS" type="button">HSS</button>
+    </nav>
+
     <section id="results" class="results" aria-labelledby="resHead" hidden>
       <h2 id="resHead">Latest results</h2>
       <ol id="resultList"></ol>
@@ -46,7 +61,9 @@
 
     <section aria-labelledby="stagesHead">
       <h2 id="stagesHead" class="sr-only">Stages</h2>
-      <div id="stageGrid" class="stage-grid" aria-live="polite"><p class="muted" style="color:var(--ivory-dim)">Loading stage updates…</p></div>
+      <div id="stageGrid" class="stage-grid" aria-live="polite">
+        <p class="muted" style="color:var(--ivory-dim)">Loading stage updates…</p>
+      </div>
     </section>
   </main>
 

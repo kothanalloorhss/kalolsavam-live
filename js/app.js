@@ -2,16 +2,18 @@
 (() => {
   const C = KL.CONFIG, esc = KL.esc;
   const $ = id => document.getElementById(id);
-  const S = { stages: [], schedule: [], data: null, lastOk: null, online: true, tickerKey: "", animate: true, activeModalStageId: null };
+  const S = { 
+    stages: [], schedule: [], data: null, lastOk: null, online: true, 
+    tickerKey: "", animate: true, activeModalStageId: null, currentFilter: "all" 
+  };
   const stageIds = () => S.stages.map(s => s.stage_id);
 
   /* ---------- data ---------- */
   async function fetchLive() {
-    const t = Date.now(); // cache-buster so nobody sees stale data
+    const t = Date.now();
     try {
       return await KL.fetchJson(`${KL.rawUrl()}?t=${t}`, { cache: "no-store" });
     } catch (err) {
-      // fallback: the copy served by GitHub Pages itself (also works for local testing)
       return KL.fetchJson(`data.json?t=${t}`, { cache: "no-store" });
     }
   }
@@ -34,10 +36,10 @@
   /* ---------- per-stage status ---------- */
   function stageView(stage) {
     const id = stage.stage_id;
-    const st = S.data.stages[id] || {};
+    const st = (S.data && S.data.stages && S.data.stages[id]) || {};
     const day = KL.today();
     const todays = KL.eventsFor(S.schedule, day, id);
-    const done = new Set(S.data.completed_events.map(String));
+    const done = new Set((S.data && S.data.completed_events ? S.data.completed_events : []).map(String));
     const base = { mode: "none", doneCount: todays.filter(e => done.has(String(e.event_id))).length, total: todays.length };
 
     if (st.status === "ongoing") {
@@ -154,8 +156,17 @@
     const day = KL.fmtLongDate(KL.now());
     $("dayLabel").textContent = idx >= 0 ? `${day}, day ${idx + 1} of ${C.festivalDates.length}` : day;
     const sync = $("syncState");
-    if (S.online && S.lastOk) { sync.textContent = `Updated ${KL.fmtTime(S.lastOk)}`; sync.className = "sync"; }
-    else if (!S.online) { sync.textContent = "Connection lost. Showing the last update and retrying."; sync.className = "sync is-off"; }
+    const offlineBar = $("offlineBar");
+
+    if (S.online && S.lastOk) { 
+      sync.textContent = `Updated ${KL.fmtTime(S.lastOk)}`; 
+      sync.className = "sync";
+      if (offlineBar) offlineBar.hidden = true;
+    } else if (!S.online) { 
+      sync.textContent = "Offline (retrying…)"; 
+      sync.className = "sync is-off";
+      if (offlineBar) offlineBar.hidden = false;
+    }
     $("testChip").hidden = !KL.testMode;
   }
 
@@ -172,9 +183,7 @@
     S.activeModalStageId = stageId;
     updateStageModal(stageId);
     const dlg = $("stageModal");
-    if (dlg && typeof dlg.showModal === "function") {
-      dlg.showModal();
-    }
+    if (dlg && typeof dlg.showModal === "function") dlg.showModal();
   }
 
   function updateStageModal(stageId) {
@@ -186,7 +195,7 @@
 
     const day = KL.today();
     const todays = KL.eventsFor(S.schedule, day, stageId);
-    const done = new Set(S.data.completed_events.map(String));
+    const done = new Set((S.data.completed_events || []).map(String));
     const st = (S.data.stages && S.data.stages[stageId]) || {};
     const ongoingId = st.status === "ongoing" ? String(st.event_id) : null;
 
@@ -285,25 +294,18 @@
     const closeBtn = $("closeModalBtn");
     if (!dlg) return;
 
-    if (closeBtn) {
-      closeBtn.addEventListener("click", () => dlg.close());
-    }
+    if (closeBtn) closeBtn.addEventListener("click", () => dlg.close());
     dlg.addEventListener("close", () => { S.activeModalStageId = null; });
     dlg.addEventListener("click", ev => {
-      // Close when backdrop is clicked
       if (ev.target === dlg) dlg.close();
     });
 
-    // Delegate clicks on stage cards
     const grid = $("stageGrid");
     grid.addEventListener("click", ev => {
       const card = ev.target.closest(".stage-card");
-      if (card && card.dataset.stageId) {
-        openStageModal(card.dataset.stageId);
-      }
+      if (card && card.dataset.stageId) openStageModal(card.dataset.stageId);
     });
 
-    // Keyboard support (Enter / Space opens modal)
     grid.addEventListener("keydown", ev => {
       if (ev.key === "Enter" || ev.key === " ") {
         const card = ev.target.closest(".stage-card");
@@ -315,12 +317,51 @@
     });
   }
 
+  /* ---------- Quick Filter Logic ---------- */
+  function initFilters() {
+    const bar = document.querySelector(".filter-bar");
+    if (!bar) return;
+
+    bar.addEventListener("click", e => {
+      const chip = e.target.closest(".filter-chip");
+      if (!chip) return;
+      bar.querySelectorAll(".filter-chip").forEach(c => c.classList.remove("is-active"));
+      chip.classList.add("is-active");
+      S.currentFilter = chip.dataset.filter;
+      renderStageGrid();
+    });
+  }
+
+  function renderStageGrid() {
+    const visible = KL.stagesWithEvents(S.stages, S.schedule, KL.today(), S.data);
+    let filtered = visible;
+
+    if (S.currentFilter === "live") {
+      filtered = visible.filter(s => stageView(s).mode === "live");
+    } else if (S.currentFilter !== "all") {
+      // Matches category chip (LP, UP, HS, HSS)
+      filtered = visible.filter(s => {
+        const v = stageView(s);
+        return v.cats && v.cats.some(c => c.toUpperCase().includes(S.currentFilter.toUpperCase()));
+      });
+    }
+
+    if (!visible.length) {
+      $("stageGrid").innerHTML = `<p class="empty-day">No events are scheduled for today. Please check back on a festival day (${esc(C.festivalDatesText)}).</p>`;
+    } else if (!filtered.length) {
+      $("stageGrid").innerHTML = `<p class="empty-day">No stages matching the "${esc(S.currentFilter)}" filter right now.</p>`;
+    } else {
+      $("stageGrid").innerHTML = filtered.map(stageCard).join("");
+    }
+  }
+
   function render() {
     if (!S.data) return;
-    renderBanner(); renderResults(); renderMeta(); renderTicker();
-    const visible = KL.stagesWithEvents(S.stages, S.schedule, KL.today(), S.data);
-    $("stageGrid").innerHTML = visible.length ? visible.map(stageCard).join("")
-      : `<p class="empty-day">No events are scheduled for today. Please check back on a festival day (${esc(C.festivalDatesText)}).</p>`;
+    renderBanner(); 
+    renderResults(); 
+    renderMeta(); 
+    renderTicker();
+    renderStageGrid();
     const btn = $("autoScrollBtn");
     if (btn) btn.hidden = document.documentElement.scrollHeight - innerHeight <= 40;
   }
@@ -387,6 +428,7 @@
       $("stageGrid").innerHTML = `<p class="muted">Could not load the stage list. Please refresh.</p>`;
       return;
     }
+    initFilters();
     initModal();
     await poll();
     S.animate = false;
@@ -394,6 +436,8 @@
     initAutoScroll();
     setInterval(() => { if (!document.hidden) poll(); }, C.pollSeconds * 1000);
     document.addEventListener("visibilitychange", () => { if (!document.hidden) poll(); });
+    window.addEventListener("online", poll);
+    window.addEventListener("offline", () => { S.online = false; renderMeta(); });
   }
   init();
 })();

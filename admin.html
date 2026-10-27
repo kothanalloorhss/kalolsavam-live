@@ -86,6 +86,12 @@
         <ul id="finishedList" class="finished-list"></ul>
       </details>
 
+      <!-- Results Editor Tool (to correct chest numbers) -->
+      <details id="editResultsWrap" class="tool">
+        <summary>Edit Announced Results (ചെസ്റ്റ് നമ്പറുകൾ തിരുത്തുക)</summary>
+        <ul id="editResultsList" class="finished-list"></ul>
+      </details>
+
       <details class="tool">
         <summary>Announcements</summary>
         <form id="bannerForm">
@@ -108,6 +114,7 @@
     </section>
   </main>
 
+  <!-- Modal: End Event & Enter Results -->
   <dialog id="endModal" aria-labelledby="endTitle">
     <form id="endForm">
       <div><h2 id="endTitle">End event</h2><p id="endEvent" class="sub-name" lang="ml"></p></div>
@@ -119,6 +126,23 @@
         <button class="btn btn-end" type="submit">Announce results</button>
         <button id="skipResults" class="btn btn-start" type="button">Finish without results</button>
         <button id="cancelEnd" class="btn btn-ghost" type="button">Cancel</button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- Modal: Edit Chest Numbers of Already Announced Results -->
+  <dialog id="editResultModal" aria-labelledby="editResultTitle">
+    <form id="editResultForm">
+      <div>
+        <h2 id="editResultTitle">Edit Announced Result</h2>
+        <p id="editResultEvent" class="sub-name" lang="ml"></p>
+      </div>
+      <label class="field">1st prize <input id="editRank1" type="text" maxlength="10" autocomplete="off"></label>
+      <label class="field">2nd prize <input id="editRank2" type="text" maxlength="10" autocomplete="off"></label>
+      <label class="field">3rd prize <input id="editRank3" type="text" maxlength="10" autocomplete="off"></label>
+      <div class="row">
+        <button class="btn btn-end" type="submit">Save Changes</button>
+        <button id="cancelEditResult" class="btn btn-ghost" type="button">Cancel</button>
       </div>
     </form>
   </dialog>
