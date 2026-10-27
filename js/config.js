@@ -2,7 +2,7 @@
    Edit CONFIG only. Loaded before app.js and admin.js. */
 window.KL = (() => {
   const CONFIG = {
-    owner: "YOUR_GITHUB_USERNAME",   // GitHub user or org that owns the repo
+    owner: "kothanalloorhss",   // GitHub user or org that owns the repo
     repo: "kalolsavam-live",         // repository name
     branch: "main",                  // branch GitHub Pages serves from
     dataPath: "data.json",           // the only file the admin app writes
