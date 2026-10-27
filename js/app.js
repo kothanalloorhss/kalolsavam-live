@@ -2,7 +2,7 @@
 (() => {
   const C = KL.CONFIG, esc = KL.esc;
   const $ = id => document.getElementById(id);
-  const S = { stages: [], schedule: [], data: null, lastOk: null, online: true, tickerKey: "", animate: true };
+  const S = { stages: [], schedule: [], data: null, lastOk: null, online: true, tickerKey: "", animate: true, activeModalStageId: null };
   const stageIds = () => S.stages.map(s => s.stage_id);
 
   /* ---------- data ---------- */
@@ -26,12 +26,15 @@
       if (!S.data) S.data = KL.normalizeData({}, stageIds());
     }
     render();
+    if (S.activeModalStageId !== null) {
+      updateStageModal(S.activeModalStageId);
+    }
   }
 
   /* ---------- per-stage status ---------- */
   function stageView(stage) {
     const id = stage.stage_id;
-    const st = S.data.stages[id];
+    const st = S.data.stages[id] || {};
     const day = KL.today();
     const todays = KL.eventsFor(S.schedule, day, id);
     const done = new Set(S.data.completed_events.map(String));
@@ -62,7 +65,7 @@
   /* ---------- rendering ---------- */
   function directions(s) {
     const map = s.is_external && s.map_url
-      ? `<a class="map-btn" href="${esc(s.map_url)}" target="_blank" rel="noopener">Open in Google Maps</a>` : "";
+      ? `<a class="map-btn" href="${esc(s.map_url)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">Open in Google Maps</a>` : "";
     const route = s.route_guide ? `<p class="route">${esc(s.route_guide)}</p>` : "";
     return map || route ? `<footer class="stage-foot">${map}${route}</footer>` : "";
   }
@@ -91,13 +94,16 @@
 
     const progress = v.total ? `<p class="progress">${v.doneCount} of ${v.total} events done</p>` : "";
     const aos = S.animate ? ` data-aos="fade-up" data-aos-delay="${(i % 3) * 90}"` : "";
-    return `<article class="stage-card is-${v.mode}"${aos}>
+    return `<article class="stage-card is-${v.mode} is-clickable" data-stage-id="${esc(s.stage_id)}"${aos} role="button" tabindex="0" aria-label="View schedule and results for Stage ${esc(s.stage_id)}">
       <header class="stage-head">
         <span class="stage-no" aria-label="Stage ${s.stage_id}">${s.stage_id}</span>
         <div class="stage-title"><h3>${esc(s.stage_name)}</h3><p>${esc(s.venue_location)}</p></div>
       </header>
       <div class="stage-body">
-        <span class="status status-${v.mode}">${label}</span>
+        <div class="stage-status-row">
+          <span class="status status-${v.mode}">${label}</span>
+          <span class="view-detail-hint">Details &rsaquo;</span>
+        </div>
         ${body}${pill}${progress}
       </div>
       ${directions(s)}
@@ -134,7 +140,7 @@
       ? items.map(i => `${KL.fmtTime(i.t)}: ${i.text}`)
       : [`Welcome to ${C.festivalTitle}. Live stage updates will appear here.`];
     const key = text.join("|");
-    if (key === S.tickerKey) return; // don't restart the scroll if nothing changed
+    if (key === S.tickerKey) return;
     S.tickerKey = key;
     const html = text.map(t => `<span class="tick">${esc(t)}</span>`).join("");
     const chars = text.join("").length;
@@ -153,6 +159,162 @@
     $("testChip").hidden = !KL.testMode;
   }
 
+  /* ---------- Stage Schedule & Results Modal ---------- */
+  function findResultForEvent(stageId, ev) {
+    const results = S.data.recent_results || [];
+    return results.find(r => 
+      String(r.stage_id) === String(stageId) && 
+      ( (r.event_id && String(r.event_id) === String(ev.event_id)) || (r.event_name && r.event_name === ev.event_name) )
+    );
+  }
+
+  function openStageModal(stageId) {
+    S.activeModalStageId = stageId;
+    updateStageModal(stageId);
+    const dlg = $("stageModal");
+    if (dlg && typeof dlg.showModal === "function") {
+      dlg.showModal();
+    }
+  }
+
+  function updateStageModal(stageId) {
+    const dlg = $("stageModal");
+    if (!dlg) return;
+
+    const stage = S.stages.find(s => String(s.stage_id) === String(stageId));
+    if (!stage) return;
+
+    const day = KL.today();
+    const todays = KL.eventsFor(S.schedule, day, stageId);
+    const done = new Set(S.data.completed_events.map(String));
+    const st = (S.data.stages && S.data.stages[stageId]) || {};
+    const ongoingId = st.status === "ongoing" ? String(st.event_id) : null;
+
+    $("modalStageTitle").textContent = `${stage.stage_name} — ${stage.venue_location}`;
+
+    // 1. Ongoing Event
+    let liveHtml = "";
+    if (st.status === "ongoing") {
+      const ev = todays.find(e => String(e.event_id) === ongoingId);
+      const name = st.event_name || (ev && ev.event_name) || "Event in progress";
+      const cats = st.categories && st.categories.length ? st.categories : KL.cats(ev);
+      const chips = cats.map(c => `<span class="chip">${esc(c)}</span>`).join("");
+      const startStr = st.actual_start ? `Started at ${KL.fmtTime(new Date(st.actual_start))}` : "Ongoing";
+      liveHtml = `
+        <div class="modal-section live-section">
+          <h4><span class="status-live"></span> Live Now</h4>
+          <div class="modal-ev-item is-live">
+            <span class="ev-name" lang="ml">${esc(name)}</span>
+            <div class="chips">${chips}</div>
+            <p class="times">${startStr}${st.scheduled_start ? ` (Scheduled: ${KL.fmtHHMM(st.scheduled_start)})` : ""}</p>
+          </div>
+        </div>`;
+    }
+
+    // 2. Upcoming Events
+    const upcoming = todays.filter(e => !done.has(String(e.event_id)) && String(e.event_id) !== ongoingId);
+    let upcomingHtml = "";
+    if (upcoming.length) {
+      upcomingHtml = `
+        <div class="modal-section">
+          <h4>Upcoming Events Today (${upcoming.length})</h4>
+          <ul class="modal-ev-list">
+            ${upcoming.map(e => {
+              const chips = KL.cats(e).map(c => `<span class="chip">${esc(c)}</span>`).join("");
+              return `<li>
+                <div class="ev-time-badge">${KL.fmtHHMM(e.start_time)}</div>
+                <div class="ev-detail">
+                  <span class="ev-name" lang="ml">${esc(e.event_name)}</span>
+                  <div class="chips">${chips}</div>
+                </div>
+              </li>`;
+            }).join("")}
+          </ul>
+        </div>`;
+    } else {
+      upcomingHtml = `
+        <div class="modal-section">
+          <h4>Upcoming Events Today</h4>
+          <p class="muted">No upcoming events left for this stage today.</p>
+        </div>`;
+    }
+
+    // 3. Completed Events & Results
+    const completed = todays.filter(e => done.has(String(e.event_id)));
+    let completedHtml = "";
+    if (completed.length) {
+      completedHtml = `
+        <div class="modal-section">
+          <h4>Completed Events (${completed.length})</h4>
+          <ul class="modal-completed-list">
+            ${completed.map(e => {
+              const res = findResultForEvent(stageId, e);
+              const chips = KL.cats(e).map(c => `<span class="chip">${esc(c)}</span>`).join("");
+              let resHtml = `<p class="muted-small">Result awaited</p>`;
+              if (res && (res.first || res.second || res.third)) {
+                const badge = (lbl, val) => val ? `<span class="rank"><b>${lbl}:</b> ${esc(val)}</span>` : "";
+                resHtml = `<div class="modal-ranks">
+                  ${badge("1st", res.first)}
+                  ${badge("2nd", res.second)}
+                  ${badge("3rd", res.third)}
+                </div>`;
+              }
+              return `<li>
+                <div class="completed-head">
+                  <span class="ev-name" lang="ml">${esc(e.event_name)}</span>
+                  <div class="chips">${chips}</div>
+                </div>
+                ${resHtml}
+              </li>`;
+            }).join("")}
+          </ul>
+        </div>`;
+    } else {
+      completedHtml = `
+        <div class="modal-section">
+          <h4>Completed Events</h4>
+          <p class="muted">No events completed yet on this stage today.</p>
+        </div>`;
+    }
+
+    $("modalContent").innerHTML = liveHtml + upcomingHtml + completedHtml;
+  }
+
+  function initModal() {
+    const dlg = $("stageModal");
+    const closeBtn = $("closeModalBtn");
+    if (!dlg) return;
+
+    if (closeBtn) {
+      closeBtn.addEventListener("click", () => dlg.close());
+    }
+    dlg.addEventListener("close", () => { S.activeModalStageId = null; });
+    dlg.addEventListener("click", ev => {
+      // Close when backdrop is clicked
+      if (ev.target === dlg) dlg.close();
+    });
+
+    // Delegate clicks on stage cards
+    const grid = $("stageGrid");
+    grid.addEventListener("click", ev => {
+      const card = ev.target.closest(".stage-card");
+      if (card && card.dataset.stageId) {
+        openStageModal(card.dataset.stageId);
+      }
+    });
+
+    // Keyboard support (Enter / Space opens modal)
+    grid.addEventListener("keydown", ev => {
+      if (ev.key === "Enter" || ev.key === " ") {
+        const card = ev.target.closest(".stage-card");
+        if (card && card.dataset.stageId) {
+          ev.preventDefault();
+          openStageModal(card.dataset.stageId);
+        }
+      }
+    });
+  }
+
   function render() {
     if (!S.data) return;
     renderBanner(); renderResults(); renderMeta(); renderTicker();
@@ -167,7 +329,7 @@
   function startAOS() {
     if (window.AOS) {
       AOS.init({ duration: 700, easing: "ease-out-cubic", once: true, offset: 30, disable: () => KL.reduced });
-    } else { // library blocked or offline: never leave content invisible
+    } else {
       document.querySelectorAll("[data-aos]").forEach(el => el.removeAttribute("data-aos"));
     }
   }
@@ -193,7 +355,7 @@
 
     function frame(ts) {
       const dt = Math.min(0.1, (ts - last) / 1000); last = ts;
-      if (enabled && !document.hidden && maxY() > 40) {
+      if (enabled && !document.hidden && maxY() > 40 && !S.activeModalStageId) {
         const wait = (everTouched ? A.resumeAfterIdleSec : A.startDelaySec) * 1000;
         if (phase === "idle" && ts - lastInput >= wait) { phase = "down"; y = scrollY; }
         if (phase === "down") {
@@ -225,9 +387,10 @@
       $("stageGrid").innerHTML = `<p class="muted">Could not load the stage list. Please refresh.</p>`;
       return;
     }
+    initModal();
     await poll();
-    S.animate = false; // later refreshes redraw cards without re-running the reveal
-    setTimeout(startAOS, KL.splashMs); // reveal as the doors open
+    S.animate = false;
+    setTimeout(startAOS, KL.splashMs);
     initAutoScroll();
     setInterval(() => { if (!document.hidden) poll(); }, C.pollSeconds * 1000);
     document.addEventListener("visibilitychange", () => { if (!document.hidden) poll(); });
