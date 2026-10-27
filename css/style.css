@@ -22,7 +22,7 @@ button { font: inherit; cursor: pointer; }
 .muted { color: var(--ink-soft); }
 
 /* header */
-.site-head { background: var(--maroon-800); padding: 1.25rem 0 1rem; position: relative; }
+.site-head { background: var(--maroon-800); padding: 1.25rem 0 1rem; position: sticky; }
 .site-head::after { content: ""; position: absolute; inset: auto 0 0 0; height: 6px; background-image: var(--kasavu); }
 .site-head h1 { font-size: clamp(1.9rem, 5vw, 2.9rem); color: var(--gold-300); font-weight: 700; }
 .site-head .sub { color: var(--ivory-dim); margin-top: .15rem; }
