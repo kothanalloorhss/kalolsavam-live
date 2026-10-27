@@ -46,6 +46,34 @@
   </header>
 
   <main class="wrap">
+    <!-- Day Progress & Punctuality Cards -->
+    <section id="dayProgress" class="stats-board" aria-label="Day overview and progress" hidden>
+      <div class="stat-card">
+        <span class="stat-label">Total Today</span>
+        <span id="statTotal" class="stat-val">0</span>
+      </div>
+      <div class="stat-card is-done">
+        <span class="stat-label">Completed</span>
+        <span id="statCompleted" class="stat-val">0</span>
+      </div>
+      <div class="stat-card is-ongoing">
+        <span class="stat-label">Live Now</span>
+        <span id="statOngoing" class="stat-val">0</span>
+      </div>
+      <div class="stat-card is-pending">
+        <span class="stat-label">Pending</span>
+        <span id="statPending" class="stat-val">0</span>
+      </div>
+      <div class="stat-card is-ontime">
+        <span class="stat-label">On-Time</span>
+        <span id="statOnTime" class="stat-val">0</span>
+      </div>
+      <div class="stat-card is-delayed">
+        <span class="stat-label">Delayed</span>
+        <span id="statDelayed" class="stat-val">0</span>
+      </div>
+    </section>
+
     <nav aria-label="Stages"><div id="chips" class="chips-row"></div></nav>
 
     <section class="panel" aria-label="Events on the selected stage">
@@ -96,10 +124,10 @@
   </dialog>
 
   <footer class="page-foot wrap">
-  <div class="credit">
-    <p class="by">by Little Kites Unit</p>
-    <p class="school">Emmanuel&rsquo;s HSS Kothanalloor</p>
-  </div>
+    <div class="credit">
+      <p class="by">by Little Kites Unit</p>
+      <p class="school">Emmanuel&rsquo;s HSS Kothanalloor</p>
+    </div>
   </footer>
 
   <div id="toast" class="toast" role="status" hidden></div>

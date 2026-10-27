@@ -86,10 +86,10 @@
   function startEvent(eventId) {
     const ev = findEvent(eventId); if (!ev) return;
     const sid = Number(ev.stage_id), cur = S.data.stages[sid];
-    if (cur.status === "ongoing") return toast(`Stage ${sid} is still running "${cur.event_name}". End it first.`, "err");
+    if (cur && cur.status === "ongoing") return toast(`Stage ${sid} is still running "${cur.event_name}". End it first.`, "err");
     const delay = Math.max(0, Math.round((KL.now() - KL.atTime(ev.date, ev.start_time)) / 60000));
     run(d => {
-      if (d.stages[sid].status === "ongoing") throw new Error(`Stage ${sid} is already running another event.`);
+      if (d.stages[sid] && d.stages[sid].status === "ongoing") throw new Error(`Stage ${sid} is already running another event.`);
       if (d.completed_events.map(String).includes(String(ev.event_id))) throw new Error("This event is already marked finished.");
       d.stages[sid] = { status: "ongoing", event_id: ev.event_id, event_name: ev.event_name, categories: KL.cats(ev),
                         scheduled_start: ev.start_time, actual_start: KL.nowISO(), delay_minutes: delay };
@@ -100,7 +100,7 @@
   function endEvent(sid, ranks) {
     run(d => {
       const st = d.stages[sid];
-      if (st.status !== "ongoing") throw new Error(`Stage ${sid} has no running event.`);
+      if (!st || st.status !== "ongoing") throw new Error(`Stage ${sid} has no running event.`);
       const eventId = st.event_id, name = st.event_name, cats = st.categories;
       if (!d.completed_events.map(String).includes(String(eventId))) d.completed_events.push(eventId);
       if (ranks) {
@@ -121,6 +121,54 @@
                                  `Reopen event ${id}`, "Event moved back to pending.");
 
   /* ---------- rendering ---------- */
+  function renderProgressCards(day) {
+    const wrap = $("dayProgress");
+    if (!wrap) return;
+
+    // All events scheduled for the current day across all stages
+    const dayEvents = S.schedule.filter(e => e.date === day);
+    if (!dayEvents.length) {
+      wrap.hidden = true;
+      return;
+    }
+    wrap.hidden = false;
+
+    const doneSet = new Set((S.data.completed_events || []).map(String));
+    const ongoingStages = Object.values(S.data.stages || {}).filter(st => st.status === "ongoing" && st.event_id);
+    const ongoingEventIds = new Set(ongoingStages.map(st => String(st.event_id)));
+
+    const completed = dayEvents.filter(e => doneSet.has(String(e.event_id)));
+    const ongoing = dayEvents.filter(e => ongoingEventIds.has(String(e.event_id)));
+    const pending = dayEvents.filter(e => !doneSet.has(String(e.event_id)) && !ongoingEventIds.has(String(e.event_id)));
+
+    // On-Time vs Delayed Calculation
+    let onTimeCount = 0;
+    let delayedCount = 0;
+    const now = KL.now();
+
+    // 1. Ongoing events check
+    ongoingStages.forEach(st => {
+      if ((st.delay_minutes || 0) <= 5) onTimeCount++;
+      else delayedCount++;
+    });
+
+    // 2. Pending events check: if scheduled start time is past by > 5 mins without starting
+    pending.forEach(e => {
+      const sched = KL.atTime(e.date, e.start_time);
+      const diffMins = Math.floor((now - sched) / 60000);
+      if (diffMins > 5) {
+        delayedCount++;
+      }
+    });
+
+    $("statTotal").textContent = dayEvents.length;
+    $("statCompleted").textContent = completed.length;
+    $("statOngoing").textContent = ongoing.length;
+    $("statPending").textContent = pending.length;
+    $("statOnTime").textContent = onTimeCount;
+    $("statDelayed").textContent = delayedCount;
+  }
+
   function eventItem(ev, st) {
     const running = st.status === "ongoing" && String(st.event_id) === String(ev.event_id);
     const blocked = st.status === "ongoing" && !running;
@@ -146,9 +194,12 @@
     $("adminDate").textContent = KL.fmtLongDate(KL.now());
     $("testChip").hidden = !KL.testMode;
     const bn = S.data.banner;
-    $("bannerState").textContent = bn.active && bn.text ? `Showing: ${bn.text}` : "No banner is showing.";
+    $("bannerState").textContent = bn && bn.active && bn.text ? `Showing: ${bn.text}` : "No banner is showing.";
 
-    // only stages that have events today (or are live) get a chip
+    // Render the day-wide progress overview
+    renderProgressCards(day);
+
+    // Only stages that have events today (or are live) get a chip
     const visible = KL.stagesWithEvents(S.stages, S.schedule, day, S.data);
     if (!visible.length) {
       $("chips").innerHTML = ""; $("stageHead").innerHTML = ""; $("eventList").innerHTML = "";
@@ -159,13 +210,13 @@
     if (!visible.some(s => s.stage_id === S.selected)) S.selected = visible[0].stage_id;
 
     $("chips").innerHTML = visible.map(s => {
-      const live = S.data.stages[s.stage_id].status === "ongoing";
+      const live = S.data.stages[s.stage_id] && S.data.stages[s.stage_id].status === "ongoing";
       return `<button class="stage-chip ${live ? "is-live" : ""}" data-chip="${s.stage_id}" aria-pressed="${s.stage_id === S.selected}"
         aria-label="Stage ${s.stage_id}${live ? ", live" : ""}">${s.stage_id}</button>`;
     }).join("");
 
     const stage = visible.find(s => s.stage_id === S.selected);
-    const st = S.data.stages[stage.stage_id];
+    const st = S.data.stages[stage.stage_id] || idleStage();
     const done = new Set(S.data.completed_events.map(String));
     const todays = KL.eventsFor(S.schedule, day, stage.stage_id);
     const pending = todays.filter(e => !done.has(String(e.event_id)));
@@ -184,7 +235,7 @@
 
   /* ---------- events ---------- */
   function openEndModal(sid) {
-    const st = S.data.stages[sid];
+    const st = S.data.stages[sid] || {};
     S.endStage = sid;
     $("endTitle").textContent = `End Stage ${sid}`;
     $("endEvent").textContent = st.event_name || "";
