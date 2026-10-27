@@ -1,0 +1,114 @@
+[
+  {
+    "stage_id": 1,
+    "stage_name": "വേദി 01",
+    "venue_location": "പാരീഷ് ഹാൾ ആഡിറ്റോറിയം",
+    "is_external": true,
+    "map_url": "https://maps.app.goo.gl/ee2tNqVoRhUzkkoK6",
+    "route_guide": ""
+  },
+  {
+    "stage_id": 2,
+    "stage_name": "വേദി 02",
+    "venue_location": "സ്കൂൾ ഓപ്പൺ സ്റ്റേജ്",
+    "is_external": false,
+    "map_url": null,
+    "route_guide": ""
+  },
+  {
+    "stage_id": 3,
+    "stage_name": "വേദി 03",
+    "venue_location": "സ്കൂൾ എൽ.പി. ഹാൾ",
+    "is_external": false,
+    "map_url": null,
+    "route_guide": ""
+  },
+  {
+    "stage_id": 4,
+    "stage_name": "വേദി 04",
+    "venue_location": "ക്ഷേത്രം ആഡിറ്റോറിയം",
+    "is_external": true,
+    "map_url": "https://maps.app.goo.gl/p1ZaPrT8kdBcLmbZA",
+    "route_guide": ""
+  },
+  {
+    "stage_id": 5,
+    "stage_name": "വേദി 05",
+    "venue_location": "സ്കൂൾ നവതി ഹാൾ",
+    "is_external": false,
+    "map_url": null,
+    "route_guide": ""
+  },
+  {
+    "stage_id": 6,
+    "stage_name": "വേദി 06",
+    "venue_location": "സ്കൂൾ HSS ഹാൾ",
+    "is_external": false,
+    "map_url": null,
+    "route_guide": ""
+  },
+  {
+    "stage_id": 7,
+    "stage_name": "വേദി 07",
+    "venue_location": "മൈലപ്പറമ്പ് ആഡിറ്റോറിയം",
+    "is_external": true,
+    "map_url": "https://maps.app.goo.gl/kzVCoHMJPWnUrG51A",
+    "route_guide": ""
+  },
+  {
+    "stage_id": 8,
+    "stage_name": "വേദി 08",
+    "venue_location": "സ്കൂൾ HSS സെമിനാർ ഹാൾ",
+    "is_external": false,
+    "map_url": null,
+    "route_guide": ""
+  },
+  {
+    "stage_id": 9,
+    "stage_name": "വേദി 09",
+    "venue_location": "സ്കൂൾ XII A ക്ലാസ്",
+    "is_external": false,
+    "map_url": null,
+    "route_guide": ""
+  },
+  {
+    "stage_id": 10,
+    "stage_name": "വേദി 10",
+    "venue_location": "സ്കൂൾ XI C ക്ലാസ്",
+    "is_external": false,
+    "map_url": null,
+    "route_guide": ""
+  },
+  {
+    "stage_id": 11,
+    "stage_name": "വേദി 11",
+    "venue_location": "സ്കൂൾ XII B ക്ലാസ് ",
+    "is_external": false,
+    "map_url": null,
+    "route_guide": ""
+  },
+  {
+    "stage_id": 12,
+    "stage_name": "വേദി 12",
+    "venue_location": "LP First Floor",
+    "is_external": false,
+    "map_url": null,
+    "route_guide": ""
+  },
+  {
+    "stage_id": 13,
+    "stage_name": "വേദി 13",
+    "venue_location": "LP Second Floor ",
+    "is_external": false,
+    "map_url": null,
+    "route_guide": ""
+  },
+  {
+    "stage_id": 14,
+    "stage_name": "വേദി 14",
+    "venue_location": "LP Old Ground",
+    "is_external": true,
+    "map_url": "https://maps.app.goo.gl/nm7Viz4XAFrrHGzm8",
+    "route_guide": ""
+  }
+]

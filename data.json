@@ -1,0 +1,138 @@
+{
+  "updated_at": null,
+  "banner": {
+    "active": false,
+    "text": ""
+  },
+  "stages": {
+    "1": {
+      "status": "idle",
+      "event_id": null,
+      "event_name": null,
+      "categories": [],
+      "scheduled_start": null,
+      "actual_start": null,
+      "delay_minutes": 0
+    },
+    "2": {
+      "status": "idle",
+      "event_id": null,
+      "event_name": null,
+      "categories": [],
+      "scheduled_start": null,
+      "actual_start": null,
+      "delay_minutes": 0
+    },
+    "3": {
+      "status": "idle",
+      "event_id": null,
+      "event_name": null,
+      "categories": [],
+      "scheduled_start": null,
+      "actual_start": null,
+      "delay_minutes": 0
+    },
+    "4": {
+      "status": "idle",
+      "event_id": null,
+      "event_name": null,
+      "categories": [],
+      "scheduled_start": null,
+      "actual_start": null,
+      "delay_minutes": 0
+    },
+    "5": {
+      "status": "idle",
+      "event_id": null,
+      "event_name": null,
+      "categories": [],
+      "scheduled_start": null,
+      "actual_start": null,
+      "delay_minutes": 0
+    },
+    "6": {
+      "status": "idle",
+      "event_id": null,
+      "event_name": null,
+      "categories": [],
+      "scheduled_start": null,
+      "actual_start": null,
+      "delay_minutes": 0
+    },
+    "7": {
+      "status": "idle",
+      "event_id": null,
+      "event_name": null,
+      "categories": [],
+      "scheduled_start": null,
+      "actual_start": null,
+      "delay_minutes": 0
+    },
+    "8": {
+      "status": "idle",
+      "event_id": null,
+      "event_name": null,
+      "categories": [],
+      "scheduled_start": null,
+      "actual_start": null,
+      "delay_minutes": 0
+    },
+    "9": {
+      "status": "idle",
+      "event_id": null,
+      "event_name": null,
+      "categories": [],
+      "scheduled_start": null,
+      "actual_start": null,
+      "delay_minutes": 0
+    },
+    "10": {
+      "status": "idle",
+      "event_id": null,
+      "event_name": null,
+      "categories": [],
+      "scheduled_start": null,
+      "actual_start": null,
+      "delay_minutes": 0
+    },
+    "11": {
+      "status": "idle",
+      "event_id": null,
+      "event_name": null,
+      "categories": [],
+      "scheduled_start": null,
+      "actual_start": null,
+      "delay_minutes": 0
+    },
+    "12": {
+      "status": "idle",
+      "event_id": null,
+      "event_name": null,
+      "categories": [],
+      "scheduled_start": null,
+      "actual_start": null,
+      "delay_minutes": 0
+    },
+    "13": {
+      "status": "idle",
+      "event_id": null,
+      "event_name": null,
+      "categories": [],
+      "scheduled_start": null,
+      "actual_start": null,
+      "delay_minutes": 0
+    },
+    "14": {
+      "status": "idle",
+      "event_id": null,
+      "event_name": null,
+      "categories": [],
+      "scheduled_start": null,
+      "actual_start": null,
+      "delay_minutes": 0
+    }
+  },
+  "ticker": [],
+  "recent_results": [],
+  "completed_events": []
+}

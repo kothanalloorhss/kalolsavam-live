@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Kalolsavam Admin</title>
+  <meta name="theme-color" content="#42101c">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+Chettan+2:wght@500;700&family=Manjari:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- token gate -->
+  <div id="gate" class="gate" hidden>
+    <form id="gateForm">
+      <h1>Admin sign-in</h1>
+      <p>Paste the GitHub fine-grained token for this repository. It stays in this browser tab and is cleared when you close it.</p>
+      <label class="field">GitHub token
+        <input id="tokenInput" type="password" autocomplete="off" required placeholder="github_pat_…">
+      </label>
+      <p id="gateError" class="form-error" role="alert"></p>
+      <button id="gateBtn" class="btn btn-end" type="submit">Connect</button>
+    </form>
+  </div>
+
+  <header class="admin-bar">
+    <div class="wrap">
+      <div>
+        <h1>Stage control</h1>
+        <p><span id="adminDate"></span> <span id="testChip" class="test-chip" hidden>Test mode</span></p>
+      </div>
+      <button id="logout" class="link" type="button">Sign out</button>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <nav aria-label="Stages"><div id="chips" class="chips-row"></div></nav>
+
+    <section class="panel" aria-label="Events on the selected stage">
+      <header id="stageHead"></header>
+      <ul id="eventList" class="ev-list"></ul>
+      <p id="emptyState" class="muted" hidden></p>
+
+      <details id="finishedWrap" class="tool" hidden>
+        <summary>Finished on this stage (<span id="finishedCount">0</span>)</summary>
+        <ul id="finishedList" class="finished-list"></ul>
+      </details>
+
+      <details class="tool">
+        <summary>Announcements</summary>
+        <form id="bannerForm">
+          <label class="field">Emergency banner (top of the public page)
+            <textarea id="bannerText" rows="2" maxlength="240"></textarea>
+          </label>
+          <p id="bannerState" class="muted"></p>
+          <div class="row">
+            <button class="btn btn-end act" type="submit">Show banner</button>
+            <button id="clearBanner" class="btn btn-ghost act" type="button">Remove banner</button>
+          </div>
+        </form>
+        <form id="noticeForm">
+          <label class="field">Ticker notice (scrolls at the bottom)
+            <input id="noticeText" type="text" maxlength="160">
+          </label>
+          <div class="row"><button class="btn btn-end act" type="submit">Add to ticker</button></div>
+        </form>
+      </details>
+    </section>
+  </main>
+
+  <dialog id="endModal" aria-labelledby="endTitle">
+    <form id="endForm">
+      <div><h2 id="endTitle">End event</h2><p id="endEvent" class="sub-name" lang="ml"></p></div>
+      <p class="muted">Enter chest numbers to announce the result, or skip.</p>
+      <label class="field">1st prize <input id="rank1" type="text" maxlength="10" autocomplete="off"></label>
+      <label class="field">2nd prize <input id="rank2" type="text" maxlength="10" autocomplete="off"></label>
+      <label class="field">3rd prize <input id="rank3" type="text" maxlength="10" autocomplete="off"></label>
+      <div class="row">
+        <button class="btn btn-end" type="submit">Announce results</button>
+        <button id="skipResults" class="btn btn-start" type="button">Finish without results</button>
+        <button id="cancelEnd" class="btn btn-ghost" type="button">Cancel</button>
+      </div>
+    </form>
+  </dialog>
+
+  <div id="toast" class="toast" role="status" hidden></div>
+
+  <script src="js/config.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kalolsavam Live</title>
+  <meta name="theme-color" content="#42101c">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+Chettan+2:wght@500;700&family=Manjari:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="alert" class="alert-banner" role="alert" hidden></div>
+
+  <header class="site-head">
+    <div class="wrap">
+      <h1 lang="ml">കലോത്സവം തത്സമയം</h1>
+      <p class="sub">Kalolsavam Live: updates from all 14 stages</p>
+      <div class="meta">
+        <span id="dayLabel"></span>
+        <span id="syncState" class="sync" aria-live="polite">Loading…</span>
+        <span id="testChip" class="test-chip" hidden>Test mode</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section id="results" class="results" aria-labelledby="resHead" hidden>
+      <h2 id="resHead">Latest results</h2>
+      <ol id="resultList"></ol>
+    </section>
+
+    <section aria-labelledby="stagesHead">
+      <h2 id="stagesHead" class="sr-only">Stages</h2>
+      <div id="stageGrid" class="stage-grid" aria-live="polite"><p class="muted" style="color:var(--ivory-dim)">Loading stage updates…</p></div>
+    </section>
+  </main>
+
+  <footer class="page-foot wrap">The page refreshes by itself every 30 seconds.</footer>
+
+  <div class="ticker" role="marquee" aria-label="Live stage updates">
+    <span class="ticker-label">Live</span>
+    <div class="ticker-view"><div id="tickerTrack" class="ticker-track"></div></div>
+  </div>
+
+  <script src="js/config.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
