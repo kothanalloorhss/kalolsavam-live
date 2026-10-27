@@ -7,17 +7,28 @@
   <meta name="theme-color" content="#42101c">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Baloo+Chettan+2:wght@500;700&family=Manjari:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anek+Malayalam:wght@500;700&family=Manjari:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <!-- branding intro: doors swing open -->
+  <div id="splash" class="splash" aria-hidden="true">
+    <div class="door door-l"></div>
+    <div class="door door-r"></div>
+    <div class="splash-brand">
+      <p class="by">by Little Kites Unit</p>
+      <p class="school">Emmanuel&rsquo;s HSS Kothanalloor</p>
+    </div>
+  </div>
+
   <div id="alert" class="alert-banner" role="alert" hidden></div>
 
   <header class="site-head">
     <div class="wrap">
-      <h1 lang="ml">കലോത്സവം തത്സമയം</h1>
-      <p class="sub">Kalolsavam Live: updates from all 14 stages</p>
-      <div class="meta">
+      <h1 lang="ml" data-aos="fade-down">കലോത്സവം തത്സമയം</h1>
+      <p class="sub" data-aos="fade" data-aos-delay="150">Kalolsavam Live: updates from every stage in use today</p>
+      <div class="meta" data-aos="fade" data-aos-delay="300">
         <span id="dayLabel"></span>
         <span id="syncState" class="sync" aria-live="polite">Loading…</span>
         <span id="testChip" class="test-chip" hidden>Test mode</span>
@@ -37,14 +48,23 @@
     </section>
   </main>
 
-  <footer class="page-foot wrap">The page refreshes by itself every 30 seconds.</footer>
+  <footer class="page-foot wrap" data-aos="fade-up" data-aos-offset="0">
+  <p>The page refreshes by itself every 30 seconds.</p>
+  <div class="credit">
+    <p class="by">by Little Kites Unit</p>
+    <p class="school">Emmanuel&rsquo;s HSS Kothanalloor</p>
+  </div>
+  </footer>
+
+  <button id="autoScrollBtn" class="autoscroll-btn" type="button" aria-pressed="true" hidden>Auto-scroll: on</button>
 
   <div class="ticker" role="marquee" aria-label="Live stage updates">
     <span class="ticker-label">Live</span>
     <div class="ticker-view"><div id="tickerTrack" class="ticker-track"></div></div>
   </div>
 
-  <script src="js/config.js"></script>
-  <script src="js/app.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script defer src="js/config.js"></script>
+  <script defer src="js/app.js"></script>
 </body>
 </html>

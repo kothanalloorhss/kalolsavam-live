@@ -5,7 +5,7 @@
   --gold-300: #f0d27a; --gold-400: #e2b84a; --gold-500: #c99a2e; --gold-700: #8a6416;
   --ivory: #fbf2dc; --ivory-dim: #efe0bd; --ink: #2a0610; --ink-soft: #62423a;
   --live: #17703f; --bad: #b3261e;
-  --font-head: "Baloo Chettan 2", system-ui, sans-serif;
+  --font-head: "Anek Malayalam", system-ui, sans-serif;
   --font-body: "Manjari", system-ui, sans-serif;
   --kasavu: linear-gradient(var(--gold-400) 0 3px, transparent 3px 5px, var(--gold-500) 5px 6px);
 }
@@ -156,4 +156,40 @@ dialog .field input { text-transform: uppercase; font-size: 1.3rem; letter-spaci
 @media (min-width: 40rem) {
   .ev { grid-template-columns: 5rem 1fr auto; }
   .ev-actions { grid-column: auto; grid-template-columns: 6rem 6rem; align-self: center; }
+}
+
+/* ========== branding: intro doors + credit ========== */
+.by { font: 700 clamp(.8rem, 2.1vw, 1rem)/1.3 var(--font-body); letter-spacing: .06em; color: var(--ivory-dim); }
+.school { font: 700 clamp(2rem, 7.5vw, 4.4rem)/1.1 var(--font-head); color: var(--gold-300); }
+
+.splash { position: fixed; inset: 0; z-index: 100; perspective: 1600px; overflow: hidden; animation: splash-gone 0s linear 3.2s forwards; }
+@keyframes splash-gone { to { visibility: hidden; } }
+.door { position: absolute; top: 0; bottom: 0; width: 50.3%; backface-visibility: hidden; will-change: transform;
+  background: linear-gradient(90deg, var(--maroon-700), var(--maroon-800)); }
+.door::before { content: ""; position: absolute; inset: 7% 9%; border: 2px solid var(--gold-500); border-radius: 6px; box-shadow: inset 0 0 0 6px var(--maroon-800), inset 0 0 0 7px var(--gold-700); }
+.door::after { content: ""; position: absolute; top: 50%; width: 1.1rem; height: 1.1rem; border-radius: 50%; background: var(--gold-400); border: 2px solid var(--gold-700); }
+.door-l { left: 0; transform-origin: left center; border-right: 5px solid var(--gold-500); animation: open-l 1.25s cubic-bezier(.65, 0, .3, 1) 1.9s forwards; }
+.door-r { right: 0; transform-origin: right center; border-left: 5px solid var(--gold-500); animation: open-r 1.25s cubic-bezier(.65, 0, .3, 1) 1.9s forwards; }
+.door-l::after { right: 1.3rem; } .door-r::after { left: 1.3rem; }
+@keyframes open-l { to { transform: rotateY(98deg); } }
+@keyframes open-r { to { transform: rotateY(-98deg); } }
+.splash-brand { position: absolute; inset: 0; z-index: 2; display: grid; place-content: center; justify-items: center; gap: .5rem; text-align: center; padding: 1.5rem; animation: brand 2.3s ease both; }
+.splash-brand::after { content: ""; width: min(22rem, 70vw); height: 6px; background-image: var(--kasavu); margin-top: .6rem; }
+.splash-brand .school { text-shadow: 0 2px 14px rgba(0, 0, 0, .5); }
+@keyframes brand { 0% { opacity: 0; transform: translateY(14px) scale(.97); } 20%, 60% { opacity: 1; transform: none; } 100% { opacity: 0; transform: scale(1.05); } }
+
+.credit { display: grid; justify-items: center; gap: .1rem; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--gold-700); }
+.credit .school { font-size: 1.5rem; }
+.page-foot p:first-child { margin-bottom: .2rem; }
+
+.empty-day { grid-column: 1 / -1; background: var(--ivory); color: var(--ink); border: 1px solid var(--gold-500); border-radius: 10px; padding: 1.2rem; font-weight: 700; }
+.autoscroll-btn { position: fixed; right: .8rem; bottom: 4.4rem; z-index: 19; background: var(--maroon-800); color: var(--gold-300); border: 1.5px solid var(--gold-500); border-radius: 999px; padding: .25rem .85rem; font: 700 .85rem var(--font-head); opacity: .9; }
+.autoscroll-btn[aria-pressed="false"] { color: var(--ivory-dim); border-color: var(--gold-700); }
+
+@media (prefers-reduced-motion: reduce) {
+  .splash { animation-delay: 2s; }
+  .door-l, .door-r { animation: door-fade .5s linear 1.4s forwards; }
+  .splash-brand { animation: brand-rm 1.9s ease both; }
+  @keyframes door-fade { to { opacity: 0; } }
+  @keyframes brand-rm { 0% { opacity: 0; } 25%, 70% { opacity: 1; } 100% { opacity: 0; } }
 }

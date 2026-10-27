@@ -2,7 +2,7 @@
 (() => {
   const C = KL.CONFIG, esc = KL.esc;
   const $ = id => document.getElementById(id);
-  const S = { stages: [], schedule: [], data: null, lastOk: null, online: true, tickerKey: "" };
+  const S = { stages: [], schedule: [], data: null, lastOk: null, online: true, tickerKey: "", animate: true };
   const stageIds = () => S.stages.map(s => s.stage_id);
 
   /* ---------- data ---------- */
@@ -67,7 +67,7 @@
     return map || route ? `<footer class="stage-foot">${map}${route}</footer>` : "";
   }
 
-  function stageCard(s) {
+  function stageCard(s, i) {
     const v = stageView(s);
     const label = { live: "Live now", next: "Up next", done: "Finished for today", none: "No events today" }[v.mode];
     let body = "", pill = "";
@@ -90,7 +90,8 @@
     }
 
     const progress = v.total ? `<p class="progress">${v.doneCount} of ${v.total} events done</p>` : "";
-    return `<article class="stage-card is-${v.mode}">
+    const aos = S.animate ? ` data-aos="fade-up" data-aos-delay="${(i % 3) * 90}"` : "";
+    return `<article class="stage-card is-${v.mode}"${aos}>
       <header class="stage-head">
         <span class="stage-no" aria-label="Stage ${s.stage_id}">${s.stage_id}</span>
         <div class="stage-title"><h3>${esc(s.stage_name)}</h3><p>${esc(s.venue_location)}</p></div>
@@ -155,7 +156,60 @@
   function render() {
     if (!S.data) return;
     renderBanner(); renderResults(); renderMeta(); renderTicker();
-    $("stageGrid").innerHTML = S.stages.map(stageCard).join("");
+    const visible = KL.stagesWithEvents(S.stages, S.schedule, KL.today(), S.data);
+    $("stageGrid").innerHTML = visible.length ? visible.map(stageCard).join("")
+      : `<p class="empty-day">No events are scheduled for today. Please check back on a festival day (${esc(C.festivalDatesText)}).</p>`;
+    const btn = $("autoScrollBtn");
+    if (btn) btn.hidden = document.documentElement.scrollHeight - innerHeight <= 40;
+  }
+
+  /* ---------- scroll-reveal animations (AOS) ---------- */
+  function startAOS() {
+    if (window.AOS) {
+      AOS.init({ duration: 700, easing: "ease-out-cubic", once: true, offset: 30, disable: () => KL.reduced });
+    } else { // library blocked or offline: never leave content invisible
+      document.querySelectorAll("[data-aos]").forEach(el => el.removeAttribute("data-aos"));
+    }
+  }
+
+  /* ---------- idle auto-scroll through all stage cards ---------- */
+  function initAutoScroll() {
+    const A = C.autoScroll, btn = $("autoScrollBtn");
+    const saved = sessionStorage.getItem("kl_autoscroll");
+    let enabled = saved ? saved === "on" : !KL.reduced;
+    let phase = "idle", y = 0, holdUntil = 0, everTouched = false;
+    let last = performance.now(), lastInput = last + KL.splashMs;
+    const maxY = () => document.documentElement.scrollHeight - innerHeight;
+
+    const paint = () => { btn.setAttribute("aria-pressed", enabled); btn.textContent = `Auto-scroll: ${enabled ? "on" : "off"}`; };
+    paint();
+    btn.addEventListener("click", () => {
+      enabled = !enabled; sessionStorage.setItem("kl_autoscroll", enabled ? "on" : "off");
+      everTouched = false; lastInput = performance.now(); phase = "idle"; paint();
+    });
+
+    const touched = () => { everTouched = true; lastInput = performance.now(); phase = "idle"; };
+    ["wheel", "touchstart", "pointerdown", "keydown"].forEach(ev => addEventListener(ev, touched, { passive: true }));
+
+    function frame(ts) {
+      const dt = Math.min(0.1, (ts - last) / 1000); last = ts;
+      if (enabled && !document.hidden && maxY() > 40) {
+        const wait = (everTouched ? A.resumeAfterIdleSec : A.startDelaySec) * 1000;
+        if (phase === "idle" && ts - lastInput >= wait) { phase = "down"; y = scrollY; }
+        if (phase === "down") {
+          y += A.speedPxPerSec * dt;
+          if (y >= maxY()) { y = maxY(); phase = "hold-bottom"; holdUntil = ts + A.holdSec * 1000; }
+          scrollTo({ top: y, behavior: "instant" });
+        } else if (phase === "hold-bottom" && ts >= holdUntil) phase = "up";
+        else if (phase === "up") {
+          y -= A.speedPxPerSec * 6 * dt;
+          if (y <= 0) { y = 0; phase = "hold-top"; holdUntil = ts + A.holdSec * 1000; }
+          scrollTo({ top: y, behavior: "instant" });
+        } else if (phase === "hold-top" && ts >= holdUntil) phase = "down";
+      }
+      requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
   }
 
   /* ---------- boot ---------- */
@@ -172,6 +226,9 @@
       return;
     }
     await poll();
+    S.animate = false; // later refreshes redraw cards without re-running the reveal
+    setTimeout(startAOS, KL.splashMs); // reveal as the doors open
+    initAutoScroll();
     setInterval(() => { if (!document.hidden) poll(); }, C.pollSeconds * 1000);
     document.addEventListener("visibilitychange", () => { if (!document.hidden) poll(); });
   }

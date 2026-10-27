@@ -2,7 +2,7 @@
    Edit CONFIG only. Loaded before app.js and admin.js. */
 window.KL = (() => {
   const CONFIG = {
-    owner: "kothanalloorhss",   // GitHub user or org that owns the repo
+    owner: "YOUR_GITHUB_USERNAME",   // GitHub user or org that owns the repo
     repo: "kalolsavam-live",         // repository name
     branch: "main",                  // branch GitHub Pages serves from
     dataPath: "data.json",           // the only file the admin app writes
@@ -15,7 +15,10 @@ window.KL = (() => {
     maxResultsShown: 5,
     maxResultsStored: 10,
     maxTickerStored: 30,
-    tickerShown: 10
+    tickerShown: 10,
+    festivalDatesText: "3 to 6 November 2026",
+    // Public page: gently scrolls through every stage card while the viewer is idle
+    autoScroll: { startDelaySec: 6, speedPxPerSec: 40, holdSec: 4, resumeAfterIdleSec: 90 }
   };
 
   const IST_OFFSET = "+05:30"; // India has no daylight saving
@@ -63,6 +66,13 @@ window.KL = (() => {
       .filter(e => e.date === date && (stageId == null || Number(e.stage_id) === Number(stageId)))
       .sort((a, b) => a.start_time.localeCompare(b.start_time) || Number(a.event_id) - Number(b.event_id));
 
+  // Only stages that have at least one event on `date` (or are live right now)
+  const stagesWithEvents = (stages, schedule, date, data) => {
+    const has = new Set(schedule.filter(e => e.date === date).map(e => Number(e.stage_id)));
+    return stages.filter(s => has.has(Number(s.stage_id)) ||
+      Boolean(data && data.stages && data.stages[s.stage_id] && data.stages[s.stage_id].status === "ongoing"));
+  };
+
   const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 
   async function fetchJson(url, opts) {
@@ -88,6 +98,22 @@ window.KL = (() => {
     return d;
   }
 
-  return { CONFIG, testMode, dateOverride, nowOverride, today, now, nowISO, atTime, fmtTime, fmtHHMM, fmtLongDate,
+  /* ---------- branding splash (door-opening intro) ---------- */
+  const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let splashMs = 0;
+  (function splash() {
+    const sp = document.getElementById("splash");
+    if (!sp) return;
+    // admin pages set data-splash="once": show the intro once per browser tab
+    if (document.body.dataset.splash === "once" && sessionStorage.getItem("kl_splash_seen")) { sp.remove(); return; }
+    sessionStorage.setItem("kl_splash_seen", "1");
+    splashMs = reduced ? 2000 : 3100;
+    const end = () => sp.remove();
+    sp.addEventListener("animationend", e => { if (e.target.classList.contains("door-r")) end(); });
+    sp.addEventListener("click", () => { splashMs = 0; end(); });
+    setTimeout(end, splashMs + 1500); // safety net
+  })();
+
+  return { CONFIG, testMode, stagesWithEvents, reduced, get splashMs() { return splashMs; }, dateOverride, nowOverride, today, now, nowISO, atTime, fmtTime, fmtHHMM, fmtLongDate,
            minutesAgo, agoText, cats, eventsFor, esc, fetchJson, rawUrl, normalizeData };
 })();

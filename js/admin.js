@@ -145,14 +145,26 @@
     const day = KL.today();
     $("adminDate").textContent = KL.fmtLongDate(KL.now());
     $("testChip").hidden = !KL.testMode;
+    const bn = S.data.banner;
+    $("bannerState").textContent = bn.active && bn.text ? `Showing: ${bn.text}` : "No banner is showing.";
 
-    $("chips").innerHTML = S.stages.map(s => {
+    // only stages that have events today (or are live) get a chip
+    const visible = KL.stagesWithEvents(S.stages, S.schedule, day, S.data);
+    if (!visible.length) {
+      $("chips").innerHTML = ""; $("stageHead").innerHTML = ""; $("eventList").innerHTML = "";
+      $("finishedWrap").hidden = true; $("emptyState").hidden = false;
+      $("emptyState").textContent = `No events are scheduled for ${day}. Festival days are ${C.festivalDates.join(", ")}. Add ?date=YYYY-MM-DD to the address to test another day.`;
+      return;
+    }
+    if (!visible.some(s => s.stage_id === S.selected)) S.selected = visible[0].stage_id;
+
+    $("chips").innerHTML = visible.map(s => {
       const live = S.data.stages[s.stage_id].status === "ongoing";
       return `<button class="stage-chip ${live ? "is-live" : ""}" data-chip="${s.stage_id}" aria-pressed="${s.stage_id === S.selected}"
         aria-label="Stage ${s.stage_id}${live ? ", live" : ""}">${s.stage_id}</button>`;
     }).join("");
 
-    const stage = S.stages.find(s => s.stage_id === S.selected) || S.stages[0];
+    const stage = visible.find(s => s.stage_id === S.selected);
     const st = S.data.stages[stage.stage_id];
     const done = new Set(S.data.completed_events.map(String));
     const todays = KL.eventsFor(S.schedule, day, stage.stage_id);
@@ -162,17 +174,12 @@
     $("stageHead").innerHTML = `<h2>${esc(stage.stage_name)}</h2><p>${esc(stage.venue_location)}</p>`;
     $("eventList").innerHTML = pending.map(e => eventItem(e, st)).join("");
     $("emptyState").hidden = pending.length > 0;
-    $("emptyState").textContent = !todays.length
-      ? `No events are scheduled on this stage for ${day}. Festival days are ${C.festivalDates.join(", ")}. Add ?date=YYYY-MM-DD to the address to test another day.`
-      : "Every event on this stage is finished.";
+    $("emptyState").textContent = "Every event on this stage is finished.";
 
     $("finishedWrap").hidden = !finished.length;
     $("finishedCount").textContent = finished.length;
     $("finishedList").innerHTML = finished.map(e => `<li><span lang="ml">${esc(e.event_name)}</span>
       <button class="link act" data-act="reopen" data-id="${esc(e.event_id)}">Move back to pending</button></li>`).join("");
-
-    const b = S.data.banner;
-    $("bannerState").textContent = b.active && b.text ? `Showing: ${b.text}` : "No banner is showing.";
   }
 
   /* ---------- events ---------- */

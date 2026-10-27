@@ -13,4 +13,3 @@ Static site on GitHub Pages. `data.json` is the only file that changes during th
 ## Testing before the festival
 Add `?date=2026-11-03` and optionally `&now=10:30` to either page. A "Test mode" chip shows.
 Test commits write real data to `data.json`, so reset it to the original file before going live.
-# kalolsavam-live

@@ -8,10 +8,20 @@
   <meta name="theme-color" content="#42101c">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Baloo+Chettan+2:wght@500;700&family=Manjari:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anek+Malayalam:wght@500;700&family=Manjari:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body data-splash="once">
+  <!-- branding intro: doors swing open -->
+  <div id="splash" class="splash" aria-hidden="true">
+    <div class="door door-l"></div>
+    <div class="door door-r"></div>
+    <div class="splash-brand">
+      <p class="by">by Little Kites Unit</p>
+      <p class="school">Emmanuel&rsquo;s HSS Kothanalloor</p>
+    </div>
+  </div>
+
   <!-- token gate -->
   <div id="gate" class="gate" hidden>
     <form id="gateForm">
@@ -85,9 +95,16 @@
     </form>
   </dialog>
 
+  <footer class="page-foot wrap">
+  <div class="credit">
+    <p class="by">by Little Kites Unit</p>
+    <p class="school">Emmanuel&rsquo;s HSS Kothanalloor</p>
+  </div>
+  </footer>
+
   <div id="toast" class="toast" role="status" hidden></div>
 
-  <script src="js/config.js"></script>
-  <script src="js/admin.js"></script>
+  <script defer src="js/config.js"></script>
+  <script defer src="js/admin.js"></script>
 </body>
 </html>
