@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-27T12:32:09.829Z",
+  "updated_at": "2026-10-27T12:36:31.038Z",
   "banner": {
     "active": true,
     "text": "This is a trial",
@@ -7,13 +7,15 @@
   },
   "stages": {
     "1": {
-      "status": "idle",
-      "event_id": null,
-      "event_name": null,
-      "categories": [],
-      "scheduled_start": null,
-      "actual_start": null,
-      "delay_minutes": 0
+      "status": "ongoing",
+      "event_id": "E101",
+      "event_name": "ചെണ്ട/ തായമ്പക",
+      "categories": [
+        "HS"
+      ],
+      "scheduled_start": "10:00",
+      "actual_start": "2026-10-27T12:36:31.038Z",
+      "delay_minutes": 486
     },
     "2": {
       "status": "idle",
@@ -134,6 +136,10 @@
     }
   },
   "ticker": [
+    {
+      "t": "2026-10-27T12:36:31.038Z",
+      "text": "Stage 1: ചെണ്ട/ തായമ്പക has started (486 min late)"
+    },
     {
       "t": "2026-10-27T12:32:09.829Z",
       "text": "This is a trial message to test the scrolls at the bottom"
