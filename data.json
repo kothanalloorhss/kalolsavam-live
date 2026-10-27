@@ -1,9 +1,8 @@
 {
-  "updated_at": "2026-10-27T12:44:28.028Z",
+  "updated_at": "2026-10-27T15:16:26.845Z",
   "banner": {
-    "active": true,
-    "text": "This is a trial",
-    "updated_at": "2026-10-27T12:27:43.711Z"
+    "active": false,
+    "text": ""
   },
   "stages": {
     "1": {
