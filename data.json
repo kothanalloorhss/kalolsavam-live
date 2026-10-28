@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-27T15:16:26.845Z",
+  "updated_at": "2026-10-28T07:14:45.402Z",
   "banner": {
     "active": false,
     "text": ""
@@ -15,15 +15,14 @@
       "delay_minutes": 0
     },
     "2": {
-      "status": "ongoing",
-      "event_id": "E105",
-      "event_name": "സംസ്കൃത നാടകം",
-      "categories": [
-        "UP"
-      ],
-      "scheduled_start": "13:00",
-      "actual_start": "2026-10-27T12:37:27.972Z",
-      "delay_minutes": 307
+      "status": "idle",
+      "event_id": null,
+      "event_name": null,
+      "categories": [],
+      "scheduled_start": null,
+      "actual_start": null,
+      "delay_minutes": 0,
+      "idle_since": "2026-10-28T07:14:45.402Z"
     },
     "3": {
       "status": "idle",
@@ -136,6 +135,10 @@
   },
   "ticker": [
     {
+      "t": "2026-10-28T07:14:45.402Z",
+      "text": "Results, Stage 2, സംസ്കൃത നാടകം: 1st 201, 2nd 202, 3rd 203"
+    },
+    {
       "t": "2026-10-27T12:44:28.028Z",
       "text": "Results, Stage 1, ചെണ്ട/ തായമ്പക: 1st 101, 2nd 102, 3rd 103"
     },
@@ -158,6 +161,18 @@
   ],
   "recent_results": [
     {
+      "event_id": "E105",
+      "event_name": "സംസ്കൃത നാടകം",
+      "stage_id": 2,
+      "categories": [
+        "UP"
+      ],
+      "announced_at": "2026-10-28T07:14:45.402Z",
+      "first": "201",
+      "second": "202",
+      "third": "203"
+    },
+    {
       "event_id": "E101",
       "event_name": "ചെണ്ട/ തായമ്പക",
       "stage_id": 1,
@@ -171,6 +186,7 @@
     }
   ],
   "completed_events": [
-    "E101"
+    "E101",
+    "E105"
   ]
 }
