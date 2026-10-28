@@ -21,7 +21,7 @@ button { font: inherit; cursor: pointer; }
 [hidden] { display: none !important; }
 .muted { color: var(--ink-soft); }
 
-/* header (Sticky + School Tag) */
+/* header */
 .site-head {
   background: var(--maroon-800);
   padding: 1rem 0 0.9rem;
@@ -30,7 +30,15 @@ button { font: inherit; cursor: pointer; }
   z-index: 30;
   box-shadow: 0 4px 18px rgba(0, 0, 0, 0.45);
 }
-.site-head::after { content: ""; position: absolute; inset: auto 0 0 0; height: 6px; background-image: var(--kasavu); }
+.site-head::after { 
+  content: ""; 
+  position: absolute; 
+  inset: auto 0 0 0; 
+  height: 6px; 
+  background-image: var(--kasavu); 
+  z-index: 1; /* വര ഡ്രോപ്പ്ഡൗണിന് താഴെയായി നിൽക്കാൻ */
+  pointer-events: none;
+}
 .site-head .school-tag {
   font: 700 clamp(0.95rem, 2.3vw, 1.25rem)/1.2 var(--font-head);
   color: var(--gold-400);
@@ -465,12 +473,13 @@ dialog.stage-modal::backdrop {
   font-size: 0.92rem;
   margin-top: 0.5rem;
 }
-/* Search Box in Sticky Header */
+/* Search Box wrap */
 .search-box-wrap {
   position: relative;
   margin-top: 0.85rem;
   width: 100%;
   max-width: 36rem;
+  z-index: 50; /* ഹെഡറിലെ വരയേക്കാൾ മുകളിലേക്ക് ഉയർത്തുന്നു */
 }
 
 .search-input-group {
