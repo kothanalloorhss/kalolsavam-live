@@ -8,6 +8,105 @@
   };
   const stageIds = () => S.stages.map(s => s.stage_id);
 
+  /* ---------- Malayalam -> Manglish Transliteration & Phonetic Engine ---------- */
+  const CONSONANTS = {
+    0x0D15: 'k', 0x0D16: 'kh', 0x0D17: 'g', 0x0D18: 'gh', 0x0D19: 'ng',
+    0x0D1A: 'ch', 0x0D1B: 'chh', 0x0D1C: 'j', 0x0D1D: 'jh', 0x0D1E: 'nj',
+    0x0D1F: 't', 0x0D20: 'th', 0x0D21: 'd', 0x0D22: 'dh', 0x0D23: 'n',
+    0x0D24: 'th', 0x0D25: 'th', 0x0D26: 'd', 0x0D27: 'dh', 0x0D28: 'n',
+    0x0D2A: 'p', 0x0D2B: 'ph', 0x0D2C: 'b', 0x0D2D: 'bh', 0x0D2E: 'm',
+    0x0D2F: 'y', 0x0D30: 'r', 0x0D31: 'r', 0x0D32: 'l', 0x0D33: 'l',
+    0x0D34: 'zh', 0x0D35: 'v', 0x0D36: 'sh', 0x0D37: 'sh', 0x0D38: 's', 0x0D39: 'h',
+    0x0D29: 'n', 0x0D3A: 'tt'
+  };
+
+  const VOWELS = {
+    0x0D05: 'a', 0x0D06: 'aa', 0x0D07: 'i', 0x0D08: 'ee', 0x0D09: 'u', 0x0D0A: 'oo',
+    0x0D0B: 'ri', 0x0D0E: 'e', 0x0D0F: 'e', 0x0D10: 'ai', 0x0D12: 'o', 0x0D13: 'o', 0x0D14: 'au'
+  };
+
+  const MATRAS = {
+    0x0D3E: 'a', 0x0D3F: 'i', 0x0D40: 'ee', 0x0D41: 'u', 0x0D42: 'oo',
+    0x0D43: 'ri', 0x0D46: 'e', 0x0D47: 'e', 0x0D48: 'ai', 0x0D4A: 'o',
+    0x0D4B: 'o', 0x0D4C: 'au'
+  };
+
+  const CHILLUS = {
+    0x0D7A: 'nn', 0x0D7B: 'n', 0x0D7C: 'r', 0x0D7D: 'l', 0x0D7E: 'l', 0x0D7F: 'k'
+  };
+
+  function toManglish(text) {
+    if (!text) return "";
+    let out = [];
+    const n = text.length;
+    let i = 0;
+    while (i < n) {
+      const code = text.charCodeAt(i);
+      if (code === 0x0D02) { out.push('m'); i++; continue; }
+      if (code === 0x0D03) { out.push('h'); i++; continue; }
+      if (VOWELS[code]) { out.push(VOWELS[code]); i++; continue; }
+      if (CHILLUS[code]) { out.push(CHILLUS[code]); i++; continue; }
+      if (CONSONANTS[code]) {
+        const c = CONSONANTS[code];
+        if (i + 1 < n) {
+          const next = text.charCodeAt(i + 1);
+          if (next === 0x0D4D) { // virama
+            out.push(c);
+            i += 2;
+            while (i < n && (text.charCodeAt(i) === 0x200C || text.charCodeAt(i) === 0x200D)) i++;
+            continue;
+          } else if (MATRAS[next]) {
+            out.push(c + MATRAS[next]);
+            i += 2;
+            continue;
+          }
+        }
+        out.push(c + 'a');
+        i++;
+        continue;
+      }
+      out.push(text[i]);
+      i++;
+    }
+    return out.join('').toLowerCase();
+  }
+
+  function normalizePhonetic(str) {
+    return (str || '')
+      .toLowerCase()
+      .replace(/aa/g, 'a').replace(/ee/g, 'i').replace(/oo/g, 'u').replace(/ou/g, 'au')
+      .replace(/th/g, 't').replace(/dh/g, 'd').replace(/bh/g, 'b').replace(/ph/g, 'p')
+      .replace(/kh/g, 'k').replace(/gh/g, 'g').replace(/sh/g, 's').replace(/zh/g, 'l')
+      .replace(/nt/g, 'nd')
+      .replace(/[^a-z0-9]/g, '')
+      .replace(/([a-z])\1+/g, '$1'); // collapse doubles: nn -> n, tt -> t, etc.
+  }
+
+  function buildSearchIndex() {
+    S.schedule.forEach(ev => {
+      const ml = (ev.event_name || "");
+      const mang = toManglish(ml);
+      const catStr = Array.isArray(ev.categories) ? ev.categories.join(" ") : (ev.category || "");
+      ev._search = {
+        ml: ml.toLowerCase(),
+        mang: mang,
+        cat: catStr.toLowerCase(),
+        normMang: normalizePhonetic(mang),
+        normCat: normalizePhonetic(catStr)
+      };
+    });
+  }
+
+  function getStageMeta(stageId) {
+    const raw = String(stageId || "");
+    const firstId = raw.split(",")[0].trim();
+    const stg = S.stages.find(s => String(s.stage_id) === firstId);
+    return {
+      name: stg ? stg.stage_name : `വേദി ${stageId}`,
+      venue: stg ? stg.venue_location : ""
+    };
+  }
+
   /* ---------- data ---------- */
   async function fetchLive() {
     const t = Date.now();
@@ -168,6 +267,93 @@
       if (offlineBar) offlineBar.hidden = false;
     }
     $("testChip").hidden = !KL.testMode;
+  }
+
+  /* ---------- Live Search Component ---------- */
+  function initSearch() {
+    const input = $("eventSearchInput");
+    const drop = $("searchResults");
+    const list = $("searchResultsList");
+    const clearBtn = $("clearSearchBtn");
+    if (!input || !drop || !list) return;
+
+    function doSearch() {
+      const q = input.value.trim();
+      if (!q) {
+        drop.hidden = true;
+        clearBtn.hidden = true;
+        list.innerHTML = "";
+        return;
+      }
+      clearBtn.hidden = false;
+      const qLower = q.toLowerCase();
+      const qNorm = normalizePhonetic(q);
+
+      const matches = S.schedule.filter(ev => {
+        const s = ev._search;
+        if (!s) return false;
+        // Direct Malayalam or Manglish match
+        if (s.ml.includes(qLower) || s.mang.includes(qLower) || s.cat.includes(qLower)) return true;
+        // Phonetic Manglish match
+        if (qNorm.length >= 2 && (s.normMang.includes(qNorm) || s.normCat.includes(qNorm))) return true;
+        return false;
+      });
+
+      if (!matches.length) {
+        list.innerHTML = `<li class="search-item search-empty">No events found matching "${esc(q)}".</li>`;
+        drop.hidden = false;
+        return;
+      }
+
+      list.innerHTML = matches.slice(0, 15).map(ev => {
+        const stg = getStageMeta(ev.stage_id);
+        const cats = KL.cats(ev).map(c => `<span class="chip">${esc(c)}</span>`).join("");
+        const dateStr = KL.fmtLongDate(new Date(ev.date));
+        const timeStr = KL.fmtHHMM(ev.start_time);
+        const stageNum = String(ev.stage_id).split(',')[0].trim();
+
+        return `<li class="search-item" data-stage-id="${esc(stageNum)}" role="option">
+          <div class="search-item-main">
+            <span class="search-item-name" lang="ml">${esc(ev.event_name)}</span>
+            <div class="chips">${cats}</div>
+          </div>
+          <div class="search-item-meta">
+            <div class="search-meta-pill">📅 ${esc(dateStr)}</div>
+            <div class="search-meta-pill">⏰ ${esc(timeStr)}</div>
+            <div class="search-meta-pill stage-pill">📍 ${esc(stg.name)}${stg.venue ? ` (${esc(stg.venue)})` : ''}</div>
+          </div>
+        </li>`;
+      }).join("");
+
+      drop.hidden = false;
+    }
+
+    input.addEventListener("input", doSearch);
+    input.addEventListener("focus", () => { if (input.value.trim()) drop.hidden = false; });
+
+    clearBtn.addEventListener("click", () => {
+      input.value = "";
+      drop.hidden = true;
+      clearBtn.hidden = true;
+      input.focus();
+    });
+
+    // Clicking an item opens the stage modal
+    list.addEventListener("click", e => {
+      const item = e.target.closest(".search-item[data-stage-id]");
+      if (item) {
+        const sid = item.dataset.stageId;
+        drop.hidden = true;
+        openStageModal(sid);
+      }
+    });
+
+    // Close on outside click
+    document.addEventListener("click", e => {
+      if (!e.target.closest(".search-box-wrap")) {
+        drop.hidden = true;
+      }
+    });
   }
 
   /* ---------- Stage Schedule & Results Modal ---------- */
@@ -339,7 +525,6 @@
     if (S.currentFilter === "live") {
       filtered = visible.filter(s => stageView(s).mode === "live");
     } else if (S.currentFilter !== "all") {
-      // Matches category chip (LP, UP, HS, HSS)
       filtered = visible.filter(s => {
         const v = stageView(s);
         return v.cats && v.cats.some(c => c.toUpperCase().includes(S.currentFilter.toUpperCase()));
@@ -428,6 +613,8 @@
       $("stageGrid").innerHTML = `<p class="muted">Could not load the stage list. Please refresh.</p>`;
       return;
     }
+    buildSearchIndex();
+    initSearch();
     initFilters();
     initModal();
     await poll();

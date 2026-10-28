@@ -29,12 +29,34 @@
 
   <div id="alert" class="alert-banner" role="alert" hidden></div>
 
-  <!-- Sticky Header -->
+  <!-- Sticky Header with Search Bar -->
   <header class="site-head">
     <div class="wrap">
       <p class="school-tag" data-aos="fade-down">Emmanuel&rsquo;s HSS Kothanalloor</p>
       <h1 lang="ml" data-aos="fade-down" data-aos-delay="100">കലോത്സവം തത്സമയം</h1>
       <p class="sub" data-aos="fade" data-aos-delay="200">Kalolsavam Live: updates from every stage in use today</p>
+      
+      <!-- Live Event Search Bar -->
+      <div class="search-box-wrap" data-aos="fade-up" data-aos-delay="250">
+        <div class="search-input-group">
+          <span class="search-icon" aria-hidden="true">🔍</span>
+          <input 
+            type="search" 
+            id="eventSearchInput" 
+            class="search-input" 
+            placeholder="Search events (e.g. Mohiniyattam, Chenda, Oppana, UP...)" 
+            autocomplete="off" 
+            spellcheck="false"
+            aria-label="Search festival events"
+          >
+          <button id="clearSearchBtn" class="clear-search-btn" type="button" aria-label="Clear search" hidden>&times;</button>
+        </div>
+        <!-- Live Search Dropdown -->
+        <div id="searchResults" class="search-results-dropdown" hidden>
+          <ul id="searchResultsList" class="search-results-list" role="listbox"></ul>
+        </div>
+      </div>
+
       <div class="meta" data-aos="fade" data-aos-delay="300">
         <span id="dayLabel"></span>
         <span id="syncState" class="sync" aria-live="polite">Loading…</span>
