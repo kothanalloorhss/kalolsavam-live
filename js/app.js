@@ -8,7 +8,69 @@
   };
   const stageIds = () => S.stages.map(s => s.stage_id);
 
-  /* ---------- Malayalam -> Manglish Transliteration & Phonetic Engine ---------- */
+  /* ---------- Comprehensive English & Manglish Alias Dictionary ---------- */
+  const ALIAS_MAP = {
+    'ഗിറ്റാർ': ['guitar', 'gitar', 'gittar'],
+    'വയലിൻ': ['violin', 'vayalin'],
+    'ബാന്റ്': ['band', 'baant', 'bandmelam'],
+    'ക്ലാർനെറ്റ്': ['clarinet'],
+    'ബ്യൂഗിൾ': ['bugle'],
+    'ജാസ്': ['jazz'],
+    'ട്രിപ്പിൾ': ['triple'],
+    'പെൻസിൽ': ['pencil', 'pensil'],
+    'ഓയിൽ കളർ': ['oil color', 'oil colour'],
+    'ജലഛായം': ['watercolor', 'water colour'],
+    'കാർട്ടൂൺ': ['cartoon'],
+    'കൊളാഷ്': ['collage'],
+    'മിമിക്രി': ['mimicry', 'mimicri'],
+    'മോണോ ആക്ട്': ['monoact', 'mono act'],
+    'മൂകാഭിനയം': ['mime', 'mookabhinayam'],
+    'സ്കിറ്റ്': ['skit'],
+    'നാടകം': ['drama', 'play', 'nadakam', 'natakam'],
+    'പ്രശ്നോത്തരി': ['quiz', 'prashnothari'],
+    'പ്രസംഗം': ['speech', 'elocution', 'prasangam'],
+    'ഉപന്യാസം': ['essay', 'upanyasam'],
+    'കഥാരചന': ['story writing', 'katharachana', 'kadharachana', 'story'],
+    'കവിതാരചന': ['poem writing', 'poetry', 'kavitharachana'],
+    'പദ്യംചൊല്ലൽ': ['recitation', 'poem recitation', 'padyamchollal'],
+    'ചിത്രരചന': ['drawing', 'painting', 'chithrarachana', 'chitrarachana'],
+    'ലളിതഗാനം': ['light music', 'lalithaganam'],
+    'ശാസ്ത്രീയ സംഗീതം': ['classical music', 'carnatic', 'shastriya sangeetham'],
+    'ദേശഭക്തിഗാനം': ['patriotic song', 'deshabhakthiganam'],
+    'മാപ്പിളപ്പാട്ട്': ['mappilapattu', 'mappilappattu', 'mappila'],
+    'വന്ദേമാതരം': ['vande mataram', 'vandematharam'],
+    'സംഘഗാനം': ['group song', 'sanghaganam'],
+    'സംഘ ഗാനം': ['group song', 'sangha ganam'],
+    'സംഘനൃത്തം': ['group dance', 'sanghanrutham'],
+    'സംഘ നൃത്തം': ['group dance', 'sangha nrutham'],
+    'ഓടക്കുഴൽ': ['flute', 'odakkuzhal'],
+    'തബല': ['tabla'],
+    'വീണ': ['veena'],
+    'മൃദംഗം': ['mridangam', 'mrudangam'],
+    'കടങ്കഥ': ['riddle', 'kadankadha'],
+    'കുച്ചുപ്പുടി': ['kuchipudi', 'kuchuppudi'],
+    'ഓട്ടൻ തുള്ളൽ': ['ottanthullal', 'ottan thullal', 'thullal'],
+    'വെസ്റ്റേൺ': ['western'],
+    'പൗരസ്ത്യം': ['oriental', 'eastern'],
+    'പാശ്ചാത്യം': ['western'],
+    'നൃത്തം': ['dance', 'nritham', 'nrutham'],
+    'നടനം': ['dance', 'nadanam'],
+    'കളി': ['kali'],
+    'ഗാനം': ['song', 'music', 'ganam'],
+    'സംഗീതം': ['song', 'music', 'sangeetham'],
+    'പാട്ട്': ['song', 'pattu'],
+    'ആലാപനം': ['singing', 'song', 'alapanam'],
+    'ചവിട്ടുനാടകം': ['chavittu', 'chavittunadakam'],
+    'തിരുവാതിര': ['thiruvathira'],
+    'മാർഗ്ഗംകളി': ['margamkali', 'margam kali'],
+    'പരിചമുട്ട്': ['parichamuttu'],
+    'പൂരക്കളി': ['poorakkali'],
+    'കോൽക്കളി': ['kolkali'],
+    'ചെണ്ട': ['chenda', 'chendamelam'],
+    'തായമ്പക': ['thayambaka', 'thayambakam']
+  };
+
+  /* ---------- Transliteration & Phonetic Engine ---------- */
   const CONSONANTS = {
     0x0D15: 'k', 0x0D16: 'kh', 0x0D17: 'g', 0x0D18: 'gh', 0x0D19: 'ng',
     0x0D1A: 'ch', 0x0D1B: 'chh', 0x0D1C: 'j', 0x0D1D: 'jh', 0x0D1E: 'nj',
@@ -35,25 +97,59 @@
     0x0D7A: 'nn', 0x0D7B: 'n', 0x0D7C: 'r', 0x0D7D: 'l', 0x0D7E: 'l', 0x0D7F: 'k'
   };
 
+  function cleanMl(text) {
+    return (text || '').replace(/[\u200C\u200D]/g, '').trim();
+  }
+
   function toManglish(text) {
     if (!text) return "";
+    let clean = cleanMl(text);
     let out = [];
-    const n = text.length;
+    const n = clean.length;
     let i = 0;
     while (i < n) {
-      const code = text.charCodeAt(i);
+      const code = clean.charCodeAt(i);
       if (code === 0x0D02) { out.push('m'); i++; continue; }
       if (code === 0x0D03) { out.push('h'); i++; continue; }
       if (VOWELS[code]) { out.push(VOWELS[code]); i++; continue; }
       if (CHILLUS[code]) { out.push(CHILLUS[code]); i++; continue; }
+
+      // Check special Malayalam conjuncts: റ്റ (0x0D31 + 0x0D4D + 0x0D31)
+      if (code === 0x0D31 && i + 2 < n && clean.charCodeAt(i + 1) === 0x0D4D && clean.charCodeAt(i + 2) === 0x0D31) {
+        let vowel = "a";
+        let advance = 3;
+        if (i + 3 < n && MATRAS[clean.charCodeAt(i + 3)]) {
+          vowel = MATRAS[clean.charCodeAt(i + 3)];
+          advance = 4;
+        } else if (i + 3 < n && clean.charCodeAt(i + 3) === 0x0D4D) {
+          vowel = "";
+          advance = 4;
+        }
+        out.push('tt' + vowel);
+        i += advance;
+        continue;
+      }
+
+      // ന്റ (0x0D28 + 0x0D4D + 0x0D31)
+      if (code === 0x0D28 && i + 2 < n && clean.charCodeAt(i + 1) === 0x0D4D && clean.charCodeAt(i + 2) === 0x0D31) {
+        let vowel = "a";
+        let advance = 3;
+        if (i + 3 < n && MATRAS[clean.charCodeAt(i + 3)]) {
+          vowel = MATRAS[clean.charCodeAt(i + 3)];
+          advance = 4;
+        }
+        out.push('nt' + vowel);
+        i += advance;
+        continue;
+      }
+
       if (CONSONANTS[code]) {
         const c = CONSONANTS[code];
         if (i + 1 < n) {
-          const next = text.charCodeAt(i + 1);
+          const next = clean.charCodeAt(i + 1);
           if (next === 0x0D4D) { // virama
             out.push(c);
             i += 2;
-            while (i < n && (text.charCodeAt(i) === 0x200C || text.charCodeAt(i) === 0x200D)) i++;
             continue;
           } else if (MATRAS[next]) {
             out.push(c + MATRAS[next]);
@@ -65,34 +161,48 @@
         i++;
         continue;
       }
-      out.push(text[i]);
+      out.push(clean[i]);
       i++;
     }
     return out.join('').toLowerCase();
   }
 
-  function normalizePhonetic(str) {
+  function normalizeFuzzy(str) {
     return (str || '')
       .toLowerCase()
-      .replace(/aa/g, 'a').replace(/ee/g, 'i').replace(/oo/g, 'u').replace(/ou/g, 'au')
-      .replace(/th/g, 't').replace(/dh/g, 'd').replace(/bh/g, 'b').replace(/ph/g, 'p')
-      .replace(/kh/g, 'k').replace(/gh/g, 'g').replace(/sh/g, 's').replace(/zh/g, 'l')
-      .replace(/nt/g, 'nd')
+      .replace(/[\u200C\u200D]/g, '')
+      .replace(/dh/g, 'th').replace(/d/g, 't')
+      .replace(/bh/g, 'b').replace(/ph/g, 'p')
+      .replace(/kh/g, 'k').replace(/gh/g, 'g')
+      .replace(/ee/g, 'i').replace(/oo/g, 'u').replace(/aa/g, 'a')
+      .replace(/nd/g, 'nt').replace(/mb/g, 'mp')
+      .replace(/sh/g, 's').replace(/w/g, 'v')
+      .replace(/th/g, 't')
       .replace(/[^a-z0-9]/g, '')
-      .replace(/([a-z])\1+/g, '$1'); // collapse doubles: nn -> n, tt -> t, etc.
+      .replace(/([a-z])\1+/g, '$1');
   }
 
   function buildSearchIndex() {
     S.schedule.forEach(ev => {
-      const ml = (ev.event_name || "");
+      const ml = cleanMl(ev.event_name || "");
       const mang = toManglish(ml);
       const catStr = Array.isArray(ev.categories) ? ev.categories.join(" ") : (ev.category || "");
+
+      // Find matching aliases from dictionary
+      const aliases = [];
+      for (const [mlTerm, engList] of Object.entries(ALIAS_MAP)) {
+        if (ml.includes(cleanMl(mlTerm))) {
+          aliases.push(...engList);
+        }
+      }
+
+      const allTokens = [ml.toLowerCase(), mang.toLowerCase(), catStr.toLowerCase(), ...aliases.map(a => a.toLowerCase())];
+      const fullText = allTokens.join(" ");
+      const fuzzyTokens = allTokens.map(normalizeFuzzy).filter(Boolean);
+
       ev._search = {
-        ml: ml.toLowerCase(),
-        mang: mang,
-        cat: catStr.toLowerCase(),
-        normMang: normalizePhonetic(mang),
-        normCat: normalizePhonetic(catStr)
+        fullText: fullText,
+        fuzzyTokens: fuzzyTokens
       };
     });
   }
@@ -286,17 +396,21 @@
         return;
       }
       clearBtn.hidden = false;
-      const qLower = q.toLowerCase();
-      const qNorm = normalizePhonetic(q);
+      const qWords = q.toLowerCase().split(/\s+/).filter(Boolean);
 
       const matches = S.schedule.filter(ev => {
         const s = ev._search;
         if (!s) return false;
-        // Direct Malayalam or Manglish match
-        if (s.ml.includes(qLower) || s.mang.includes(qLower) || s.cat.includes(qLower)) return true;
-        // Phonetic Manglish match
-        if (qNorm.length >= 2 && (s.normMang.includes(qNorm) || s.normCat.includes(qNorm))) return true;
-        return false;
+
+        // Every typed keyword must match either the full text tokens or fuzzy sounds
+        return qWords.every(word => {
+          if (s.fullText.includes(word)) return true;
+          const wFuzz = normalizeFuzzy(word);
+          if (wFuzz.length >= 2) {
+            return s.fuzzyTokens.some(ft => ft.includes(wFuzz));
+          }
+          return false;
+        });
       });
 
       if (!matches.length) {
@@ -329,7 +443,7 @@
     }
 
     input.addEventListener("input", doSearch);
-    input.addEventListener("focus", () => { if (input.value.trim()) drop.hidden = false; });
+    input.addEventListener("focus", () => { if (input.value.trim()) doSearch(); });
 
     clearBtn.addEventListener("click", () => {
       input.value = "";
@@ -338,7 +452,6 @@
       input.focus();
     });
 
-    // Clicking an item opens the stage modal
     list.addEventListener("click", e => {
       const item = e.target.closest(".search-item[data-stage-id]");
       if (item) {
@@ -348,7 +461,6 @@
       }
     });
 
-    // Close on outside click
     document.addEventListener("click", e => {
       if (!e.target.closest(".search-box-wrap")) {
         drop.hidden = true;
@@ -381,8 +493,8 @@
 
     const day = KL.today();
     const todays = KL.eventsFor(S.schedule, day, stageId);
-    const done = new Set((S.data.completed_events || []).map(String));
-    const st = (S.data.stages && S.data.stages[stageId]) || {};
+    const done = new Set((S.data && S.data.completed_events ? S.data.completed_events : []).map(String));
+    const st = (S.data && S.data.stages && S.data.stages[stageId]) || {};
     const ongoingId = st.status === "ongoing" ? String(st.event_id) : null;
 
     $("modalStageTitle").textContent = `${stage.stage_name} — ${stage.venue_location}`;
