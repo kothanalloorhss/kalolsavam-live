@@ -681,3 +681,40 @@ dialog.stage-modal::backdrop {
     font-size: 0.76rem;
   }
 }
+
+/* Splash Screen Logo & Typography */
+.splash-logo {
+  width: clamp(5.5rem, 16vw, 7.5rem);
+  height: clamp(5.5rem, 16vw, 7.5rem);
+  object-fit: contain;
+  border-radius: 50%;
+  background: #ffffff;
+  padding: 4px;
+  border: 3px solid var(--gold-400);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.55);
+  margin-bottom: 0.2rem;
+}
+
+.splash-fest-name {
+  font-family: var(--font-head);
+  font-size: clamp(1.8rem, 5.5vw, 2.8rem);
+  font-weight: 700;
+  color: var(--gold-300);
+  line-height: 1.1;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+}
+
+.splash-fest-sub {
+  font-family: var(--font-body);
+  font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+  font-weight: 700;
+  color: var(--ivory);
+  letter-spacing: 0.03em;
+  margin-bottom: 0.2rem;
+}
+
+.splash-brand .school {
+  font-size: clamp(1.1rem, 3.2vw, 1.6rem);
+  color: var(--ivory-dim);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+}
