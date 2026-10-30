@@ -616,3 +616,68 @@ dialog.stage-modal::backdrop {
   text-align: center;
   font-weight: 600;
 }
+/* Festival Brand & Logo Layout */
+.brand-row {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-bottom: 0.6rem;
+}
+
+.fest-logo {
+  width: 3.8rem;
+  height: 3.8rem;
+  object-fit: contain;
+  border-radius: 50%;
+  background: #ffffff;
+  padding: 2px;
+  border: 2px solid var(--gold-400);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.35);
+  flex-shrink: 0;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+}
+
+.fest-edition {
+  font-family: var(--font-head);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--ivory-dim);
+  letter-spacing: 0.02em;
+}
+
+.fest-name {
+  font-family: var(--font-head);
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--gold-300);
+  letter-spacing: 0.03em;
+}
+
+.school-host {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  color: var(--gold-400);
+  opacity: 0.95;
+}
+
+/* മൊബൈൽ ഫോണുകളിൽ വൃത്തിയായി കാണിക്കാൻ */
+@media (max-width: 480px) {
+  .fest-logo {
+    width: 3.2rem;
+    height: 3.2rem;
+  }
+  .fest-name {
+    font-size: 1.25rem;
+  }
+  .fest-edition {
+    font-size: 0.78rem;
+  }
+  .school-host {
+    font-size: 0.76rem;
+  }
+}
