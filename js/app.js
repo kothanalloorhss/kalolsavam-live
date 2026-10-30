@@ -8,6 +8,19 @@
   };
   const stageIds = () => S.stages.map(s => s.stage_id);
 
+  function parseStageIds(stg) {
+    if (Array.isArray(stg)) return stg.map(Number);
+    return String(stg || '').split(',').map(s => Number(s.trim())).filter(n => !isNaN(n) && n > 0);
+  }
+
+  function getEventsForStage(schedule, day, stageId) {
+    const sId = Number(stageId);
+    return schedule.filter(e => {
+      if (e.date !== day) return false;
+      return parseStageIds(e.stage_id).includes(sId);
+    });
+  }
+
   /* ---------- Comprehensive English & Manglish Alias Dictionary ---------- */
   const ALIAS_MAP = {
     'ഗിറ്റാർ': ['guitar', 'gitar', 'gittar'],
@@ -70,7 +83,6 @@
     'തായമ്പക': ['thayambaka', 'thayambakam']
   };
 
-  /* ---------- Transliteration & Phonetic Engine ---------- */
   const CONSONANTS = {
     0x0D15: 'k', 0x0D16: 'kh', 0x0D17: 'g', 0x0D18: 'gh', 0x0D19: 'ng',
     0x0D1A: 'ch', 0x0D1B: 'chh', 0x0D1C: 'j', 0x0D1D: 'jh', 0x0D1E: 'nj',
@@ -114,7 +126,6 @@
       if (VOWELS[code]) { out.push(VOWELS[code]); i++; continue; }
       if (CHILLUS[code]) { out.push(CHILLUS[code]); i++; continue; }
 
-      // Check special Malayalam conjuncts: റ്റ (0x0D31 + 0x0D4D + 0x0D31)
       if (code === 0x0D31 && i + 2 < n && clean.charCodeAt(i + 1) === 0x0D4D && clean.charCodeAt(i + 2) === 0x0D31) {
         let vowel = "a";
         let advance = 3;
@@ -130,7 +141,6 @@
         continue;
       }
 
-      // ന്റ (0x0D28 + 0x0D4D + 0x0D31)
       if (code === 0x0D28 && i + 2 < n && clean.charCodeAt(i + 1) === 0x0D4D && clean.charCodeAt(i + 2) === 0x0D31) {
         let vowel = "a";
         let advance = 3;
@@ -147,7 +157,7 @@
         const c = CONSONANTS[code];
         if (i + 1 < n) {
           const next = clean.charCodeAt(i + 1);
-          if (next === 0x0D4D) { // virama
+          if (next === 0x0D4D) {
             out.push(c);
             i += 2;
             continue;
@@ -188,7 +198,6 @@
       const mang = toManglish(ml);
       const catStr = Array.isArray(ev.categories) ? ev.categories.join(" ") : (ev.category || "");
 
-      // Find matching aliases from dictionary
       const aliases = [];
       for (const [mlTerm, engList] of Object.entries(ALIAS_MAP)) {
         if (ml.includes(cleanMl(mlTerm))) {
@@ -208,11 +217,17 @@
   }
 
   function getStageMeta(stageId) {
-    const raw = String(stageId || "");
-    const firstId = raw.split(",")[0].trim();
-    const stg = S.stages.find(s => String(s.stage_id) === firstId);
+    const sids = parseStageIds(stageId);
+    if (!sids.length) return { name: `വേദി ${stageId}`, venue: "" };
+    const stg = S.stages.find(s => s.stage_id === sids[0]);
+    if (sids.length > 1) {
+      return {
+        name: `വേദി ${sids.join(' & ')}`,
+        venue: stg ? `${stg.venue_location} (സംയുക്തം)` : ""
+      };
+    }
     return {
-      name: stg ? stg.stage_name : `വേദി ${stageId}`,
+      name: stg ? stg.stage_name : `വേദി ${sids[0]}`,
       venue: stg ? stg.venue_location : ""
     };
   }
@@ -247,7 +262,7 @@
     const id = stage.stage_id;
     const st = (S.data && S.data.stages && S.data.stages[id]) || {};
     const day = KL.today();
-    const todays = KL.eventsFor(S.schedule, day, id);
+    const todays = getEventsForStage(S.schedule, day, id);
     const done = new Set((S.data && S.data.completed_events ? S.data.completed_events : []).map(String));
     const base = { mode: "none", doneCount: todays.filter(e => done.has(String(e.event_id))).length, total: todays.length };
 
@@ -257,23 +272,36 @@
       const schedHHMM = st.scheduled_start || (ev && ev.start_time) || null;
       const sched = schedHHMM ? KL.atTime(ev ? ev.date : day, schedHHMM) : null;
       const delay = sched && !isNaN(started) ? Math.round((started - sched) / 60000) : (st.delay_minutes || 0);
-      return { ...base, mode: "live", name: st.event_name || (ev && ev.event_name) || "Event in progress",
-               cats: st.categories && st.categories.length ? st.categories : KL.cats(ev),
-               sched: schedHHMM, started: isNaN(started) ? null : started, delay };
+      return { 
+        ...base, 
+        mode: "live", 
+        name: st.event_name || (ev && ev.event_name) || "Event in progress",
+        cats: st.categories && st.categories.length ? st.categories : KL.cats(ev),
+        sched: schedHHMM, 
+        started: isNaN(started) ? null : started, 
+        delay,
+        combined: st.combined_stages || (ev ? parseStageIds(ev.stage_id) : null)
+      };
     }
 
     const next = todays.find(e => !done.has(String(e.event_id)));
     if (next) {
       const sched = KL.atTime(next.date, next.start_time);
-      return { ...base, mode: "next", name: next.event_name, cats: KL.cats(next), sched: next.start_time,
-               delay: Math.max(0, Math.floor((KL.now() - sched) / 60000)) };
+      return { 
+        ...base, 
+        mode: "next", 
+        name: next.event_name, 
+        cats: KL.cats(next), 
+        sched: next.start_time,
+        delay: Math.max(0, Math.floor((KL.now() - sched) / 60000)),
+        combined: parseStageIds(next.stage_id)
+      };
     }
     return { ...base, mode: todays.length ? "done" : "none" };
   }
 
   const delayClass = m => (m <= 5 ? "ok" : m <= 20 ? "warn" : "bad");
 
-  /* ---------- rendering ---------- */
   function directions(s) {
     const map = s.is_external && s.map_url
       ? `<a class="map-btn" href="${esc(s.map_url)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">Open in Google Maps</a>` : "";
@@ -286,9 +314,13 @@
     const label = { live: "Live now", next: "Up next", done: "Finished for today", none: "No events today" }[v.mode];
     let body = "", pill = "";
 
+    const combinedNotice = v.combined && v.combined.length > 1
+      ? `<span class="chip" style="background:var(--maroon-600)">👥 വേദി ${v.combined.join(' & ')} സംയുക്തം</span>`
+      : "";
+
     if (v.mode === "live" || v.mode === "next") {
       const chips = (v.cats || []).map(c => `<span class="chip">${esc(c)}</span>`).join("");
-      body += `<p class="event-name" lang="ml">${esc(v.name)}</p><div class="chips">${chips}</div>`;
+      body += `<p class="event-name" lang="ml">${esc(v.name)}</p><div class="chips">${chips}${combinedNotice}</div>`;
       if (v.mode === "live") {
         body += `<p class="times">Started ${v.started ? KL.fmtTime(v.started) : "—"}${v.sched ? `, scheduled ${KL.fmtHHMM(v.sched)}` : ""}</p>`;
         pill = v.delay > 0 ? `<span class="delay ${delayClass(v.delay)}">Started ${v.delay} min late</span>`
@@ -401,8 +433,6 @@
       const matches = S.schedule.filter(ev => {
         const s = ev._search;
         if (!s) return false;
-
-        // Every typed keyword must match either the full text tokens or fuzzy sounds
         return qWords.every(word => {
           if (s.fullText.includes(word)) return true;
           const wFuzz = normalizeFuzzy(word);
@@ -424,9 +454,10 @@
         const cats = KL.cats(ev).map(c => `<span class="chip">${esc(c)}</span>`).join("");
         const dateStr = KL.fmtLongDate(new Date(ev.date));
         const timeStr = KL.fmtHHMM(ev.start_time);
-        const stageNum = String(ev.stage_id).split(',')[0].trim();
+        const sids = parseStageIds(ev.stage_id);
+        const firstSid = sids[0] || 1;
 
-        return `<li class="search-item" data-stage-id="${esc(stageNum)}" role="option">
+        return `<li class="search-item" data-stage-id="${esc(firstSid)}" role="option">
           <div class="search-item-main">
             <span class="search-item-name" lang="ml">${esc(ev.event_name)}</span>
             <div class="chips">${cats}</div>
@@ -472,7 +503,7 @@
   function findResultForEvent(stageId, ev) {
     const results = S.data.recent_results || [];
     return results.find(r => 
-      String(r.stage_id) === String(stageId) && 
+      String(r.stage_id).includes(String(stageId)) && 
       ( (r.event_id && String(r.event_id) === String(ev.event_id)) || (r.event_name && r.event_name === ev.event_name) )
     );
   }
@@ -492,7 +523,7 @@
     if (!stage) return;
 
     const day = KL.today();
-    const todays = KL.eventsFor(S.schedule, day, stageId);
+    const todays = getEventsForStage(S.schedule, day, stageId);
     const done = new Set((S.data && S.data.completed_events ? S.data.completed_events : []).map(String));
     const st = (S.data && S.data.stages && S.data.stages[stageId]) || {};
     const ongoingId = st.status === "ongoing" ? String(st.event_id) : null;
@@ -507,12 +538,15 @@
       const cats = st.categories && st.categories.length ? st.categories : KL.cats(ev);
       const chips = cats.map(c => `<span class="chip">${esc(c)}</span>`).join("");
       const startStr = st.actual_start ? `Started at ${KL.fmtTime(new Date(st.actual_start))}` : "Ongoing";
+      const comb = st.combined_stages && st.combined_stages.length > 1
+        ? `<span class="chip" style="background:var(--maroon-600)">👥 വേദി ${st.combined_stages.join(' & ')} സംയുക്തം</span>` : "";
+
       liveHtml = `
         <div class="modal-section live-section">
           <h4><span class="status-live"></span> Live Now</h4>
           <div class="modal-ev-item is-live">
             <span class="ev-name" lang="ml">${esc(name)}</span>
-            <div class="chips">${chips}</div>
+            <div class="chips">${chips}${comb}</div>
             <p class="times">${startStr}${st.scheduled_start ? ` (Scheduled: ${KL.fmtHHMM(st.scheduled_start)})` : ""}</p>
           </div>
         </div>`;
@@ -528,11 +562,13 @@
           <ul class="modal-ev-list">
             ${upcoming.map(e => {
               const chips = KL.cats(e).map(c => `<span class="chip">${esc(c)}</span>`).join("");
+              const sids = parseStageIds(e.stage_id);
+              const comb = sids.length > 1 ? `<span class="chip" style="background:var(--maroon-600)">വേദി ${sids.join(' & ')}</span>` : "";
               return `<li>
                 <div class="ev-time-badge">${KL.fmtHHMM(e.start_time)}</div>
                 <div class="ev-detail">
                   <span class="ev-name" lang="ml">${esc(e.event_name)}</span>
-                  <div class="chips">${chips}</div>
+                  <div class="chips">${chips}${comb}</div>
                 </div>
               </li>`;
             }).join("")}
@@ -631,7 +667,13 @@
   }
 
   function renderStageGrid() {
-    const visible = KL.stagesWithEvents(S.stages, S.schedule, KL.today(), S.data);
+    const day = KL.today();
+    const visible = S.stages.filter(s => {
+      const evs = getEventsForStage(S.schedule, day, s.stage_id);
+      const isLive = S.data.stages[s.stage_id] && S.data.stages[s.stage_id].status === "ongoing";
+      return evs.length > 0 || isLive;
+    });
+
     let filtered = visible;
 
     if (S.currentFilter === "live") {
@@ -652,6 +694,13 @@
     }
   }
 
+  function updateAutoScrollButtonVisibility() {
+    const btn = $("autoScrollBtn");
+    if (!btn) return;
+    const canScroll = (document.documentElement.scrollHeight - window.innerHeight) > 40;
+    btn.hidden = !canScroll;
+  }
+
   function render() {
     if (!S.data) return;
     renderBanner(); 
@@ -659,8 +708,7 @@
     renderMeta(); 
     renderTicker();
     renderStageGrid();
-    const btn = $("autoScrollBtn");
-    if (btn) btn.hidden = document.documentElement.scrollHeight - innerHeight <= 40;
+    updateAutoScrollButtonVisibility();
   }
 
   /* ---------- scroll-reveal animations (AOS) ---------- */
@@ -672,40 +720,79 @@
     }
   }
 
-  /* ---------- idle auto-scroll through all stage cards ---------- */
+  /* ---------- idle auto-scroll through all stage cards (Fixed & Restored) ---------- */
   function initAutoScroll() {
-    const A = C.autoScroll, btn = $("autoScrollBtn");
+    const A = C.autoScroll || { speedPxPerSec: 28, startDelaySec: 4, resumeAfterIdleSec: 8, holdSec: 3 };
+    const btn = $("autoScrollBtn");
+    if (!btn) return;
+
     const saved = sessionStorage.getItem("kl_autoscroll");
     let enabled = saved ? saved === "on" : !KL.reduced;
     let phase = "idle", y = 0, holdUntil = 0, everTouched = false;
-    let last = performance.now(), lastInput = last + KL.splashMs;
-    const maxY = () => document.documentElement.scrollHeight - innerHeight;
+    let last = performance.now();
+    let lastInput = performance.now(); // Start idle timer directly
 
-    const paint = () => { btn.setAttribute("aria-pressed", enabled); btn.textContent = `Auto-scroll: ${enabled ? "on" : "off"}`; };
+    const maxY = () => Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
+
+    const paint = () => {
+      btn.setAttribute("aria-pressed", enabled);
+      btn.textContent = `Auto-scroll: ${enabled ? "on" : "off"}`;
+    };
     paint();
+
     btn.addEventListener("click", () => {
-      enabled = !enabled; sessionStorage.setItem("kl_autoscroll", enabled ? "on" : "off");
-      everTouched = false; lastInput = performance.now(); phase = "idle"; paint();
+      enabled = !enabled;
+      sessionStorage.setItem("kl_autoscroll", enabled ? "on" : "off");
+      everTouched = false;
+      lastInput = performance.now();
+      phase = "idle";
+      paint();
     });
 
-    const touched = () => { everTouched = true; lastInput = performance.now(); phase = "idle"; };
-    ["wheel", "touchstart", "pointerdown", "keydown"].forEach(ev => addEventListener(ev, touched, { passive: true }));
+    const markInteraction = () => {
+      everTouched = true;
+      lastInput = performance.now();
+      phase = "idle";
+    };
+
+    ["wheel", "touchstart", "pointerdown", "keydown"].forEach(ev => {
+      window.addEventListener(ev, markInteraction, { passive: true });
+    });
 
     function frame(ts) {
-      const dt = Math.min(0.1, (ts - last) / 1000); last = ts;
-      if (enabled && !document.hidden && maxY() > 40 && !S.activeModalStageId) {
-        const wait = (everTouched ? A.resumeAfterIdleSec : A.startDelaySec) * 1000;
-        if (phase === "idle" && ts - lastInput >= wait) { phase = "down"; y = scrollY; }
+      const dt = Math.min(0.1, (ts - last) / 1000);
+      last = ts;
+      const maxScroll = maxY();
+
+      if (enabled && !document.hidden && maxScroll > 40 && !S.activeModalStageId) {
+        const wait = (everTouched ? (A.resumeAfterIdleSec || 8) : (A.startDelaySec || 4)) * 1000;
+        
+        if (phase === "idle" && (ts - lastInput) >= wait) {
+          phase = "down";
+          y = window.scrollY;
+        }
+
         if (phase === "down") {
-          y += A.speedPxPerSec * dt;
-          if (y >= maxY()) { y = maxY(); phase = "hold-bottom"; holdUntil = ts + A.holdSec * 1000; }
-          scrollTo({ top: y, behavior: "instant" });
-        } else if (phase === "hold-bottom" && ts >= holdUntil) phase = "up";
-        else if (phase === "up") {
-          y -= A.speedPxPerSec * 6 * dt;
-          if (y <= 0) { y = 0; phase = "hold-top"; holdUntil = ts + A.holdSec * 1000; }
-          scrollTo({ top: y, behavior: "instant" });
-        } else if (phase === "hold-top" && ts >= holdUntil) phase = "down";
+          y += (A.speedPxPerSec || 28) * dt;
+          if (y >= maxScroll) {
+            y = maxScroll;
+            phase = "hold-bottom";
+            holdUntil = ts + (A.holdSec || 3) * 1000;
+          }
+          window.scrollTo(0, y);
+        } else if (phase === "hold-bottom" && ts >= holdUntil) {
+          phase = "up";
+        } else if (phase === "up") {
+          y -= (A.speedPxPerSec || 28) * 5 * dt;
+          if (y <= 0) {
+            y = 0;
+            phase = "hold-top";
+            holdUntil = ts + (A.holdSec || 3) * 1000;
+          }
+          window.scrollTo(0, y);
+        } else if (phase === "hold-top" && ts >= holdUntil) {
+          phase = "down";
+        }
       }
       requestAnimationFrame(frame);
     }
@@ -725,6 +812,7 @@
       $("stageGrid").innerHTML = `<p class="muted">Could not load the stage list. Please refresh.</p>`;
       return;
     }
+
     buildSearchIndex();
     initSearch();
     initFilters();
@@ -733,10 +821,13 @@
     S.animate = false;
     setTimeout(startAOS, KL.splashMs);
     initAutoScroll();
+
     setInterval(() => { if (!document.hidden) poll(); }, C.pollSeconds * 1000);
     document.addEventListener("visibilitychange", () => { if (!document.hidden) poll(); });
     window.addEventListener("online", poll);
     window.addEventListener("offline", () => { S.online = false; renderMeta(); });
+    window.addEventListener("resize", updateAutoScrollButtonVisibility);
   }
+
   init();
 })();
