@@ -112,6 +112,39 @@
         </form>
       </details>
     </section>
+
+    <!-- Modal: Edit Schedule (Time & Stage Change) -->
+  <dialog id="editScheduleModal" aria-labelledby="editSchedTitle">
+    <form id="editScheduleForm">
+      <div>
+        <h2 id="editSchedTitle">ഷെഡ്യൂൾ മാറ്റുക</h2>
+        <p id="editSchedEventName" class="sub-name" lang="ml"></p>
+      </div>
+      
+      <label class="field">പുതിയ സമയം (Start Time)
+        <input id="editSchedTime" type="time" required>
+      </label>
+
+      <label class="field">വേദി (Stage)
+        <select id="editSchedStage" style="padding:0.55rem; border:2px solid var(--gold-700); border-radius:6px; font:inherit;">
+          <!-- JS വഴി 1 മുതൽ 14 വരെയുള്ള സ്റ്റേജുകൾ ലോഡ് ചെയ്യും -->
+        </select>
+      </label>
+
+      <label class="field">സ്റ്റാറ്റസ്
+        <select id="editSchedStatus" style="padding:0.55rem; border:2px solid var(--gold-700); border-radius:6px; font:inherit;">
+          <option value="active">Active (സാധാരണ പോലെ നടക്കുക)</option>
+          <option value="postponed">Postponed (മാറ്റിവെച്ചു)</option>
+          <option value="cancelled">Cancelled (റദ്ദാക്കി)</option>
+        </select>
+      </label>
+
+      <div class="row" style="margin-top:0.8rem;">
+        <button class="btn btn-end" type="submit">മാറ്റങ്ങൾ സേവ് ചെയ്യുക</button>
+        <button id="cancelEditSched" class="btn btn-ghost" type="button">റദ്ദാക്കുക</button>
+      </div>
+    </form>
+  </dialog>
   </main>
 
   <!-- Modal: End Event & Enter Results -->

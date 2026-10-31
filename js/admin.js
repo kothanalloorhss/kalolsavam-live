@@ -235,19 +235,92 @@
     
     const targetStageIds = parseStageIds(ev.stage_id);
     const isCombined = targetStageIds.length > 1;
-    const combinedBadge = isCombined ? `<span class="chip" style="background:var(--gold-700)">വേദി ${targetStageIds.join(' & ')} (കംബൈൻഡ്)</span>` : "";
+    const combinedBadge = isCombined ? `<span class="chip" style="background:var(--gold-700)">വേദി ${targetStageIds.join(' & ')} (സംയുക്തം)</span>` : "";
+    const isOverridden = ev._overridden ? `<span class="chip" style="background:#b3261e">ഷെഡ്യൂൾ തിരുത്തിയത്</span>` : "";
 
     const chips = KL.cats(ev).map(c => `<span class="chip">${esc(c)}</span>`).join("");
     return `<li class="ev ${running ? "is-live" : ""}">
       <div class="ev-time">${KL.fmtHHMM(ev.start_time)}</div>
-      <div class="ev-main"><p class="ev-name" lang="ml">${esc(ev.event_name)}</p>
-        <div class="chips">${chips}${combinedBadge}</div>${note ? `<p class="ev-note ${running ? "" : "is-due"}">${esc(note)}</p>` : ""}
-        ${running ? `<button class="link act" data-act="cancel" data-stage="${S.selected}">Started by mistake? Reset stage</button>` : ""}</div>
+      <div class="ev-main">
+        <p class="ev-name" lang="ml">${esc(ev.event_name)}</p>
+        <div class="chips">${chips}${combinedBadge}${isOverridden}</div>
+        ${note ? `<p class="ev-note ${running ? "" : "is-due"}">${esc(note)}</p>` : ""}
+        <div style="margin-top:0.35rem; display:flex; gap:0.8rem; align-items:center;">
+          ${running ? `<button class="link act" data-act="cancel" data-stage="${S.selected}">Started by mistake? Reset stage</button>` : ""}
+          ${!running ? `<button class="link act" data-act="edit-sched" data-id="${esc(ev.event_id)}">✏️ ഷെഡ്യൂൾ മാറ്റുക</button>` : ""}
+        </div>
+      </div>
       <div class="ev-actions">
         <button class="btn btn-start act" data-act="start" data-id="${esc(ev.event_id)}" ${running || blocked ? "disabled" : ""}>Start</button>
         <button class="btn btn-end act" data-act="end" data-stage="${S.selected}" ${running ? "" : "disabled"}>End</button>
       </div></li>`;
   }
+
+  // data.json-ൽ നിന്ന് schedule_overrides എടുത്ത് ഷെഡ്യൂളിലേക്ക് മെർജ് ചെയ്യുന്നു
+  function getEffectiveSchedule() {
+    const overrides = (S.data && S.data.schedule_overrides) || {};
+    return S.schedule.map(item => {
+      const ov = overrides[String(item.event_id)];
+      if (ov) {
+        return {
+          ...item,
+          start_time: ov.start_time || item.start_time,
+          stage_id: ov.stage_id || item.stage_id,
+          status_override: ov.status || 'active',
+          _overridden: true
+        };
+      }
+      return item;
+    }).filter(e => e.status_override !== 'cancelled'); // കാൻസൽ ചെയ്തവ ലിസ്റ്റിൽ നിന്ന് ഒഴിവാക്കുന്നു
+  }
+
+  let currentEditEventId = null;
+
+  function openEditScheduleModal(eventId) {
+    const ev = S.schedule.find(e => String(e.event_id) === String(eventId));
+    if (!ev) return;
+    currentEditEventId = eventId;
+    
+    const overrides = (S.data && S.data.schedule_overrides) || {};
+    const ov = overrides[String(eventId)] || {};
+
+    $("editSchedEventName").textContent = `${ev.event_name} (${KL.cats(ev).join(', ')})`;
+    $("editSchedTime").value = (ov.start_time || ev.start_time).slice(0, 5);
+    
+    // സ്റ്റേജ് സെലക്ഷൻ ഡ്രോപ്പ്ഡൗൺ തയ്യാറാക്കൽ
+    const stageSelect = $("editSchedStage");
+    stageSelect.innerHTML = S.stages.map(s => 
+      `<option value="${s.stage_id}">${s.stage_id}. ${s.stage_name}</option>`
+    ).join("");
+    stageSelect.value = String(ov.stage_id || ev.stage_id).split(',')[0].trim();
+    $("editSchedStatus").value = ov.status || 'active';
+
+    $("editScheduleModal").showModal();
+  }
+
+  // മോഡൽ സബ്മിറ്റ് ചെയ്യുമ്പോൾ
+  $("editScheduleForm").addEventListener("submit", e => {
+    e.preventDefault();
+    const newTime = $("editSchedTime").value;
+    const newStage = $("editSchedStage").value;
+    const newStatus = $("editSchedStatus").value;
+
+    $("editScheduleModal").close();
+
+    run(d => {
+      if (!d.schedule_overrides) d.schedule_overrides = {};
+      d.schedule_overrides[String(currentEditEventId)] = {
+        start_time: newTime ? `${newTime}:00` : undefined,
+        stage_id: newStage,
+        status: newStatus,
+        updated_at: KL.nowISO()
+      };
+      const ev = findEvent(currentEditEventId);
+      pushTicker(d, `ഷെഡ്യൂൾ മാറ്റം: ${ev ? ev.event_name : ''} വേദി ${newStage}-ലേക്ക് (${KL.fmtHHMM(newTime)}) പുനഃക്രമീകരിച്ചു`);
+    }, `Reschedule event ${currentEditEventId}`, "ഷെഡ്യൂൾ വിജയകരമായി തിരുത്തി.");
+  });
+
+  $("cancelEditSched").addEventListener("click", () => $("editScheduleModal").close());
 
   function renderResultsEditor() {
     const list = $("editResultsList");
@@ -368,6 +441,7 @@
 
   document.addEventListener("click", e => {
     const chip = e.target.closest("[data-chip]");
+    if (act === "edit-sched") openEditScheduleModal(id);
     if (chip) { S.selected = Number(chip.dataset.chip); sessionStorage.setItem("kl_stage", S.selected); render(); return; }
     const btn = e.target.closest("[data-act]");
     if (!btn || btn.disabled || S.busy) return;

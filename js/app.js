@@ -720,6 +720,23 @@
     }
   }
 
+  // data.json-ൽ നിന്ന് schedule_overrides എടുത്ത് ഷെഡ്യൂളിലേക്ക് മെർജ് ചെയ്യുന്നു
+  function getEffectiveSchedule() {
+    const overrides = (S.data && S.data.schedule_overrides) || {};
+    return S.schedule.map(item => {
+      const ov = overrides[String(item.event_id)];
+      if (ov) {
+        return {
+          ...item,
+          start_time: ov.start_time || item.start_time,
+          stage_id: ov.stage_id || item.stage_id,
+          status_override: ov.status || 'active',
+          _overridden: true
+        };
+      }
+      return item;
+    }).filter(e => e.status_override !== 'cancelled'); // കാൻസൽ ചെയ്തവ ലിസ്റ്റിൽ നിന്ന് ഒഴിവാക്കുന്നു
+  }
   /* ---------- idle auto-scroll through all stage cards (Fixed & Restored) ---------- */
   function initAutoScroll() {
     const A = C.autoScroll || { speedPxPerSec: 28, startDelaySec: 4, resumeAfterIdleSec: 8, holdSec: 3 };
