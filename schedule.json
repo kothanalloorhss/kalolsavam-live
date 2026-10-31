@@ -1,7 +1,7 @@
 [
     {
         "event_id": "E101",
-        "date": "2026-11-03",
+        "date": "2026-10-31",
         "stage_id": "1",
         "category": "HS",
         "event_name": "ചെണ്ട/ തായമ്പക",
@@ -9,7 +9,7 @@
     },
     {
         "event_id": "E102",
-        "date": "2026-11-03",
+        "date": "2026-10-31",
         "stage_id": "1",
         "category": "HSS",
         "event_name": "ചെണ്ട/ തായമ്പക",
@@ -17,7 +17,7 @@
     },
     {
         "event_id": "E103",
-        "date": "2026-11-03",
+        "date": "2026-10-31",
         "stage_id": "1",
         "category": "HS",
         "event_name": "ചെണ്ടമേളം",
@@ -25,7 +25,7 @@
     },
     {
         "event_id": "E104",
-        "date": "2026-11-03",
+        "date": "2026-10-31",
         "stage_id": "1",
         "category": "HSS",
         "event_name": "ചെണ്ടമേളം",
@@ -33,7 +33,7 @@
     },
     {
         "event_id": "E105",
-        "date": "2026-11-03",
+        "date": "2026-10-31",
         "stage_id": "2",
         "category": "UP",
         "event_name": "സംസ്കൃത നാടകം",
@@ -41,7 +41,7 @@
     },
     {
         "event_id": "E106",
-        "date": "2026-11-03",
+        "date": "2026-10-31",
         "stage_id": "3",
         "category": "LP",
         "event_name": "കടങ്കഥ",
@@ -49,7 +49,7 @@
     },
     {
         "event_id": "E107",
-        "date": "2026-11-03",
+        "date": "2026-10-31",
         "stage_id": "4",
         "category": "LP",
         "event_name": "കഥാകഥനം",
@@ -57,7 +57,7 @@
     },
     {
         "event_id": "E108",
-        "date": "2026-11-03",
+        "date": "2026-10-31",
         "stage_id": "4",
         "category": "Gen",
         "event_name": "അക്ഷരശ്ലോകം",
@@ -65,7 +65,7 @@
     },
     {
         "event_id": "E109",
-        "date": "2026-11-03",
+        "date": "2026-10-31",
         "stage_id": "4",
         "category": "HS",
         "event_name": "കാവ്യകേളി",
@@ -73,7 +73,7 @@
     },
     {
         "event_id": "E110",
-        "date": "2026-11-03",
+        "date": "2026-10-31",
         "stage_id": "5",
         "category": "Gen ",
         "event_name": "അഭിനയഗാനം മലയാളം",
@@ -81,7 +81,7 @@
     },
     {
         "event_id": "E111",
-        "date": "2026-11-03",
+        "date": "2026-10-31",
         "stage_id": "6",
         "category": "UP, HS, HSS",
         "event_name": "കഥാരചന സംസ്കൃതം",
@@ -89,7 +89,7 @@
     },
     {
         "event_id": "E112",
-        "date": "2026-11-03",
+        "date": "2026-10-31",
         "stage_id": "6",
         "category": "UP, HS, HSS",
         "event_name": "കവിതാരചന സംസ്കൃതം",
@@ -97,7 +97,7 @@
     },
     {
         "event_id": "E113",
-        "date": "2026-11-03",
+        "date": "2026-10-31",
         "stage_id": "6",
         "category": "UP, HS, HSS",
         "event_name": "ഉപന്യാസം സംസ്‌കൃതം",
@@ -105,7 +105,7 @@
     },
     {
         "event_id": "E114",
-        "date": "2026-11-03",
+        "date": "2026-10-31",
         "stage_id": "6",
         "category": "UP",
         "event_name": "സമസ്യാപൂരണം സംസ്‌കൃതം",
@@ -113,7 +113,7 @@
     },
     {
         "event_id": "E115",
-        "date": "2026-11-03",
+        "date": "2026-10-31",
         "stage_id": "6",
         "category": "HS",
         "event_name": "സമസ്യാപൂരണം സംസ്‌കൃതം",
@@ -121,7 +121,7 @@
     },
     {
         "event_id": "E116",
-        "date": "2026-11-03",
+        "date": "2026-10-31",
         "stage_id": "8",
         "category": "UP, HS, HSS",
         "event_name": "കഥാരചന മലയാളം",
@@ -129,7 +129,7 @@
     },
     {
         "event_id": "E117",
-        "date": "2026-11-03",
+        "date": "2026-10-31",
         "stage_id": "8",
         "category": "UP, HS, HSS",
         "event_name": "കവിതാരചന മലയാളം",
@@ -137,7 +137,7 @@
     },
     {
         "event_id": "E118",
-        "date": "2026-11-03",
+        "date": "2026-10-31",
         "stage_id": "8",
         "category": "HS, HSS",
         "event_name": "ഉപന്യാസം മലയാളം",
@@ -145,7 +145,7 @@
     },
     {
         "event_id": "E119",
-        "date": "2026-11-03",
+        "date": "2026-10-31",
         "stage_id": "9",
         "category": "UP, HS, HSS",
         "event_name": "കഥാരചന ഹിന്ദി",
@@ -153,7 +153,7 @@
     },
     {
         "event_id": "E120",
-        "date": "2026-11-03",
+        "date": "2026-10-31",
         "stage_id": "9",
         "category": "HS, HSS",
         "event_name": "കവിതാരചന ഹിന്ദി",
@@ -161,7 +161,7 @@
     },
     {
         "event_id": "E121",
-        "date": "2026-11-03",
+        "date": "2026-10-31",
         "stage_id": "9",
         "category": "HS, HSS",
         "event_name": "ഉപന്യാസം ഹിന്ദി",
@@ -169,7 +169,7 @@
     },
     {
         "event_id": "E122",
-        "date": "2026-11-03",
+        "date": "2026-10-31",
         "stage_id": "10",
         "category": "HS, HSS",
         "event_name": "കഥാരചന ഇംഗ്ലീഷ്",
@@ -177,7 +177,7 @@
     },
     {
         "event_id": "E123",
-        "date": "2026-11-03",
+        "date": "2026-10-31",
         "stage_id": "10",
         "category": "HS, HSS",
         "event_name": "കവിതാരചന ഇംഗ്ലീഷ്",
@@ -185,7 +185,7 @@
     },
     {
         "event_id": "E124",
-        "date": "2026-11-03",
+        "date": "2026-10-31",
         "stage_id": "10",
         "category": "HS, HSS",
         "event_name": "ഉപന്യാസം ഇംഗ്ലീഷ്",
@@ -193,7 +193,7 @@
     },
     {
         "event_id": "E125",
-        "date": "2026-11-03",
+        "date": "2026-10-31",
         "stage_id": "11",
         "category": "HS, HSS",
         "event_name": "കഥാരചന ഉറുദു",
@@ -201,7 +201,7 @@
     },
     {
         "event_id": "E126",
-        "date": "2026-11-03",
+        "date": "2026-10-31",
         "stage_id": "11",
         "category": "HS, HSS",
         "event_name": "കവിതാരചന ഉറുദു",
@@ -209,7 +209,7 @@
     },
     {
         "event_id": "E127",
-        "date": "2026-11-03",
+        "date": "2026-10-31",
         "stage_id": "11",
         "category": "HS",
         "event_name": "കവിതാരചന തമിഴ്",
@@ -217,7 +217,7 @@
     },
     {
         "event_id": "E128",
-        "date": "2026-11-03",
+        "date": "2026-10-31",
         "stage_id": "11",
         "category": "HS",
         "event_name": "കവിതാരചന കന്നഡ",
@@ -225,7 +225,7 @@
     },
     {
         "event_id": "E129",
-        "date": "2026-11-03",
+        "date": "2026-10-31",
         "stage_id": "11",
         "category": "HS",
         "event_name": "കവിതാരചന അറബി",
@@ -233,7 +233,7 @@
     },
     {
         "event_id": "E130",
-        "date": "2026-11-03",
+        "date": "2026-10-31",
         "stage_id": "11",
         "category": "HS, HSS",
         "event_name": "ഉപന്യാസം അറബി",
@@ -241,7 +241,7 @@
     },
     {
         "event_id": "E131",
-        "date": "2026-11-03",
+        "date": "2026-10-31",
         "stage_id": "11",
         "category": "HS, HSS",
         "event_name": "ഉപന്യാസം ഉറുദു",
@@ -249,7 +249,7 @@
     },
     {
         "event_id": "E132",
-        "date": "2026-11-03",
+        "date": "2026-10-31",
         "stage_id": "12, 13",
         "category": "LP, UP, HS, HSS",
         "event_name": "ചിത്രരചന പെൻസിൽ",
@@ -257,7 +257,7 @@
     },
     {
         "event_id": "E133",
-        "date": "2026-11-03",
+        "date": "2026-10-31",
         "stage_id": "12, 13",
         "category": "LP, UP, HS, HSS",
         "event_name": "ചിത്രരചന ജലഛായം",
@@ -265,7 +265,7 @@
     },
     {
         "event_id": "E134",
-        "date": "2026-11-03",
+        "date": "2026-10-31",
         "stage_id": "12, 13",
         "category": "HSS",
         "event_name": "കൊളാഷ്",
@@ -273,7 +273,7 @@
     },
     {
         "event_id": "E135",
-        "date": "2026-11-03",
+        "date": "2026-10-31",
         "stage_id": "12, 13",
         "category": "HS, HSS",
         "event_name": "ചിത്രരചന ഓയിൽ കളർ",
@@ -281,7 +281,7 @@
     },
     {
         "event_id": "E136",
-        "date": "2026-11-03",
+        "date": "2026-10-31",
         "stage_id": "12, 13",
         "category": "HS, HSS",
         "event_name": "കാർട്ടൂൺ",
@@ -289,7 +289,7 @@
     },
     {
         "event_id": "E137",
-        "date": "2026-11-03",
+        "date": "2026-10-31",
         "stage_id": "14",
         "category": "Gen",
         "event_name": "ബാന്റുമേളം",
