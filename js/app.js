@@ -13,9 +13,27 @@
     return String(stg || '').split(',').map(s => Number(s.trim())).filter(n => !isNaN(n) && n > 0);
   }
 
-  function getEventsForStage(schedule, day, stageId) {
+  // data.json-ൽ നിന്നുള്ള schedule_overrides മാസ്റ്റർ ഷെഡ്യൂളിലേക്ക് മെർജ് ചെയ്യുന്നു
+  function getEffectiveSchedule() {
+    const overrides = (S.data && S.data.schedule_overrides) || {};
+    return S.schedule.map(item => {
+      const ov = overrides[String(item.event_id)];
+      if (ov) {
+        return {
+          ...item,
+          start_time: ov.start_time || item.start_time,
+          stage_id: ov.stage_id || item.stage_id,
+          status_override: ov.status || 'active',
+          _overridden: true
+        };
+      }
+      return item;
+    }).filter(e => e.status_override !== 'cancelled');
+  }
+
+  function getEventsForStage(day, stageId) {
     const sId = Number(stageId);
-    return schedule.filter(e => {
+    return getEffectiveSchedule().filter(e => {
       if (e.date !== day) return false;
       return parseStageIds(e.stage_id).includes(sId);
     });
@@ -193,7 +211,8 @@
   }
 
   function buildSearchIndex() {
-    S.schedule.forEach(ev => {
+    const eff = getEffectiveSchedule();
+    eff.forEach(ev => {
       const ml = cleanMl(ev.event_name || "");
       const mang = toManglish(ml);
       const catStr = Array.isArray(ev.categories) ? ev.categories.join(" ") : (ev.category || "");
@@ -251,6 +270,7 @@
       S.online = false;
       if (!S.data) S.data = KL.normalizeData({}, stageIds());
     }
+    buildSearchIndex();
     render();
     if (S.activeModalStageId !== null) {
       updateStageModal(S.activeModalStageId);
@@ -262,12 +282,12 @@
     const id = stage.stage_id;
     const st = (S.data && S.data.stages && S.data.stages[id]) || {};
     const day = KL.today();
-    const todays = getEventsForStage(S.schedule, day, id);
+    const todays = getEventsForStage(day, id);
     const done = new Set((S.data && S.data.completed_events ? S.data.completed_events : []).map(String));
     const base = { mode: "none", doneCount: todays.filter(e => done.has(String(e.event_id))).length, total: todays.length };
 
     if (st.status === "ongoing") {
-      const ev = S.schedule.find(e => String(e.event_id) === String(st.event_id));
+      const ev = getEffectiveSchedule().find(e => String(e.event_id) === String(st.event_id));
       const started = new Date(st.actual_start);
       const schedHHMM = st.scheduled_start || (ev && ev.start_time) || null;
       const sched = schedHHMM ? KL.atTime(ev ? ev.date : day, schedHHMM) : null;
@@ -388,8 +408,10 @@
     const html = text.map(t => `<span class="tick">${esc(t)}</span>`).join("");
     const chars = text.join("").length;
     const track = $("tickerTrack");
-    track.style.setProperty("--dur", `${Math.max(30, Math.round(chars * 0.22))}s`);
-    track.innerHTML = html;
+    if (track) {
+      track.style.setProperty("--dur", `${Math.max(30, Math.round(chars * 0.22))}s`);
+      track.innerHTML = html;
+    }
   }
 
   function renderMeta() {
@@ -423,14 +445,15 @@
       const q = input.value.trim();
       if (!q) {
         drop.hidden = true;
-        clearBtn.hidden = true;
+        if (clearBtn) clearBtn.hidden = true;
         list.innerHTML = "";
         return;
       }
-      clearBtn.hidden = false;
+      if (clearBtn) clearBtn.hidden = false;
       const qWords = q.toLowerCase().split(/\s+/).filter(Boolean);
 
-      const matches = S.schedule.filter(ev => {
+      const eff = getEffectiveSchedule();
+      const matches = eff.filter(ev => {
         const s = ev._search;
         if (!s) return false;
         return qWords.every(word => {
@@ -476,12 +499,14 @@
     input.addEventListener("input", doSearch);
     input.addEventListener("focus", () => { if (input.value.trim()) doSearch(); });
 
-    clearBtn.addEventListener("click", () => {
-      input.value = "";
-      drop.hidden = true;
-      clearBtn.hidden = true;
-      input.focus();
-    });
+    if (clearBtn) {
+      clearBtn.addEventListener("click", () => {
+        input.value = "";
+        drop.hidden = true;
+        clearBtn.hidden = true;
+        input.focus();
+      });
+    }
 
     list.addEventListener("click", e => {
       const item = e.target.closest(".search-item[data-stage-id]");
@@ -523,7 +548,7 @@
     if (!stage) return;
 
     const day = KL.today();
-    const todays = getEventsForStage(S.schedule, day, stageId);
+    const todays = getEventsForStage(day, stageId);
     const done = new Set((S.data && S.data.completed_events ? S.data.completed_events : []).map(String));
     const st = (S.data && S.data.stages && S.data.stages[stageId]) || {};
     const ongoingId = st.status === "ongoing" ? String(st.event_id) : null;
@@ -663,13 +688,14 @@
       chip.classList.add("is-active");
       S.currentFilter = chip.dataset.filter;
       renderStageGrid();
+      updateAutoScrollButtonVisibility();
     });
   }
 
   function renderStageGrid() {
     const day = KL.today();
     const visible = S.stages.filter(s => {
-      const evs = getEventsForStage(S.schedule, day, s.stage_id);
+      const evs = getEventsForStage(day, s.stage_id);
       const isLive = S.data.stages[s.stage_id] && S.data.stages[s.stage_id].status === "ongoing";
       return evs.length > 0 || isLive;
     });
@@ -720,24 +746,7 @@
     }
   }
 
-  // data.json-ൽ നിന്ന് schedule_overrides എടുത്ത് ഷെഡ്യൂളിലേക്ക് മെർജ് ചെയ്യുന്നു
-  function getEffectiveSchedule() {
-    const overrides = (S.data && S.data.schedule_overrides) || {};
-    return S.schedule.map(item => {
-      const ov = overrides[String(item.event_id)];
-      if (ov) {
-        return {
-          ...item,
-          start_time: ov.start_time || item.start_time,
-          stage_id: ov.stage_id || item.stage_id,
-          status_override: ov.status || 'active',
-          _overridden: true
-        };
-      }
-      return item;
-    }).filter(e => e.status_override !== 'cancelled'); // കാൻസൽ ചെയ്തവ ലിസ്റ്റിൽ നിന്ന് ഒഴിവാക്കുന്നു
-  }
-  /* ---------- idle auto-scroll through all stage cards (Fixed & Restored) ---------- */
+  /* ---------- idle auto-scroll through all stage cards (Fixed & Optimized) ---------- */
   function initAutoScroll() {
     const A = C.autoScroll || { speedPxPerSec: 28, startDelaySec: 4, resumeAfterIdleSec: 8, holdSec: 3 };
     const btn = $("autoScrollBtn");
@@ -747,7 +756,7 @@
     let enabled = saved ? saved === "on" : !KL.reduced;
     let phase = "idle", y = 0, holdUntil = 0, everTouched = false;
     let last = performance.now();
-    let lastInput = performance.now(); // Start idle timer directly
+    let lastInput = performance.now();
 
     const maxY = () => Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
 
@@ -780,8 +789,11 @@
       const dt = Math.min(0.1, (ts - last) / 1000);
       last = ts;
       const maxScroll = maxY();
+      const drop = $("searchResults");
+      const searchOpen = drop && !drop.hidden;
 
-      if (enabled && !document.hidden && maxScroll > 40 && !S.activeModalStageId) {
+      // Don't auto scroll if stage modal is active or search dropdown is open
+      if (enabled && !document.hidden && maxScroll > 40 && !S.activeModalStageId && !searchOpen) {
         const wait = (everTouched ? (A.resumeAfterIdleSec || 8) : (A.startDelaySec || 4)) * 1000;
         
         if (phase === "idle" && (ts - lastInput) >= wait) {
@@ -838,6 +850,7 @@
     S.animate = false;
     setTimeout(startAOS, KL.splashMs);
     initAutoScroll();
+    updateAutoScrollButtonVisibility();
 
     setInterval(() => { if (!document.hidden) poll(); }, C.pollSeconds * 1000);
     document.addEventListener("visibilitychange", () => { if (!document.hidden) poll(); });

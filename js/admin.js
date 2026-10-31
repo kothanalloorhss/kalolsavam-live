@@ -9,13 +9,32 @@
     selected: Number(sessionStorage.getItem("kl_stage")) || 1, busy: false, endStage: null, editResultIdx: null 
   };
   const stageIds = () => S.stages.map(s => s.stage_id);
-  const findEvent = id => S.schedule.find(e => String(e.event_id) === String(id));
 
   // Multi-stage helper: extracts array of numeric stage IDs from "12, 13" or 12 or [12, 13]
   function parseStageIds(stg) {
     if (Array.isArray(stg)) return stg.map(Number);
     return String(stg || '').split(',').map(s => Number(s.trim())).filter(n => !isNaN(n) && n > 0);
   }
+
+  // Merges schedule_overrides from data.json into base schedule
+  function getEffectiveSchedule() {
+    const overrides = (S.data && S.data.schedule_overrides) || {};
+    return S.schedule.map(item => {
+      const ov = overrides[String(item.event_id)];
+      if (ov) {
+        return {
+          ...item,
+          start_time: ov.start_time || item.start_time,
+          stage_id: ov.stage_id || item.stage_id,
+          status_override: ov.status || 'active',
+          _overridden: true
+        };
+      }
+      return item;
+    }).filter(e => e.status_override !== 'cancelled');
+  }
+
+  const findEvent = id => getEffectiveSchedule().find(e => String(e.event_id) === String(id));
 
   /* ---------- GitHub Contents API ---------- */
   const toB64 = str => { let bin = ""; new TextEncoder().encode(str).forEach(b => (bin += String.fromCharCode(b))); return btoa(bin); };
@@ -94,7 +113,6 @@
     const ev = findEvent(eventId); if (!ev) return;
     const targetStageIds = parseStageIds(ev.stage_id);
     
-    // Check if any of the target stages is already running another event
     for (const sid of targetStageIds) {
       const cur = S.data.stages[sid];
       if (cur && cur.status === "ongoing" && String(cur.event_id) !== String(ev.event_id)) {
@@ -119,7 +137,6 @@
         combined_stages: targetStageIds.length > 1 ? targetStageIds : null
       };
 
-      // Set ongoing on all combined stages simultaneously
       targetStageIds.forEach(sid => {
         d.stages[sid] = { ...payload };
       });
@@ -155,7 +172,6 @@
         pushTicker(d, `Stage ${sid}: ${name} has finished`);
       }
 
-      // Reset all associated stages to idle together
       combined.forEach(s => {
         d.stages[s] = idleStage();
       });
@@ -186,7 +202,8 @@
     const wrap = $("dayProgress");
     if (!wrap) return;
 
-    const dayEvents = S.schedule.filter(e => e.date === day);
+    const effSchedule = getEffectiveSchedule();
+    const dayEvents = effSchedule.filter(e => e.date === day);
     if (!dayEvents.length) { wrap.hidden = true; return; }
     wrap.hidden = false;
 
@@ -202,7 +219,6 @@
     let delayedCount = 0;
     const now = KL.now();
 
-    // Avoid double counting ongoing events if they run on multiple stages
     const processedOngoingIds = new Set();
     ongoingStages.forEach(st => {
       if (processedOngoingIds.has(String(st.event_id))) return;
@@ -256,71 +272,31 @@
       </div></li>`;
   }
 
-  // data.json-ൽ നിന്ന് schedule_overrides എടുത്ത് ഷെഡ്യൂളിലേക്ക് മെർജ് ചെയ്യുന്നു
-  function getEffectiveSchedule() {
-    const overrides = (S.data && S.data.schedule_overrides) || {};
-    return S.schedule.map(item => {
-      const ov = overrides[String(item.event_id)];
-      if (ov) {
-        return {
-          ...item,
-          start_time: ov.start_time || item.start_time,
-          stage_id: ov.stage_id || item.stage_id,
-          status_override: ov.status || 'active',
-          _overridden: true
-        };
-      }
-      return item;
-    }).filter(e => e.status_override !== 'cancelled'); // കാൻസൽ ചെയ്തവ ലിസ്റ്റിൽ നിന്ന് ഒഴിവാക്കുന്നു
-  }
-
   let currentEditEventId = null;
 
   function openEditScheduleModal(eventId) {
-    const ev = S.schedule.find(e => String(e.event_id) === String(eventId));
+    const ev = findEvent(eventId);
     if (!ev) return;
     currentEditEventId = eventId;
     
     const overrides = (S.data && S.data.schedule_overrides) || {};
     const ov = overrides[String(eventId)] || {};
 
-    $("editSchedEventName").textContent = `${ev.event_name} (${KL.cats(ev).join(', ')})`;
-    $("editSchedTime").value = (ov.start_time || ev.start_time).slice(0, 5);
+    const catsText = KL.cats(ev).length ? ` (${KL.cats(ev).join(', ')})` : "";
+    $("editSchedEventName").textContent = `${ev.event_name}${catsText}`;
+    $("editSchedTime").value = (ov.start_time || ev.start_time || "09:00").slice(0, 5);
     
-    // സ്റ്റേജ് സെലക്ഷൻ ഡ്രോപ്പ്ഡൗൺ തയ്യാറാക്കൽ
     const stageSelect = $("editSchedStage");
-    stageSelect.innerHTML = S.stages.map(s => 
-      `<option value="${s.stage_id}">${s.stage_id}. ${s.stage_name}</option>`
-    ).join("");
-    stageSelect.value = String(ov.stage_id || ev.stage_id).split(',')[0].trim();
+    if (stageSelect) {
+      stageSelect.innerHTML = S.stages.map(s => 
+        `<option value="${s.stage_id}">${s.stage_id}. ${s.stage_name}</option>`
+      ).join("");
+      stageSelect.value = String(ov.stage_id || ev.stage_id).split(',')[0].trim();
+    }
     $("editSchedStatus").value = ov.status || 'active';
 
     $("editScheduleModal").showModal();
   }
-
-  // മോഡൽ സബ്മിറ്റ് ചെയ്യുമ്പോൾ
-  $("editScheduleForm").addEventListener("submit", e => {
-    e.preventDefault();
-    const newTime = $("editSchedTime").value;
-    const newStage = $("editSchedStage").value;
-    const newStatus = $("editSchedStatus").value;
-
-    $("editScheduleModal").close();
-
-    run(d => {
-      if (!d.schedule_overrides) d.schedule_overrides = {};
-      d.schedule_overrides[String(currentEditEventId)] = {
-        start_time: newTime ? `${newTime}:00` : undefined,
-        stage_id: newStage,
-        status: newStatus,
-        updated_at: KL.nowISO()
-      };
-      const ev = findEvent(currentEditEventId);
-      pushTicker(d, `ഷെഡ്യൂൾ മാറ്റം: ${ev ? ev.event_name : ''} വേദി ${newStage}-ലേക്ക് (${KL.fmtHHMM(newTime)}) പുനഃക്രമീകരിച്ചു`);
-    }, `Reschedule event ${currentEditEventId}`, "ഷെഡ്യൂൾ വിജയകരമായി തിരുത്തി.");
-  });
-
-  $("cancelEditSched").addEventListener("click", () => $("editScheduleModal").close());
 
   function renderResultsEditor() {
     const list = $("editResultsList");
@@ -361,9 +337,10 @@
     renderProgressCards(day);
     renderResultsEditor();
 
-    // Stages with events today or ongoing
+    const effSchedule = getEffectiveSchedule();
+
     const visible = S.stages.filter(s => {
-      const evs = getEventsForStage(S.schedule, day, s.stage_id);
+      const evs = getEventsForStage(effSchedule, day, s.stage_id);
       const isLive = S.data.stages[s.stage_id] && S.data.stages[s.stage_id].status === "ongoing";
       return evs.length > 0 || isLive;
     });
@@ -393,7 +370,7 @@
     const stage = visible.find(s => s.stage_id === S.selected);
     const st = S.data.stages[stage.stage_id] || idleStage();
     const done = new Set((S.data.completed_events || []).map(String));
-    const todays = getEventsForStage(S.schedule, day, stage.stage_id);
+    const todays = getEventsForStage(effSchedule, day, stage.stage_id);
     const pending = todays.filter(e => !done.has(String(e.event_id)));
     const finished = todays.filter(e => done.has(String(e.event_id)));
 
@@ -441,8 +418,12 @@
 
   document.addEventListener("click", e => {
     const chip = e.target.closest("[data-chip]");
-    if (act === "edit-sched") openEditScheduleModal(id);
-    if (chip) { S.selected = Number(chip.dataset.chip); sessionStorage.setItem("kl_stage", S.selected); render(); return; }
+    if (chip) { 
+      S.selected = Number(chip.dataset.chip); 
+      sessionStorage.setItem("kl_stage", S.selected); 
+      render(); 
+      return; 
+    }
     const btn = e.target.closest("[data-act]");
     if (!btn || btn.disabled || S.busy) return;
     const { act, id, stage, idx } = btn.dataset;
@@ -451,6 +432,7 @@
     else if (act === "cancel" && confirm(`Reset Stage ${stage} to idle? The start notice stays in the ticker.`)) cancelStart(Number(stage));
     else if (act === "reopen") reopenEvent(id);
     else if (act === "edit-result") openEditResultModal(Number(idx));
+    else if (act === "edit-sched") openEditScheduleModal(id);
   });
 
   $("endForm").addEventListener("submit", e => {
@@ -469,6 +451,32 @@
     if (S.editResultIdx !== null) updateResult(S.editResultIdx, ranks);
   });
   $("cancelEditResult").addEventListener("click", () => $("editResultModal").close());
+
+  $("editScheduleForm").addEventListener("submit", e => {
+    e.preventDefault();
+    const newTime = $("editSchedTime").value;
+    const newStage = $("editSchedStage").value;
+    const newStatus = $("editSchedStatus").value;
+
+    $("editScheduleModal").close();
+
+    const formattedTime = newTime ? (newTime.length === 5 ? `${newTime}:00` : newTime) : undefined;
+
+    run(d => {
+      if (!d.schedule_overrides) d.schedule_overrides = {};
+      d.schedule_overrides[String(currentEditEventId)] = {
+        start_time: formattedTime,
+        stage_id: newStage,
+        status: newStatus,
+        updated_at: KL.nowISO()
+      };
+      const ev = findEvent(currentEditEventId);
+      const evName = ev ? ev.event_name : currentEditEventId;
+      pushTicker(d, `ഷെഡ്യൂൾ മാറ്റം: ${evName} വേദി ${newStage}-ലേക്ക് (${KL.fmtHHMM(newTime)}) പുനഃക്രമീകരിച്ചു`);
+    }, `Reschedule event ${currentEditEventId}`, "ഷെഡ്യൂൾ വിജയകരമായി തിരുത്തി.");
+  });
+
+  $("cancelEditSched").addEventListener("click", () => $("editScheduleModal").close());
 
   $("bannerForm").addEventListener("submit", e => {
     e.preventDefault();

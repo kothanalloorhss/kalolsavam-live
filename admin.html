@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex">
-  <title>Kalolsavam Admin</title>
+  <title>Kalolsavam Admin — Sarang 2026</title>
   <meta name="theme-color" content="#42101c">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -112,8 +112,9 @@
         </form>
       </details>
     </section>
+  </main>
 
-    <!-- Modal: Edit Schedule (Time & Stage Change) -->
+  <!-- Modal: Edit Schedule (Time & Stage Change) -->
   <dialog id="editScheduleModal" aria-labelledby="editSchedTitle">
     <form id="editScheduleForm">
       <div>
@@ -126,13 +127,13 @@
       </label>
 
       <label class="field">വേദി (Stage)
-        <select id="editSchedStage" style="padding:0.55rem; border:2px solid var(--gold-700); border-radius:6px; font:inherit;">
-          <!-- JS വഴി 1 മുതൽ 14 വരെയുള്ള സ്റ്റേജുകൾ ലോഡ് ചെയ്യും -->
+        <select id="editSchedStage" style="padding:0.55rem; border:2px solid var(--gold-700); border-radius:6px; font:inherit; background:#fff; color:var(--ink);">
+          <!-- Populated dynamically via JS -->
         </select>
       </label>
 
       <label class="field">സ്റ്റാറ്റസ്
-        <select id="editSchedStatus" style="padding:0.55rem; border:2px solid var(--gold-700); border-radius:6px; font:inherit;">
+        <select id="editSchedStatus" style="padding:0.55rem; border:2px solid var(--gold-700); border-radius:6px; font:inherit; background:#fff; color:var(--ink);">
           <option value="active">Active (സാധാരണ പോലെ നടക്കുക)</option>
           <option value="postponed">Postponed (മാറ്റിവെച്ചു)</option>
           <option value="cancelled">Cancelled (റദ്ദാക്കി)</option>
@@ -145,7 +146,6 @@
       </div>
     </form>
   </dialog>
-  </main>
 
   <!-- Modal: End Event & Enter Results -->
   <dialog id="endModal" aria-labelledby="endTitle">
