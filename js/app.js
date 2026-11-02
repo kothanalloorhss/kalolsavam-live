@@ -277,6 +277,23 @@
     }
   }
 
+  /* ---------- Compact Header on Scroll ---------- */
+  function initScrollHeader() {
+    const header = document.querySelector('.site-head');
+    if (!header) return;
+    
+    const checkScroll = () => {
+      if (window.scrollY > 60) {
+        header.classList.add('is-scrolled');
+      } else {
+        header.classList.remove('is-scrolled');
+      }
+    };
+
+    window.addEventListener('scroll', checkScroll, { passive: true });
+    checkScroll(); // റീലോഡ് ചെയ്യുമ്പോൾ സ്ക്രോൾ ആണെങ്കിൽ ക്ലാസ് ആഡ് ചെയ്യാൻ
+  }
+
   /* ---------- Inauguration Countdown Timer ---------- */
   function initCountdown() {
     const cdWrap = $("countdownSection");
@@ -313,7 +330,6 @@
     const id = stage.stage_id;
     const st = (S.data && S.data.stages && S.data.stages[id]) || {};
     
-    // ഡിഫോൾട്ടായി ഇന്നത്തെ ദിവസം സെറ്റ് ചെയ്യുക, അല്ലെങ്കിൽ ഒന്നാം ദിവസം കാണിക്കുക
     let day = KL.today();
     if (!C.festivalDates.includes(day)) {
       day = C.festivalDates[0] || "2026-11-03";
@@ -370,7 +386,6 @@
     const v = stageView(s);
     let label = { live: "Live now", next: "Up next", done: "Finished for today", none: "No events today" }[v.mode];
     
-    // പരിപാടി തുടങ്ങുന്നതിനു മുൻപ് "Scheduled: [Time]" എന്ന് ലേബൽ കൊടുക്കുന്നു
     let day = KL.today();
     if (!C.festivalDates.includes(day) && v.mode === "next") {
       label = `Scheduled: ${KL.fmtHHMM(v.sched)}`;
@@ -390,7 +405,6 @@
                            : `<span class="delay ok">Started on time</span>`;
       } else {
         body += `<p class="times">Scheduled ${KL.fmtHHMM(v.sched)}</p>`;
-        // പരിപാടി തുടങ്ങുന്നതിനു മുൻപ് വെറുതെ ലാഗ് വാണിംഗ് കാണിക്കണ്ട
         if (C.festivalDates.includes(day)) {
           pill = v.delay > 0 ? `<span class="delay ${delayClass(v.delay)}">Running ${v.delay} min behind</span>` : "";
         }
@@ -900,6 +914,7 @@
     initFilters();
     initModal();
     initCountdown();
+    initScrollHeader();
     await poll();
     
     S.animate = false;

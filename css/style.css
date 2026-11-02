@@ -62,6 +62,7 @@ button { font: inherit; cursor: pointer; }
   top: 0;
   z-index: 40;
   box-shadow: 0 4px 18px rgba(0, 0, 0, 0.45);
+  transition: padding 0.25s ease, box-shadow 0.25s ease;
 }
 .site-head::after { 
   content: ""; 
@@ -71,6 +72,41 @@ button { font: inherit; cursor: pointer; }
   background-image: var(--kasavu); 
   z-index: 1;
   pointer-events: none;
+}
+
+/* Scrolled/Compact Header State */
+.site-head.is-scrolled {
+  padding: 0.5rem 0 0.6rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+}
+.site-head.is-scrolled .hide-on-scroll {
+  display: none !important;
+}
+.site-head.is-scrolled .brand-row {
+  margin-bottom: 0.4rem;
+}
+.site-head.is-scrolled .fest-logo {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-width: 1.5px;
+}
+.site-head.is-scrolled .fest-name {
+  font-size: 1.25rem;
+}
+.site-head.is-scrolled .search-box-wrap {
+  margin-top: 0;
+}
+.site-head.is-scrolled .countdown-slim {
+  margin-bottom: 0.4rem;
+  padding: 0.35rem 0.6rem;
+}
+.site-head.is-scrolled .cd-text {
+  font-size: 0.95rem;
+}
+.site-head.is-scrolled .cd-time-unit {
+  font-size: 0.9rem;
+  min-width: 2.4rem;
+  padding: 0.1rem 0.35rem;
 }
 
 /* Countdown Slim Banner in Header */
@@ -86,6 +122,7 @@ button { font: inherit; cursor: pointer; }
   justify-content: space-between;
   gap: 0.6rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  transition: all 0.25s ease;
 }
 .cd-text {
   font-family: var(--font-head);
@@ -95,6 +132,7 @@ button { font: inherit; cursor: pointer; }
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  transition: font-size 0.25s ease;
 }
 .cd-pulse {
   width: 10px;
@@ -126,6 +164,7 @@ button { font: inherit; cursor: pointer; }
   gap: 0.15rem;
   min-width: 3.4rem;
   justify-content: center;
+  transition: all 0.25s ease;
 }
 .cd-time-unit small {
   font-size: 0.75rem;
@@ -139,6 +178,7 @@ button { font: inherit; cursor: pointer; }
   align-items: center;
   gap: 0.85rem;
   margin-bottom: 0.5rem;
+  transition: margin-bottom 0.25s ease;
 }
 .fest-logo {
   width: 3.8rem;
@@ -150,6 +190,7 @@ button { font: inherit; cursor: pointer; }
   border: 2px solid var(--gold-400);
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.35);
   flex-shrink: 0;
+  transition: width 0.25s ease, height 0.25s ease, border-width 0.25s ease;
 }
 .brand-text {
   display: flex;
@@ -169,6 +210,7 @@ button { font: inherit; cursor: pointer; }
   font-weight: 700;
   color: var(--gold-300);
   letter-spacing: 0.03em;
+  transition: font-size 0.25s ease;
 }
 .school-host {
   font-family: var(--font-body);
@@ -190,6 +232,7 @@ button { font: inherit; cursor: pointer; }
   width: 100%;
   max-width: 36rem;
   z-index: 50;
+  transition: margin-top 0.25s ease;
 }
 .search-input-group {
   display: flex;
