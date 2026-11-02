@@ -32,11 +32,24 @@
 
   <div id="alert" class="alert-banner" role="alert" hidden></div>
 
-  <!-- Sticky Header with Logo, School Tag & Search Bar -->
+  <!-- Sticky Header with Countdown, Logo, School Tag & Search Bar -->
   <header class="site-head">
     <div class="wrap">
+      
+      <!-- Compact Countdown Banner in Header -->
+      <div id="countdownSection" class="countdown-slim" data-aos="fade-down" hidden>
+        <div class="cd-text">
+          <span class="cd-pulse"></span> സാരംഗ് 2026 ആരംഭിക്കാൻ
+        </div>
+        <div class="cd-timer">
+          <div class="cd-time-unit"><span id="cdHours">00</span><small>h</small></div>
+          <div class="cd-time-unit"><span id="cdMins">00</span><small>m</small></div>
+          <div class="cd-time-unit"><span id="cdSecs">00</span><small>s</small></div>
+        </div>
+      </div>
+
       <!-- Festival Branding Row -->
-      <div class="brand-row" data-aos="fade-down">
+      <div class="brand-row" data-aos="fade-down" data-aos-delay="50">
         <img src="assets/icons/logo.png" alt="സാരംഗ് 2026 ലോഗോ" class="fest-logo" width="60" height="60">
         <div class="brand-text">
           <span class="fest-edition">കുറവിലങ്ങാട് ഉപജില്ലാ കലോത്സവം 2026</span>
@@ -49,7 +62,7 @@
       <h1 lang="ml" data-aos="fade-down" data-aos-delay="100">തത്സമയ വിവരങ്ങൾ</h1>
       <p class="sub" data-aos="fade" data-aos-delay="150">വേദികളിലെ മത്സര പുരോഗതിയും ഫലങ്ങളും</p>
       
-      <!-- Live Event Search Bar (data-aos removed to prevent stacking context collision with header stripe) -->
+      <!-- Live Event Search Bar -->
       <div class="search-box-wrap">
         <div class="search-input-group">
           <span class="search-icon" aria-hidden="true">🔍</span>
@@ -82,20 +95,6 @@
   </header>
 
   <main class="wrap">
-    <!-- Festival Inauguration Countdown Banner (Hidden once started) -->
-    <section id="countdownSection" class="countdown-card" aria-label="Inauguration Countdown" hidden>
-      <div class="countdown-head">
-        <span class="countdown-badge">ഉദ്ഘാടന സമ്മേളനം</span>
-        <h3>സാരംഗ് 2026 ആരംഭിക്കാൻ ഇനി</h3>
-        <p class="countdown-sub">നവംബർ 3, ചൊവ്വാഴ്ച രാവിലെ 9:00 AM</p>
-      </div>
-      <div class="countdown-grid">
-        <div class="time-box"><span id="cdHours" class="time-val">00</span><span class="time-lbl">Hours</span></div>
-        <div class="time-box"><span id="cdMins" class="time-val">00</span><span class="time-lbl">Minutes</span></div>
-        <div class="time-box"><span id="cdSecs" class="time-val">00</span><span class="time-lbl">Seconds</span></div>
-      </div>
-    </section>
-
     <!-- Category & Status Quick Filter Chips -->
     <nav class="filter-bar" aria-label="Filter stages">
       <button class="filter-chip is-active" data-filter="all" type="button">എല്ലാം</button>

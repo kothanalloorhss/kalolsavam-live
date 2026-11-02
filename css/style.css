@@ -73,6 +73,66 @@ button { font: inherit; cursor: pointer; }
   pointer-events: none;
 }
 
+/* Countdown Slim Banner in Header */
+.countdown-slim {
+  background: var(--maroon-700);
+  border: 1px solid var(--gold-500);
+  border-radius: 8px;
+  padding: 0.5rem 0.85rem;
+  margin-bottom: 0.85rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+.cd-text {
+  font-family: var(--font-head);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--gold-300);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.cd-pulse {
+  width: 10px;
+  height: 10px;
+  background: #3ddc84;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #3ddc84;
+  animation: cdPulse 1.2s infinite alternate;
+}
+@keyframes cdPulse { 
+  from { opacity: 0.4; box-shadow: 0 0 2px #3ddc84; } 
+  to { opacity: 1; box-shadow: 0 0 10px #3ddc84; } 
+}
+.cd-timer {
+  display: flex;
+  gap: 0.35rem;
+}
+.cd-time-unit {
+  background: var(--maroon-900);
+  color: var(--ivory);
+  border: 1px solid var(--gold-700);
+  border-radius: 4px;
+  padding: 0.15rem 0.45rem;
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 1.15rem;
+  display: flex;
+  align-items: baseline;
+  gap: 0.15rem;
+  min-width: 3.4rem;
+  justify-content: center;
+}
+.cd-time-unit small {
+  font-size: 0.75rem;
+  color: var(--gold-400);
+  text-transform: uppercase;
+}
+
 /* Festival Brand & Logo Layout */
 .brand-row {
   display: flex;
@@ -660,6 +720,13 @@ details.tool form { display: grid; gap: .5rem; margin-top: .6rem; }
   .fest-name { font-size: 1.25rem; }
   .fest-edition { font-size: 0.78rem; }
   .school-host { font-size: 0.76rem; }
+  
+  .countdown-slim {
+    justify-content: center;
+    flex-direction: column;
+    gap: 0.4rem;
+    padding: 0.6rem;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -668,71 +735,4 @@ details.tool form { display: grid; gap: .5rem; margin-top: .6rem; }
   .splash-brand { animation: brand-rm 1.9s ease both; }
   @keyframes door-fade { to { opacity: 0; } }
   @keyframes brand-rm { 0% { opacity: 0; } 25%, 70% { opacity: 1; } 100% { opacity: 0; } }
-}
-/* Countdown Timer Card */
-.countdown-card {
-  background: linear-gradient(135deg, var(--maroon-800), var(--maroon-700));
-  border: 2px solid var(--gold-400);
-  border-radius: 12px;
-  padding: 1.25rem 1rem;
-  text-align: center;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
-  margin-bottom: 1rem;
-  position: relative;
-  overflow: hidden;
-}
-.countdown-card::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 4px;
-  background-image: var(--kasavu);
-}
-.countdown-badge {
-  background: var(--gold-400);
-  color: var(--maroon-900);
-  font: 700 0.85rem var(--font-head);
-  padding: 0.15rem 0.6rem;
-  border-radius: 999px;
-  display: inline-block;
-  margin-bottom: 0.4rem;
-}
-.countdown-head h3 {
-  color: var(--gold-300);
-  font-size: 1.35rem;
-  font-weight: 700;
-}
-.countdown-sub {
-  color: var(--ivory-dim);
-  font-size: 0.9rem;
-  margin-top: 0.2rem;
-}
-.countdown-grid {
-  display: flex;
-  justify-content: center;
-  gap: 0.75rem;
-  margin-top: 1rem;
-}
-.time-box {
-  background: var(--maroon-900);
-  border: 1.5px solid var(--gold-500);
-  border-radius: 8px;
-  padding: 0.5rem 0.85rem;
-  min-width: 4.8rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.time-val {
-  font-family: var(--font-head);
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: var(--gold-300);
-  line-height: 1.1;
-}
-.time-lbl {
-  font-size: 0.72rem;
-  text-transform: uppercase;
-  color: var(--ivory-dim);
-  letter-spacing: 0.05em;
 }
