@@ -487,14 +487,7 @@ dialog .sub-name { font: 700 1.1rem var(--font-head); margin-bottom: .2rem; }
 dialog form { display: grid; gap: .7rem; }
 dialog .field input { text-transform: uppercase; font-size: 1.3rem; letter-spacing: .08em; }
 
-/* Stage Details Modal Specifics */
-dialog.stage-modal {
-  width: min(38rem, calc(100% - 2rem));
-  max-height: 85vh;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-}
+/* Common Modal Header */
 .modal-header {
   display: flex;
   justify-content: space-between;
@@ -519,7 +512,15 @@ dialog.stage-modal {
   padding: 1.2rem;
   overflow-y: auto;
   display: grid;
-  gap: 1.25rem;
+}
+
+/* Stage Details Modal Specifics */
+dialog.stage-modal {
+  width: min(38rem, calc(100% - 2rem));
+  max-height: 85vh;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
 }
 .modal-section h4 {
   font-family: var(--font-head);
@@ -529,6 +530,7 @@ dialog.stage-modal {
   padding-bottom: 0.35rem;
   margin: 0 0 0.6rem 0;
 }
+.modal-body { gap: 1.25rem; }
 .modal-ev-item.is-live {
   background: #eef8f1;
   border: 2px solid var(--live);
@@ -577,6 +579,30 @@ dialog.stage-modal {
 }
 .modal-ranks .rank b { color: var(--maroon-700); }
 .muted-small { font-size: 0.88rem; color: var(--ink-soft); margin: 0; }
+
+/* Welcome Guidelines Modal Specifics */
+.welcome-body { gap: 0.8rem; }
+.guidelines-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.85rem; }
+.guidelines-list li { 
+  display: flex; 
+  gap: 0.8rem; 
+  align-items: flex-start; 
+  background: #fffaf0; 
+  border: 1px solid var(--gold-700); 
+  padding: 0.85rem; 
+  border-radius: 8px; 
+  line-height: 1.45;
+}
+.guidelines-list li a { color: var(--maroon-700); font-weight: 700; text-decoration: underline; }
+.guidelines-list li strong { color: var(--maroon-800); }
+.g-icon { font-size: 1.4rem; flex: none; line-height: 1; margin-top: 0.1rem; }
+.w-full { width: 100%; }
+
+/* General UI Buttons */
+.btn { border-radius: 8px; border: 2px solid transparent; font: 700 1.15rem var(--font-head); padding: 0.6rem 1.1rem; cursor: pointer; }
+.btn-start { background: var(--live); color: #fff; }
+.btn-end { background: var(--maroon-700); color: var(--gold-300); border-color: var(--maroon-700); }
+.btn-ghost { background: transparent; color: var(--maroon-700); border-color: var(--maroon-700); }
 
 /* ========== admin ========== */
 .admin-bar { background: var(--maroon-800); position: relative; padding: .8rem 0 1rem; }
@@ -668,11 +694,7 @@ dialog.stage-modal {
 .ev-note { font-size: .92rem; color: var(--live); font-weight: 700; margin-top: .2rem; }
 .ev-note.is-due { color: #8e4a00; }
 .ev-actions { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; gap: .6rem; }
-.btn { min-height: 3rem; border-radius: 8px; border: 2px solid transparent; font: 700 1.15rem var(--font-head); }
 .btn:disabled { opacity: .35; cursor: not-allowed; }
-.btn-start { background: var(--live); color: #fff; }
-.btn-end { background: var(--maroon-700); color: var(--gold-300); }
-.btn-ghost { background: transparent; color: var(--maroon-700); border-color: var(--maroon-700); }
 .is-busy .act { pointer-events: none; opacity: .55; }
 details.tool { margin-top: 1rem; border-top: 1px dashed var(--gold-700); padding-top: .7rem; }
 details.tool summary { cursor: pointer; font: 700 1.05rem var(--font-head); color: var(--maroon-700); }

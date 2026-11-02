@@ -20,6 +20,13 @@
     .dash-stage-name { font-weight: 700; color: var(--maroon-700); margin-bottom: 0.2rem; display: block; }
     .dash-event-name { color: var(--ink); font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; display: block; }
     .admin-search-input { width: 100%; padding: 0.6rem 0.8rem; border: 2px solid var(--gold-400); border-radius: 8px; font: inherit; margin-bottom: 1rem; }
+    
+    /* Date Navigation Tabs */
+    .admin-date-nav { display: flex; gap: 0.5rem; overflow-x: auto; margin-bottom: 1.25rem; padding-bottom: 0.4rem; scrollbar-width: none; }
+    .admin-date-nav::-webkit-scrollbar { display: none; }
+    .date-tab { flex: none; background: var(--maroon-800); color: var(--ivory-dim); border: 1px solid var(--gold-700); padding: 0.4rem 1rem; border-radius: 6px; font: 700 0.95rem var(--font-head); cursor: pointer; transition: all 0.2s ease; }
+    .date-tab:hover { background: var(--maroon-700); color: var(--ivory); }
+    .date-tab.is-active { background: var(--gold-400); color: var(--maroon-900); border-color: var(--gold-400); box-shadow: 0 2px 8px rgba(0,0,0,0.2); }
   </style>
 </head>
 <body data-splash="once">
@@ -55,10 +62,14 @@
   </header>
 
   <main class="wrap">
+    
+    <!-- Admin Date Navigation -->
+    <nav id="adminDateSelector" class="admin-date-nav" aria-label="Select Date"></nav>
+
     <!-- Day Progress Cards -->
     <section id="dayProgress" class="stats-board" aria-label="Day overview and progress" hidden>
       <div class="stat-card">
-        <span class="stat-label">Total Today</span>
+        <span class="stat-label">Total Selected</span>
         <span id="statTotal" class="stat-val">0</span>
       </div>
       <div class="stat-card is-done">

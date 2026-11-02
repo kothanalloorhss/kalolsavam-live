@@ -291,7 +291,7 @@
     };
 
     window.addEventListener('scroll', checkScroll, { passive: true });
-    checkScroll(); // റീലോഡ് ചെയ്യുമ്പോൾ സ്ക്രോൾ ആണെങ്കിൽ ക്ലാസ് ആഡ് ചെയ്യാൻ
+    checkScroll();
   }
 
   /* ---------- Inauguration Countdown Timer ---------- */
@@ -323,6 +323,28 @@
 
     updateTimer();
     setInterval(updateTimer, 1000);
+  }
+
+  /* ---------- Welcome Guidelines Modal ---------- */
+  function initWelcomeModal() {
+    const modal = $("welcomeModal");
+    const closeBtn = $("closeWelcomeBtn");
+    const startBtn = $("startAppBtn");
+    if (!modal) return;
+
+    const dismiss = () => {
+      modal.close();
+      sessionStorage.setItem("kl_welcome_seen", "true");
+    };
+
+    if (closeBtn) closeBtn.addEventListener("click", dismiss);
+    if (startBtn) startBtn.addEventListener("click", dismiss);
+    
+    if (!sessionStorage.getItem("kl_welcome_seen")) {
+      setTimeout(() => {
+        if (typeof modal.showModal === "function") modal.showModal();
+      }, KL.splashMs + 500); 
+    }
   }
 
   /* ---------- per-stage status ---------- */
@@ -859,8 +881,9 @@
       const maxScroll = maxY();
       const drop = $("searchResults");
       const searchOpen = drop && !drop.hidden;
+      const welcomeOpen = $("welcomeModal") && $("welcomeModal").open;
 
-      if (enabled && !document.hidden && maxScroll > 40 && !S.activeModalStageId && !searchOpen) {
+      if (enabled && !document.hidden && maxScroll > 40 && !S.activeModalStageId && !searchOpen && !welcomeOpen) {
         const wait = (everTouched ? (A.resumeAfterIdleSec || 8) : (A.startDelaySec || 4)) * 1000;
         
         if (phase === "idle" && (ts - lastInput) >= wait) {
@@ -913,6 +936,7 @@
     initSearch();
     initFilters();
     initModal();
+    initWelcomeModal();
     initCountdown();
     initScrollHeader();
     await poll();

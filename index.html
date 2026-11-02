@@ -142,6 +142,35 @@
     <div id="modalContent" class="modal-body"></div>
   </dialog>
 
+  <!-- Welcome / Guidelines Modal -->
+  <dialog id="welcomeModal" class="stage-modal" aria-labelledby="welcomeTitle">
+    <div class="modal-header">
+      <h3 id="welcomeTitle">സ്വാഗതം! ശ്രദ്ധിക്കുക</h3>
+      <button id="closeWelcomeBtn" class="close-modal-btn" type="button" aria-label="Close dialog">&times;</button>
+    </div>
+    <div class="modal-body welcome-body">
+      <ul class="guidelines-list">
+        <li>
+          <span class="g-icon">⏱️</span>
+          <div><strong>സമയക്രമം:</strong> ഇതിൽ നൽകിയിരിക്കുന്ന സമയക്രമങ്ങളിൽ പ്രായോഗികമായ മാറ്റങ്ങൾ ഉണ്ടായേക്കാം.</div>
+        </li>
+        <li>
+          <span class="g-icon">🏆</span>
+          <div><strong>ഫലങ്ങൾ:</strong> ഇവിടെ പ്രസിദ്ധീകരിക്കുന്ന ഫലങ്ങൾ പൂർണ്ണമായും അനൗദ്യോഗികമാണ്. ഔദ്യോഗിക ഫലങ്ങൾക്ക് <a href="https://ulsavam.kite.kerala.gov.in" target="_blank" rel="noopener">ulsavam.kite.kerala.gov.in</a> സന്ദർശിക്കുക.</div>
+        </li>
+        <li>
+          <span class="g-icon">🔍</span>
+          <div><strong>സെർച്ച്:</strong> ഏത് മത്സരമാണ് എവിടെ, എപ്പോഴാണ് നടക്കുന്നതെന്ന് കണ്ടെത്താൻ മുകളിലുള്ള സെർച്ച് ബാർ ഉപയോഗിക്കുക.</div>
+        </li>
+        <li>
+          <span class="g-icon">📅</span>
+          <div><strong>ഇന്നത്തെ വിവരങ്ങൾ:</strong> താഴെ നൽകിയിരിക്കുന്ന കാർഡുകളിൽ അതത് ദിവസത്തെ പ്രോഗ്രാമുകളും ഏറ്റവും പുതിയ ഫലങ്ങളും ലഭ്യമാകും.</div>
+        </li>
+      </ul>
+      <button id="startAppBtn" class="btn btn-start w-full" type="button" style="margin-top: 0.5rem;">മനസ്സിലായി, തുടരുക</button>
+    </div>
+  </dialog>
+
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   <script defer src="js/config.js"></script>
   <script defer src="js/app.js"></script>

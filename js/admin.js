@@ -7,7 +7,8 @@
   const S = { 
     token: sessionStorage.getItem(TOKEN_KEY), stages: [], schedule: [], data: null,
     selected: Number(sessionStorage.getItem("kl_stage")) || 1, busy: false, endStage: null, editResultIdx: null,
-    searchQuery: "" 
+    searchQuery: "",
+    activeDate: null // അഡ്മിന് ഏത് ദിവസവും തിരഞ്ഞെടുക്കാം
   };
   const stageIds = () => S.stages.map(s => s.stage_id);
 
@@ -182,6 +183,19 @@
   }
 
   /* ---------- rendering ---------- */
+  function renderDateTabs() {
+    const wrap = $("adminDateSelector");
+    if (!wrap) return;
+    
+    wrap.innerHTML = C.festivalDates.map(d => {
+      const isAct = d === S.activeDate;
+      // Format to simple like "Nov 3"
+      const dateObj = new Date(d);
+      const label = dateObj.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+      return `<button type="button" class="date-tab ${isAct ? 'is-active' : ''}" data-date="${esc(d)}">${esc(label)}</button>`;
+    }).join('');
+  }
+
   function renderProgressCards(day) {
     const wrap = $("dayProgress");
     if (!wrap) return;
@@ -224,10 +238,10 @@
         statusText = `🔴 Live: ${st.event_name}`;
       } else if (allDone) {
         statusClass = "is-done";
-        statusText = "ഇന്നത്തെ മത്സരങ്ങൾ കഴിഞ്ഞു";
+        statusText = "മത്സരങ്ങൾ കഴിഞ്ഞു";
       } else if (todays.length === 0) {
         statusClass = "is-done";
-        statusText = "ഇന്ന് മത്സരങ്ങളില്ല";
+        statusText = "മത്സരങ്ങളില്ല";
       }
       
       return `
@@ -335,7 +349,7 @@
   }
 
   function renderEventList() {
-    const day = KL.today();
+    const day = S.activeDate;
     const effSchedule = getEffectiveSchedule();
     const stage = S.stages.find(s => s.stage_id === S.selected);
     const st = S.data.stages[stage.stage_id] || idleStage();
@@ -345,7 +359,6 @@
     let pending = todays.filter(e => !done.has(String(e.event_id)));
     let finished = todays.filter(e => done.has(String(e.event_id)));
 
-    // Apply local search filter if exists
     if (S.searchQuery) {
       pending = pending.filter(e => e.event_name.toLowerCase().includes(S.searchQuery));
       finished = finished.filter(e => e.event_name.toLowerCase().includes(S.searchQuery));
@@ -353,7 +366,7 @@
 
     const now = KL.now();
     let idleNotice = "";
-    if (st.status === "idle" && st.idle_since) {
+    if (st.status === "idle" && st.idle_since && KL.today() === day) {
       const idleMins = Math.floor((now - new Date(st.idle_since)) / 60000);
       if (idleMins >= 10 && pending.length > 0) {
         idleNotice = `<div class="idle-warning">⚠️ ഈ വേദി ഒഴിഞ്ഞുകിടക്കാൻ തുടങ്ങിയിട്ട് ${idleMins} മിനിറ്റ് കഴിഞ്ഞു. അടുത്ത പ്രോഗ്രാം ആരംഭിക്കുക.</div>`;
@@ -374,17 +387,21 @@
   function render() {
     if (!S.data) return;
     
-    // Determine active day (default to first festival day if opened before fest)
-    let day = KL.today();
-    if (!C.festivalDates.includes(day)) {
-      day = C.festivalDates[0] || "2026-11-03";
+    // Set Active Date for Admin if null
+    if (!S.activeDate) {
+      S.activeDate = KL.today();
+      if (!C.festivalDates.includes(S.activeDate)) {
+        S.activeDate = C.festivalDates[0]; // Default to Day 1 if opened before fest
+      }
     }
+    const day = S.activeDate;
 
     $("adminDate").textContent = KL.fmtLongDate(KL.now());
     $("testChip").hidden = !KL.testMode;
     const bn = S.data.banner;
     $("bannerState").textContent = bn && bn.active && bn.text ? `Showing: ${bn.text}` : "No banner is showing.";
 
+    renderDateTabs();
     renderProgressCards(day);
     renderGlobalDashboard(day);
     renderResultsEditor();
@@ -414,7 +431,7 @@
       const st = S.data.stages[s.stage_id];
       const live = st && st.status === "ongoing";
       let idleAlert = false;
-      if (st && st.status === "idle" && st.idle_since) {
+      if (st && st.status === "idle" && st.idle_since && KL.today() === day) {
         const idleMins = Math.floor((now - new Date(st.idle_since)) / 60000);
         if (idleMins >= 10) idleAlert = true;
       }
@@ -450,6 +467,13 @@
   }
 
   document.addEventListener("click", e => {
+    const dateBtn = e.target.closest(".date-tab");
+    if (dateBtn) {
+      S.activeDate = dateBtn.dataset.date;
+      render();
+      return;
+    }
+
     const chip = e.target.closest("[data-chip]");
     if (chip) { 
       S.selected = Number(chip.dataset.chip); 
