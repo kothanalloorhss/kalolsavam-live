@@ -6,17 +6,16 @@
   const TOKEN_KEY = "kl_admin_token";
   const S = { 
     token: sessionStorage.getItem(TOKEN_KEY), stages: [], schedule: [], data: null,
-    selected: Number(sessionStorage.getItem("kl_stage")) || 1, busy: false, endStage: null, editResultIdx: null 
+    selected: Number(sessionStorage.getItem("kl_stage")) || 1, busy: false, endStage: null, editResultIdx: null,
+    searchQuery: "" 
   };
   const stageIds = () => S.stages.map(s => s.stage_id);
 
-  // Multi-stage helper: extracts array of numeric stage IDs from "12, 13" or 12 or [12, 13]
   function parseStageIds(stg) {
     if (Array.isArray(stg)) return stg.map(Number);
     return String(stg || '').split(',').map(s => Number(s.trim())).filter(n => !isNaN(n) && n > 0);
   }
 
-  // Merges schedule_overrides from data.json into base schedule
   function getEffectiveSchedule() {
     const overrides = (S.data && S.data.schedule_overrides) || {};
     return S.schedule.map(item => {
@@ -108,7 +107,7 @@
   const pushTicker = (d, text) => { d.ticker.unshift({ t: KL.nowISO(), text }); trimList(d.ticker, C.maxTickerStored); };
   const idleStage = () => ({ status: "idle", event_id: null, event_name: null, categories: [], scheduled_start: null, actual_start: null, delay_minutes: 0, idle_since: KL.nowISO() });
 
-  /* ---------- actions (Supports Single & Combined Stages) ---------- */
+  /* ---------- actions ---------- */
   function startEvent(eventId) {
     const ev = findEvent(eventId); if (!ev) return;
     const targetStageIds = parseStageIds(ev.stage_id);
@@ -127,20 +126,12 @@
       if (d.completed_events.map(String).includes(String(ev.event_id))) throw new Error("This event is already marked finished.");
       
       const payload = {
-        status: "ongoing",
-        event_id: ev.event_id,
-        event_name: ev.event_name,
-        categories: KL.cats(ev),
-        scheduled_start: ev.start_time,
-        actual_start: KL.nowISO(),
-        delay_minutes: delay,
+        status: "ongoing", event_id: ev.event_id, event_name: ev.event_name, categories: KL.cats(ev),
+        scheduled_start: ev.start_time, actual_start: KL.nowISO(), delay_minutes: delay,
         combined_stages: targetStageIds.length > 1 ? targetStageIds : null
       };
 
-      targetStageIds.forEach(sid => {
-        d.stages[sid] = { ...payload };
-      });
-
+      targetStageIds.forEach(sid => { d.stages[sid] = { ...payload }; });
       pushTicker(d, `${stageDesc}: ${ev.event_name} has started${delay > 5 ? ` (${delay} min late)` : ""}`);
     }, `${stageDesc} start: event ${ev.event_id}`, `${stageDesc} is now live.`);
   }
@@ -156,14 +147,9 @@
       
       if (ranks) {
         d.recent_results.unshift({ 
-          event_id: eventId, 
-          event_name: name, 
-          stage_id: combined.length > 1 ? combined.join(', ') : sid, 
-          categories: cats,
-          announced_at: KL.nowISO(), 
-          first: ranks.first, 
-          second: ranks.second, 
-          third: ranks.third 
+          event_id: eventId, event_name: name, stage_id: combined.length > 1 ? combined.join(', ') : sid, 
+          categories: cats, announced_at: KL.nowISO(), 
+          first: ranks.first, second: ranks.second, third: ranks.third 
         });
         trimList(d.recent_results, C.maxResultsStored);
         const parts = [["1st", ranks.first], ["2nd", ranks.second], ["3rd", ranks.third]].filter(p => p[1]).map(p => `${p[0]} ${p[1]}`);
@@ -172,9 +158,7 @@
         pushTicker(d, `Stage ${sid}: ${name} has finished`);
       }
 
-      combined.forEach(s => {
-        d.stages[s] = idleStage();
-      });
+      combined.forEach(s => { d.stages[s] = idleStage(); });
     }, `Stage ${sid} end`, ranks ? "Event finished and results announced." : "Event finished.");
   }
 
@@ -215,30 +199,44 @@
     const ongoing = dayEvents.filter(e => ongoingEventIds.has(String(e.event_id)));
     const pending = dayEvents.filter(e => !doneSet.has(String(e.event_id)) && !ongoingEventIds.has(String(e.event_id)));
 
-    let onTimeCount = 0;
-    let delayedCount = 0;
-    const now = KL.now();
-
-    const processedOngoingIds = new Set();
-    ongoingStages.forEach(st => {
-      if (processedOngoingIds.has(String(st.event_id))) return;
-      processedOngoingIds.add(String(st.event_id));
-      if ((st.delay_minutes || 0) <= 5) onTimeCount++;
-      else delayedCount++;
-    });
-
-    pending.forEach(e => {
-      const sched = KL.atTime(e.date, e.start_time);
-      const diffMins = Math.floor((now - sched) / 60000);
-      if (diffMins > 5) delayedCount++;
-    });
-
     $("statTotal").textContent = dayEvents.length;
     $("statCompleted").textContent = completed.length;
     $("statOngoing").textContent = ongoing.length;
     $("statPending").textContent = pending.length;
-    $("statOnTime").textContent = onTimeCount;
-    $("statDelayed").textContent = delayedCount;
+  }
+
+  function renderGlobalDashboard(day) {
+    const dash = $("globalDashboard");
+    if (!dash) return;
+    
+    const doneSet = new Set((S.data.completed_events || []).map(String));
+    
+    dash.innerHTML = S.stages.map(s => {
+      const st = S.data.stages[s.stage_id] || idleStage();
+      let statusClass = "is-idle";
+      let statusText = "Idle / വെറുതെ";
+      
+      const todays = getEventsForStage(getEffectiveSchedule(), day, s.stage_id);
+      const allDone = todays.length > 0 && todays.every(e => doneSet.has(String(e.event_id)));
+
+      if (st.status === "ongoing") {
+        statusClass = "is-live";
+        statusText = `🔴 Live: ${st.event_name}`;
+      } else if (allDone) {
+        statusClass = "is-done";
+        statusText = "ഇന്നത്തെ മത്സരങ്ങൾ കഴിഞ്ഞു";
+      } else if (todays.length === 0) {
+        statusClass = "is-done";
+        statusText = "ഇന്ന് മത്സരങ്ങളില്ല";
+      }
+      
+      return `
+        <div class="dash-item ${statusClass}">
+          <span class="dash-stage-name">വേദി ${s.stage_id} - ${esc(s.stage_name)}</span>
+          <span class="dash-event-name" title="${esc(statusText)}">${esc(statusText)}</span>
+        </div>
+      `;
+    }).join('');
   }
 
   function eventItem(ev, st) {
@@ -326,15 +324,69 @@
     });
   }
 
+  function initAdminSearch() {
+    const searchInput = $("adminEventSearch");
+    if(searchInput) {
+      searchInput.addEventListener("input", (e) => {
+        S.searchQuery = e.target.value.toLowerCase().trim();
+        renderEventList();
+      });
+    }
+  }
+
+  function renderEventList() {
+    const day = KL.today();
+    const effSchedule = getEffectiveSchedule();
+    const stage = S.stages.find(s => s.stage_id === S.selected);
+    const st = S.data.stages[stage.stage_id] || idleStage();
+    const done = new Set((S.data.completed_events || []).map(String));
+    
+    let todays = getEventsForStage(effSchedule, day, stage.stage_id);
+    let pending = todays.filter(e => !done.has(String(e.event_id)));
+    let finished = todays.filter(e => done.has(String(e.event_id)));
+
+    // Apply local search filter if exists
+    if (S.searchQuery) {
+      pending = pending.filter(e => e.event_name.toLowerCase().includes(S.searchQuery));
+      finished = finished.filter(e => e.event_name.toLowerCase().includes(S.searchQuery));
+    }
+
+    const now = KL.now();
+    let idleNotice = "";
+    if (st.status === "idle" && st.idle_since) {
+      const idleMins = Math.floor((now - new Date(st.idle_since)) / 60000);
+      if (idleMins >= 10 && pending.length > 0) {
+        idleNotice = `<div class="idle-warning">⚠️ ഈ വേദി ഒഴിഞ്ഞുകിടക്കാൻ തുടങ്ങിയിട്ട് ${idleMins} മിനിറ്റ് കഴിഞ്ഞു. അടുത്ത പ്രോഗ്രാം ആരംഭിക്കുക.</div>`;
+      }
+    }
+
+    $("stageHead").innerHTML = `<h2>${esc(stage.stage_name)}</h2><p>${esc(stage.venue_location)}</p>${idleNotice}`;
+    $("eventList").innerHTML = pending.map(e => eventItem(e, st)).join("");
+    $("emptyState").hidden = pending.length > 0;
+    $("emptyState").textContent = S.searchQuery ? "No events found matching your search." : "Every event on this stage is finished.";
+
+    $("finishedWrap").hidden = !finished.length;
+    $("finishedCount").textContent = finished.length;
+    $("finishedList").innerHTML = finished.map(e => `<li><span lang="ml">${esc(e.event_name)}</span>
+      <button class="link act" data-act="reopen" data-id="${esc(e.event_id)}">Move back to pending</button></li>`).join("");
+  }
+
   function render() {
     if (!S.data) return;
-    const day = KL.today();
+    
+    // Determine active day (default to first festival day if opened before fest)
+    let day = KL.today();
+    if (!C.festivalDates.includes(day)) {
+      day = C.festivalDates[0] || "2026-11-03";
+    }
+
     $("adminDate").textContent = KL.fmtLongDate(KL.now());
     $("testChip").hidden = !KL.testMode;
     const bn = S.data.banner;
     $("bannerState").textContent = bn && bn.active && bn.text ? `Showing: ${bn.text}` : "No banner is showing.";
 
     renderProgressCards(day);
+    renderGlobalDashboard(day);
     renderResultsEditor();
 
     const effSchedule = getEffectiveSchedule();
@@ -348,9 +400,13 @@
     if (!visible.length) {
       $("chips").innerHTML = ""; $("stageHead").innerHTML = ""; $("eventList").innerHTML = "";
       $("finishedWrap").hidden = true; $("emptyState").hidden = false;
-      $("emptyState").textContent = `No events are scheduled for ${day}. Festival days are ${C.festivalDates.join(", ")}. Add ?date=YYYY-MM-DD to the address to test another day.`;
+      $("emptyState").textContent = `No events are scheduled for ${day}. Festival days are ${C.festivalDates.join(", ")}.`;
+      if($("adminEventSearch")) $("adminEventSearch").hidden = true;
       return;
     }
+    
+    if($("adminEventSearch")) $("adminEventSearch").hidden = false;
+    
     if (!visible.some(s => s.stage_id === S.selected)) S.selected = visible[0].stage_id;
 
     const now = KL.now();
@@ -367,30 +423,7 @@
         aria-label="Stage ${s.stage_id}${live ? ", live" : ""}${idleAlert ? ", idle over 10 min" : ""}">${s.stage_id}</button>`;
     }).join("");
 
-    const stage = visible.find(s => s.stage_id === S.selected);
-    const st = S.data.stages[stage.stage_id] || idleStage();
-    const done = new Set((S.data.completed_events || []).map(String));
-    const todays = getEventsForStage(effSchedule, day, stage.stage_id);
-    const pending = todays.filter(e => !done.has(String(e.event_id)));
-    const finished = todays.filter(e => done.has(String(e.event_id)));
-
-    let idleNotice = "";
-    if (st.status === "idle" && st.idle_since) {
-      const idleMins = Math.floor((now - new Date(st.idle_since)) / 60000);
-      if (idleMins >= 10 && pending.length > 0) {
-        idleNotice = `<div class="idle-warning">⚠️ ഈ വേദി ഒഴിഞ്ഞുകിടക്കാൻ തുടങ്ങിയിട്ട് ${idleMins} മിനിറ്റ് കഴിഞ്ഞു. അടുത്ത പ്രോഗ്രാം ആരംഭിക്കുക.</div>`;
-      }
-    }
-
-    $("stageHead").innerHTML = `<h2>${esc(stage.stage_name)}</h2><p>${esc(stage.venue_location)}</p>${idleNotice}`;
-    $("eventList").innerHTML = pending.map(e => eventItem(e, st)).join("");
-    $("emptyState").hidden = pending.length > 0;
-    $("emptyState").textContent = "Every event on this stage is finished.";
-
-    $("finishedWrap").hidden = !finished.length;
-    $("finishedCount").textContent = finished.length;
-    $("finishedList").innerHTML = finished.map(e => `<li><span lang="ml">${esc(e.event_name)}</span>
-      <button class="link act" data-act="reopen" data-id="${esc(e.event_id)}">Move back to pending</button></li>`).join("");
+    renderEventList();
   }
 
   /* ---------- events ---------- */
@@ -526,6 +559,9 @@
       ]);
       S.stages.sort((a, b) => a.stage_id - b.stage_id);
     } catch (err) { return showGate("Could not load stages.json or schedule.json."); }
+    
+    initAdminSearch();
+    
     if (S.token) { try { await connect(S.token); return; } catch (err) { sessionStorage.removeItem(TOKEN_KEY); showGate(err.message); return; } }
     showGate();
   }

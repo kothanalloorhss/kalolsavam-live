@@ -10,9 +10,19 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Anek+Malayalam:wght@500;700&family=Manjari:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Admin specific extra styles */
+    .global-dash-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr)); gap: 0.6rem; margin-top: 0.6rem; }
+    .dash-item { background: #fff; border: 1px solid var(--gold-500); border-left: 4px solid var(--gold-500); border-radius: 6px; padding: 0.6rem; font-size: 0.9rem; }
+    .dash-item.is-live { border-left-color: var(--live); background: #f0faf3; }
+    .dash-item.is-idle { border-left-color: #f59e0b; }
+    .dash-item.is-done { border-left-color: var(--ink-soft); background: var(--ivory-dim); opacity: 0.8; }
+    .dash-stage-name { font-weight: 700; color: var(--maroon-700); margin-bottom: 0.2rem; display: block; }
+    .dash-event-name { color: var(--ink); font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; display: block; }
+    .admin-search-input { width: 100%; padding: 0.6rem 0.8rem; border: 2px solid var(--gold-400); border-radius: 8px; font: inherit; margin-bottom: 1rem; }
+  </style>
 </head>
 <body data-splash="once">
-  <!-- branding intro: doors swing open -->
   <div id="splash" class="splash" aria-hidden="true">
     <div class="door door-l"></div>
     <div class="door door-r"></div>
@@ -22,11 +32,10 @@
     </div>
   </div>
 
-  <!-- token gate -->
   <div id="gate" class="gate" hidden>
     <form id="gateForm">
       <h1>Admin sign-in</h1>
-      <p>Paste the GitHub fine-grained token for this repository. It stays in this browser tab and is cleared when you close it.</p>
+      <p>Paste the GitHub fine-grained token for this repository.</p>
       <label class="field">GitHub token
         <input id="tokenInput" type="password" autocomplete="off" required placeholder="github_pat_…">
       </label>
@@ -46,7 +55,7 @@
   </header>
 
   <main class="wrap">
-    <!-- Day Progress & Punctuality Cards -->
+    <!-- Day Progress Cards -->
     <section id="dayProgress" class="stats-board" aria-label="Day overview and progress" hidden>
       <div class="stat-card">
         <span class="stat-label">Total Today</span>
@@ -64,20 +73,22 @@
         <span class="stat-label">Pending</span>
         <span id="statPending" class="stat-val">0</span>
       </div>
-      <div class="stat-card is-ontime">
-        <span class="stat-label">On-Time</span>
-        <span id="statOnTime" class="stat-val">0</span>
-      </div>
-      <div class="stat-card is-delayed">
-        <span class="stat-label">Delayed</span>
-        <span id="statDelayed" class="stat-val">0</span>
-      </div>
     </section>
+
+    <!-- Global Control Room View -->
+    <details class="tool" open style="margin-top:0; border:none; padding:0; background:var(--ivory); border-radius:10px; padding:1rem; border:1px solid var(--gold-500); margin-bottom: 0.5rem;">
+      <summary style="font-size: 1.15rem;">🌐 കൺട്രോൾ റൂം വ്യൂ (All Stages Status)</summary>
+      <div id="globalDashboard" class="global-dash-grid"></div>
+    </details>
 
     <nav aria-label="Stages"><div id="chips" class="chips-row"></div></nav>
 
     <section class="panel" aria-label="Events on the selected stage">
       <header id="stageHead"></header>
+      
+      <!-- Admin Search for Events within the selected stage -->
+      <input type="search" id="adminEventSearch" class="admin-search-input" placeholder="🔍 Search events in this stage (e.g. Mohiniyattam)...">
+      
       <ul id="eventList" class="ev-list"></ul>
       <p id="emptyState" class="muted" hidden></p>
 
@@ -86,14 +97,13 @@
         <ul id="finishedList" class="finished-list"></ul>
       </details>
 
-      <!-- Results Editor Tool (to correct chest numbers) -->
       <details id="editResultsWrap" class="tool">
         <summary>Edit Announced Results (ചെസ്റ്റ് നമ്പറുകൾ തിരുത്തുക)</summary>
         <ul id="editResultsList" class="finished-list"></ul>
       </details>
 
       <details class="tool">
-        <summary>Announcements</summary>
+        <summary>Announcements (Banner & Ticker)</summary>
         <form id="bannerForm">
           <label class="field">Emergency banner (top of the public page)
             <textarea id="bannerText" rows="2" maxlength="240"></textarea>
@@ -114,24 +124,19 @@
     </section>
   </main>
 
-  <!-- Modal: Edit Schedule (Time & Stage Change) -->
+  <!-- Modals -->
   <dialog id="editScheduleModal" aria-labelledby="editSchedTitle">
     <form id="editScheduleForm">
       <div>
         <h2 id="editSchedTitle">ഷെഡ്യൂൾ മാറ്റുക</h2>
         <p id="editSchedEventName" class="sub-name" lang="ml"></p>
       </div>
-      
       <label class="field">പുതിയ സമയം (Start Time)
         <input id="editSchedTime" type="time" required>
       </label>
-
       <label class="field">വേദി (Stage)
-        <select id="editSchedStage" style="padding:0.55rem; border:2px solid var(--gold-700); border-radius:6px; font:inherit; background:#fff; color:var(--ink);">
-          <!-- Populated dynamically via JS -->
-        </select>
+        <select id="editSchedStage" style="padding:0.55rem; border:2px solid var(--gold-700); border-radius:6px; font:inherit; background:#fff; color:var(--ink);"></select>
       </label>
-
       <label class="field">സ്റ്റാറ്റസ്
         <select id="editSchedStatus" style="padding:0.55rem; border:2px solid var(--gold-700); border-radius:6px; font:inherit; background:#fff; color:var(--ink);">
           <option value="active">Active (സാധാരണ പോലെ നടക്കുക)</option>
@@ -139,7 +144,6 @@
           <option value="cancelled">Cancelled (റദ്ദാക്കി)</option>
         </select>
       </label>
-
       <div class="row" style="margin-top:0.8rem;">
         <button class="btn btn-end" type="submit">മാറ്റങ്ങൾ സേവ് ചെയ്യുക</button>
         <button id="cancelEditSched" class="btn btn-ghost" type="button">റദ്ദാക്കുക</button>
@@ -147,11 +151,10 @@
     </form>
   </dialog>
 
-  <!-- Modal: End Event & Enter Results -->
   <dialog id="endModal" aria-labelledby="endTitle">
     <form id="endForm">
       <div><h2 id="endTitle">End event</h2><p id="endEvent" class="sub-name" lang="ml"></p></div>
-      <p class="muted">Enter chest numbers to announce the result, or skip.</p>
+      <p class="muted">Enter chest numbers to announce the result, or skip if none.</p>
       <label class="field">1st prize <input id="rank1" type="text" maxlength="10" autocomplete="off"></label>
       <label class="field">2nd prize <input id="rank2" type="text" maxlength="10" autocomplete="off"></label>
       <label class="field">3rd prize <input id="rank3" type="text" maxlength="10" autocomplete="off"></label>
@@ -163,7 +166,6 @@
     </form>
   </dialog>
 
-  <!-- Modal: Edit Chest Numbers of Already Announced Results -->
   <dialog id="editResultModal" aria-labelledby="editResultTitle">
     <form id="editResultForm">
       <div>
@@ -179,13 +181,6 @@
       </div>
     </form>
   </dialog>
-
-  <footer class="page-foot wrap">
-    <div class="credit">
-      <p class="by">by Little Kites Unit</p>
-      <p class="school">Emmanuel&rsquo;s HSS Kothanalloor</p>
-    </div>
-  </footer>
 
   <div id="toast" class="toast" role="status" hidden></div>
 
