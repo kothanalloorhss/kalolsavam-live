@@ -277,11 +277,48 @@
     }
   }
 
+  /* ---------- Inauguration Countdown Timer ---------- */
+  function initCountdown() {
+    const cdWrap = $("countdownSection");
+    if (!cdWrap) return;
+
+    // Inauguration: 3 November 2026, 9:00 AM IST
+    const targetTime = new Date("2026-11-03T09:00:00+05:30").getTime();
+
+    function updateTimer() {
+      const now = Date.now();
+      const diff = targetTime - now;
+
+      if (diff <= 0) {
+        cdWrap.hidden = true;
+        return;
+      }
+
+      cdWrap.hidden = false;
+      const hours = Math.floor(diff / (1000 * 60 * 60));
+      const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const secs = Math.floor((diff % (1000 * 60)) / 1000);
+
+      $("cdHours").textContent = String(hours).padStart(2, "0");
+      $("cdMins").textContent = String(mins).padStart(2, "0");
+      $("cdSecs").textContent = String(secs).padStart(2, "0");
+    }
+
+    updateTimer();
+    setInterval(updateTimer, 1000);
+  }
+
   /* ---------- per-stage status ---------- */
   function stageView(stage) {
     const id = stage.stage_id;
     const st = (S.data && S.data.stages && S.data.stages[id]) || {};
-    const day = KL.today();
+    
+    // ഡിഫോൾട്ടായി ഇന്നത്തെ ദിവസം സെറ്റ് ചെയ്യുക, അല്ലെങ്കിൽ ഒന്നാം ദിവസം കാണിക്കുക
+    let day = KL.today();
+    if (!C.festivalDates.includes(day)) {
+      day = C.festivalDates[0] || "2026-11-03";
+    }
+
     const todays = getEventsForStage(day, id);
     const done = new Set((S.data && S.data.completed_events ? S.data.completed_events : []).map(String));
     const base = { mode: "none", doneCount: todays.filter(e => done.has(String(e.event_id))).length, total: todays.length };
@@ -331,9 +368,15 @@
 
   function stageCard(s, i) {
     const v = stageView(s);
-    const label = { live: "Live now", next: "Up next", done: "Finished for today", none: "No events today" }[v.mode];
-    let body = "", pill = "";
+    let label = { live: "Live now", next: "Up next", done: "Finished for today", none: "No events today" }[v.mode];
+    
+    // പരിപാടി തുടങ്ങുന്നതിനു മുൻപ് "Scheduled: [Time]" എന്ന് ലേബൽ കൊടുക്കുന്നു
+    let day = KL.today();
+    if (!C.festivalDates.includes(day) && v.mode === "next") {
+      label = `Scheduled: ${KL.fmtHHMM(v.sched)}`;
+    }
 
+    let body = "", pill = "";
     const combinedNotice = v.combined && v.combined.length > 1
       ? `<span class="chip" style="background:var(--maroon-600)">👥 വേദി ${v.combined.join(' & ')} സംയുക്തം</span>`
       : "";
@@ -347,7 +390,10 @@
                            : `<span class="delay ok">Started on time</span>`;
       } else {
         body += `<p class="times">Scheduled ${KL.fmtHHMM(v.sched)}</p>`;
-        pill = v.delay > 0 ? `<span class="delay ${delayClass(v.delay)}">Running ${v.delay} min behind</span>` : "";
+        // പരിപാടി തുടങ്ങുന്നതിനു മുൻപ് വെറുതെ ലാഗ് വാണിംഗ് കാണിക്കണ്ട
+        if (C.festivalDates.includes(day)) {
+          pill = v.delay > 0 ? `<span class="delay ${delayClass(v.delay)}">Running ${v.delay} min behind</span>` : "";
+        }
       }
     } else if (v.mode === "done") {
       body = `<p class="muted">All ${v.total} events on this stage are complete.</p>`;
@@ -364,7 +410,7 @@
       </header>
       <div class="stage-body">
         <div class="stage-status-row">
-          <span class="status status-${v.mode}">${label}</span>
+          <span class="status status-${v.mode}">${esc(label)}</span>
           <span class="view-detail-hint">Details &rsaquo;</span>
         </div>
         ${body}${pill}${progress}
@@ -547,7 +593,11 @@
     const stage = S.stages.find(s => String(s.stage_id) === String(stageId));
     if (!stage) return;
 
-    const day = KL.today();
+    let day = KL.today();
+    if (!C.festivalDates.includes(day)) {
+      day = C.festivalDates[0] || "2026-11-03";
+    }
+
     const todays = getEventsForStage(day, stageId);
     const done = new Set((S.data && S.data.completed_events ? S.data.completed_events : []).map(String));
     const st = (S.data && S.data.stages && S.data.stages[stageId]) || {};
@@ -693,7 +743,11 @@
   }
 
   function renderStageGrid() {
-    const day = KL.today();
+    let day = KL.today();
+    if (!C.festivalDates.includes(day)) {
+      day = C.festivalDates[0] || "2026-11-03";
+    }
+
     const visible = S.stages.filter(s => {
       const evs = getEventsForStage(day, s.stage_id);
       const isLive = S.data.stages[s.stage_id] && S.data.stages[s.stage_id].status === "ongoing";
@@ -712,9 +766,9 @@
     }
 
     if (!visible.length) {
-      $("stageGrid").innerHTML = `<p class="empty-day">No events are scheduled for today. Please check back on a festival day (${esc(C.festivalDatesText)}).</p>`;
+      $("stageGrid").innerHTML = `<p class="empty-day">മത്സരക്രമങ്ങൾ തയ്യാറായി വരുന്നു. ഉടൻ ലഭ്യമാകും.</p>`;
     } else if (!filtered.length) {
-      $("stageGrid").innerHTML = `<p class="empty-day">No stages matching the "${esc(S.currentFilter)}" filter right now.</p>`;
+      $("stageGrid").innerHTML = `<p class="empty-day">തിരഞ്ഞെടുത്ത ഫിൽട്ടറിൽ മത്സരങ്ങൾ ലഭ്യമല്ല.</p>`;
     } else {
       $("stageGrid").innerHTML = filtered.map(stageCard).join("");
     }
@@ -746,7 +800,7 @@
     }
   }
 
-  /* ---------- idle auto-scroll through all stage cards (Fixed & Optimized) ---------- */
+  /* ---------- idle auto-scroll through all stage cards ---------- */
   function initAutoScroll() {
     const A = C.autoScroll || { speedPxPerSec: 28, startDelaySec: 4, resumeAfterIdleSec: 8, holdSec: 3 };
     const btn = $("autoScrollBtn");
@@ -792,7 +846,6 @@
       const drop = $("searchResults");
       const searchOpen = drop && !drop.hidden;
 
-      // Don't auto scroll if stage modal is active or search dropdown is open
       if (enabled && !document.hidden && maxScroll > 40 && !S.activeModalStageId && !searchOpen) {
         const wait = (everTouched ? (A.resumeAfterIdleSec || 8) : (A.startDelaySec || 4)) * 1000;
         
@@ -846,7 +899,9 @@
     initSearch();
     initFilters();
     initModal();
+    initCountdown();
     await poll();
+    
     S.animate = false;
     setTimeout(startAOS, KL.splashMs);
     initAutoScroll();
