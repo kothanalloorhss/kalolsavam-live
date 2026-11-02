@@ -5,7 +5,7 @@
     "venue_location": "പാരീഷ് ഹാൾ ആഡിറ്റോറിയം",
     "is_external": true,
     "map_url": "https://maps.app.goo.gl/ee2tNqVoRhUzkkoK6",
-    "route_guide": ""
+    "route_guide": " കോതനല്ലൂർ പാരിഷ് ഹാൾ"
   },
   {
     "stage_id": 2,
@@ -13,7 +13,7 @@
     "venue_location": "സ്കൂൾ ഓപ്പൺ സ്റ്റേജ്",
     "is_external": false,
     "map_url": null,
-    "route_guide": ""
+    "route_guide": "സ്‌കൂളിന്റെ ഓപ്പൺ സ്റ്റേജ്"
   },
   {
     "stage_id": 3,
@@ -21,7 +21,7 @@
     "venue_location": "സ്കൂൾ എൽ.പി. ഹാൾ",
     "is_external": false,
     "map_url": null,
-    "route_guide": ""
+    "route_guide": "എൽ.പി. വിഭാഗം കെട്ടിടം രണ്ടാം നിലയിലെ ഹാൾ"
   },
   {
     "stage_id": 4,
@@ -29,7 +29,7 @@
     "venue_location": "ക്ഷേത്രം ആഡിറ്റോറിയം",
     "is_external": true,
     "map_url": "https://maps.app.goo.gl/p1ZaPrT8kdBcLmbZA",
-    "route_guide": ""
+    "route_guide": "കോതനല്ലൂർ ക്ഷേത്രത്തിന്റെ ഹാൾ"
   },
   {
     "stage_id": 5,
@@ -37,7 +37,7 @@
     "venue_location": "സ്കൂൾ നവതി ഹാൾ",
     "is_external": false,
     "map_url": null,
-    "route_guide": ""
+    "route_guide": "സ്‌കൂൾ നവതി കെട്ടിടത്തിന്റെ രണ്ടാം നിലയിലെ ഹാൾ"
   },
   {
     "stage_id": 6,
@@ -45,7 +45,7 @@
     "venue_location": "സ്കൂൾ HSS ഹാൾ",
     "is_external": false,
     "map_url": null,
-    "route_guide": ""
+    "route_guide": "ഹയർ സെക്കണ്ടറി വിഭാഗത്തിലെ രണ്ടാം നിലയിലെ സെമിനാർ ഹാൾ"
   },
   {
     "stage_id": 7,
@@ -53,7 +53,7 @@
     "venue_location": "മൈലപ്പറമ്പ് ആഡിറ്റോറിയം",
     "is_external": true,
     "map_url": "https://maps.app.goo.gl/kzVCoHMJPWnUrG51A",
-    "route_guide": ""
+    "route_guide": "മൈലപ്പറമ്പിൽ കുടുംബ യോഗ ഹാൾ"
   },
   {
     "stage_id": 8,
@@ -61,7 +61,7 @@
     "venue_location": "സ്കൂൾ HSS സെമിനാർ ഹാൾ",
     "is_external": false,
     "map_url": null,
-    "route_guide": ""
+    "route_guide": "ഹയർ സെക്കണ്ടറി വിഭാഗത്തിലെ രണ്ടാം നിലയിലെ സെമിനാർ ഹാൾ"
   },
   {
     "stage_id": 9,
@@ -69,7 +69,7 @@
     "venue_location": "സ്കൂൾ XII A ക്ലാസ്",
     "is_external": false,
     "map_url": null,
-    "route_guide": ""
+    "route_guide": "ഹയർ സെക്കണ്ടറി വിഭാഗത്തിലെ ഗ്രൗണ്ട് ഫ്ലോറിലെ XII A ക്ലാസ്"
   },
   {
     "stage_id": 10,
@@ -77,7 +77,7 @@
     "venue_location": "സ്കൂൾ XI C ക്ലാസ്",
     "is_external": false,
     "map_url": null,
-    "route_guide": ""
+    "route_guide": "ഹയർ സെക്കണ്ടറി വിഭാഗത്തിലെ ഗ്രൗണ്ട് ഫ്ലോറിലെ XI C ക്ലാസ്"
   },
   {
     "stage_id": 11,
@@ -85,23 +85,23 @@
     "venue_location": "സ്കൂൾ XII B ക്ലാസ് ",
     "is_external": false,
     "map_url": null,
-    "route_guide": ""
+    "route_guide": "ഹയർ സെക്കണ്ടറി വിഭാഗത്തിലെ ഗ്രൗണ്ട് ഫ്ലോറിലെ XII B ക്ലാസ്"
   },
   {
     "stage_id": 12,
     "stage_name": "വേദി 12",
-    "venue_location": "LP First Floor",
+    "venue_location": "LP Second Floor",
     "is_external": false,
     "map_url": null,
-    "route_guide": ""
+    "route_guide": "എൽ പി വിഭാഗത്തിലെ ഒന്നാം നിലയിലെ ക്ലാസ്"
   },
   {
     "stage_id": 13,
     "stage_name": "വേദി 13",
-    "venue_location": "LP Second Floor ",
+    "venue_location": "LP First Floor ",
     "is_external": false,
     "map_url": null,
-    "route_guide": ""
+    "route_guide": "എൽ പി വിഭാഗത്തിലെ ഒന്നാം നിലയിലെ ക്ലാസ്"
   },
   {
     "stage_id": 14,
@@ -109,6 +109,6 @@
     "venue_location": "LP Old Ground",
     "is_external": true,
     "map_url": "https://maps.app.goo.gl/nm7Viz4XAFrrHGzm8",
-    "route_guide": ""
+    "route_guide": "കോതനല്ലൂർ സ്‌കൂളിന്റെ പഴയ എൽ.പി. വിഭാഗം കെട്ടിടം "
   }
 ]
