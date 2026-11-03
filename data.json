@@ -5,13 +5,27 @@
   },
   "stages": {
     "1": {
-      "status": "idle",
+      "status": "ongoing",
       "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
-      "delay_minutes": 0
+      "delay_minutes": 0,
+      "idle_since": null,
+      "events": [
+        {
+          "event_id": "E101",
+          "event_name": "ചെണ്ട/ തായമ്പക",
+          "categories": [
+            "HS"
+          ],
+          "scheduled_start": "11:30",
+          "actual_start": "2026-11-03T07:43:56.881Z",
+          "delay_minutes": 104,
+          "combined_stages": null
+        }
+      ]
     },
     "2": {
       "status": "idle",
@@ -165,6 +179,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-03T07:43:56.881Z",
+      "text": "Stage 1: ചെണ്ട/ തായമ്പക has started (104 min late)"
+    },
+    {
       "t": "2026-11-03T06:49:57.081Z",
       "text": "Stage 3: കഥാകഥനം has started (140 min late)"
     },
@@ -175,5 +193,5 @@
   ],
   "recent_results": [],
   "completed_events": [],
-  "updated_at": "2026-11-03T06:49:57.081Z"
+  "updated_at": "2026-11-03T07:43:56.881Z"
 }
