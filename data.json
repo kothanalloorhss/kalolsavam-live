@@ -138,23 +138,6 @@
             12,
             13
           ]
-        },
-        {
-          "event_id": "E134",
-          "event_name": "ചിത്രരചന ജലഛായം",
-          "categories": [
-            "LP",
-            "UP",
-            "HS",
-            "HSS"
-          ],
-          "scheduled_start": "12:00",
-          "actual_start": "2026-11-03T06:14:07.181Z",
-          "delay_minutes": 0,
-          "combined_stages": [
-            12,
-            13
-          ]
         }
       ]
     },
@@ -218,5 +201,5 @@
   ],
   "recent_results": [],
   "completed_events": [],
-  "updated_at": "2026-11-03T06:14:07.181Z"
+  "updated_at": "2026-11-03T06:17:41.088Z"
 }
