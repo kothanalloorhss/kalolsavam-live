@@ -68,27 +68,14 @@
       "events": []
     },
     "6": {
-      "status": "ongoing",
-      "event_id": null,
+      "status": "idle",
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": null,
-      "events": [
-        {
-          "event_id": "E114",
-          "event_name": "സമസ്യാപൂരണം സംസ്‌കൃതം",
-          "categories": [
-            "HS"
-          ],
-          "scheduled_start": "11:00",
-          "actual_start": "2026-11-03T09:50:48.266Z",
-          "delay_minutes": 261,
-          "combined_stages": null
-        }
-      ]
+      "idle_since": "2026-11-03T09:51:22.780Z",
+      "events": []
     },
     "7": {
       "status": "idle",
@@ -183,6 +170,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-03T09:51:22.780Z",
+      "text": "Results, Stage 6, സമസ്യാപൂരണം സംസ്‌കൃതം: 1st 180, 2nd 182, 3rd 183"
+    },
+    {
       "t": "2026-11-03T09:50:48.266Z",
       "text": "Stage 6: സമസ്യാപൂരണം സംസ്‌കൃതം has started (261 min late)"
     },
@@ -213,6 +204,18 @@
   ],
   "recent_results": [
     {
+      "event_id": "E114",
+      "event_name": "സമസ്യാപൂരണം സംസ്‌കൃതം",
+      "stage_id": 6,
+      "categories": [
+        "HS"
+      ],
+      "announced_at": "2026-11-03T09:51:22.780Z",
+      "first": "180",
+      "second": "182",
+      "third": "183"
+    },
+    {
       "event_id": "E110",
       "event_name": "അഭിനയഗാനം മലയാളം",
       "stage_id": 5,
@@ -227,7 +230,8 @@
   ],
   "completed_events": [
     "E101",
-    "E110"
+    "E110",
+    "E114"
   ],
-  "updated_at": "2026-11-03T09:50:48.266Z"
+  "updated_at": "2026-11-03T09:51:22.780Z"
 }
