@@ -801,3 +801,16 @@ details.tool form { display: grid; gap: .5rem; margin-top: .6rem; }
   @keyframes door-fade { to { opacity: 0; } }
   @keyframes brand-rm { 0% { opacity: 0; } 25%, 70% { opacity: 1; } 100% { opacity: 0; } }
 }
+
+/* Multiple Live Events in One Stage Card */
+.live-sub-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  width: 100%;
+}
+.live-sub-item + .live-sub-item {
+  margin-top: 0.8rem;
+  padding-top: 0.8rem;
+  border-top: 1px dashed var(--gold-500);
+}

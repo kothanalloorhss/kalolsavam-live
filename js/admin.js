@@ -6,9 +6,9 @@
   const TOKEN_KEY = "kl_admin_token";
   const S = { 
     token: sessionStorage.getItem(TOKEN_KEY), stages: [], schedule: [], data: null,
-    selected: Number(sessionStorage.getItem("kl_stage")) || 1, busy: false, endStage: null, editResultIdx: null,
-    searchQuery: "",
-    activeDate: null // അഡ്മിന് ഏത് ദിവസവും തിരഞ്ഞെടുക്കാം
+    selected: Number(sessionStorage.getItem("kl_stage")) || 1, busy: false, 
+    endStage: null, endEventId: null, editResultIdx: null,
+    searchQuery: "", activeDate: null 
   };
   const stageIds = () => S.stages.map(s => s.stage_id);
 
@@ -35,6 +35,14 @@
   }
 
   const findEvent = id => getEffectiveSchedule().find(e => String(e.event_id) === String(id));
+
+  // Helper to extract multiple live events safely handling legacy data formats
+  function getLiveEvents(st) {
+    if (!st || st.status !== "ongoing") return [];
+    if (st.events && Array.isArray(st.events)) return st.events;
+    if (st.event_id) return [st];
+    return [];
+  }
 
   /* ---------- GitHub Contents API ---------- */
   const toB64 = str => { let bin = ""; new TextEncoder().encode(str).forEach(b => (bin += String.fromCharCode(b))); return btoa(bin); };
@@ -106,20 +114,12 @@
 
   const trimList = (arr, n) => { if (arr.length > n) arr.length = n; };
   const pushTicker = (d, text) => { d.ticker.unshift({ t: KL.nowISO(), text }); trimList(d.ticker, C.maxTickerStored); };
-  const idleStage = () => ({ status: "idle", event_id: null, event_name: null, categories: [], scheduled_start: null, actual_start: null, delay_minutes: 0, idle_since: KL.nowISO() });
+  const idleStage = () => ({ status: "idle", events: [], idle_since: KL.nowISO() });
 
-  /* ---------- actions ---------- */
+  /* ---------- actions (Supports Multiple Concurrent Events) ---------- */
   function startEvent(eventId) {
     const ev = findEvent(eventId); if (!ev) return;
     const targetStageIds = parseStageIds(ev.stage_id);
-    
-    for (const sid of targetStageIds) {
-      const cur = S.data.stages[sid];
-      if (cur && cur.status === "ongoing" && String(cur.event_id) !== String(ev.event_id)) {
-        return toast(`Stage ${sid} is still running "${cur.event_name}". End it first.`, "err");
-      }
-    }
-
     const delay = Math.max(0, Math.round((KL.now() - KL.atTime(ev.date, ev.start_time)) / 60000));
     const stageDesc = targetStageIds.length > 1 ? `Stages ${targetStageIds.join(' & ')}` : `Stage ${targetStageIds[0]}`;
 
@@ -127,22 +127,38 @@
       if (d.completed_events.map(String).includes(String(ev.event_id))) throw new Error("This event is already marked finished.");
       
       const payload = {
-        status: "ongoing", event_id: ev.event_id, event_name: ev.event_name, categories: KL.cats(ev),
+        event_id: ev.event_id, event_name: ev.event_name, categories: KL.cats(ev),
         scheduled_start: ev.start_time, actual_start: KL.nowISO(), delay_minutes: delay,
         combined_stages: targetStageIds.length > 1 ? targetStageIds : null
       };
 
-      targetStageIds.forEach(sid => { d.stages[sid] = { ...payload }; });
+      targetStageIds.forEach(sid => { 
+        const st = d.stages[sid] || { status: "idle", events: [] };
+        st.status = "ongoing";
+        st.idle_since = null;
+        if (!Array.isArray(st.events)) {
+          st.events = st.event_id ? [{ event_id: st.event_id, event_name: st.event_name, categories: st.categories, scheduled_start: st.scheduled_start, actual_start: st.actual_start, delay_minutes: st.delay_minutes, combined_stages: st.combined_stages }] : [];
+        }
+        if (!st.events.some(e => String(e.event_id) === String(ev.event_id))) {
+          st.events.push(payload);
+        }
+        d.stages[sid] = st;
+      });
       pushTicker(d, `${stageDesc}: ${ev.event_name} has started${delay > 5 ? ` (${delay} min late)` : ""}`);
     }, `${stageDesc} start: event ${ev.event_id}`, `${stageDesc} is now live.`);
   }
 
-  function endEvent(sid, ranks) {
+  function endEvent(sid, eventId, ranks) {
     run(d => {
       const st = d.stages[sid];
       if (!st || st.status !== "ongoing") throw new Error(`Stage ${sid} has no running event.`);
-      const eventId = st.event_id, name = st.event_name, cats = st.categories;
-      const combined = st.combined_stages || [sid];
+      
+      const liveEvs = Array.isArray(st.events) ? st.events : (st.event_id ? [st] : []);
+      const evData = liveEvs.find(e => String(e.event_id) === String(eventId));
+      if (!evData) throw new Error("Event not found running.");
+
+      const name = evData.event_name, cats = evData.categories;
+      const combined = evData.combined_stages || [sid];
 
       if (!d.completed_events.map(String).includes(String(eventId))) d.completed_events.push(eventId);
       
@@ -159,15 +175,44 @@
         pushTicker(d, `Stage ${sid}: ${name} has finished`);
       }
 
-      combined.forEach(s => { d.stages[s] = idleStage(); });
-    }, `Stage ${sid} end`, ranks ? "Event finished and results announced." : "Event finished.");
+      combined.forEach(s => { 
+        const cst = d.stages[s];
+        if (cst) {
+          const curEvs = Array.isArray(cst.events) ? cst.events : (cst.event_id ? [cst] : []);
+          cst.events = curEvs.filter(e => String(e.event_id) !== String(eventId));
+          if (cst.events.length === 0) {
+            cst.status = "idle";
+            cst.idle_since = KL.nowISO();
+            delete cst.event_id;
+          }
+          d.stages[s] = cst;
+        }
+      });
+    }, `Stage ${sid} end event ${eventId}`, ranks ? "Event finished and results announced." : "Event finished.");
   }
 
-  const cancelStart = sid => run(d => {
+  const cancelStart = (sid, eventId) => run(d => {
     const st = d.stages[sid];
-    const combined = (st && st.combined_stages) || [sid];
-    combined.forEach(s => { d.stages[s] = idleStage(); });
-  }, `Stage ${sid} start cancelled`, `Stage(s) reset to idle.`);
+    if (!st) return;
+    const liveEvs = Array.isArray(st.events) ? st.events : (st.event_id ? [st] : []);
+    const evData = liveEvs.find(e => String(e.event_id) === String(eventId));
+    if (!evData) return;
+
+    const combined = evData.combined_stages || [sid];
+    combined.forEach(s => { 
+      const cst = d.stages[s];
+      if (cst) {
+        const curEvs = Array.isArray(cst.events) ? cst.events : (cst.event_id ? [cst] : []);
+        cst.events = curEvs.filter(e => String(e.event_id) !== String(eventId));
+        if (cst.events.length === 0) {
+          cst.status = "idle";
+          cst.idle_since = KL.nowISO();
+          delete cst.event_id;
+        }
+        d.stages[s] = cst;
+      }
+    });
+  }, `Stage ${sid} start cancelled for ${eventId}`, `Event reset to pending.`);
 
   const reopenEvent = id => run(d => { d.completed_events = d.completed_events.filter(x => String(x) !== String(id)); },
                                  `Reopen event ${id}`, "Event moved back to pending.");
@@ -186,10 +231,8 @@
   function renderDateTabs() {
     const wrap = $("adminDateSelector");
     if (!wrap) return;
-    
     wrap.innerHTML = C.festivalDates.map(d => {
       const isAct = d === S.activeDate;
-      // Format to simple like "Nov 3"
       const dateObj = new Date(d);
       const label = dateObj.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
       return `<button type="button" class="date-tab ${isAct ? 'is-active' : ''}" data-date="${esc(d)}">${esc(label)}</button>`;
@@ -199,15 +242,19 @@
   function renderProgressCards(day) {
     const wrap = $("dayProgress");
     if (!wrap) return;
-
     const effSchedule = getEffectiveSchedule();
     const dayEvents = effSchedule.filter(e => e.date === day);
     if (!dayEvents.length) { wrap.hidden = true; return; }
     wrap.hidden = false;
 
     const doneSet = new Set((S.data.completed_events || []).map(String));
-    const ongoingStages = Object.values(S.data.stages || {}).filter(st => st.status === "ongoing" && st.event_id);
-    const ongoingEventIds = new Set(ongoingStages.map(st => String(st.event_id)));
+    
+    // Aggregate multiple events safely
+    const ongoingEventIds = new Set();
+    Object.values(S.data.stages || {}).forEach(st => {
+      const live = getLiveEvents(st);
+      live.forEach(e => ongoingEventIds.add(String(e.event_id)));
+    });
 
     const completed = dayEvents.filter(e => doneSet.has(String(e.event_id)));
     const ongoing = dayEvents.filter(e => ongoingEventIds.has(String(e.event_id)));
@@ -222,20 +269,21 @@
   function renderGlobalDashboard(day) {
     const dash = $("globalDashboard");
     if (!dash) return;
-    
     const doneSet = new Set((S.data.completed_events || []).map(String));
     
     dash.innerHTML = S.stages.map(s => {
       const st = S.data.stages[s.stage_id] || idleStage();
+      const liveEvs = getLiveEvents(st);
+      
       let statusClass = "is-idle";
       let statusText = "Idle / വെറുതെ";
-      
       const todays = getEventsForStage(getEffectiveSchedule(), day, s.stage_id);
       const allDone = todays.length > 0 && todays.every(e => doneSet.has(String(e.event_id)));
 
-      if (st.status === "ongoing") {
+      if (st.status === "ongoing" && liveEvs.length > 0) {
         statusClass = "is-live";
-        statusText = `🔴 Live: ${st.event_name}`;
+        const names = liveEvs.map(e => e.event_name).join(", ");
+        statusText = `🔴 Live: ${names}`;
       } else if (allDone) {
         statusClass = "is-done";
         statusText = "മത്സരങ്ങൾ കഴിഞ്ഞു";
@@ -254,19 +302,21 @@
   }
 
   function eventItem(ev, st) {
-    const running = st.status === "ongoing" && String(st.event_id) === String(ev.event_id);
-    const blocked = st.status === "ongoing" && !running;
+    const liveEvs = getLiveEvents(st);
+    const evData = liveEvs.find(e => String(e.event_id) === String(ev.event_id));
+    const running = !!evData;
+    
     const due = Math.floor((KL.now() - KL.atTime(ev.date, ev.start_time)) / 60000);
     const note = running
-      ? `Running since ${KL.fmtTime(st.actual_start)}${st.delay_minutes > 0 ? `, started ${st.delay_minutes} min late` : ""}`
+      ? `Running since ${KL.fmtTime(evData.actual_start)}${evData.delay_minutes > 0 ? `, started ${evData.delay_minutes} min late` : ""}`
       : due > 0 ? `Due ${due} min ago` : "";
     
     const targetStageIds = parseStageIds(ev.stage_id);
     const isCombined = targetStageIds.length > 1;
     const combinedBadge = isCombined ? `<span class="chip" style="background:var(--gold-700)">വേദി ${targetStageIds.join(' & ')} (സംയുക്തം)</span>` : "";
     const isOverridden = ev._overridden ? `<span class="chip" style="background:#b3261e">ഷെഡ്യൂൾ തിരുത്തിയത്</span>` : "";
-
     const chips = KL.cats(ev).map(c => `<span class="chip">${esc(c)}</span>`).join("");
+
     return `<li class="ev ${running ? "is-live" : ""}">
       <div class="ev-time">${KL.fmtHHMM(ev.start_time)}</div>
       <div class="ev-main">
@@ -274,13 +324,13 @@
         <div class="chips">${chips}${combinedBadge}${isOverridden}</div>
         ${note ? `<p class="ev-note ${running ? "" : "is-due"}">${esc(note)}</p>` : ""}
         <div style="margin-top:0.35rem; display:flex; gap:0.8rem; align-items:center;">
-          ${running ? `<button class="link act" data-act="cancel" data-stage="${S.selected}">Started by mistake? Reset stage</button>` : ""}
+          ${running ? `<button class="link act" data-act="cancel" data-stage="${S.selected}" data-id="${esc(ev.event_id)}">Started by mistake? Reset</button>` : ""}
           ${!running ? `<button class="link act" data-act="edit-sched" data-id="${esc(ev.event_id)}">✏️ ഷെഡ്യൂൾ മാറ്റുക</button>` : ""}
         </div>
       </div>
       <div class="ev-actions">
-        <button class="btn btn-start act" data-act="start" data-id="${esc(ev.event_id)}" ${running || blocked ? "disabled" : ""}>Start</button>
-        <button class="btn btn-end act" data-act="end" data-stage="${S.selected}" ${running ? "" : "disabled"}>End</button>
+        <button class="btn btn-start act" data-act="start" data-id="${esc(ev.event_id)}" ${running ? "disabled" : ""}>Start</button>
+        <button class="btn btn-end act" data-act="end" data-stage="${S.selected}" data-id="${esc(ev.event_id)}" ${running ? "" : "disabled"}>End</button>
       </div></li>`;
   }
 
@@ -300,13 +350,10 @@
     
     const stageSelect = $("editSchedStage");
     if (stageSelect) {
-      stageSelect.innerHTML = S.stages.map(s => 
-        `<option value="${s.stage_id}">${s.stage_id}. ${s.stage_name}</option>`
-      ).join("");
+      stageSelect.innerHTML = S.stages.map(s => `<option value="${s.stage_id}">${s.stage_id}. ${s.stage_name}</option>`).join("");
       stageSelect.value = String(ov.stage_id || ev.stage_id).split(',')[0].trim();
     }
     $("editSchedStatus").value = ov.status || 'active';
-
     $("editScheduleModal").showModal();
   }
 
@@ -333,8 +380,7 @@
     const sId = Number(stageId);
     return schedule.filter(e => {
       if (e.date !== day) return false;
-      const sids = parseStageIds(e.stage_id);
-      return sids.includes(sId);
+      return parseStageIds(e.stage_id).includes(sId);
     });
   }
 
@@ -387,12 +433,9 @@
   function render() {
     if (!S.data) return;
     
-    // Set Active Date for Admin if null
     if (!S.activeDate) {
       S.activeDate = KL.today();
-      if (!C.festivalDates.includes(S.activeDate)) {
-        S.activeDate = C.festivalDates[0]; // Default to Day 1 if opened before fest
-      }
+      if (!C.festivalDates.includes(S.activeDate)) S.activeDate = C.festivalDates[0];
     }
     const day = S.activeDate;
 
@@ -407,7 +450,6 @@
     renderResultsEditor();
 
     const effSchedule = getEffectiveSchedule();
-
     const visible = S.stages.filter(s => {
       const evs = getEventsForStage(effSchedule, day, s.stage_id);
       const isLive = S.data.stages[s.stage_id] && S.data.stages[s.stage_id].status === "ongoing";
@@ -423,13 +465,13 @@
     }
     
     if($("adminEventSearch")) $("adminEventSearch").hidden = false;
-    
     if (!visible.some(s => s.stage_id === S.selected)) S.selected = visible[0].stage_id;
 
     const now = KL.now();
     $("chips").innerHTML = visible.map(s => {
       const st = S.data.stages[s.stage_id];
-      const live = st && st.status === "ongoing";
+      const liveEvs = getLiveEvents(st);
+      const live = st && st.status === "ongoing" && liveEvs.length > 0;
       let idleAlert = false;
       if (st && st.status === "idle" && st.idle_since && KL.today() === day) {
         const idleMins = Math.floor((now - new Date(st.idle_since)) / 60000);
@@ -444,12 +486,18 @@
   }
 
   /* ---------- events ---------- */
-  function openEndModal(sid) {
+  function openEndModal(sid, eventId) {
     const st = S.data.stages[sid] || {};
+    const liveEvs = getLiveEvents(st);
+    const evData = liveEvs.find(e => String(e.event_id) === String(eventId));
+    if (!evData) return toast("Event not found running on this stage.", "err");
+
     S.endStage = sid;
-    const combined = st.combined_stages || [sid];
+    S.endEventId = eventId;
+    const combined = evData.combined_stages || [sid];
+    
     $("endTitle").textContent = combined.length > 1 ? `End Stages ${combined.join(' & ')}` : `End Stage ${sid}`;
-    $("endEvent").textContent = st.event_name || "";
+    $("endEvent").textContent = evData.event_name || "";
     ["rank1", "rank2", "rank3"].forEach(id => ($(id).value = ""));
     $("endModal").showModal();
     $("rank1").focus();
@@ -468,25 +516,17 @@
 
   document.addEventListener("click", e => {
     const dateBtn = e.target.closest(".date-tab");
-    if (dateBtn) {
-      S.activeDate = dateBtn.dataset.date;
-      render();
-      return;
-    }
+    if (dateBtn) { S.activeDate = dateBtn.dataset.date; render(); return; }
 
     const chip = e.target.closest("[data-chip]");
-    if (chip) { 
-      S.selected = Number(chip.dataset.chip); 
-      sessionStorage.setItem("kl_stage", S.selected); 
-      render(); 
-      return; 
-    }
+    if (chip) { S.selected = Number(chip.dataset.chip); sessionStorage.setItem("kl_stage", S.selected); render(); return; }
+    
     const btn = e.target.closest("[data-act]");
     if (!btn || btn.disabled || S.busy) return;
     const { act, id, stage, idx } = btn.dataset;
     if (act === "start") startEvent(id);
-    else if (act === "end") openEndModal(Number(stage));
-    else if (act === "cancel" && confirm(`Reset Stage ${stage} to idle? The start notice stays in the ticker.`)) cancelStart(Number(stage));
+    else if (act === "end") openEndModal(Number(stage), id);
+    else if (act === "cancel" && confirm(`Reset this event?`)) cancelStart(Number(stage), id);
     else if (act === "reopen") reopenEvent(id);
     else if (act === "edit-result") openEditResultModal(Number(idx));
     else if (act === "edit-sched") openEditScheduleModal(id);
@@ -496,9 +536,9 @@
     e.preventDefault();
     const ranks = { first: $("rank1").value.trim(), second: $("rank2").value.trim(), third: $("rank3").value.trim() };
     $("endModal").close();
-    endEvent(S.endStage, ranks.first || ranks.second || ranks.third ? ranks : null);
+    endEvent(S.endStage, S.endEventId, ranks.first || ranks.second || ranks.third ? ranks : null);
   });
-  $("skipResults").addEventListener("click", () => { $("endModal").close(); endEvent(S.endStage, null); });
+  $("skipResults").addEventListener("click", () => { $("endModal").close(); endEvent(S.endStage, S.endEventId, null); });
   $("cancelEnd").addEventListener("click", () => $("endModal").close());
 
   $("editResultForm").addEventListener("submit", e => {
@@ -514,22 +554,14 @@
     const newTime = $("editSchedTime").value;
     const newStage = $("editSchedStage").value;
     const newStatus = $("editSchedStatus").value;
-
     $("editScheduleModal").close();
-
     const formattedTime = newTime ? (newTime.length === 5 ? `${newTime}:00` : newTime) : undefined;
 
     run(d => {
       if (!d.schedule_overrides) d.schedule_overrides = {};
-      d.schedule_overrides[String(currentEditEventId)] = {
-        start_time: formattedTime,
-        stage_id: newStage,
-        status: newStatus,
-        updated_at: KL.nowISO()
-      };
+      d.schedule_overrides[String(currentEditEventId)] = { start_time: formattedTime, stage_id: newStage, status: newStatus, updated_at: KL.nowISO() };
       const ev = findEvent(currentEditEventId);
-      const evName = ev ? ev.event_name : currentEditEventId;
-      pushTicker(d, `ഷെഡ്യൂൾ മാറ്റം: ${evName} വേദി ${newStage}-ലേക്ക് (${KL.fmtHHMM(newTime)}) പുനഃക്രമീകരിച്ചു`);
+      pushTicker(d, `ഷെഡ്യൂൾ മാറ്റം: ${ev ? ev.event_name : currentEditEventId} വേദി ${newStage}-ലേക്ക് പുനഃക്രമീകരിച്ചു`);
     }, `Reschedule event ${currentEditEventId}`, "ഷെഡ്യൂൾ വിജയകരമായി തിരുത്തി.");
   });
 
@@ -583,9 +615,7 @@
       ]);
       S.stages.sort((a, b) => a.stage_id - b.stage_id);
     } catch (err) { return showGate("Could not load stages.json or schedule.json."); }
-    
     initAdminSearch();
-    
     if (S.token) { try { await connect(S.token); return; } catch (err) { sessionStorage.removeItem(TOKEN_KEY); showGate(err.message); return; } }
     showGate();
   }
