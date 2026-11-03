@@ -6,6 +6,7 @@
   "stages": {
     "1": {
       "status": "idle",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
@@ -56,27 +57,14 @@
       "delay_minutes": 0
     },
     "5": {
-      "status": "ongoing",
-      "event_id": null,
+      "status": "idle",
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": null,
-      "events": [
-        {
-          "event_id": "E110",
-          "event_name": "അഭിനയഗാനം മലയാളം",
-          "categories": [
-            "Gen"
-          ],
-          "scheduled_start": "09:00",
-          "actual_start": "2026-11-03T07:51:20.810Z",
-          "delay_minutes": 261,
-          "combined_stages": null
-        }
-      ]
+      "idle_since": "2026-11-03T09:20:50.993Z",
+      "events": []
     },
     "6": {
       "status": "idle",
@@ -180,6 +168,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-03T09:20:50.993Z",
+      "text": "Results, Stage 5, അഭിനയഗാനം മലയാളം: 1st 45, 2nd 66, 3rd 59"
+    },
+    {
       "t": "2026-11-03T08:24:20.817Z",
       "text": "Stage 1: ചെണ്ട/ തായമ്പക has finished"
     },
@@ -200,9 +192,23 @@
       "text": "Stages 12 & 13: ചിത്രരചന പെൻസിൽ has started (89 min late)"
     }
   ],
-  "recent_results": [],
-  "completed_events": [
-    "E101"
+  "recent_results": [
+    {
+      "event_id": "E110",
+      "event_name": "അഭിനയഗാനം മലയാളം",
+      "stage_id": 5,
+      "categories": [
+        "Gen"
+      ],
+      "announced_at": "2026-11-03T09:20:50.993Z",
+      "first": "45",
+      "second": "66",
+      "third": "59"
+    }
   ],
-  "updated_at": "2026-11-03T08:24:20.817Z"
+  "completed_events": [
+    "E101",
+    "E110"
+  ],
+  "updated_at": "2026-11-03T09:20:50.993Z"
 }
