@@ -23,13 +23,27 @@
       "delay_minutes": 0
     },
     "3": {
-      "status": "idle",
+      "status": "ongoing",
       "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
-      "delay_minutes": 0
+      "delay_minutes": 0,
+      "idle_since": null,
+      "events": [
+        {
+          "event_id": "E108",
+          "event_name": "കഥാകഥനം",
+          "categories": [
+            "LP"
+          ],
+          "scheduled_start": "10:00",
+          "actual_start": "2026-11-03T06:49:57.081Z",
+          "delay_minutes": 140,
+          "combined_stages": null
+        }
+      ]
     },
     "4": {
       "status": "idle",
@@ -151,11 +165,15 @@
   },
   "ticker": [
     {
+      "t": "2026-11-03T06:49:57.081Z",
+      "text": "Stage 3: കഥാകഥനം has started (140 min late)"
+    },
+    {
       "t": "2026-11-03T05:59:14.890Z",
       "text": "Stages 12 & 13: ചിത്രരചന പെൻസിൽ has started (89 min late)"
     }
   ],
   "recent_results": [],
   "completed_events": [],
-  "updated_at": "2026-11-03T05:59:14.890Z"
+  "updated_at": "2026-11-03T06:49:57.081Z"
 }
