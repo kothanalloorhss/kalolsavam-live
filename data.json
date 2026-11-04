@@ -131,13 +131,27 @@
       ]
     },
     "7": {
-      "status": "idle",
+      "status": "ongoing",
       "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
-      "delay_minutes": 0
+      "delay_minutes": 0,
+      "idle_since": null,
+      "events": [
+        {
+          "event_id": "E194",
+          "event_name": "പ്രസംഗം ഇംഗ്ലീഷ്",
+          "categories": [
+            "UP"
+          ],
+          "scheduled_start": "09:00",
+          "actual_start": "2026-11-04T04:59:23.705Z",
+          "delay_minutes": 89,
+          "combined_stages": null
+        }
+      ]
     },
     "8": {
       "status": "idle",
@@ -226,6 +240,10 @@
     }
   },
   "ticker": [
+    {
+      "t": "2026-11-04T04:59:23.705Z",
+      "text": "Stage 7: പ്രസംഗം ഇംഗ്ലീഷ് has started (89 min late)"
+    },
     {
       "t": "2026-11-04T04:58:03.796Z",
       "text": "Stage 4: മാപ്പിളപ്പാട്ട് Girls has started (58 min late)"
@@ -366,5 +384,5 @@
     "E138",
     "E169"
   ],
-  "updated_at": "2026-11-04T04:58:03.796Z"
+  "updated_at": "2026-11-04T04:59:23.705Z"
 }
