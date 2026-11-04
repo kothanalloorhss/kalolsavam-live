@@ -52,6 +52,7 @@
     },
     "3": {
       "status": "idle",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
@@ -148,17 +149,6 @@
           "actual_start": "2026-11-04T09:35:29.594Z",
           "delay_minutes": 130,
           "combined_stages": null
-        },
-        {
-          "event_id": "E197",
-          "event_name": "പദ്യംചൊല്ലൽ ഇംഗ്ലീഷ്",
-          "categories": [
-            "HS"
-          ],
-          "scheduled_start": "12:00",
-          "actual_start": "2026-11-04T10:03:12.545Z",
-          "delay_minutes": 213,
-          "combined_stages": null
         }
       ]
     },
@@ -249,6 +239,10 @@
     }
   },
   "ticker": [
+    {
+      "t": "2026-11-04T10:22:06.660Z",
+      "text": "Results announced for Stage 7, പദ്യംചൊല്ലൽ ഇംഗ്ലീഷ് (HS)"
+    },
     {
       "t": "2026-11-04T10:21:53.716Z",
       "text": "Results announced for Stage 3, ലളിതഗാനം Girls (HS)"
@@ -364,13 +358,25 @@
     {
       "t": "2026-11-04T07:29:51.832Z",
       "text": "Results announced for Stage 1, തിരുവാതിര (HS)"
-    },
-    {
-      "t": "2026-11-04T07:21:07.307Z",
-      "text": "Results announced for Stage 3, ശാസ്ത്രീയ സംഗീതം Girls (HSS)"
     }
   ],
   "recent_results": [
+    {
+      "event_id": "E197",
+      "event_name": "പദ്യംചൊല്ലൽ ഇംഗ്ലീഷ്",
+      "stage_id": 7,
+      "categories": [
+        "HS"
+      ],
+      "announced_at": "2026-11-04T10:22:06.660Z",
+      "results": {
+        "HS": {
+          "first": "16",
+          "second": "",
+          "third": ""
+        }
+      }
+    },
     {
       "event_id": "E166",
       "event_name": "ലളിതഗാനം Girls",
@@ -514,22 +520,6 @@
           "third": ""
         }
       }
-    },
-    {
-      "event_id": "E140",
-      "event_name": "തിരുവാതിര",
-      "stage_id": 1,
-      "categories": [
-        "HS"
-      ],
-      "announced_at": "2026-11-04T07:29:51.832Z",
-      "results": {
-        "HS": {
-          "first": "21",
-          "second": "19",
-          "third": "18"
-        }
-      }
     }
   ],
   "completed_events": [
@@ -563,7 +553,8 @@
     "E192",
     "E175",
     "E147",
-    "E166"
+    "E166",
+    "E197"
   ],
-  "updated_at": "2026-11-04T10:21:53.716Z"
+  "updated_at": "2026-11-04T10:22:06.660Z"
 }
