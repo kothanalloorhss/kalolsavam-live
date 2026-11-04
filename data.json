@@ -29,6 +29,7 @@
     },
     "2": {
       "status": "idle",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
@@ -118,27 +119,14 @@
       "events": []
     },
     "7": {
-      "status": "ongoing",
-      "event_id": null,
+      "status": "idle",
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": null,
-      "events": [
-        {
-          "event_id": "E199",
-          "event_name": "പദ്യംചൊല്ലൽ ഇംഗ്ലീഷ്",
-          "categories": [
-            "UP"
-          ],
-          "scheduled_start": "13:45",
-          "actual_start": "2026-11-04T10:59:42.415Z",
-          "delay_minutes": 165,
-          "combined_stages": null
-        }
-      ]
+      "idle_since": "2026-11-04T12:44:52.989Z",
+      "events": []
     },
     "8": {
       "status": "idle",
@@ -227,6 +215,10 @@
     }
   },
   "ticker": [
+    {
+      "t": "2026-11-04T12:44:52.989Z",
+      "text": "Results announced for Stage 7, പദ്യംചൊല്ലൽ ഇംഗ്ലീഷ് (UP)"
+    },
     {
       "t": "2026-11-04T12:35:08.405Z",
       "text": "Results announced for Stage 2, കുച്ചുപ്പുടി Girls (HSS)"
@@ -342,13 +334,25 @@
     {
       "t": "2026-11-04T10:36:09.697Z",
       "text": "Updated Result: നാടൻപ്പാട്ട് (HS)"
-    },
-    {
-      "t": "2026-11-04T10:34:58.833Z",
-      "text": "Results announced for Stage 1, നാടൻപ്പാട്ട് (HS)"
     }
   ],
   "recent_results": [
+    {
+      "event_id": "E199",
+      "event_name": "പദ്യംചൊല്ലൽ ഇംഗ്ലീഷ്",
+      "stage_id": 7,
+      "categories": [
+        "UP"
+      ],
+      "announced_at": "2026-11-04T12:44:52.989Z",
+      "results": {
+        "UP": {
+          "first": "25",
+          "second": "",
+          "third": ""
+        }
+      }
+    },
     {
       "event_id": "E153",
       "event_name": "കുച്ചുപ്പുടി Girls",
@@ -492,22 +496,6 @@
           "third": "13"
         }
       }
-    },
-    {
-      "event_id": "E188",
-      "event_name": "പ്രസംഗം മലയാളം ",
-      "stage_id": 5,
-      "categories": [
-        "LP"
-      ],
-      "announced_at": "2026-11-04T10:30:05.832Z",
-      "results": {
-        "LP": {
-          "first": "35",
-          "second": "",
-          "third": ""
-        }
-      }
     }
   ],
   "completed_events": [
@@ -556,9 +544,10 @@
     "E174",
     "E176",
     "E142",
-    "E153"
+    "E153",
+    "E199"
   ],
-  "updated_at": "2026-11-04T12:35:08.405Z",
+  "updated_at": "2026-11-04T12:44:52.989Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
