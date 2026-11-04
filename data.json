@@ -26,6 +26,7 @@
     },
     "3": {
       "status": "idle",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
@@ -111,8 +112,7 @@
       "delay_minutes": 0
     },
     "12": {
-      "status": "ongoing",
-      "event_id": "E133",
+      "status": "idle",
       "event_name": "ചിത്രരചന പെൻസിൽ",
       "categories": [
         "LP",
@@ -126,11 +126,12 @@
       "combined_stages": [
         12,
         13
-      ]
+      ],
+      "events": [],
+      "idle_since": "2026-11-04T03:08:36.816Z"
     },
     "13": {
-      "status": "ongoing",
-      "event_id": "E133",
+      "status": "idle",
       "event_name": "ചിത്രരചന പെൻസിൽ",
       "categories": [
         "LP",
@@ -144,7 +145,9 @@
       "combined_stages": [
         12,
         13
-      ]
+      ],
+      "events": [],
+      "idle_since": "2026-11-04T03:08:36.816Z"
     },
     "14": {
       "status": "idle",
@@ -157,6 +160,10 @@
     }
   },
   "ticker": [
+    {
+      "t": "2026-11-04T03:08:36.816Z",
+      "text": "Stage 12: ചിത്രരചന പെൻസിൽ has finished"
+    },
     {
       "t": "2026-11-04T03:08:29.546Z",
       "text": "Stage 3: കഥാകഥനം has finished"
@@ -224,7 +231,8 @@
     "E101",
     "E110",
     "E114",
-    "E108"
+    "E108",
+    "E133"
   ],
-  "updated_at": "2026-11-04T03:08:29.546Z"
+  "updated_at": "2026-11-04T03:08:36.816Z"
 }
