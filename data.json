@@ -50,27 +50,14 @@
       "events": []
     },
     "4": {
-      "status": "ongoing",
-      "event_id": null,
+      "status": "idle",
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": null,
-      "events": [
-        {
-          "event_id": "E182",
-          "event_name": "ഒപ്പന",
-          "categories": [
-            "HSS"
-          ],
-          "scheduled_start": "16:40",
-          "actual_start": "2026-11-04T13:58:20.036Z",
-          "delay_minutes": 168,
-          "combined_stages": null
-        }
-      ]
+      "idle_since": "2026-11-04T14:31:04.438Z",
+      "events": []
     },
     "5": {
       "status": "ongoing",
@@ -108,6 +95,7 @@
     },
     "7": {
       "status": "idle",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
@@ -203,6 +191,10 @@
     }
   },
   "ticker": [
+    {
+      "t": "2026-11-04T14:31:04.438Z",
+      "text": "Results announced for Stage 4, ഒപ്പന (HSS)"
+    },
     {
       "t": "2026-11-04T14:30:47.375Z",
       "text": "Results announced for Stage 7, പദ്യംചൊല്ലൽ ഇംഗ്ലീഷ് (LP)"
@@ -318,13 +310,25 @@
     {
       "t": "2026-11-04T11:46:34.713Z",
       "text": "Stage 4: സംഘ ഗാനം ഉറുദു has started (272 min late)"
-    },
-    {
-      "t": "2026-11-04T11:43:07.505Z",
-      "text": "Stage 2: കുച്ചുപ്പുടി Girls has started (203 min late)"
     }
   ],
   "recent_results": [
+    {
+      "event_id": "E182",
+      "event_name": "ഒപ്പന",
+      "stage_id": 4,
+      "categories": [
+        "HSS"
+      ],
+      "announced_at": "2026-11-04T14:31:04.438Z",
+      "results": {
+        "HSS": {
+          "first": "18",
+          "second": "",
+          "third": ""
+        }
+      }
+    },
     {
       "event_id": "E200",
       "event_name": "പദ്യംചൊല്ലൽ ഇംഗ്ലീഷ്",
@@ -468,22 +472,6 @@
           "third": ""
         }
       }
-    },
-    {
-      "event_id": "E199",
-      "event_name": "പദ്യംചൊല്ലൽ ഇംഗ്ലീഷ്",
-      "stage_id": 7,
-      "categories": [
-        "UP"
-      ],
-      "announced_at": "2026-11-04T12:44:52.989Z",
-      "results": {
-        "UP": {
-          "first": "25",
-          "second": "",
-          "third": ""
-        }
-      }
     }
   ],
   "completed_events": [
@@ -542,9 +530,10 @@
     "E168",
     "E180",
     "E181",
-    "E200"
+    "E200",
+    "E182"
   ],
-  "updated_at": "2026-11-04T14:30:47.375Z",
+  "updated_at": "2026-11-04T14:31:04.438Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
