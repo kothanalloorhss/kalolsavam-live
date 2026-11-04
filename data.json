@@ -35,17 +35,6 @@
           "actual_start": "2026-11-04T09:45:52.885Z",
           "delay_minutes": 186,
           "combined_stages": null
-        },
-        {
-          "event_id": "E152",
-          "event_name": "കുച്ചുപ്പുടി Boys",
-          "categories": [
-            "HSS"
-          ],
-          "scheduled_start": "13:40",
-          "actual_start": "2026-11-04T10:41:37.299Z",
-          "delay_minutes": 152,
-          "combined_stages": null
         }
       ]
     },
@@ -131,6 +120,7 @@
     },
     "6": {
       "status": "idle",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
@@ -569,5 +559,5 @@
     "E141",
     "E193"
   ],
-  "updated_at": "2026-11-04T10:44:05.350Z"
+  "updated_at": "2026-11-04T10:46:22.057Z"
 }
