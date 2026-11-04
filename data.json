@@ -51,30 +51,18 @@
       ]
     },
     "3": {
-      "status": "ongoing",
-      "event_id": null,
+      "status": "idle",
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": null,
-      "events": [
-        {
-          "event_id": "E165",
-          "event_name": "ലളിതഗാനം Boys",
-          "categories": [
-            "HS"
-          ],
-          "scheduled_start": "11:05",
-          "actual_start": "2026-11-04T07:31:12.331Z",
-          "delay_minutes": 116,
-          "combined_stages": null
-        }
-      ]
+      "idle_since": "2026-11-04T08:36:08.183Z",
+      "events": []
     },
     "4": {
       "status": "idle",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
@@ -240,6 +228,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-04T08:36:08.183Z",
+      "text": "Results announced for Stage 3, ലളിതഗാനം Boys (HS)"
+    },
+    {
       "t": "2026-11-04T08:35:24.229Z",
       "text": "Results announced for Stage 4, പദ്യംചൊല്ലൽ ഉറുദു (UP)"
     },
@@ -354,13 +346,25 @@
     {
       "t": "2026-11-04T05:13:54.933Z",
       "text": "Stage 1: തിരുവാതിര has started (64 min late)"
-    },
-    {
-      "t": "2026-11-04T05:10:51.914Z",
-      "text": "Results, Stage 3, ശാസ്ത്രീയ സംഗീതം: 1st 24"
     }
   ],
   "recent_results": [
+    {
+      "event_id": "E165",
+      "event_name": "ലളിതഗാനം Boys",
+      "stage_id": 3,
+      "categories": [
+        "HS"
+      ],
+      "announced_at": "2026-11-04T08:36:08.183Z",
+      "results": {
+        "HS": {
+          "first": "26",
+          "second": "",
+          "third": ""
+        }
+      }
+    },
     {
       "event_id": "E173",
       "event_name": "പദ്യംചൊല്ലൽ ഉറുദു",
@@ -504,22 +508,6 @@
           "third": "13"
         }
       }
-    },
-    {
-      "event_id": "E160",
-      "event_name": "ശാസ്ത്രീയ സംഗീതം",
-      "stage_id": 3,
-      "categories": [
-        "UP"
-      ],
-      "announced_at": "2026-11-04T05:51:10.312Z",
-      "results": {
-        "UP": {
-          "first": "40",
-          "second": "",
-          "third": ""
-        }
-      }
     }
   ],
   "completed_events": [
@@ -544,7 +532,8 @@
     "E140",
     "E195",
     "E187",
-    "E173"
+    "E173",
+    "E165"
   ],
-  "updated_at": "2026-11-04T08:35:24.229Z"
+  "updated_at": "2026-11-04T08:36:08.183Z"
 }
