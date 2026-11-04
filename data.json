@@ -16,14 +16,27 @@
       "events": []
     },
     "2": {
-      "status": "idle",
+      "status": "ongoing",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": "2026-11-04T11:16:04.627Z",
-      "events": []
+      "idle_since": null,
+      "events": [
+        {
+          "event_id": "E150",
+          "event_name": "കുച്ചുപ്പുടി Girls",
+          "categories": [
+            "UP"
+          ],
+          "scheduled_start": "13:20",
+          "actual_start": "2026-11-04T11:16:12.995Z",
+          "delay_minutes": 206,
+          "combined_stages": null
+        }
+      ]
     },
     "3": {
       "status": "ongoing",
@@ -227,6 +240,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-04T11:16:12.995Z",
+      "text": "Stage 2: കുച്ചുപ്പുടി Girls has started (206 min late)"
+    },
+    {
       "t": "2026-11-04T11:16:04.627Z",
       "text": "Results announced for Stage 2, ഭരതനാട്യം Boys (HSS)"
     },
@@ -341,10 +358,6 @@
     {
       "t": "2026-11-04T08:55:35.399Z",
       "text": "Stage 4: പദ്യംചൊല്ലൽ ഉറുദു has started (136 min late)"
-    },
-    {
-      "t": "2026-11-04T08:42:33.617Z",
-      "text": "Stage 4: മാപ്പിളപ്പാട്ട് Girls has finished"
     }
   ],
   "recent_results": [
@@ -550,5 +563,5 @@
     "E198",
     "E149"
   ],
-  "updated_at": "2026-11-04T11:16:04.627Z"
+  "updated_at": "2026-11-04T11:16:12.995Z"
 }
