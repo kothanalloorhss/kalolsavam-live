@@ -7,7 +7,7 @@
   const S = { 
     token: sessionStorage.getItem(TOKEN_KEY), stages: [], schedule: [], data: null,
     selected: Number(sessionStorage.getItem("kl_stage")) || 1, busy: false, 
-    endStage: null, endEventId: null, editResultIdx: null,
+    endStage: null, endEventId: null, editResultIdx: null, addResultEventId: null,
     searchQuery: "", activeDate: null 
   };
   const stageIds = () => S.stages.map(s => s.stage_id);
@@ -215,6 +215,30 @@
     }, `Update result ${index}`, "Result updated successfully.");
   }
 
+  /* New Function to Add Results to Already Skipped Events */
+  function addResultLate(eventId, resultsByCat) {
+    run(d => {
+      const ev = findEvent(eventId);
+      if (!ev) throw new Error("Event not found.");
+      
+      // Ensure it's in completed events (safeguard)
+      if (!d.completed_events.map(String).includes(String(eventId))) {
+          d.completed_events.push(eventId);
+      }
+
+      d.recent_results.unshift({ 
+        event_id: eventId, 
+        event_name: ev.event_name, 
+        stage_id: ev.stage_id, 
+        categories: KL.cats(ev), 
+        announced_at: KL.nowISO(), 
+        results: resultsByCat 
+      });
+      trimList(d.recent_results, C.maxResultsStored);
+      pushTicker(d, `Results announced: ${ev.event_name} (${Object.keys(resultsByCat).join(", ")})`);
+    }, `Add late result for event ${eventId}`, "Result published successfully.");
+  }
+
   /* ---------- rendering ---------- */
   function renderDateTabs() {
     const wrap = $("adminDateSelector");
@@ -415,16 +439,34 @@
 
     $("finishedWrap").hidden = !finished.length;
     $("finishedCount").textContent = finished.length;
-    $("finishedList").innerHTML = finished.map(e => `<li><span lang="ml">${esc(e.event_name)}</span>
-      <button class="link act" data-act="reopen" data-id="${esc(e.event_id)}">Move back to pending</button></li>`).join("");
+    
+    // Finished List Render
+    $("finishedList").innerHTML = finished.map(e => {
+      // Check if a result exists for this event
+      const hasResult = (S.data.recent_results || []).some(r => String(r.event_id) === String(e.event_id));
+      const resAction = hasResult 
+          ? `<span class="muted-small" style="color:var(--live)">Result Published ✅</span>`
+          : `<button class="link act" data-act="add-result" data-id="${esc(e.event_id)}" style="color:var(--live); font-weight:700;">➕ Add Result</button>`;
+
+      return `<li>
+        <span lang="ml">${esc(e.event_name)}</span>
+        <div style="display:flex; gap:0.75rem; align-items:center;">
+          ${resAction}
+          <button class="link act" data-act="reopen" data-id="${esc(e.event_id)}">Move back to pending</button>
+        </div>
+      </li>`;
+    }).join("");
   }
 
   function render() {
     if (!S.data) return;
     
+    // Set Active Date for Admin if null
     if (!S.activeDate) {
       S.activeDate = KL.today();
-      if (!C.festivalDates.includes(S.activeDate)) S.activeDate = C.festivalDates[0];
+      if (!C.festivalDates.includes(S.activeDate)) {
+        S.activeDate = C.festivalDates[0]; // Default to Day 1 if opened before fest
+      }
     }
     const day = S.activeDate;
 
@@ -439,6 +481,7 @@
     renderResultsEditor();
 
     const effSchedule = getEffectiveSchedule();
+
     const visible = S.stages.filter(s => {
       const evs = getEventsForStage(effSchedule, day, s.stage_id);
       const isLive = S.data.stages[s.stage_id] && S.data.stages[s.stage_id].status === "ongoing";
@@ -454,6 +497,7 @@
     }
     
     if($("adminEventSearch")) $("adminEventSearch").hidden = false;
+    
     if (!visible.some(s => s.stage_id === S.selected)) S.selected = visible[0].stage_id;
 
     const now = KL.now();
@@ -510,6 +554,9 @@
     const r = S.data.recent_results[idx];
     if (!r) return;
     S.editResultIdx = idx;
+    S.addResultEventId = null; // Clear add state
+    
+    $("editResultTitle").textContent = "Edit Announced Result (തിരുത്തുക)";
     $("editResultEvent").textContent = `${r.event_name} (Stage ${r.stage_id})`;
     
     const cats = r.categories && r.categories.length ? r.categories : ["General"];
@@ -531,6 +578,29 @@
     $("editResultModal").showModal();
   }
 
+  function openAddResultModal(eventId) {
+    const ev = findEvent(eventId);
+    if (!ev) return;
+    S.addResultEventId = eventId;
+    S.editResultIdx = null; // Clear edit state
+    
+    $("editResultTitle").textContent = "Add Result (പുതുതായി റിസൾട്ട് നൽകുക)";
+    $("editResultEvent").textContent = `${ev.event_name} (Stage ${ev.stage_id})`;
+    
+    const cats = ev.categories && ev.categories.length ? ev.categories : ["General"];
+    $("editRanksContainer").innerHTML = cats.map(c => `
+    <div class="cat-rank-group" data-cat="${esc(c)}">
+      <div class="cat-rank-title">വിഭാഗം: ${esc(c)}</div>
+      <div class="row">
+        <label class="field slim">1st <input name="first" type="text" maxlength="10" autocomplete="off"></label>
+        <label class="field slim">2nd <input name="second" type="text" maxlength="10" autocomplete="off"></label>
+        <label class="field slim">3rd <input name="third" type="text" maxlength="10" autocomplete="off"></label>
+      </div>
+    </div>`).join("");
+
+    $("editResultModal").showModal();
+  }
+
   /* ---------- Event Listeners ---------- */
   document.addEventListener("click", e => {
     const dateBtn = e.target.closest(".date-tab");
@@ -547,6 +617,7 @@
     else if (act === "cancel" && confirm(`Reset this event?`)) cancelStart(Number(stage), id);
     else if (act === "reopen") reopenEvent(id);
     else if (act === "edit-result") openEditResultModal(Number(idx));
+    else if (act === "add-result") openAddResultModal(id);
     else if (act === "edit-sched") openEditScheduleModal(id);
   });
 
@@ -586,7 +657,12 @@
       }
     });
     $("editResultModal").close();
-    if (S.editResultIdx !== null) updateResult(S.editResultIdx, hasAny ? resultsByCat : {});
+    
+    if (S.editResultIdx !== null) {
+      updateResult(S.editResultIdx, hasAny ? resultsByCat : {});
+    } else if (S.addResultEventId !== null) {
+      if (hasAny) addResultLate(S.addResultEventId, resultsByCat);
+    }
   });
   $("cancelEditResult").addEventListener("click", () => $("editResultModal").close());
 
