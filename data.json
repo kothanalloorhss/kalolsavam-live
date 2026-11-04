@@ -5,15 +5,27 @@
   },
   "stages": {
     "1": {
-      "status": "idle",
+      "status": "ongoing",
       "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": "2026-11-04T05:53:53.429Z",
-      "events": []
+      "idle_since": null,
+      "events": [
+        {
+          "event_id": "E140",
+          "event_name": "തിരുവാതിര",
+          "categories": [
+            "HS"
+          ],
+          "scheduled_start": "10:20",
+          "actual_start": "2026-11-04T06:20:34.767Z",
+          "delay_minutes": 91,
+          "combined_stages": null
+        }
+      ]
     },
     "2": {
       "status": "ongoing",
@@ -228,6 +240,10 @@
     }
   },
   "ticker": [
+    {
+      "t": "2026-11-04T06:20:34.767Z",
+      "text": "Stage 1: തിരുവാതിര has started (91 min late)"
+    },
     {
       "t": "2026-11-04T06:20:22.786Z",
       "text": "Stage 3: ശാസ്ത്രീയ സംഗീതം Girls has started (105 min late)"
@@ -464,5 +480,5 @@
     "E139",
     "E170"
   ],
-  "updated_at": "2026-11-04T06:20:22.786Z"
+  "updated_at": "2026-11-04T06:20:34.767Z"
 }
