@@ -70,6 +70,17 @@
           "actual_start": "2026-11-04T06:20:22.786Z",
           "delay_minutes": 105,
           "combined_stages": null
+        },
+        {
+          "event_id": "E161",
+          "event_name": "ശാസ്ത്രീയ സംഗീതം Boys",
+          "categories": [
+            "HS"
+          ],
+          "scheduled_start": "09:35",
+          "actual_start": "2026-11-04T06:25:51.091Z",
+          "delay_minutes": 141,
+          "combined_stages": null
         }
       ]
     },
@@ -132,6 +143,7 @@
     },
     "7": {
       "status": "idle",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
@@ -227,6 +239,10 @@
     }
   },
   "ticker": [
+    {
+      "t": "2026-11-04T06:25:51.091Z",
+      "text": "Stage 3: ശാസ്ത്രീയ സംഗീതം Boys has started (141 min late)"
+    },
     {
       "t": "2026-11-04T06:25:15.469Z",
       "text": "Results announced for Stage 7, പ്രസംഗം ഇംഗ്ലീഷ് (UP)"
@@ -342,10 +358,6 @@
     {
       "t": "2026-11-03T07:43:56.881Z",
       "text": "Stage 1: ചെണ്ട/ തായമ്പക has started (104 min late)"
-    },
-    {
-      "t": "2026-11-03T06:49:57.081Z",
-      "text": "Stage 3: കഥാകഥനം has started (140 min late)"
     }
   ],
   "recent_results": [
@@ -509,5 +521,5 @@
     "E186",
     "E194"
   ],
-  "updated_at": "2026-11-04T06:25:15.469Z"
+  "updated_at": "2026-11-04T06:25:51.091Z"
 }
