@@ -73,14 +73,27 @@
       ]
     },
     "5": {
-      "status": "idle",
+      "status": "ongoing",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": "2026-11-04T14:38:28.814Z",
-      "events": []
+      "idle_since": null,
+      "events": [
+        {
+          "event_id": "E190",
+          "event_name": "പ്രസംഗം മലയാളം ",
+          "categories": [
+            "HS"
+          ],
+          "scheduled_start": "16:00",
+          "actual_start": "2026-11-04T14:38:34.316Z",
+          "delay_minutes": 249,
+          "combined_stages": null
+        }
+      ]
     },
     "6": {
       "status": "idle",
@@ -191,6 +204,10 @@
     }
   },
   "ticker": [
+    {
+      "t": "2026-11-04T14:38:34.316Z",
+      "text": "Stage 5: പ്രസംഗം മലയാളം  has started (249 min late)"
+    },
     {
       "t": "2026-11-04T14:38:28.814Z",
       "text": "Results announced for Stage 5, പ്രസംഗം മലയാളം  (UP)"
@@ -306,10 +323,6 @@
     {
       "t": "2026-11-04T11:47:00.022Z",
       "text": "Stage 4: പദ്യംചൊല്ലൽ ഉറുദു has finished"
-    },
-    {
-      "t": "2026-11-04T11:46:47.354Z",
-      "text": "Stage 4: ഗസൽ ആലാപനം ഉറുദു has started (127 min late)"
     }
   ],
   "recent_results": [
@@ -534,7 +547,7 @@
     "E182",
     "E189"
   ],
-  "updated_at": "2026-11-04T14:38:28.814Z",
+  "updated_at": "2026-11-04T14:38:34.316Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
