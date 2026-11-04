@@ -62,14 +62,27 @@
       ]
     },
     "4": {
-      "status": "idle",
+      "status": "ongoing",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": "2026-11-04T12:48:44.577Z",
-      "events": []
+      "idle_since": null,
+      "events": [
+        {
+          "event_id": "E179",
+          "event_name": "ഗസൽ ആലാപനം ഉറുദു",
+          "categories": [
+            "HSS"
+          ],
+          "scheduled_start": "15:10",
+          "actual_start": "2026-11-04T12:48:51.552Z",
+          "delay_minutes": 189,
+          "combined_stages": null
+        }
+      ]
     },
     "5": {
       "status": "ongoing",
@@ -216,6 +229,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-04T12:48:51.552Z",
+      "text": "Stage 4: ഗസൽ ആലാപനം ഉറുദു has started (189 min late)"
+    },
+    {
       "t": "2026-11-04T12:48:44.577Z",
       "text": "Results announced for Stage 4, സംഘ ഗാനം ഉറുദു (HS)"
     },
@@ -330,10 +347,6 @@
     {
       "t": "2026-11-04T10:44:05.350Z",
       "text": "Results announced for Stage 6, സംഘ ഗാനം (HSS)"
-    },
-    {
-      "t": "2026-11-04T10:42:52.029Z",
-      "text": "Stage 6: സംഘ ഗാനം has started (73 min late)"
     }
   ],
   "recent_results": [
@@ -548,7 +561,7 @@
     "E199",
     "E178"
   ],
-  "updated_at": "2026-11-04T12:48:44.577Z",
+  "updated_at": "2026-11-04T12:48:51.552Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
