@@ -130,14 +130,27 @@
       "events": []
     },
     "7": {
-      "status": "idle",
+      "status": "ongoing",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": "2026-11-04T10:59:38.319Z",
-      "events": []
+      "idle_since": null,
+      "events": [
+        {
+          "event_id": "E199",
+          "event_name": "പദ്യംചൊല്ലൽ ഇംഗ്ലീഷ്",
+          "categories": [
+            "UP"
+          ],
+          "scheduled_start": "13:45",
+          "actual_start": "2026-11-04T10:59:42.415Z",
+          "delay_minutes": 165,
+          "combined_stages": null
+        }
+      ]
     },
     "8": {
       "status": "idle",
@@ -226,6 +239,10 @@
     }
   },
   "ticker": [
+    {
+      "t": "2026-11-04T10:59:42.415Z",
+      "text": "Stage 7: പദ്യംചൊല്ലൽ ഇംഗ്ലീഷ് has started (165 min late)"
+    },
     {
       "t": "2026-11-04T10:59:38.319Z",
       "text": "Stage 7: പദ്യംചൊല്ലൽ ഇംഗ്ലീഷ് has finished"
@@ -341,10 +358,6 @@
     {
       "t": "2026-11-04T08:42:29.298Z",
       "text": "Stage 4: മാപ്പിളപ്പാട്ട് Girls has started (217 min late)"
-    },
-    {
-      "t": "2026-11-04T08:42:24.324Z",
-      "text": "Stage 4: മാപ്പിളപ്പാട്ട് Boys has finished"
     }
   ],
   "recent_results": [
@@ -549,5 +562,5 @@
     "E148",
     "E198"
   ],
-  "updated_at": "2026-11-04T10:59:38.319Z"
+  "updated_at": "2026-11-04T10:59:42.415Z"
 }
