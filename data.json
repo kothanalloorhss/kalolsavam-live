@@ -17,6 +17,7 @@
     },
     "2": {
       "status": "idle",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
@@ -37,27 +38,14 @@
       "events": []
     },
     "4": {
-      "status": "ongoing",
-      "event_id": null,
+      "status": "idle",
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": null,
-      "events": [
-        {
-          "event_id": "E183",
-          "event_name": "ഒപ്പന",
-          "categories": [
-            "HS"
-          ],
-          "scheduled_start": "17:20",
-          "actual_start": "2026-11-04T14:31:14.518Z",
-          "delay_minutes": 161,
-          "combined_stages": null
-        }
-      ]
+      "idle_since": "2026-11-04T15:08:00.180Z",
+      "events": []
     },
     "5": {
       "status": "idle",
@@ -180,6 +168,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-04T15:08:00.180Z",
+      "text": "Results announced for Stage 4, ഒപ്പന (HS)"
+    },
+    {
       "t": "2026-11-04T15:03:14.569Z",
       "text": "Results announced for Stage 2, മോഹിനിയാട്ടം (HS)"
     },
@@ -294,13 +286,25 @@
     {
       "t": "2026-11-04T12:14:05.899Z",
       "text": "Updated Result: നാടൻപ്പാട്ട് (HS)"
-    },
-    {
-      "t": "2026-11-04T11:56:04.683Z",
-      "text": "Stage 1: വഞ്ചിപ്പാട്ട് has started (226 min late)"
     }
   ],
   "recent_results": [
+    {
+      "event_id": "E183",
+      "event_name": "ഒപ്പന",
+      "stage_id": 4,
+      "categories": [
+        "HS"
+      ],
+      "announced_at": "2026-11-04T15:08:00.180Z",
+      "results": {
+        "HS": {
+          "first": "29",
+          "second": "",
+          "third": ""
+        }
+      }
+    },
     {
       "event_id": "E156",
       "event_name": "മോഹിനിയാട്ടം",
@@ -444,22 +448,6 @@
           "third": ""
         }
       }
-    },
-    {
-      "event_id": "E154",
-      "event_name": "കുച്ചുപ്പുടി Girls",
-      "stage_id": 2,
-      "categories": [
-        "HS"
-      ],
-      "announced_at": "2026-11-04T13:44:43.896Z",
-      "results": {
-        "HS": {
-          "first": "20",
-          "second": "",
-          "third": ""
-        }
-      }
     }
   ],
   "completed_events": [
@@ -523,9 +511,10 @@
     "E189",
     "E190",
     "E191",
-    "E156"
+    "E156",
+    "E183"
   ],
-  "updated_at": "2026-11-04T15:03:29.310Z",
+  "updated_at": "2026-11-04T15:08:00.180Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
