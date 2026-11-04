@@ -92,17 +92,6 @@
           "actual_start": "2026-11-04T10:15:13.290Z",
           "delay_minutes": 184,
           "combined_stages": null
-        },
-        {
-          "event_id": "E177",
-          "event_name": "സംഘ ഗാനം ഉറുദു",
-          "categories": [
-            "UP"
-          ],
-          "scheduled_start": "12:45",
-          "actual_start": "2026-11-04T11:46:34.713Z",
-          "delay_minutes": 272,
-          "combined_stages": null
         }
       ]
     },
@@ -251,6 +240,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-04T11:46:43.454Z",
+      "text": "Results announced for Stage 4, സംഘ ഗാനം ഉറുദു (UP)"
+    },
+    {
       "t": "2026-11-04T11:46:34.713Z",
       "text": "Stage 4: സംഘ ഗാനം ഉറുദു has started (272 min late)"
     },
@@ -365,13 +358,25 @@
     {
       "t": "2026-11-04T09:42:50.911Z",
       "text": "Results announced for Stage 2, ഭരതനാട്യം (UP)"
-    },
-    {
-      "t": "2026-11-04T09:39:45.603Z",
-      "text": "Stage 2: ഭരതനാട്യം has started (230 min late)"
     }
   ],
   "recent_results": [
+    {
+      "event_id": "E177",
+      "event_name": "സംഘ ഗാനം ഉറുദു",
+      "stage_id": 4,
+      "categories": [
+        "UP"
+      ],
+      "announced_at": "2026-11-04T11:46:43.454Z",
+      "results": {
+        "UP": {
+          "first": "30",
+          "second": "",
+          "third": ""
+        }
+      }
+    },
     {
       "event_id": "E152",
       "event_name": "കുച്ചുപ്പുടി Boys",
@@ -515,22 +520,6 @@
           "third": ""
         }
       }
-    },
-    {
-      "event_id": "E166",
-      "event_name": "ലളിതഗാനം Girls",
-      "stage_id": 3,
-      "categories": [
-        "HS"
-      ],
-      "announced_at": "2026-11-04T10:21:53.716Z",
-      "results": {
-        "HS": {
-          "first": "22",
-          "second": "",
-          "third": ""
-        }
-      }
     }
   ],
   "completed_events": [
@@ -574,9 +563,10 @@
     "E198",
     "E149",
     "E150",
-    "E152"
+    "E152",
+    "E177"
   ],
-  "updated_at": "2026-11-04T11:46:34.713Z",
+  "updated_at": "2026-11-04T11:46:43.454Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
