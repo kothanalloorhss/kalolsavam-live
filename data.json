@@ -63,6 +63,7 @@
     },
     "4": {
       "status": "idle",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
@@ -95,27 +96,14 @@
       ]
     },
     "6": {
-      "status": "ongoing",
-      "event_id": null,
+      "status": "idle",
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": null,
-      "events": [
-        {
-          "event_id": "E192",
-          "event_name": "സംഘ ഗാനം",
-          "categories": [
-            "LP"
-          ],
-          "scheduled_start": "09:00",
-          "actual_start": "2026-11-04T04:36:42.927Z",
-          "delay_minutes": 67,
-          "combined_stages": null
-        }
-      ]
+      "idle_since": "2026-11-04T09:13:32.903Z",
+      "events": []
     },
     "7": {
       "status": "idle",
@@ -215,6 +203,10 @@
     }
   },
   "ticker": [
+    {
+      "t": "2026-11-04T09:13:32.903Z",
+      "text": "Results announced for Stage 6, സംഘ ഗാനം (LP)"
+    },
     {
       "t": "2026-11-04T08:59:02.254Z",
       "text": "Stage 3: ലളിതഗാനം Girls has started (164 min late)"
@@ -330,13 +322,25 @@
     {
       "t": "2026-11-04T06:25:15.469Z",
       "text": "Results announced for Stage 7, പ്രസംഗം ഇംഗ്ലീഷ് (UP)"
-    },
-    {
-      "t": "2026-11-04T06:22:09.407Z",
-      "text": "Stage 5: പദ്യംചൊല്ലൽ മലയാളം has started (92 min late)"
     }
   ],
   "recent_results": [
+    {
+      "event_id": "E192",
+      "event_name": "സംഘ ഗാനം",
+      "stage_id": 6,
+      "categories": [
+        "LP"
+      ],
+      "announced_at": "2026-11-04T09:13:32.903Z",
+      "results": {
+        "LP": {
+          "first": "27",
+          "second": "",
+          "third": ""
+        }
+      }
+    },
     {
       "event_id": "E196",
       "event_name": "പ്രസംഗം ഇംഗ്ലീഷ്",
@@ -480,22 +484,6 @@
           "third": ""
         }
       }
-    },
-    {
-      "event_id": "E186",
-      "event_name": "പദ്യംചൊല്ലൽ മലയാളം",
-      "stage_id": 5,
-      "categories": [
-        "HS"
-      ],
-      "announced_at": "2026-11-04T06:21:16.803Z",
-      "results": {
-        "HS": {
-          "first": "23",
-          "second": "",
-          "third": ""
-        }
-      }
     }
   ],
   "completed_events": [
@@ -525,7 +513,8 @@
     "E146",
     "E196",
     "E171",
-    "E172"
+    "E172",
+    "E192"
   ],
-  "updated_at": "2026-11-04T09:08:26.488Z"
+  "updated_at": "2026-11-04T09:13:32.903Z"
 }
