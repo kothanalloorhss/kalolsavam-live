@@ -50,14 +50,27 @@
       "events": []
     },
     "4": {
-      "status": "idle",
+      "status": "ongoing",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": "2026-11-04T08:42:33.617Z",
-      "events": []
+      "idle_since": null,
+      "events": [
+        {
+          "event_id": "E174",
+          "event_name": "പദ്യംചൊല്ലൽ ഉറുദു",
+          "categories": [
+            "HS"
+          ],
+          "scheduled_start": "12:10",
+          "actual_start": "2026-11-04T08:55:35.399Z",
+          "delay_minutes": 136,
+          "combined_stages": null
+        }
+      ]
     },
     "5": {
       "status": "ongoing",
@@ -204,6 +217,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-04T08:55:35.399Z",
+      "text": "Stage 4: പദ്യംചൊല്ലൽ ഉറുദു has started (136 min late)"
+    },
+    {
       "t": "2026-11-04T08:42:33.617Z",
       "text": "Stage 4: മാപ്പിളപ്പാട്ട് Girls has finished"
     },
@@ -318,10 +335,6 @@
     {
       "t": "2026-11-04T06:21:16.803Z",
       "text": "Results announced for Stage 5, പദ്യംചൊല്ലൽ മലയാളം (HS)"
-    },
-    {
-      "t": "2026-11-04T06:20:34.767Z",
-      "text": "Stage 1: തിരുവാതിര has started (91 min late)"
     }
   ],
   "recent_results": [
@@ -515,5 +528,5 @@
     "E171",
     "E172"
   ],
-  "updated_at": "2026-11-04T08:42:33.617Z"
+  "updated_at": "2026-11-04T08:55:35.399Z"
 }
