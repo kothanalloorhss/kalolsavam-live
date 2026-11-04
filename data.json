@@ -35,6 +35,17 @@
           "actual_start": "2026-11-04T09:45:52.885Z",
           "delay_minutes": 186,
           "combined_stages": null
+        },
+        {
+          "event_id": "E152",
+          "event_name": "കുച്ചുപ്പുടി Boys",
+          "categories": [
+            "HSS"
+          ],
+          "scheduled_start": "13:40",
+          "actual_start": "2026-11-04T10:41:37.299Z",
+          "delay_minutes": 152,
+          "combined_stages": null
         }
       ]
     },
@@ -240,6 +251,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-04T10:41:37.299Z",
+      "text": "Stage 2: കുച്ചുപ്പുടി Boys has started (152 min late)"
+    },
+    {
       "t": "2026-11-04T10:36:09.697Z",
       "text": "Updated Result: നാടൻപ്പാട്ട് (HS)"
     },
@@ -354,10 +369,6 @@
     {
       "t": "2026-11-04T07:57:54.652Z",
       "text": "Stage 5: പ്രസംഗം മലയാളം  has started (148 min late)"
-    },
-    {
-      "t": "2026-11-04T07:57:51.719Z",
-      "text": "Stage 5: പദ്യംചൊല്ലൽ മലയാളം has finished"
     }
   ],
   "recent_results": [
@@ -558,5 +569,5 @@
     "E188",
     "E141"
   ],
-  "updated_at": "2026-11-04T10:36:09.697Z"
+  "updated_at": "2026-11-04T10:41:37.299Z"
 }
