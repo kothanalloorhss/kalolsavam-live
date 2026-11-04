@@ -16,27 +16,14 @@
       "events": []
     },
     "2": {
-      "status": "ongoing",
-      "event_id": null,
+      "status": "idle",
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": null,
-      "events": [
-        {
-          "event_id": "E157",
-          "event_name": "മോഹിനിയാട്ടം",
-          "categories": [
-            "HSS"
-          ],
-          "scheduled_start": "16:10",
-          "actual_start": "2026-11-04T15:21:23.991Z",
-          "delay_minutes": 281,
-          "combined_stages": null
-        }
-      ]
+      "idle_since": "2026-11-04T15:50:20.881Z",
+      "events": []
     },
     "3": {
       "status": "idle",
@@ -51,6 +38,7 @@
     },
     "4": {
       "status": "idle",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
@@ -180,6 +168,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-04T15:50:20.881Z",
+      "text": "Stage 2: മോഹിനിയാട്ടം has finished"
+    },
+    {
       "t": "2026-11-04T15:35:07.446Z",
       "text": "Results announced for Stage 4, കോൽക്കളി (HS)"
     },
@@ -294,10 +286,6 @@
     {
       "t": "2026-11-04T13:06:41.623Z",
       "text": "Stage 1: വഞ്ചിപ്പാട്ട് has started (267 min late)"
-    },
-    {
-      "t": "2026-11-04T13:03:31.316Z",
-      "text": "Stage 2: കുച്ചുപ്പുടി Girls has started (253 min late)"
     }
   ],
   "recent_results": [
@@ -527,9 +515,10 @@
     "E183",
     "E155",
     "E184",
-    "E185"
+    "E185",
+    "E157"
   ],
-  "updated_at": "2026-11-04T15:35:07.446Z",
+  "updated_at": "2026-11-04T15:50:20.881Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
