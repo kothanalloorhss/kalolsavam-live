@@ -16,27 +16,14 @@
       "events": []
     },
     "2": {
-      "status": "ongoing",
-      "event_id": null,
+      "status": "idle",
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": null,
-      "events": [
-        {
-          "event_id": "E151",
-          "event_name": "കുച്ചുപ്പുടി Boys",
-          "categories": [
-            "HS"
-          ],
-          "scheduled_start": "13:30",
-          "actual_start": "2026-11-04T11:28:26.953Z",
-          "delay_minutes": 208,
-          "combined_stages": null
-        }
-      ]
+      "idle_since": "2026-11-04T11:28:35.350Z",
+      "events": []
     },
     "3": {
       "status": "ongoing",
@@ -564,5 +551,5 @@
     "E149",
     "E150"
   ],
-  "updated_at": "2026-11-04T11:28:26.953Z"
+  "updated_at": "2026-11-04T11:28:35.350Z"
 }
