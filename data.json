@@ -16,27 +16,14 @@
       "events": []
     },
     "2": {
-      "status": "ongoing",
-      "event_id": null,
+      "status": "idle",
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": null,
-      "events": [
-        {
-          "event_id": "E155",
-          "event_name": "മോഹിനിയാട്ടം",
-          "categories": [
-            "UP"
-          ],
-          "scheduled_start": "15:10",
-          "actual_start": "2026-11-04T13:55:53.765Z",
-          "delay_minutes": 256,
-          "combined_stages": null
-        }
-      ]
+      "idle_since": "2026-11-04T15:03:29.310Z",
+      "events": []
     },
     "3": {
       "status": "idle",
@@ -538,7 +525,7 @@
     "E191",
     "E156"
   ],
-  "updated_at": "2026-11-04T15:03:14.569Z",
+  "updated_at": "2026-11-04T15:03:29.310Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
