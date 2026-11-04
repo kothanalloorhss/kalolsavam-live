@@ -50,14 +50,27 @@
       "events": []
     },
     "4": {
-      "status": "idle",
+      "status": "ongoing",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": "2026-11-04T08:42:24.324Z",
-      "events": []
+      "idle_since": null,
+      "events": [
+        {
+          "event_id": "E172",
+          "event_name": "മാപ്പിളപ്പാട്ട് Girls",
+          "categories": [
+            "HSS"
+          ],
+          "scheduled_start": "10:35",
+          "actual_start": "2026-11-04T08:42:29.298Z",
+          "delay_minutes": 217,
+          "combined_stages": null
+        }
+      ]
     },
     "5": {
       "status": "ongoing",
@@ -204,6 +217,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-04T08:42:29.298Z",
+      "text": "Stage 4: മാപ്പിളപ്പാട്ട് Girls has started (217 min late)"
+    },
+    {
       "t": "2026-11-04T08:42:24.324Z",
       "text": "Stage 4: മാപ്പിളപ്പാട്ട് Boys has finished"
     },
@@ -318,10 +335,6 @@
     {
       "t": "2026-11-04T06:20:22.786Z",
       "text": "Stage 3: ശാസ്ത്രീയ സംഗീതം Girls has started (105 min late)"
-    },
-    {
-      "t": "2026-11-04T06:15:39.754Z",
-      "text": "Results announced for Stage 4, മാപ്പിളപ്പാട്ട് Girls (HS)"
     }
   ],
   "recent_results": [
@@ -514,5 +527,5 @@
     "E196",
     "E171"
   ],
-  "updated_at": "2026-11-04T08:42:24.324Z"
+  "updated_at": "2026-11-04T08:42:29.298Z"
 }
