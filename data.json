@@ -50,14 +50,27 @@
       "events": []
     },
     "4": {
-      "status": "idle",
+      "status": "ongoing",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": "2026-11-04T14:31:04.438Z",
-      "events": []
+      "idle_since": null,
+      "events": [
+        {
+          "event_id": "E183",
+          "event_name": "ഒപ്പന",
+          "categories": [
+            "HS"
+          ],
+          "scheduled_start": "17:20",
+          "actual_start": "2026-11-04T14:31:14.518Z",
+          "delay_minutes": 161,
+          "combined_stages": null
+        }
+      ]
     },
     "5": {
       "status": "ongoing",
@@ -192,6 +205,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-04T14:31:14.518Z",
+      "text": "Stage 4: ഒപ്പന has started (161 min late)"
+    },
+    {
       "t": "2026-11-04T14:31:04.438Z",
       "text": "Results announced for Stage 4, ഒപ്പന (HSS)"
     },
@@ -306,10 +323,6 @@
     {
       "t": "2026-11-04T11:46:43.454Z",
       "text": "Results announced for Stage 4, സംഘ ഗാനം ഉറുദു (UP)"
-    },
-    {
-      "t": "2026-11-04T11:46:34.713Z",
-      "text": "Stage 4: സംഘ ഗാനം ഉറുദു has started (272 min late)"
     }
   ],
   "recent_results": [
@@ -533,7 +546,7 @@
     "E200",
     "E182"
   ],
-  "updated_at": "2026-11-04T14:31:04.438Z",
+  "updated_at": "2026-11-04T14:31:14.518Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
