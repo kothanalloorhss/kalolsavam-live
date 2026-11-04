@@ -130,27 +130,14 @@
       "events": []
     },
     "7": {
-      "status": "ongoing",
-      "event_id": null,
+      "status": "idle",
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": null,
-      "events": [
-        {
-          "event_id": "E198",
-          "event_name": "പദ്യംചൊല്ലൽ ഇംഗ്ലീഷ്",
-          "categories": [
-            "HSS"
-          ],
-          "scheduled_start": "12:55",
-          "actual_start": "2026-11-04T09:35:29.594Z",
-          "delay_minutes": 130,
-          "combined_stages": null
-        }
-      ]
+      "idle_since": "2026-11-04T10:59:38.319Z",
+      "events": []
     },
     "8": {
       "status": "idle",
@@ -239,6 +226,10 @@
     }
   },
   "ticker": [
+    {
+      "t": "2026-11-04T10:59:38.319Z",
+      "text": "Stage 7: പദ്യംചൊല്ലൽ ഇംഗ്ലീഷ് has finished"
+    },
     {
       "t": "2026-11-04T10:57:45.244Z",
       "text": "Results announced for Stage 2, ഭരതനാട്യം Girls (HSS)"
@@ -354,10 +345,6 @@
     {
       "t": "2026-11-04T08:42:24.324Z",
       "text": "Stage 4: മാപ്പിളപ്പാട്ട് Boys has finished"
-    },
-    {
-      "t": "2026-11-04T08:42:20.091Z",
-      "text": "Stage 4: മാപ്പിളപ്പാട്ട് Boys has started (237 min late)"
     }
   ],
   "recent_results": [
@@ -559,7 +546,8 @@
     "E141",
     "E193",
     "E167",
-    "E148"
+    "E148",
+    "E198"
   ],
-  "updated_at": "2026-11-04T10:57:45.244Z"
+  "updated_at": "2026-11-04T10:59:38.319Z"
 }
