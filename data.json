@@ -28,27 +28,14 @@
       ]
     },
     "2": {
-      "status": "ongoing",
-      "event_id": null,
+      "status": "idle",
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": null,
-      "events": [
-        {
-          "event_id": "E153",
-          "event_name": "കുച്ചുപ്പുടി Girls",
-          "categories": [
-            "HSS"
-          ],
-          "scheduled_start": "13:50",
-          "actual_start": "2026-11-04T11:43:07.505Z",
-          "delay_minutes": 203,
-          "combined_stages": null
-        }
-      ]
+      "idle_since": "2026-11-04T12:35:08.405Z",
+      "events": []
     },
     "3": {
       "status": "ongoing",
@@ -241,6 +228,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-04T12:35:08.405Z",
+      "text": "Results announced for Stage 2, കുച്ചുപ്പുടി Girls (HSS)"
+    },
+    {
       "t": "2026-11-04T12:14:05.899Z",
       "text": "Updated Result: നാടൻപ്പാട്ട് (HS)"
     },
@@ -355,13 +346,25 @@
     {
       "t": "2026-11-04T10:34:58.833Z",
       "text": "Results announced for Stage 1, നാടൻപ്പാട്ട് (HS)"
-    },
-    {
-      "t": "2026-11-04T10:30:26.811Z",
-      "text": "Stage 5: പ്രസംഗം മലയാളം  has started (120 min late)"
     }
   ],
   "recent_results": [
+    {
+      "event_id": "E153",
+      "event_name": "കുച്ചുപ്പുടി Girls",
+      "stage_id": 2,
+      "categories": [
+        "HSS"
+      ],
+      "announced_at": "2026-11-04T12:35:08.405Z",
+      "results": {
+        "HSS": {
+          "first": "18",
+          "second": "",
+          "third": ""
+        }
+      }
+    },
     {
       "event_id": "E177",
       "event_name": "സംഘ ഗാനം ഉറുദു",
@@ -505,22 +508,6 @@
           "third": ""
         }
       }
-    },
-    {
-      "event_id": "E197",
-      "event_name": "പദ്യംചൊല്ലൽ ഇംഗ്ലീഷ്",
-      "stage_id": 7,
-      "categories": [
-        "HS"
-      ],
-      "announced_at": "2026-11-04T10:22:06.660Z",
-      "results": {
-        "HS": {
-          "first": "16",
-          "second": "",
-          "third": ""
-        }
-      }
     }
   ],
   "completed_events": [
@@ -568,9 +555,10 @@
     "E177",
     "E174",
     "E176",
-    "E142"
+    "E142",
+    "E153"
   ],
-  "updated_at": "2026-11-04T12:14:05.899Z",
+  "updated_at": "2026-11-04T12:35:08.405Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
