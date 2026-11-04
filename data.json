@@ -5,15 +5,27 @@
   },
   "stages": {
     "1": {
-      "status": "idle",
+      "status": "ongoing",
       "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": "2026-11-03T08:24:20.817Z",
-      "events": []
+      "idle_since": null,
+      "events": [
+        {
+          "event_id": "E138",
+          "event_name": "തിരുവാതിര",
+          "categories": [
+            "UP"
+          ],
+          "scheduled_start": "09:30",
+          "actual_start": "2026-11-04T04:31:53.850Z",
+          "delay_minutes": 32,
+          "combined_stages": null
+        }
+      ]
     },
     "2": {
       "status": "idle",
@@ -189,6 +201,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-04T04:31:53.850Z",
+      "text": "Stage 1: തിരുവാതിര has started (32 min late)"
+    },
+    {
       "t": "2026-11-04T04:30:55.638Z",
       "text": "Stage 5: പദ്യംചൊല്ലൽ മലയാളം has started (61 min late)"
     },
@@ -270,5 +286,5 @@
     "E108",
     "E133"
   ],
-  "updated_at": "2026-11-04T04:30:55.638Z"
+  "updated_at": "2026-11-04T04:31:53.850Z"
 }
