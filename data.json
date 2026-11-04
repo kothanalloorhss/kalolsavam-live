@@ -5,15 +5,27 @@
   },
   "stages": {
     "1": {
-      "status": "idle",
+      "status": "ongoing",
       "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": "2026-11-04T12:59:35.168Z",
-      "events": []
+      "idle_since": null,
+      "events": [
+        {
+          "event_id": "E144",
+          "event_name": "വഞ്ചിപ്പാട്ട്",
+          "categories": [
+            "HSS"
+          ],
+          "scheduled_start": "14:10",
+          "actual_start": "2026-11-04T13:06:41.623Z",
+          "delay_minutes": 267,
+          "combined_stages": null
+        }
+      ]
     },
     "2": {
       "status": "ongoing",
@@ -229,6 +241,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-04T13:06:41.623Z",
+      "text": "Stage 1: വഞ്ചിപ്പാട്ട് has started (267 min late)"
+    },
+    {
       "t": "2026-11-04T13:03:31.316Z",
       "text": "Stage 2: കുച്ചുപ്പുടി Girls has started (253 min late)"
     },
@@ -343,10 +359,6 @@
     {
       "t": "2026-11-04T10:57:30.040Z",
       "text": "Stage 3: സംഘ ഗാനം has started (157 min late)"
-    },
-    {
-      "t": "2026-11-04T10:53:28.886Z",
-      "text": "Results announced for Stage 3, സംഘ ഗാനം (HS)"
     }
   ],
   "recent_results": [
@@ -562,7 +574,7 @@
     "E178",
     "E143"
   ],
-  "updated_at": "2026-11-04T13:03:31.316Z",
+  "updated_at": "2026-11-04T13:06:41.623Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
