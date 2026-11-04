@@ -59,15 +59,27 @@
       ]
     },
     "5": {
-      "status": "idle",
+      "status": "ongoing",
       "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": "2026-11-03T09:20:50.993Z",
-      "events": []
+      "idle_since": null,
+      "events": [
+        {
+          "event_id": "E186",
+          "event_name": "പദ്യംചൊല്ലൽ മലയാളം",
+          "categories": [
+            "HS"
+          ],
+          "scheduled_start": "09:00",
+          "actual_start": "2026-11-04T04:30:55.638Z",
+          "delay_minutes": 61,
+          "combined_stages": null
+        }
+      ]
     },
     "6": {
       "status": "idle",
@@ -177,6 +189,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-04T04:30:55.638Z",
+      "text": "Stage 5: പദ്യംചൊല്ലൽ മലയാളം has started (61 min late)"
+    },
+    {
       "t": "2026-11-04T04:10:59.131Z",
       "text": "Stage 4: മാപ്പിളപ്പാട്ട് Boys has started (41 min late)"
     },
@@ -254,5 +270,5 @@
     "E108",
     "E133"
   ],
-  "updated_at": "2026-11-04T04:10:59.131Z"
+  "updated_at": "2026-11-04T04:30:55.638Z"
 }
