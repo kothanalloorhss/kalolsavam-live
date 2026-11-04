@@ -16,15 +16,27 @@
       "events": []
     },
     "2": {
-      "status": "idle",
+      "status": "ongoing",
       "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": "2026-11-04T15:03:29.310Z",
-      "events": []
+      "idle_since": null,
+      "events": [
+        {
+          "event_id": "E155",
+          "event_name": "മോഹിനിയാട്ടം",
+          "categories": [
+            "UP"
+          ],
+          "scheduled_start": "15:10",
+          "actual_start": "2026-11-04T15:10:26.180Z",
+          "delay_minutes": 330,
+          "combined_stages": null
+        }
+      ]
     },
     "3": {
       "status": "idle",
@@ -39,6 +51,7 @@
     },
     "4": {
       "status": "idle",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
@@ -168,6 +181,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-04T15:10:26.180Z",
+      "text": "Stage 2: മോഹിനിയാട്ടം has started (330 min late)"
+    },
+    {
       "t": "2026-11-04T15:08:00.180Z",
       "text": "Results announced for Stage 4, ഒപ്പന (HS)"
     },
@@ -282,10 +299,6 @@
     {
       "t": "2026-11-04T12:35:08.405Z",
       "text": "Results announced for Stage 2, കുച്ചുപ്പുടി Girls (HSS)"
-    },
-    {
-      "t": "2026-11-04T12:14:05.899Z",
-      "text": "Updated Result: നാടൻപ്പാട്ട് (HS)"
     }
   ],
   "recent_results": [
@@ -514,7 +527,7 @@
     "E156",
     "E183"
   ],
-  "updated_at": "2026-11-04T15:08:00.180Z",
+  "updated_at": "2026-11-04T15:10:26.180Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
