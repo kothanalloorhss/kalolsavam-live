@@ -5,27 +5,14 @@
   },
   "stages": {
     "1": {
-      "status": "ongoing",
-      "event_id": null,
+      "status": "idle",
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": null,
-      "events": [
-        {
-          "event_id": "E141",
-          "event_name": "നാടൻപ്പാട്ട്",
-          "categories": [
-            "HS"
-          ],
-          "scheduled_start": "11:20",
-          "actual_start": "2026-11-04T07:41:52.564Z",
-          "delay_minutes": 112,
-          "combined_stages": null
-        }
-      ]
+      "idle_since": "2026-11-04T10:34:58.833Z",
+      "events": []
     },
     "2": {
       "status": "ongoing",
@@ -252,6 +239,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-04T10:34:58.833Z",
+      "text": "Results announced for Stage 1, നാടൻപ്പാട്ട് (HS)"
+    },
+    {
       "t": "2026-11-04T10:30:26.811Z",
       "text": "Stage 5: പ്രസംഗം മലയാളം  has started (120 min late)"
     },
@@ -366,13 +357,25 @@
     {
       "t": "2026-11-04T07:53:54.935Z",
       "text": "Stage 7: പ്രസംഗം ഇംഗ്ലീഷ് has started (144 min late)"
-    },
-    {
-      "t": "2026-11-04T07:49:25.533Z",
-      "text": "Results announced for Stage 7, പ്രസംഗം ഇംഗ്ലീഷ് (HS)"
     }
   ],
   "recent_results": [
+    {
+      "event_id": "E141",
+      "event_name": "നാടൻപ്പാട്ട്",
+      "stage_id": 1,
+      "categories": [
+        "HS"
+      ],
+      "announced_at": "2026-11-04T10:34:58.833Z",
+      "results": {
+        "HS": {
+          "first": "18",
+          "second": "",
+          "third": ""
+        }
+      }
+    },
     {
       "event_id": "E188",
       "event_name": "പ്രസംഗം മലയാളം ",
@@ -516,22 +519,6 @@
           "third": ""
         }
       }
-    },
-    {
-      "event_id": "E173",
-      "event_name": "പദ്യംചൊല്ലൽ ഉറുദു",
-      "stage_id": 4,
-      "categories": [
-        "UP"
-      ],
-      "announced_at": "2026-11-04T08:35:24.229Z",
-      "results": {
-        "UP": {
-          "first": "29",
-          "second": "",
-          "third": ""
-        }
-      }
     }
   ],
   "completed_events": [
@@ -567,7 +554,8 @@
     "E147",
     "E166",
     "E197",
-    "E188"
+    "E188",
+    "E141"
   ],
-  "updated_at": "2026-11-04T10:30:26.811Z"
+  "updated_at": "2026-11-04T10:34:58.833Z"
 }
