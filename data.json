@@ -62,14 +62,27 @@
       ]
     },
     "4": {
-      "status": "idle",
+      "status": "ongoing",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": "2026-11-04T04:57:58.444Z",
-      "events": []
+      "idle_since": null,
+      "events": [
+        {
+          "event_id": "E170",
+          "event_name": "മാപ്പിളപ്പാട്ട് Girls",
+          "categories": [
+            "HS"
+          ],
+          "scheduled_start": "09:30",
+          "actual_start": "2026-11-04T04:58:03.796Z",
+          "delay_minutes": 58,
+          "combined_stages": null
+        }
+      ]
     },
     "5": {
       "status": "ongoing",
@@ -214,6 +227,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-04T04:58:03.796Z",
+      "text": "Stage 4: മാപ്പിളപ്പാട്ട് Girls has started (58 min late)"
+    },
+    {
       "t": "2026-11-04T04:57:58.443Z",
       "text": "Results, Stage 4, മാപ്പിളപ്പാട്ട് Boys: 1st 13"
     },
@@ -349,5 +366,5 @@
     "E138",
     "E169"
   ],
-  "updated_at": "2026-11-04T04:57:58.444Z"
+  "updated_at": "2026-11-04T04:58:03.796Z"
 }
