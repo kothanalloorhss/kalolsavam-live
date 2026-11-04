@@ -74,14 +74,27 @@
       ]
     },
     "4": {
-      "status": "idle",
+      "status": "ongoing",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": "2026-11-04T13:13:36.799Z",
-      "events": []
+      "idle_since": null,
+      "events": [
+        {
+          "event_id": "E180",
+          "event_name": "ഗസൽ ആലാപനം ഉറുദു",
+          "categories": [
+            "HS"
+          ],
+          "scheduled_start": "15:40",
+          "actual_start": "2026-11-04T13:13:43.457Z",
+          "delay_minutes": 184,
+          "combined_stages": null
+        }
+      ]
     },
     "5": {
       "status": "ongoing",
@@ -228,6 +241,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-04T13:13:43.457Z",
+      "text": "Stage 4: ഗസൽ ആലാപനം ഉറുദു has started (184 min late)"
+    },
+    {
       "t": "2026-11-04T13:13:36.799Z",
       "text": "Results announced for Stage 4, ഗസൽ ആലാപനം ഉറുദു (HSS)"
     },
@@ -342,10 +359,6 @@
     {
       "t": "2026-11-04T10:59:38.319Z",
       "text": "Stage 7: പദ്യംചൊല്ലൽ ഇംഗ്ലീഷ് has finished"
-    },
-    {
-      "t": "2026-11-04T10:57:45.244Z",
-      "text": "Results announced for Stage 2, ഭരതനാട്യം Girls (HSS)"
     }
   ],
   "recent_results": [
@@ -562,7 +575,7 @@
     "E143",
     "E179"
   ],
-  "updated_at": "2026-11-04T13:13:36.799Z",
+  "updated_at": "2026-11-04T13:13:43.457Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
