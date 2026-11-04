@@ -130,15 +130,27 @@
       ]
     },
     "6": {
-      "status": "idle",
+      "status": "ongoing",
       "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": "2026-11-04T09:13:32.903Z",
-      "events": []
+      "idle_since": null,
+      "events": [
+        {
+          "event_id": "E193",
+          "event_name": "സംഘ ഗാനം",
+          "categories": [
+            "HSS"
+          ],
+          "scheduled_start": "15:00",
+          "actual_start": "2026-11-04T10:42:52.029Z",
+          "delay_minutes": 73,
+          "combined_stages": null
+        }
+      ]
     },
     "7": {
       "status": "ongoing",
@@ -250,6 +262,10 @@
     }
   },
   "ticker": [
+    {
+      "t": "2026-11-04T10:42:52.029Z",
+      "text": "Stage 6: സംഘ ഗാനം has started (73 min late)"
+    },
     {
       "t": "2026-11-04T10:41:37.299Z",
       "text": "Stage 2: കുച്ചുപ്പുടി Boys has started (152 min late)"
@@ -365,10 +381,6 @@
     {
       "t": "2026-11-04T08:35:14.585Z",
       "text": "Stage 4: പദ്യംചൊല്ലൽ ഉറുദു has started (175 min late)"
-    },
-    {
-      "t": "2026-11-04T07:57:54.652Z",
-      "text": "Stage 5: പ്രസംഗം മലയാളം  has started (148 min late)"
     }
   ],
   "recent_results": [
@@ -569,5 +581,5 @@
     "E188",
     "E141"
   ],
-  "updated_at": "2026-11-04T10:41:37.299Z"
+  "updated_at": "2026-11-04T10:42:52.029Z"
 }
