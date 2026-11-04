@@ -50,14 +50,27 @@
       "events": []
     },
     "4": {
-      "status": "idle",
+      "status": "ongoing",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": "2026-11-04T13:58:14.717Z",
-      "events": []
+      "idle_since": null,
+      "events": [
+        {
+          "event_id": "E182",
+          "event_name": "ഒപ്പന",
+          "categories": [
+            "HSS"
+          ],
+          "scheduled_start": "16:40",
+          "actual_start": "2026-11-04T13:58:20.036Z",
+          "delay_minutes": 168,
+          "combined_stages": null
+        }
+      ]
     },
     "5": {
       "status": "ongoing",
@@ -204,6 +217,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-04T13:58:20.036Z",
+      "text": "Stage 4: ഒപ്പന has started (168 min late)"
+    },
+    {
       "t": "2026-11-04T13:58:14.717Z",
       "text": "Results announced for Stage 4, ഒപ്പന (UP)"
     },
@@ -318,10 +335,6 @@
     {
       "t": "2026-11-04T11:39:25.231Z",
       "text": "Results announced for Stage 2, കുച്ചുപ്പുടി Boys (HSS)"
-    },
-    {
-      "t": "2026-11-04T11:28:48.662Z",
-      "text": "ഷെഡ്യൂൾ മാറ്റം: കുച്ചുപ്പുടി Boys വേദി 2-ലേക്ക് പുനഃക്രമീകരിച്ചു"
     }
   ],
   "recent_results": [
@@ -543,7 +556,7 @@
     "E180",
     "E181"
   ],
-  "updated_at": "2026-11-04T13:58:14.717Z",
+  "updated_at": "2026-11-04T13:58:20.036Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
