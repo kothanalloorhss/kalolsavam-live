@@ -5,27 +5,14 @@
   },
   "stages": {
     "1": {
-      "status": "ongoing",
-      "event_id": null,
+      "status": "idle",
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": null,
-      "events": [
-        {
-          "event_id": "E142",
-          "event_name": "നാടൻപ്പാട്ട്",
-          "categories": [
-            "HSS"
-          ],
-          "scheduled_start": "12:20",
-          "actual_start": "2026-11-04T11:55:55.655Z",
-          "delay_minutes": 306,
-          "combined_stages": null
-        }
-      ]
+      "idle_since": "2026-11-04T11:56:01.014Z",
+      "events": []
     },
     "2": {
       "status": "ongoing",
@@ -241,6 +228,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-04T11:56:01.014Z",
+      "text": "Stage 1: നാടൻപ്പാട്ട് has finished"
+    },
+    {
       "t": "2026-11-04T11:55:55.655Z",
       "text": "Stage 1: നാടൻപ്പാട്ട് has started (306 min late)"
     },
@@ -355,10 +346,6 @@
     {
       "t": "2026-11-04T10:28:45.549Z",
       "text": "Stage 3: സംഘ ഗാനം has started (179 min late)"
-    },
-    {
-      "t": "2026-11-04T10:22:06.660Z",
-      "text": "Results announced for Stage 7, പദ്യംചൊല്ലൽ ഇംഗ്ലീഷ് (HS)"
     }
   ],
   "recent_results": [
@@ -567,9 +554,10 @@
     "E152",
     "E177",
     "E174",
-    "E176"
+    "E176",
+    "E142"
   ],
-  "updated_at": "2026-11-04T11:55:55.655Z",
+  "updated_at": "2026-11-04T11:56:01.014Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
