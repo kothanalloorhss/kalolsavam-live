@@ -6,6 +6,7 @@
   "stages": {
     "1": {
       "status": "idle",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
@@ -49,27 +50,14 @@
       "events": []
     },
     "4": {
-      "status": "ongoing",
-      "event_id": null,
+      "status": "idle",
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": null,
-      "events": [
-        {
-          "event_id": "E170",
-          "event_name": "മാപ്പിളപ്പാട്ട് Girls",
-          "categories": [
-            "HS"
-          ],
-          "scheduled_start": "09:30",
-          "actual_start": "2026-11-04T04:58:03.796Z",
-          "delay_minutes": 58,
-          "combined_stages": null
-        }
-      ]
+      "idle_since": "2026-11-04T06:15:39.754Z",
+      "events": []
     },
     "5": {
       "status": "ongoing",
@@ -228,6 +216,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-04T06:15:39.754Z",
+      "text": "Results announced for Stage 4, മാപ്പിളപ്പാട്ട് Girls (HS)"
+    },
+    {
       "t": "2026-11-04T05:53:53.429Z",
       "text": "Results announced for Stage 1, തിരുവാതിര (HSS)"
     },
@@ -329,6 +321,22 @@
     }
   ],
   "recent_results": [
+    {
+      "event_id": "E170",
+      "event_name": "മാപ്പിളപ്പാട്ട് Girls",
+      "stage_id": 4,
+      "categories": [
+        "HS"
+      ],
+      "announced_at": "2026-11-04T06:15:39.754Z",
+      "results": {
+        "HS": {
+          "first": "23",
+          "second": "",
+          "third": ""
+        }
+      }
+    },
     {
       "event_id": "E139",
       "event_name": "തിരുവാതിര",
@@ -436,7 +444,8 @@
     "E169",
     "E159",
     "E160",
-    "E139"
+    "E139",
+    "E170"
   ],
-  "updated_at": "2026-11-04T05:53:53.429Z"
+  "updated_at": "2026-11-04T06:15:39.754Z"
 }
