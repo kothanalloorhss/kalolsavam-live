@@ -50,27 +50,14 @@
       "events": []
     },
     "4": {
-      "status": "ongoing",
-      "event_id": null,
+      "status": "idle",
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": null,
-      "events": [
-        {
-          "event_id": "E172",
-          "event_name": "മാപ്പിളപ്പാട്ട് Girls",
-          "categories": [
-            "HSS"
-          ],
-          "scheduled_start": "10:35",
-          "actual_start": "2026-11-04T08:42:29.298Z",
-          "delay_minutes": 217,
-          "combined_stages": null
-        }
-      ]
+      "idle_since": "2026-11-04T08:42:33.617Z",
+      "events": []
     },
     "5": {
       "status": "ongoing",
@@ -217,6 +204,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-04T08:42:33.617Z",
+      "text": "Stage 4: മാപ്പിളപ്പാട്ട് Girls has finished"
+    },
+    {
       "t": "2026-11-04T08:42:29.298Z",
       "text": "Stage 4: മാപ്പിളപ്പാട്ട് Girls has started (217 min late)"
     },
@@ -331,10 +322,6 @@
     {
       "t": "2026-11-04T06:20:34.767Z",
       "text": "Stage 1: തിരുവാതിര has started (91 min late)"
-    },
-    {
-      "t": "2026-11-04T06:20:22.786Z",
-      "text": "Stage 3: ശാസ്ത്രീയ സംഗീതം Girls has started (105 min late)"
     }
   ],
   "recent_results": [
@@ -525,7 +512,8 @@
     "E165",
     "E146",
     "E196",
-    "E171"
+    "E171",
+    "E172"
   ],
-  "updated_at": "2026-11-04T08:42:29.298Z"
+  "updated_at": "2026-11-04T08:42:33.617Z"
 }
