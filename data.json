@@ -5,15 +5,27 @@
   },
   "stages": {
     "1": {
-      "status": "idle",
+      "status": "ongoing",
       "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": "2026-11-04T04:49:13.492Z",
-      "events": []
+      "idle_since": null,
+      "events": [
+        {
+          "event_id": "E139",
+          "event_name": "തിരുവാതിര",
+          "categories": [
+            "HSS"
+          ],
+          "scheduled_start": "09:40",
+          "actual_start": "2026-11-04T05:13:54.933Z",
+          "delay_minutes": 64,
+          "combined_stages": null
+        }
+      ]
     },
     "2": {
       "status": "ongoing",
@@ -40,6 +52,7 @@
     },
     "3": {
       "status": "idle",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
@@ -228,6 +241,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-04T05:13:54.933Z",
+      "text": "Stage 1: തിരുവാതിര has started (64 min late)"
+    },
+    {
       "t": "2026-11-04T05:10:51.914Z",
       "text": "Results, Stage 3, ശാസ്ത്രീയ സംഗീതം: 1st 24"
     },
@@ -388,5 +405,5 @@
     "E169",
     "E159"
   ],
-  "updated_at": "2026-11-04T05:10:51.916Z"
+  "updated_at": "2026-11-04T05:13:54.933Z"
 }
