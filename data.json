@@ -62,27 +62,14 @@
       ]
     },
     "4": {
-      "status": "ongoing",
-      "event_id": null,
+      "status": "idle",
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": null,
-      "events": [
-        {
-          "event_id": "E176",
-          "event_name": "പ്രസംഗം ഉറുദു",
-          "categories": [
-            "Gen"
-          ],
-          "scheduled_start": "12:40",
-          "actual_start": "2026-11-04T10:15:13.290Z",
-          "delay_minutes": 184,
-          "combined_stages": null
-        }
-      ]
+      "idle_since": "2026-11-04T11:47:04.849Z",
+      "events": []
     },
     "5": {
       "status": "ongoing",
@@ -229,6 +216,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-04T11:47:04.849Z",
+      "text": "Stage 4: പ്രസംഗം ഉറുദു has finished"
+    },
+    {
       "t": "2026-11-04T11:47:00.022Z",
       "text": "Stage 4: പദ്യംചൊല്ലൽ ഉറുദു has finished"
     },
@@ -343,10 +334,6 @@
     {
       "t": "2026-11-04T10:15:13.290Z",
       "text": "Stage 4: പ്രസംഗം ഉറുദു has started (184 min late)"
-    },
-    {
-      "t": "2026-11-04T10:03:12.545Z",
-      "text": "Stage 7: പദ്യംചൊല്ലൽ ഇംഗ്ലീഷ് has started (213 min late)"
     }
   ],
   "recent_results": [
@@ -554,9 +541,10 @@
     "E150",
     "E152",
     "E177",
-    "E174"
+    "E174",
+    "E176"
   ],
-  "updated_at": "2026-11-04T11:47:00.022Z",
+  "updated_at": "2026-11-04T11:47:04.849Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
