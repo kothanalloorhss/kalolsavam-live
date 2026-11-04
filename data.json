@@ -16,14 +16,27 @@
       "events": []
     },
     "2": {
-      "status": "idle",
+      "status": "ongoing",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": "2026-11-04T15:21:19.177Z",
-      "events": []
+      "idle_since": null,
+      "events": [
+        {
+          "event_id": "E157",
+          "event_name": "മോഹിനിയാട്ടം",
+          "categories": [
+            "HSS"
+          ],
+          "scheduled_start": "16:10",
+          "actual_start": "2026-11-04T15:21:23.991Z",
+          "delay_minutes": 281,
+          "combined_stages": null
+        }
+      ]
     },
     "3": {
       "status": "idle",
@@ -180,6 +193,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-04T15:21:23.991Z",
+      "text": "Stage 2: മോഹിനിയാട്ടം has started (281 min late)"
+    },
+    {
       "t": "2026-11-04T15:21:19.177Z",
       "text": "Results announced for Stage 2, മോഹിനിയാട്ടം (UP)"
     },
@@ -294,10 +311,6 @@
     {
       "t": "2026-11-04T12:48:44.577Z",
       "text": "Results announced for Stage 4, സംഘ ഗാനം ഉറുദു (HS)"
-    },
-    {
-      "t": "2026-11-04T12:46:22.904Z",
-      "text": "Stage 7: പദ്യംചൊല്ലൽ ഇംഗ്ലീഷ് has started (211 min late)"
     }
   ],
   "recent_results": [
@@ -527,7 +540,7 @@
     "E183",
     "E155"
   ],
-  "updated_at": "2026-11-04T15:21:19.177Z",
+  "updated_at": "2026-11-04T15:21:23.991Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
