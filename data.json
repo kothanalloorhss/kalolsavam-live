@@ -25,27 +25,14 @@
       "delay_minutes": 0
     },
     "3": {
-      "status": "ongoing",
-      "event_id": null,
+      "status": "idle",
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": null,
-      "events": [
-        {
-          "event_id": "E108",
-          "event_name": "കഥാകഥനം",
-          "categories": [
-            "LP"
-          ],
-          "scheduled_start": "10:00",
-          "actual_start": "2026-11-03T06:49:57.081Z",
-          "delay_minutes": 140,
-          "combined_stages": null
-        }
-      ]
+      "idle_since": "2026-11-04T03:08:29.546Z",
+      "events": []
     },
     "4": {
       "status": "idle",
@@ -69,6 +56,7 @@
     },
     "6": {
       "status": "idle",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
@@ -170,6 +158,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-04T03:08:29.546Z",
+      "text": "Stage 3: കഥാകഥനം has finished"
+    },
+    {
       "t": "2026-11-03T09:51:22.780Z",
       "text": "Results, Stage 6, സമസ്യാപൂരണം സംസ്‌കൃതം: 1st 180, 2nd 182, 3rd 183"
     },
@@ -231,7 +223,8 @@
   "completed_events": [
     "E101",
     "E110",
-    "E114"
+    "E114",
+    "E108"
   ],
-  "updated_at": "2026-11-03T09:51:22.780Z"
+  "updated_at": "2026-11-04T03:08:29.546Z"
 }
