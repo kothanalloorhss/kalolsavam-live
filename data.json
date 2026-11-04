@@ -28,6 +28,7 @@
     },
     "3": {
       "status": "idle",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
@@ -37,27 +38,14 @@
       "events": []
     },
     "4": {
-      "status": "ongoing",
-      "event_id": null,
+      "status": "idle",
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": null,
-      "events": [
-        {
-          "event_id": "E180",
-          "event_name": "ഗസൽ ആലാപനം ഉറുദു",
-          "categories": [
-            "HS"
-          ],
-          "scheduled_start": "15:40",
-          "actual_start": "2026-11-04T13:13:43.457Z",
-          "delay_minutes": 184,
-          "combined_stages": null
-        }
-      ]
+      "idle_since": "2026-11-04T13:45:13.555Z",
+      "events": []
     },
     "5": {
       "status": "ongoing",
@@ -204,6 +192,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-04T13:45:13.555Z",
+      "text": "Results announced for Stage 4, ഗസൽ ആലാപനം ഉറുദു (HS)"
+    },
+    {
       "t": "2026-11-04T13:44:57.954Z",
       "text": "Results announced for Stage 3, സംഘ ഗാനം (UP)"
     },
@@ -318,13 +310,25 @@
     {
       "t": "2026-11-04T11:28:18.704Z",
       "text": "Results announced for Stage 2, കുച്ചുപ്പുടി Girls (UP)"
-    },
-    {
-      "t": "2026-11-04T11:16:12.995Z",
-      "text": "Stage 2: കുച്ചുപ്പുടി Girls has started (206 min late)"
     }
   ],
   "recent_results": [
+    {
+      "event_id": "E180",
+      "event_name": "ഗസൽ ആലാപനം ഉറുദു",
+      "stage_id": 4,
+      "categories": [
+        "HS"
+      ],
+      "announced_at": "2026-11-04T13:45:13.555Z",
+      "results": {
+        "HS": {
+          "first": "29",
+          "second": "",
+          "third": ""
+        }
+      }
+    },
     {
       "event_id": "E168",
       "event_name": "സംഘ ഗാനം",
@@ -468,22 +472,6 @@
           "third": ""
         }
       }
-    },
-    {
-      "event_id": "E152",
-      "event_name": "കുച്ചുപ്പുടി Boys",
-      "stage_id": 2,
-      "categories": [
-        "HSS"
-      ],
-      "announced_at": "2026-11-04T11:39:25.230Z",
-      "results": {
-        "HSS": {
-          "first": "25",
-          "second": "",
-          "third": ""
-        }
-      }
     }
   ],
   "completed_events": [
@@ -539,9 +527,10 @@
     "E179",
     "E144",
     "E154",
-    "E168"
+    "E168",
+    "E180"
   ],
-  "updated_at": "2026-11-04T13:44:57.954Z",
+  "updated_at": "2026-11-04T13:45:13.555Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
