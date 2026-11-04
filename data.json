@@ -28,13 +28,27 @@
       ]
     },
     "2": {
-      "status": "idle",
+      "status": "ongoing",
       "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
-      "delay_minutes": 0
+      "delay_minutes": 0,
+      "idle_since": null,
+      "events": [
+        {
+          "event_id": "E145",
+          "event_name": "ഭരതനാട്യം Girls",
+          "categories": [
+            "HS"
+          ],
+          "scheduled_start": "09:00",
+          "actual_start": "2026-11-04T04:33:28.989Z",
+          "delay_minutes": 63,
+          "combined_stages": null
+        }
+      ]
     },
     "3": {
       "status": "ongoing",
@@ -213,6 +227,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-04T04:33:28.989Z",
+      "text": "Stage 2: ഭരതനാട്യം Girls has started (63 min late)"
+    },
+    {
       "t": "2026-11-04T04:32:16.932Z",
       "text": "Stage 3: ശാസ്ത്രീയ സംഗീതം has started (62 min late)"
     },
@@ -302,5 +320,5 @@
     "E108",
     "E133"
   ],
-  "updated_at": "2026-11-04T04:32:16.932Z"
+  "updated_at": "2026-11-04T04:33:28.989Z"
 }
