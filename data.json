@@ -92,6 +92,17 @@
           "actual_start": "2026-11-04T10:15:13.290Z",
           "delay_minutes": 184,
           "combined_stages": null
+        },
+        {
+          "event_id": "E179",
+          "event_name": "ഗസൽ ആലാപനം ഉറുദു",
+          "categories": [
+            "HSS"
+          ],
+          "scheduled_start": "15:10",
+          "actual_start": "2026-11-04T11:46:47.354Z",
+          "delay_minutes": 127,
+          "combined_stages": null
         }
       ]
     },
@@ -240,6 +251,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-04T11:46:47.354Z",
+      "text": "Stage 4: ഗസൽ ആലാപനം ഉറുദു has started (127 min late)"
+    },
+    {
       "t": "2026-11-04T11:46:43.454Z",
       "text": "Results announced for Stage 4, സംഘ ഗാനം ഉറുദു (UP)"
     },
@@ -354,10 +369,6 @@
     {
       "t": "2026-11-04T09:45:52.885Z",
       "text": "Stage 2: ഭരതനാട്യം Girls has started (186 min late)"
-    },
-    {
-      "t": "2026-11-04T09:42:50.911Z",
-      "text": "Results announced for Stage 2, ഭരതനാട്യം (UP)"
     }
   ],
   "recent_results": [
@@ -566,7 +577,7 @@
     "E152",
     "E177"
   ],
-  "updated_at": "2026-11-04T11:46:43.454Z",
+  "updated_at": "2026-11-04T11:46:47.354Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
