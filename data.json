@@ -16,27 +16,14 @@
       "events": []
     },
     "2": {
-      "status": "ongoing",
-      "event_id": null,
+      "status": "idle",
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": null,
-      "events": [
-        {
-          "event_id": "E149",
-          "event_name": "ഭരതനാട്യം Boys",
-          "categories": [
-            "HSS"
-          ],
-          "scheduled_start": "13:10",
-          "actual_start": "2026-11-04T10:46:29.735Z",
-          "delay_minutes": 186,
-          "combined_stages": null
-        }
-      ]
+      "idle_since": "2026-11-04T11:16:04.627Z",
+      "events": []
     },
     "3": {
       "status": "ongoing",
@@ -240,6 +227,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-04T11:16:04.627Z",
+      "text": "Results announced for Stage 2, ഭരതനാട്യം Boys (HSS)"
+    },
+    {
       "t": "2026-11-04T10:59:42.415Z",
       "text": "Stage 7: പദ്യംചൊല്ലൽ ഇംഗ്ലീഷ് has started (165 min late)"
     },
@@ -354,13 +345,25 @@
     {
       "t": "2026-11-04T08:42:33.617Z",
       "text": "Stage 4: മാപ്പിളപ്പാട്ട് Girls has finished"
-    },
-    {
-      "t": "2026-11-04T08:42:29.298Z",
-      "text": "Stage 4: മാപ്പിളപ്പാട്ട് Girls has started (217 min late)"
     }
   ],
   "recent_results": [
+    {
+      "event_id": "E149",
+      "event_name": "ഭരതനാട്യം Boys",
+      "stage_id": 2,
+      "categories": [
+        "HSS"
+      ],
+      "announced_at": "2026-11-04T11:16:04.627Z",
+      "results": {
+        "HSS": {
+          "first": "30",
+          "second": "",
+          "third": ""
+        }
+      }
+    },
     {
       "event_id": "E148",
       "event_name": "ഭരതനാട്യം Girls",
@@ -504,22 +507,6 @@
           "third": ""
         }
       }
-    },
-    {
-      "event_id": "E192",
-      "event_name": "സംഘ ഗാനം",
-      "stage_id": 6,
-      "categories": [
-        "LP"
-      ],
-      "announced_at": "2026-11-04T09:13:32.903Z",
-      "results": {
-        "LP": {
-          "first": "27",
-          "second": "",
-          "third": ""
-        }
-      }
     }
   ],
   "completed_events": [
@@ -560,7 +547,8 @@
     "E193",
     "E167",
     "E148",
-    "E198"
+    "E198",
+    "E149"
   ],
-  "updated_at": "2026-11-04T10:59:42.415Z"
+  "updated_at": "2026-11-04T11:16:04.627Z"
 }
