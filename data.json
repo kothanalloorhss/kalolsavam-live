@@ -16,15 +16,27 @@
       "events": []
     },
     "2": {
-      "status": "idle",
+      "status": "ongoing",
       "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": "2026-11-04T13:44:43.896Z",
-      "events": []
+      "idle_since": null,
+      "events": [
+        {
+          "event_id": "E155",
+          "event_name": "മോഹിനിയാട്ടം",
+          "categories": [
+            "UP"
+          ],
+          "scheduled_start": "15:10",
+          "actual_start": "2026-11-04T13:55:53.765Z",
+          "delay_minutes": 256,
+          "combined_stages": null
+        }
+      ]
     },
     "3": {
       "status": "idle",
@@ -205,6 +217,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-04T13:55:53.765Z",
+      "text": "Stage 2: മോഹിനിയാട്ടം has started (256 min late)"
+    },
+    {
       "t": "2026-11-04T13:48:14.064Z",
       "text": "Stage 4: ഒപ്പന has started (168 min late)"
     },
@@ -319,10 +335,6 @@
     {
       "t": "2026-11-04T11:28:40.161Z",
       "text": "Stage 2: കുച്ചുപ്പുടി Boys has started (199 min late)"
-    },
-    {
-      "t": "2026-11-04T11:28:26.953Z",
-      "text": "Stage 2: കുച്ചുപ്പുടി Boys has started (208 min late)"
     }
   ],
   "recent_results": [
@@ -543,7 +555,7 @@
     "E168",
     "E180"
   ],
-  "updated_at": "2026-11-04T13:48:14.064Z",
+  "updated_at": "2026-11-04T13:55:53.765Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
