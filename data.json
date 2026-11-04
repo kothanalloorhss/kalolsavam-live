@@ -5,27 +5,14 @@
   },
   "stages": {
     "1": {
-      "status": "ongoing",
-      "event_id": null,
+      "status": "idle",
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": null,
-      "events": [
-        {
-          "event_id": "E138",
-          "event_name": "തിരുവാതിര",
-          "categories": [
-            "UP"
-          ],
-          "scheduled_start": "09:30",
-          "actual_start": "2026-11-04T04:31:53.850Z",
-          "delay_minutes": 32,
-          "combined_stages": null
-        }
-      ]
+      "idle_since": "2026-11-04T04:49:13.492Z",
+      "events": []
     },
     "2": {
       "status": "ongoing",
@@ -239,6 +226,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-04T04:49:13.492Z",
+      "text": "Results announced for Stage 1, തിരുവാതിര (UP)"
+    },
+    {
       "t": "2026-11-04T04:36:42.927Z",
       "text": "Stage 6: സംഘ ഗാനം has started (67 min late)"
     },
@@ -305,6 +296,22 @@
   ],
   "recent_results": [
     {
+      "event_id": "E138",
+      "event_name": "തിരുവാതിര",
+      "stage_id": 1,
+      "categories": [
+        "UP"
+      ],
+      "announced_at": "2026-11-04T04:49:13.492Z",
+      "results": {
+        "UP": {
+          "first": "11",
+          "second": "",
+          "third": ""
+        }
+      }
+    },
+    {
       "event_id": "E114",
       "event_name": "സമസ്യാപൂരണം സംസ്‌കൃതം",
       "stage_id": 6,
@@ -334,7 +341,8 @@
     "E110",
     "E114",
     "E108",
-    "E133"
+    "E133",
+    "E138"
   ],
-  "updated_at": "2026-11-04T04:36:42.927Z"
+  "updated_at": "2026-11-04T04:49:13.492Z"
 }
