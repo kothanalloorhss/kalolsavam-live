@@ -131,27 +131,14 @@
       ]
     },
     "7": {
-      "status": "ongoing",
-      "event_id": null,
+      "status": "idle",
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": null,
-      "events": [
-        {
-          "event_id": "E194",
-          "event_name": "പ്രസംഗം ഇംഗ്ലീഷ്",
-          "categories": [
-            "UP"
-          ],
-          "scheduled_start": "09:00",
-          "actual_start": "2026-11-04T04:59:23.705Z",
-          "delay_minutes": 89,
-          "combined_stages": null
-        }
-      ]
+      "idle_since": "2026-11-04T06:25:15.469Z",
+      "events": []
     },
     "8": {
       "status": "idle",
@@ -240,6 +227,10 @@
     }
   },
   "ticker": [
+    {
+      "t": "2026-11-04T06:25:15.469Z",
+      "text": "Results announced for Stage 7, പ്രസംഗം ഇംഗ്ലീഷ് (UP)"
+    },
     {
       "t": "2026-11-04T06:22:09.407Z",
       "text": "Stage 5: പദ്യംചൊല്ലൽ മലയാളം has started (92 min late)"
@@ -355,13 +346,25 @@
     {
       "t": "2026-11-03T06:49:57.081Z",
       "text": "Stage 3: കഥാകഥനം has started (140 min late)"
-    },
-    {
-      "t": "2026-11-03T05:59:14.890Z",
-      "text": "Stages 12 & 13: ചിത്രരചന പെൻസിൽ has started (89 min late)"
     }
   ],
   "recent_results": [
+    {
+      "event_id": "E194",
+      "event_name": "പ്രസംഗം ഇംഗ്ലീഷ്",
+      "stage_id": 7,
+      "categories": [
+        "UP"
+      ],
+      "announced_at": "2026-11-04T06:25:15.469Z",
+      "results": {
+        "UP": {
+          "first": "23",
+          "second": "",
+          "third": ""
+        }
+      }
+    },
     {
       "event_id": "E186",
       "event_name": "പദ്യംചൊല്ലൽ മലയാളം",
@@ -503,7 +506,8 @@
     "E160",
     "E139",
     "E170",
-    "E186"
+    "E186",
+    "E194"
   ],
-  "updated_at": "2026-11-04T06:22:09.407Z"
+  "updated_at": "2026-11-04T06:25:15.469Z"
 }
