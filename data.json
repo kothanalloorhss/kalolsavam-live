@@ -28,14 +28,27 @@
       ]
     },
     "2": {
-      "status": "idle",
+      "status": "ongoing",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": "2026-11-04T09:42:50.911Z",
-      "events": []
+      "idle_since": null,
+      "events": [
+        {
+          "event_id": "E148",
+          "event_name": "ഭരതനാട്യം Girls",
+          "categories": [
+            "HSS"
+          ],
+          "scheduled_start": "12:10",
+          "actual_start": "2026-11-04T09:45:52.885Z",
+          "delay_minutes": 186,
+          "combined_stages": null
+        }
+      ]
     },
     "3": {
       "status": "ongoing",
@@ -228,6 +241,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-04T09:45:52.885Z",
+      "text": "Stage 2: ഭരതനാട്യം Girls has started (186 min late)"
+    },
+    {
       "t": "2026-11-04T09:42:50.911Z",
       "text": "Results announced for Stage 2, ഭരതനാട്യം (UP)"
     },
@@ -342,10 +359,6 @@
     {
       "t": "2026-11-04T07:02:17.016Z",
       "text": "Stage 3: ശാസ്ത്രീയ സംഗീതം Boys has started (107 min late)"
-    },
-    {
-      "t": "2026-11-04T07:02:08.933Z",
-      "text": "Stage 3: ശാസ്ത്രീയ സംഗീതം Girls has finished"
     }
   ],
   "recent_results": [
@@ -542,5 +555,5 @@
     "E175",
     "E147"
   ],
-  "updated_at": "2026-11-04T09:42:50.911Z"
+  "updated_at": "2026-11-04T09:45:52.885Z"
 }
