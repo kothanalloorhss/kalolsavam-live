@@ -5,27 +5,14 @@
   },
   "stages": {
     "1": {
-      "status": "ongoing",
-      "event_id": null,
+      "status": "idle",
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": null,
-      "events": [
-        {
-          "event_id": "E144",
-          "event_name": "വഞ്ചിപ്പാട്ട്",
-          "categories": [
-            "HSS"
-          ],
-          "scheduled_start": "14:10",
-          "actual_start": "2026-11-04T13:06:41.623Z",
-          "delay_minutes": 267,
-          "combined_stages": null
-        }
-      ]
+      "idle_since": "2026-11-04T13:23:20.626Z",
+      "events": []
     },
     "2": {
       "status": "ongoing",
@@ -241,6 +228,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-04T13:23:20.626Z",
+      "text": "Results announced for Stage 1, വഞ്ചിപ്പാട്ട് (HSS)"
+    },
+    {
       "t": "2026-11-04T13:13:43.457Z",
       "text": "Stage 4: ഗസൽ ആലാപനം ഉറുദു has started (184 min late)"
     },
@@ -355,13 +346,25 @@
     {
       "t": "2026-11-04T10:59:42.415Z",
       "text": "Stage 7: പദ്യംചൊല്ലൽ ഇംഗ്ലീഷ് has started (165 min late)"
-    },
-    {
-      "t": "2026-11-04T10:59:38.319Z",
-      "text": "Stage 7: പദ്യംചൊല്ലൽ ഇംഗ്ലീഷ് has finished"
     }
   ],
   "recent_results": [
+    {
+      "event_id": "E144",
+      "event_name": "വഞ്ചിപ്പാട്ട്",
+      "stage_id": 1,
+      "categories": [
+        "HSS"
+      ],
+      "announced_at": "2026-11-04T13:23:20.626Z",
+      "results": {
+        "HSS": {
+          "first": "16",
+          "second": "17",
+          "third": ""
+        }
+      }
+    },
     {
       "event_id": "E179",
       "event_name": "ഗസൽ ആലാപനം ഉറുദു",
@@ -505,22 +508,6 @@
           "third": ""
         }
       }
-    },
-    {
-      "event_id": "E148",
-      "event_name": "ഭരതനാട്യം Girls",
-      "stage_id": 2,
-      "categories": [
-        "HSS"
-      ],
-      "announced_at": "2026-11-04T10:57:45.244Z",
-      "results": {
-        "HSS": {
-          "first": "26",
-          "second": "",
-          "third": ""
-        }
-      }
     }
   ],
   "completed_events": [
@@ -573,9 +560,10 @@
     "E199",
     "E178",
     "E143",
-    "E179"
+    "E179",
+    "E144"
   ],
-  "updated_at": "2026-11-04T13:13:43.457Z",
+  "updated_at": "2026-11-04T13:23:20.626Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
