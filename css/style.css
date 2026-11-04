@@ -814,3 +814,40 @@ details.tool form { display: grid; gap: .5rem; margin-top: .6rem; }
   padding-top: 0.8rem;
   border-top: 1px dashed var(--gold-500);
 }
+
+/* Multi-Category Results Styling */
+.ranks-container { 
+  display: grid; 
+  gap: 1rem; 
+  margin: 0.5rem 0 1rem; 
+  max-height: 45vh; 
+  overflow-y: auto; 
+  padding-right: 0.5rem;
+}
+.cat-rank-group { 
+  background: #fffaf0; 
+  border: 1px dashed var(--gold-700); 
+  border-radius: 8px; 
+  padding: 0.85rem; 
+}
+.cat-rank-title { 
+  font: 700 1.05rem var(--font-head); 
+  color: var(--maroon-700); 
+  margin-bottom: 0.5rem; 
+}
+.field.slim { font-size: 0.85rem; flex: 1; }
+.field.slim input { padding: 0.4rem; font-size: 1.1rem; }
+.cat-result-row { 
+  display: flex; 
+  align-items: baseline; 
+  gap: 0.75rem; 
+  margin-top: 0.5rem; 
+  flex-wrap: wrap; 
+}
+.res-cat-badge { 
+  font: 700 0.8rem var(--font-head); 
+  background: var(--gold-400); 
+  color: var(--maroon-900); 
+  padding: 0.15rem 0.5rem; 
+  border-radius: 4px; 
+}

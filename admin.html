@@ -162,14 +162,16 @@
     </form>
   </dialog>
 
+  <!-- Modal: End Event & Enter Results -->
   <dialog id="endModal" aria-labelledby="endTitle">
     <form id="endForm">
       <div><h2 id="endTitle">End event</h2><p id="endEvent" class="sub-name" lang="ml"></p></div>
       <p class="muted">Enter chest numbers to announce the result, or skip if none.</p>
-      <label class="field">1st prize <input id="rank1" type="text" maxlength="10" autocomplete="off"></label>
-      <label class="field">2nd prize <input id="rank2" type="text" maxlength="10" autocomplete="off"></label>
-      <label class="field">3rd prize <input id="rank3" type="text" maxlength="10" autocomplete="off"></label>
-      <div class="row">
+      
+      <!-- Dynamic Ranks Container for Multiple Categories -->
+      <div id="endRanksContainer" class="ranks-container"></div>
+
+      <div class="row" style="margin-top: 0.5rem;">
         <button class="btn btn-end" type="submit">Announce results</button>
         <button id="skipResults" class="btn btn-start" type="button">Finish without results</button>
         <button id="cancelEnd" class="btn btn-ghost" type="button">Cancel</button>
@@ -177,16 +179,18 @@
     </form>
   </dialog>
 
+  <!-- Modal: Edit Chest Numbers of Already Announced Results -->
   <dialog id="editResultModal" aria-labelledby="editResultTitle">
     <form id="editResultForm">
       <div>
         <h2 id="editResultTitle">Edit Announced Result</h2>
         <p id="editResultEvent" class="sub-name" lang="ml"></p>
       </div>
-      <label class="field">1st prize <input id="editRank1" type="text" maxlength="10" autocomplete="off"></label>
-      <label class="field">2nd prize <input id="editRank2" type="text" maxlength="10" autocomplete="off"></label>
-      <label class="field">3rd prize <input id="editRank3" type="text" maxlength="10" autocomplete="off"></label>
-      <div class="row">
+      
+      <!-- Dynamic Ranks Container for Editing -->
+      <div id="editRanksContainer" class="ranks-container"></div>
+
+      <div class="row" style="margin-top: 0.5rem;">
         <button class="btn btn-end" type="submit">Save Changes</button>
         <button id="cancelEditResult" class="btn btn-ghost" type="button">Cancel</button>
       </div>

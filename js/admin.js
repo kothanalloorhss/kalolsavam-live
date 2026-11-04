@@ -36,7 +36,6 @@
 
   const findEvent = id => getEffectiveSchedule().find(e => String(e.event_id) === String(id));
 
-  // Helper to extract multiple live events safely handling legacy data formats
   function getLiveEvents(st) {
     if (!st || st.status !== "ongoing") return [];
     if (st.events && Array.isArray(st.events)) return st.events;
@@ -95,7 +94,6 @@
     return p;
   }
 
-  /* ---------- UI helpers ---------- */
   let toastTimer;
   function toast(msg, kind = "ok") {
     const t = $("toast");
@@ -116,7 +114,7 @@
   const pushTicker = (d, text) => { d.ticker.unshift({ t: KL.nowISO(), text }); trimList(d.ticker, C.maxTickerStored); };
   const idleStage = () => ({ status: "idle", events: [], idle_since: KL.nowISO() });
 
-  /* ---------- actions (Supports Multiple Concurrent Events) ---------- */
+  /* ---------- actions ---------- */
   function startEvent(eventId) {
     const ev = findEvent(eventId); if (!ev) return;
     const targetStageIds = parseStageIds(ev.stage_id);
@@ -139,21 +137,19 @@
         if (!Array.isArray(st.events)) {
           st.events = st.event_id ? [{ event_id: st.event_id, event_name: st.event_name, categories: st.categories, scheduled_start: st.scheduled_start, actual_start: st.actual_start, delay_minutes: st.delay_minutes, combined_stages: st.combined_stages }] : [];
         }
-        if (!st.events.some(e => String(e.event_id) === String(ev.event_id))) {
-          st.events.push(payload);
-        }
+        if (!st.events.some(e => String(e.event_id) === String(ev.event_id))) st.events.push(payload);
         d.stages[sid] = st;
       });
       pushTicker(d, `${stageDesc}: ${ev.event_name} has started${delay > 5 ? ` (${delay} min late)` : ""}`);
     }, `${stageDesc} start: event ${ev.event_id}`, `${stageDesc} is now live.`);
   }
 
-  function endEvent(sid, eventId, ranks) {
+  function endEvent(sid, eventId, resultsByCat) {
     run(d => {
       const st = d.stages[sid];
       if (!st || st.status !== "ongoing") throw new Error(`Stage ${sid} has no running event.`);
       
-      const liveEvs = Array.isArray(st.events) ? st.events : (st.event_id ? [st] : []);
+      const liveEvs = getLiveEvents(st);
       const evData = liveEvs.find(e => String(e.event_id) === String(eventId));
       if (!evData) throw new Error("Event not found running.");
 
@@ -162,15 +158,14 @@
 
       if (!d.completed_events.map(String).includes(String(eventId))) d.completed_events.push(eventId);
       
-      if (ranks) {
+      if (resultsByCat && Object.keys(resultsByCat).length > 0) {
         d.recent_results.unshift({ 
           event_id: eventId, event_name: name, stage_id: combined.length > 1 ? combined.join(', ') : sid, 
           categories: cats, announced_at: KL.nowISO(), 
-          first: ranks.first, second: ranks.second, third: ranks.third 
+          results: resultsByCat 
         });
         trimList(d.recent_results, C.maxResultsStored);
-        const parts = [["1st", ranks.first], ["2nd", ranks.second], ["3rd", ranks.third]].filter(p => p[1]).map(p => `${p[0]} ${p[1]}`);
-        pushTicker(d, `Results, Stage ${sid}, ${name}: ${parts.join(", ")}`);
+        pushTicker(d, `Results announced for Stage ${sid}, ${name} (${Object.keys(resultsByCat).join(", ")})`);
       } else {
         pushTicker(d, `Stage ${sid}: ${name} has finished`);
       }
@@ -178,7 +173,7 @@
       combined.forEach(s => { 
         const cst = d.stages[s];
         if (cst) {
-          const curEvs = Array.isArray(cst.events) ? cst.events : (cst.event_id ? [cst] : []);
+          const curEvs = getLiveEvents(cst);
           cst.events = curEvs.filter(e => String(e.event_id) !== String(eventId));
           if (cst.events.length === 0) {
             cst.status = "idle";
@@ -188,27 +183,22 @@
           d.stages[s] = cst;
         }
       });
-    }, `Stage ${sid} end event ${eventId}`, ranks ? "Event finished and results announced." : "Event finished.");
+    }, `Stage ${sid} end event ${eventId}`, resultsByCat ? "Event finished and results announced." : "Event finished.");
   }
 
   const cancelStart = (sid, eventId) => run(d => {
     const st = d.stages[sid];
     if (!st) return;
-    const liveEvs = Array.isArray(st.events) ? st.events : (st.event_id ? [st] : []);
-    const evData = liveEvs.find(e => String(e.event_id) === String(eventId));
+    const evData = getLiveEvents(st).find(e => String(e.event_id) === String(eventId));
     if (!evData) return;
 
     const combined = evData.combined_stages || [sid];
     combined.forEach(s => { 
       const cst = d.stages[s];
       if (cst) {
-        const curEvs = Array.isArray(cst.events) ? cst.events : (cst.event_id ? [cst] : []);
+        const curEvs = getLiveEvents(cst);
         cst.events = curEvs.filter(e => String(e.event_id) !== String(eventId));
-        if (cst.events.length === 0) {
-          cst.status = "idle";
-          cst.idle_since = KL.nowISO();
-          delete cst.event_id;
-        }
+        if (cst.events.length === 0) { cst.status = "idle"; cst.idle_since = KL.nowISO(); delete cst.event_id; }
         d.stages[s] = cst;
       }
     });
@@ -217,13 +207,11 @@
   const reopenEvent = id => run(d => { d.completed_events = d.completed_events.filter(x => String(x) !== String(id)); },
                                  `Reopen event ${id}`, "Event moved back to pending.");
 
-  function updateResult(index, ranks) {
+  function updateResult(index, resultsByCat) {
     run(d => {
       if (!d.recent_results || !d.recent_results[index]) throw new Error("Result item not found.");
-      d.recent_results[index].first = ranks.first;
-      d.recent_results[index].second = ranks.second;
-      d.recent_results[index].third = ranks.third;
-      pushTicker(d, `Updated Result: ${d.recent_results[index].event_name} -> 1st: ${ranks.first || "—"}, 2nd: ${ranks.second || "—"}, 3rd: ${ranks.third || "—"}`);
+      d.recent_results[index].results = resultsByCat;
+      pushTicker(d, `Updated Result: ${d.recent_results[index].event_name} (${Object.keys(resultsByCat).join(", ")})`);
     }, `Update result ${index}`, "Result updated successfully.");
   }
 
@@ -248,12 +236,9 @@
     wrap.hidden = false;
 
     const doneSet = new Set((S.data.completed_events || []).map(String));
-    
-    // Aggregate multiple events safely
     const ongoingEventIds = new Set();
     Object.values(S.data.stages || {}).forEach(st => {
-      const live = getLiveEvents(st);
-      live.forEach(e => ongoingEventIds.add(String(e.event_id)));
+      getLiveEvents(st).forEach(e => ongoingEventIds.add(String(e.event_id)));
     });
 
     const completed = dayEvents.filter(e => doneSet.has(String(e.event_id)));
@@ -334,8 +319,6 @@
       </div></li>`;
   }
 
-  let currentEditEventId = null;
-
   function openEditScheduleModal(eventId) {
     const ev = findEvent(eventId);
     if (!ev) return;
@@ -366,10 +349,16 @@
       return;
     }
     list.innerHTML = results.map((r, idx) => {
+      // Handle multi-category results structure safely
+      const resObj = r.results || ( (r.first || r.second || r.third) ? { "General": { first: r.first, second: r.second, third: r.third } } : {} );
+      const desc = Object.entries(resObj).map(([cat, ranks]) => {
+         return `${cat !== "General" ? `[${cat}] ` : ''}1st: ${ranks.first || '—'}, 2nd: ${ranks.second || '—'}, 3rd: ${ranks.third || '—'}`;
+      }).join("<br>");
+
       return `<li>
         <div>
           <span lang="ml" style="font-weight:700;">${esc(r.event_name)}</span> (Stage ${esc(r.stage_id)})<br>
-          <span class="muted" style="font-size:0.9rem">1st: ${esc(r.first || '—')}, 2nd: ${esc(r.second || '—')}, 3rd: ${esc(r.third || '—')}</span>
+          <span class="muted" style="font-size:0.9rem">${desc}</span>
         </div>
         <button class="btn btn-ghost act" style="min-height:2.2rem; padding:0 0.75rem; font-size:0.95rem;" data-act="edit-result" data-idx="${idx}">Edit</button>
       </li>`;
@@ -485,7 +474,7 @@
     renderEventList();
   }
 
-  /* ---------- events ---------- */
+  /* ---------- Modals Dynamic Forms ---------- */
   function openEndModal(sid, eventId) {
     const st = S.data.stages[sid] || {};
     const liveEvs = getLiveEvents(st);
@@ -498,9 +487,23 @@
     
     $("endTitle").textContent = combined.length > 1 ? `End Stages ${combined.join(' & ')}` : `End Stage ${sid}`;
     $("endEvent").textContent = evData.event_name || "";
-    ["rank1", "rank2", "rank3"].forEach(id => ($(id).value = ""));
+    
+    // Generate rank fields per category
+    const cats = evData.categories && evData.categories.length ? evData.categories : ["General"];
+    $("endRanksContainer").innerHTML = cats.map(c => `
+      <div class="cat-rank-group" data-cat="${esc(c)}">
+        <div class="cat-rank-title">വിഭാഗം: ${esc(c)}</div>
+        <div class="row">
+          <label class="field slim">1st <input name="first" type="text" maxlength="10" autocomplete="off"></label>
+          <label class="field slim">2nd <input name="second" type="text" maxlength="10" autocomplete="off"></label>
+          <label class="field slim">3rd <input name="third" type="text" maxlength="10" autocomplete="off"></label>
+        </div>
+      </div>
+    `).join("");
+
     $("endModal").showModal();
-    $("rank1").focus();
+    const firstInput = $("endRanksContainer").querySelector("input");
+    if(firstInput) firstInput.focus();
   }
 
   function openEditResultModal(idx) {
@@ -508,12 +511,27 @@
     if (!r) return;
     S.editResultIdx = idx;
     $("editResultEvent").textContent = `${r.event_name} (Stage ${r.stage_id})`;
-    $("editRank1").value = r.first || "";
-    $("editRank2").value = r.second || "";
-    $("editRank3").value = r.third || "";
+    
+    const cats = r.categories && r.categories.length ? r.categories : ["General"];
+    const resObj = r.results || ( (r.first || r.second || r.third) ? { "General": { first: r.first, second: r.second, third: r.third } } : {} );
+
+    $("editRanksContainer").innerHTML = cats.map(c => {
+      const ranks = resObj[c] || { first: "", second: "", third: "" };
+      return `
+      <div class="cat-rank-group" data-cat="${esc(c)}">
+        <div class="cat-rank-title">വിഭാഗം: ${esc(c)}</div>
+        <div class="row">
+          <label class="field slim">1st <input name="first" type="text" maxlength="10" autocomplete="off" value="${esc(ranks.first)}"></label>
+          <label class="field slim">2nd <input name="second" type="text" maxlength="10" autocomplete="off" value="${esc(ranks.second)}"></label>
+          <label class="field slim">3rd <input name="third" type="text" maxlength="10" autocomplete="off" value="${esc(ranks.third)}"></label>
+        </div>
+      </div>`;
+    }).join("");
+
     $("editResultModal").showModal();
   }
 
+  /* ---------- Event Listeners ---------- */
   document.addEventListener("click", e => {
     const dateBtn = e.target.closest(".date-tab");
     if (dateBtn) { S.activeDate = dateBtn.dataset.date; render(); return; }
@@ -534,18 +552,41 @@
 
   $("endForm").addEventListener("submit", e => {
     e.preventDefault();
-    const ranks = { first: $("rank1").value.trim(), second: $("rank2").value.trim(), third: $("rank3").value.trim() };
+    const resultsByCat = {};
+    let hasAny = false;
+    document.querySelectorAll("#endRanksContainer .cat-rank-group").forEach(el => {
+      const cat = el.dataset.cat;
+      const first = el.querySelector('[name="first"]').value.trim();
+      const second = el.querySelector('[name="second"]').value.trim();
+      const third = el.querySelector('[name="third"]').value.trim();
+      if (first || second || third) {
+        resultsByCat[cat] = { first, second, third };
+        hasAny = true;
+      }
+    });
     $("endModal").close();
-    endEvent(S.endStage, S.endEventId, ranks.first || ranks.second || ranks.third ? ranks : null);
+    endEvent(S.endStage, S.endEventId, hasAny ? resultsByCat : null);
   });
+  
   $("skipResults").addEventListener("click", () => { $("endModal").close(); endEvent(S.endStage, S.endEventId, null); });
   $("cancelEnd").addEventListener("click", () => $("endModal").close());
 
   $("editResultForm").addEventListener("submit", e => {
     e.preventDefault();
-    const ranks = { first: $("editRank1").value.trim(), second: $("editRank2").value.trim(), third: $("editRank3").value.trim() };
+    const resultsByCat = {};
+    let hasAny = false;
+    document.querySelectorAll("#editRanksContainer .cat-rank-group").forEach(el => {
+      const cat = el.dataset.cat;
+      const first = el.querySelector('[name="first"]').value.trim();
+      const second = el.querySelector('[name="second"]').value.trim();
+      const third = el.querySelector('[name="third"]').value.trim();
+      if (first || second || third) {
+        resultsByCat[cat] = { first, second, third };
+        hasAny = true;
+      }
+    });
     $("editResultModal").close();
-    if (S.editResultIdx !== null) updateResult(S.editResultIdx, ranks);
+    if (S.editResultIdx !== null) updateResult(S.editResultIdx, hasAny ? resultsByCat : {});
   });
   $("cancelEditResult").addEventListener("click", () => $("editResultModal").close());
 
@@ -564,7 +605,6 @@
       pushTicker(d, `ഷെഡ്യൂൾ മാറ്റം: ${ev ? ev.event_name : currentEditEventId} വേദി ${newStage}-ലേക്ക് പുനഃക്രമീകരിച്ചു`);
     }, `Reschedule event ${currentEditEventId}`, "ഷെഡ്യൂൾ വിജയകരമായി തിരുത്തി.");
   });
-
   $("cancelEditSched").addEventListener("click", () => $("editScheduleModal").close());
 
   $("bannerForm").addEventListener("submit", e => {
@@ -582,37 +622,20 @@
 
   /* ---------- token gate + boot ---------- */
   function showGate(msg) { $("gate").hidden = false; $("gateError").textContent = msg || ""; $("tokenInput").focus(); }
-
-  async function connect(token) {
-    S.token = token;
-    const { data } = await readRemote();
-    S.data = data;
-    sessionStorage.setItem(TOKEN_KEY, token);
-    $("gate").hidden = true;
-    render();
-  }
-
+  async function connect(token) { S.token = token; const { data } = await readRemote(); S.data = data; sessionStorage.setItem(TOKEN_KEY, token); $("gate").hidden = true; render(); }
   $("gateForm").addEventListener("submit", async e => {
     e.preventDefault();
     const btn = $("gateBtn"); btn.disabled = true; $("gateError").textContent = "";
-    try { await connect($("tokenInput").value.trim()); }
-    catch (err) { S.token = null; $("gateError").textContent = err.message; }
-    finally { btn.disabled = false; }
+    try { await connect($("tokenInput").value.trim()); } catch (err) { S.token = null; $("gateError").textContent = err.message; } finally { btn.disabled = false; }
   });
   $("logout").addEventListener("click", () => { sessionStorage.removeItem(TOKEN_KEY); location.reload(); });
 
-  document.addEventListener("visibilitychange", async () => {
-    if (document.hidden || !S.token || S.busy) return;
-    try { S.data = (await readRemote()).data; render(); } catch (e) {}
-  });
+  document.addEventListener("visibilitychange", async () => { if (document.hidden || !S.token || S.busy) return; try { S.data = (await readRemote()).data; render(); } catch (e) {} });
 
   async function init() {
     document.title = `${C.festivalTitle} Admin`;
     try {
-      [S.stages, S.schedule] = await Promise.all([
-        KL.fetchJson("stages.json", { cache: "no-cache" }),
-        KL.fetchJson("schedule.json", { cache: "no-cache" })
-      ]);
+      [S.stages, S.schedule] = await Promise.all([KL.fetchJson("stages.json", { cache: "no-cache" }), KL.fetchJson("schedule.json", { cache: "no-cache" })]);
       S.stages.sort((a, b) => a.stage_id - b.stage_id);
     } catch (err) { return showGate("Could not load stages.json or schedule.json."); }
     initAdminSearch();
