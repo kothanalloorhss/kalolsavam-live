@@ -5,14 +5,27 @@
   },
   "stages": {
     "1": {
-      "status": "idle",
+      "status": "ongoing",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": "2026-11-04T11:56:01.014Z",
-      "events": []
+      "idle_since": null,
+      "events": [
+        {
+          "event_id": "E143",
+          "event_name": "വഞ്ചിപ്പാട്ട്",
+          "categories": [
+            "HS"
+          ],
+          "scheduled_start": "13:40",
+          "actual_start": "2026-11-04T11:56:04.683Z",
+          "delay_minutes": 226,
+          "combined_stages": null
+        }
+      ]
     },
     "2": {
       "status": "ongoing",
@@ -228,6 +241,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-04T11:56:04.683Z",
+      "text": "Stage 1: വഞ്ചിപ്പാട്ട് has started (226 min late)"
+    },
+    {
       "t": "2026-11-04T11:56:01.014Z",
       "text": "Stage 1: നാടൻപ്പാട്ട് has finished"
     },
@@ -342,10 +359,6 @@
     {
       "t": "2026-11-04T10:30:05.832Z",
       "text": "Results announced for Stage 5, പ്രസംഗം മലയാളം  (LP)"
-    },
-    {
-      "t": "2026-11-04T10:28:45.549Z",
-      "text": "Stage 3: സംഘ ഗാനം has started (179 min late)"
     }
   ],
   "recent_results": [
@@ -557,7 +570,7 @@
     "E176",
     "E142"
   ],
-  "updated_at": "2026-11-04T11:56:01.014Z",
+  "updated_at": "2026-11-04T11:56:04.683Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
