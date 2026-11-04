@@ -73,27 +73,14 @@
       ]
     },
     "5": {
-      "status": "ongoing",
-      "event_id": null,
+      "status": "idle",
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": null,
-      "events": [
-        {
-          "event_id": "E190",
-          "event_name": "പ്രസംഗം മലയാളം ",
-          "categories": [
-            "HS"
-          ],
-          "scheduled_start": "16:00",
-          "actual_start": "2026-11-04T14:38:34.316Z",
-          "delay_minutes": 249,
-          "combined_stages": null
-        }
-      ]
+      "idle_since": "2026-11-04T14:38:47.181Z",
+      "events": []
     },
     "6": {
       "status": "idle",
@@ -204,6 +191,10 @@
     }
   },
   "ticker": [
+    {
+      "t": "2026-11-04T14:38:47.181Z",
+      "text": "Results announced for Stage 5, പ്രസംഗം മലയാളം  (HS)"
+    },
     {
       "t": "2026-11-04T14:38:34.316Z",
       "text": "Stage 5: പ്രസംഗം മലയാളം  has started (249 min late)"
@@ -319,13 +310,25 @@
     {
       "t": "2026-11-04T11:47:04.849Z",
       "text": "Stage 4: പ്രസംഗം ഉറുദു has finished"
-    },
-    {
-      "t": "2026-11-04T11:47:00.022Z",
-      "text": "Stage 4: പദ്യംചൊല്ലൽ ഉറുദു has finished"
     }
   ],
   "recent_results": [
+    {
+      "event_id": "E190",
+      "event_name": "പ്രസംഗം മലയാളം ",
+      "stage_id": 5,
+      "categories": [
+        "HS"
+      ],
+      "announced_at": "2026-11-04T14:38:47.181Z",
+      "results": {
+        "HS": {
+          "first": "35",
+          "second": "",
+          "third": ""
+        }
+      }
+    },
     {
       "event_id": "E189",
       "event_name": "പ്രസംഗം മലയാളം ",
@@ -469,22 +472,6 @@
           "third": ""
         }
       }
-    },
-    {
-      "event_id": "E143",
-      "event_name": "വഞ്ചിപ്പാട്ട്",
-      "stage_id": 1,
-      "categories": [
-        "HS"
-      ],
-      "announced_at": "2026-11-04T12:59:35.168Z",
-      "results": {
-        "HS": {
-          "first": "12",
-          "second": "14",
-          "third": ""
-        }
-      }
     }
   ],
   "completed_events": [
@@ -545,9 +532,10 @@
     "E181",
     "E200",
     "E182",
-    "E189"
+    "E189",
+    "E190"
   ],
-  "updated_at": "2026-11-04T14:38:34.316Z",
+  "updated_at": "2026-11-04T14:38:47.181Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
