@@ -39,27 +39,14 @@
       ]
     },
     "3": {
-      "status": "ongoing",
-      "event_id": null,
+      "status": "idle",
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": null,
-      "events": [
-        {
-          "event_id": "E159",
-          "event_name": "ശാസ്ത്രീയ സംഗീതം",
-          "categories": [
-            "LP"
-          ],
-          "scheduled_start": "09:00",
-          "actual_start": "2026-11-04T04:32:16.932Z",
-          "delay_minutes": 62,
-          "combined_stages": null
-        }
-      ]
+      "idle_since": "2026-11-04T05:10:51.916Z",
+      "events": []
     },
     "4": {
       "status": "ongoing",
@@ -241,6 +228,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-04T05:10:51.914Z",
+      "text": "Results, Stage 3, ശാസ്ത്രീയ സംഗീതം: 1st 24"
+    },
+    {
       "t": "2026-11-04T04:59:23.705Z",
       "text": "Stage 7: പ്രസംഗം ഇംഗ്ലീഷ് has started (89 min late)"
     },
@@ -323,6 +314,18 @@
   ],
   "recent_results": [
     {
+      "event_id": "E159",
+      "event_name": "ശാസ്ത്രീയ സംഗീതം",
+      "stage_id": 3,
+      "categories": [
+        "LP"
+      ],
+      "announced_at": "2026-11-04T05:10:51.914Z",
+      "first": "24",
+      "second": "",
+      "third": ""
+    },
+    {
       "event_id": "E169",
       "event_name": "മാപ്പിളപ്പാട്ട് Boys",
       "stage_id": 4,
@@ -382,7 +385,8 @@
     "E108",
     "E133",
     "E138",
-    "E169"
+    "E169",
+    "E159"
   ],
-  "updated_at": "2026-11-04T04:59:23.705Z"
+  "updated_at": "2026-11-04T05:10:51.916Z"
 }
