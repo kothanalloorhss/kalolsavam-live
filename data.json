@@ -51,27 +51,14 @@
       ]
     },
     "3": {
-      "status": "ongoing",
-      "event_id": null,
+      "status": "idle",
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": null,
-      "events": [
-        {
-          "event_id": "E163",
-          "event_name": "ശാസ്ത്രീയ സംഗീതം Boys",
-          "categories": [
-            "HSS"
-          ],
-          "scheduled_start": "10:45",
-          "actual_start": "2026-11-04T07:02:17.016Z",
-          "delay_minutes": 107,
-          "combined_stages": null
-        }
-      ]
+      "idle_since": "2026-11-04T07:02:20.766Z",
+      "events": []
     },
     "4": {
       "status": "idle",
@@ -241,6 +228,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-04T07:02:20.764Z",
+      "text": "Stage 3: ശാസ്ത്രീയ സംഗീതം Boys has finished"
+    },
+    {
       "t": "2026-11-04T07:02:17.016Z",
       "text": "Stage 3: ശാസ്ത്രീയ സംഗീതം Boys has started (107 min late)"
     },
@@ -355,10 +346,6 @@
     {
       "t": "2026-11-04T03:08:36.816Z",
       "text": "Stage 12: ചിത്രരചന പെൻസിൽ has finished"
-    },
-    {
-      "t": "2026-11-04T03:08:29.546Z",
-      "text": "Stage 3: കഥാകഥനം has finished"
     }
   ],
   "recent_results": [
@@ -527,7 +514,8 @@
     "E194",
     "E161",
     "E145",
-    "E162"
+    "E162",
+    "E163"
   ],
-  "updated_at": "2026-11-04T07:02:17.016Z"
+  "updated_at": "2026-11-04T07:02:20.766Z"
 }
