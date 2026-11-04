@@ -28,27 +28,14 @@
       ]
     },
     "2": {
-      "status": "ongoing",
-      "event_id": null,
+      "status": "idle",
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": null,
-      "events": [
-        {
-          "event_id": "E147",
-          "event_name": "ഭരതനാട്യം",
-          "categories": [
-            "UP"
-          ],
-          "scheduled_start": "11:20",
-          "actual_start": "2026-11-04T09:39:45.603Z",
-          "delay_minutes": 230,
-          "combined_stages": null
-        }
-      ]
+      "idle_since": "2026-11-04T09:42:50.911Z",
+      "events": []
     },
     "3": {
       "status": "ongoing",
@@ -241,6 +228,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-04T09:42:50.911Z",
+      "text": "Results announced for Stage 2, ഭരതനാട്യം (UP)"
+    },
+    {
       "t": "2026-11-04T09:39:45.603Z",
       "text": "Stage 2: ഭരതനാട്യം has started (230 min late)"
     },
@@ -355,13 +346,25 @@
     {
       "t": "2026-11-04T07:02:08.933Z",
       "text": "Stage 3: ശാസ്ത്രീയ സംഗീതം Girls has finished"
-    },
-    {
-      "t": "2026-11-04T06:38:57.176Z",
-      "text": "Stage 7: പ്രസംഗം ഇംഗ്ലീഷ് has started (99 min late)"
     }
   ],
   "recent_results": [
+    {
+      "event_id": "E147",
+      "event_name": "ഭരതനാട്യം",
+      "stage_id": 2,
+      "categories": [
+        "UP"
+      ],
+      "announced_at": "2026-11-04T09:42:50.911Z",
+      "results": {
+        "UP": {
+          "first": "22",
+          "second": "",
+          "third": ""
+        }
+      }
+    },
     {
       "event_id": "E175",
       "event_name": "പദ്യംചൊല്ലൽ ഉറുദു",
@@ -505,22 +508,6 @@
           "third": ""
         }
       }
-    },
-    {
-      "event_id": "E161",
-      "event_name": "ശാസ്ത്രീയ സംഗീതം Boys",
-      "stage_id": 3,
-      "categories": [
-        "HS"
-      ],
-      "announced_at": "2026-11-04T06:25:58.879Z",
-      "results": {
-        "HS": {
-          "first": "27",
-          "second": "",
-          "third": ""
-        }
-      }
     }
   ],
   "completed_events": [
@@ -552,7 +539,8 @@
     "E171",
     "E172",
     "E192",
-    "E175"
+    "E175",
+    "E147"
   ],
-  "updated_at": "2026-11-04T09:39:45.603Z"
+  "updated_at": "2026-11-04T09:42:50.911Z"
 }
