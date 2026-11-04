@@ -50,27 +50,14 @@
       "events": []
     },
     "4": {
-      "status": "ongoing",
-      "event_id": null,
+      "status": "idle",
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": null,
-      "events": [
-        {
-          "event_id": "E171",
-          "event_name": "മാപ്പിളപ്പാട്ട് Boys",
-          "categories": [
-            "HSS"
-          ],
-          "scheduled_start": "10:15",
-          "actual_start": "2026-11-04T08:42:20.091Z",
-          "delay_minutes": 237,
-          "combined_stages": null
-        }
-      ]
+      "idle_since": "2026-11-04T08:42:24.324Z",
+      "events": []
     },
     "5": {
       "status": "ongoing",
@@ -217,6 +204,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-04T08:42:24.324Z",
+      "text": "Stage 4: മാപ്പിളപ്പാട്ട് Boys has finished"
+    },
+    {
       "t": "2026-11-04T08:42:20.091Z",
       "text": "Stage 4: മാപ്പിളപ്പാട്ട് Boys has started (237 min late)"
     },
@@ -331,10 +322,6 @@
     {
       "t": "2026-11-04T06:15:39.754Z",
       "text": "Results announced for Stage 4, മാപ്പിളപ്പാട്ട് Girls (HS)"
-    },
-    {
-      "t": "2026-11-04T05:53:53.429Z",
-      "text": "Results announced for Stage 1, തിരുവാതിര (HSS)"
     }
   ],
   "recent_results": [
@@ -524,7 +511,8 @@
     "E173",
     "E165",
     "E146",
-    "E196"
+    "E196",
+    "E171"
   ],
-  "updated_at": "2026-11-04T08:42:20.091Z"
+  "updated_at": "2026-11-04T08:42:24.324Z"
 }
