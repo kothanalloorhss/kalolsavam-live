@@ -51,27 +51,14 @@
       ]
     },
     "3": {
-      "status": "ongoing",
-      "event_id": null,
+      "status": "idle",
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": null,
-      "events": [
-        {
-          "event_id": "E164",
-          "event_name": "ശാസ്ത്രീയ സംഗീതം Girls",
-          "categories": [
-            "HSS"
-          ],
-          "scheduled_start": "11:00",
-          "actual_start": "2026-11-04T07:20:57.029Z",
-          "delay_minutes": 111,
-          "combined_stages": null
-        }
-      ]
+      "idle_since": "2026-11-04T07:21:07.307Z",
+      "events": []
     },
     "4": {
       "status": "idle",
@@ -241,6 +228,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-04T07:21:07.307Z",
+      "text": "Results announced for Stage 3, ശാസ്ത്രീയ സംഗീതം Girls (HSS)"
+    },
+    {
       "t": "2026-11-04T07:20:57.029Z",
       "text": "Stage 3: ശാസ്ത്രീയ സംഗീതം Girls has started (111 min late)"
     },
@@ -355,13 +346,25 @@
     {
       "t": "2026-11-04T04:30:55.638Z",
       "text": "Stage 5: പദ്യംചൊല്ലൽ മലയാളം has started (61 min late)"
-    },
-    {
-      "t": "2026-11-04T04:10:59.131Z",
-      "text": "Stage 4: മാപ്പിളപ്പാട്ട് Boys has started (41 min late)"
     }
   ],
   "recent_results": [
+    {
+      "event_id": "E164",
+      "event_name": "ശാസ്ത്രീയ സംഗീതം Girls",
+      "stage_id": 3,
+      "categories": [
+        "HSS"
+      ],
+      "announced_at": "2026-11-04T07:21:07.307Z",
+      "results": {
+        "HSS": {
+          "first": "32",
+          "second": "",
+          "third": ""
+        }
+      }
+    },
     {
       "event_id": "E161",
       "event_name": "ശാസ്ത്രീയ സംഗീതം Boys",
@@ -497,18 +500,6 @@
           "third": ""
         }
       }
-    },
-    {
-      "event_id": "E114",
-      "event_name": "സമസ്യാപൂരണം സംസ്‌കൃതം",
-      "stage_id": 6,
-      "categories": [
-        "HS"
-      ],
-      "announced_at": "2026-11-03T09:51:22.780Z",
-      "first": "180",
-      "second": "182",
-      "third": "183"
     }
   ],
   "completed_events": [
@@ -528,7 +519,8 @@
     "E161",
     "E145",
     "E162",
-    "E163"
+    "E163",
+    "E164"
   ],
-  "updated_at": "2026-11-04T07:20:57.029Z"
+  "updated_at": "2026-11-04T07:21:07.307Z"
 }
