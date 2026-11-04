@@ -51,14 +51,27 @@
       ]
     },
     "3": {
-      "status": "idle",
+      "status": "ongoing",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": "2026-11-04T07:02:20.766Z",
-      "events": []
+      "idle_since": null,
+      "events": [
+        {
+          "event_id": "E164",
+          "event_name": "ശാസ്ത്രീയ സംഗീതം Girls",
+          "categories": [
+            "HSS"
+          ],
+          "scheduled_start": "11:00",
+          "actual_start": "2026-11-04T07:20:57.029Z",
+          "delay_minutes": 111,
+          "combined_stages": null
+        }
+      ]
     },
     "4": {
       "status": "idle",
@@ -228,6 +241,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-04T07:20:57.029Z",
+      "text": "Stage 3: ശാസ്ത്രീയ സംഗീതം Girls has started (111 min late)"
+    },
+    {
       "t": "2026-11-04T07:02:20.764Z",
       "text": "Stage 3: ശാസ്ത്രീയ സംഗീതം Boys has finished"
     },
@@ -342,10 +359,6 @@
     {
       "t": "2026-11-04T04:10:59.131Z",
       "text": "Stage 4: മാപ്പിളപ്പാട്ട് Boys has started (41 min late)"
-    },
-    {
-      "t": "2026-11-04T03:08:36.816Z",
-      "text": "Stage 12: ചിത്രരചന പെൻസിൽ has finished"
     }
   ],
   "recent_results": [
@@ -517,5 +530,5 @@
     "E162",
     "E163"
   ],
-  "updated_at": "2026-11-04T07:02:20.766Z"
+  "updated_at": "2026-11-04T07:20:57.029Z"
 }
