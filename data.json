@@ -92,6 +92,17 @@
           "actual_start": "2026-11-04T10:15:13.290Z",
           "delay_minutes": 184,
           "combined_stages": null
+        },
+        {
+          "event_id": "E177",
+          "event_name": "സംഘ ഗാനം ഉറുദു",
+          "categories": [
+            "UP"
+          ],
+          "scheduled_start": "12:45",
+          "actual_start": "2026-11-04T11:46:34.713Z",
+          "delay_minutes": 272,
+          "combined_stages": null
         }
       ]
     },
@@ -240,6 +251,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-04T11:46:34.713Z",
+      "text": "Stage 4: സംഘ ഗാനം ഉറുദു has started (272 min late)"
+    },
+    {
       "t": "2026-11-04T11:43:07.505Z",
       "text": "Stage 2: കുച്ചുപ്പുടി Girls has started (203 min late)"
     },
@@ -354,10 +369,6 @@
     {
       "t": "2026-11-04T09:39:45.603Z",
       "text": "Stage 2: ഭരതനാട്യം has started (230 min late)"
-    },
-    {
-      "t": "2026-11-04T09:38:51.531Z",
-      "text": "Results announced for Stage 4, പദ്യംചൊല്ലൽ ഉറുദു (HSS)"
     }
   ],
   "recent_results": [
@@ -565,7 +576,7 @@
     "E150",
     "E152"
   ],
-  "updated_at": "2026-11-04T11:43:07.505Z",
+  "updated_at": "2026-11-04T11:46:34.713Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
