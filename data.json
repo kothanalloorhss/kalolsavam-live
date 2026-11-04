@@ -29,6 +29,7 @@
     },
     "2": {
       "status": "idle",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
@@ -106,27 +107,14 @@
       ]
     },
     "7": {
-      "status": "ongoing",
-      "event_id": null,
+      "status": "idle",
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": null,
-      "events": [
-        {
-          "event_id": "E196",
-          "event_name": "പ്രസംഗം ഇംഗ്ലീഷ്",
-          "categories": [
-            "HSS"
-          ],
-          "scheduled_start": "11:00",
-          "actual_start": "2026-11-04T07:53:54.935Z",
-          "delay_minutes": 144,
-          "combined_stages": null
-        }
-      ]
+      "idle_since": "2026-11-04T08:37:02.738Z",
+      "events": []
     },
     "8": {
       "status": "idle",
@@ -215,6 +203,10 @@
     }
   },
   "ticker": [
+    {
+      "t": "2026-11-04T08:37:02.738Z",
+      "text": "Results announced for Stage 7, പ്രസംഗം ഇംഗ്ലീഷ് (HSS)"
+    },
     {
       "t": "2026-11-04T08:36:26.742Z",
       "text": "Results announced for Stage 2, ഭരതനാട്യം (LP)"
@@ -330,13 +322,25 @@
     {
       "t": "2026-11-04T05:51:10.312Z",
       "text": "Results announced for Stage 3, ശാസ്ത്രീയ സംഗീതം (UP)"
-    },
-    {
-      "t": "2026-11-04T05:32:55.026Z",
-      "text": "Stage 3: ശാസ്ത്രീയ സംഗീതം has started (103 min late)"
     }
   ],
   "recent_results": [
+    {
+      "event_id": "E196",
+      "event_name": "പ്രസംഗം ഇംഗ്ലീഷ്",
+      "stage_id": 7,
+      "categories": [
+        "HSS"
+      ],
+      "announced_at": "2026-11-04T08:37:02.738Z",
+      "results": {
+        "HSS": {
+          "first": "38",
+          "second": "",
+          "third": ""
+        }
+      }
+    },
     {
       "event_id": "E146",
       "event_name": "ഭരതനാട്യം",
@@ -480,22 +484,6 @@
           "third": ""
         }
       }
-    },
-    {
-      "event_id": "E170",
-      "event_name": "മാപ്പിളപ്പാട്ട് Girls",
-      "stage_id": 4,
-      "categories": [
-        "HS"
-      ],
-      "announced_at": "2026-11-04T06:15:39.754Z",
-      "results": {
-        "HS": {
-          "first": "23",
-          "second": "",
-          "third": ""
-        }
-      }
     }
   ],
   "completed_events": [
@@ -522,7 +510,8 @@
     "E187",
     "E173",
     "E165",
-    "E146"
+    "E146",
+    "E196"
   ],
-  "updated_at": "2026-11-04T08:36:26.742Z"
+  "updated_at": "2026-11-04T08:37:02.738Z"
 }
