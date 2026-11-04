@@ -5,15 +5,27 @@
   },
   "stages": {
     "1": {
-      "status": "idle",
+      "status": "ongoing",
       "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": "2026-11-04T07:29:51.832Z",
-      "events": []
+      "idle_since": null,
+      "events": [
+        {
+          "event_id": "E141",
+          "event_name": "നാടൻപ്പാട്ട്",
+          "categories": [
+            "HS"
+          ],
+          "scheduled_start": "11:20",
+          "actual_start": "2026-11-04T07:41:52.564Z",
+          "delay_minutes": 112,
+          "combined_stages": null
+        }
+      ]
     },
     "2": {
       "status": "ongoing",
@@ -229,6 +241,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-04T07:41:52.564Z",
+      "text": "Stage 1: നാടൻപ്പാട്ട് has started (112 min late)"
+    },
+    {
       "t": "2026-11-04T07:31:12.331Z",
       "text": "Stage 3: ലളിതഗാനം Boys has started (116 min late)"
     },
@@ -343,10 +359,6 @@
     {
       "t": "2026-11-04T04:33:28.989Z",
       "text": "Stage 2: ഭരതനാട്യം Girls has started (63 min late)"
-    },
-    {
-      "t": "2026-11-04T04:32:16.932Z",
-      "text": "Stage 3: ശാസ്ത്രീയ സംഗീതം has started (62 min late)"
     }
   ],
   "recent_results": [
@@ -524,5 +536,5 @@
     "E164",
     "E140"
   ],
-  "updated_at": "2026-11-04T07:31:12.331Z"
+  "updated_at": "2026-11-04T07:41:52.564Z"
 }
