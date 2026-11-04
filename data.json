@@ -50,27 +50,14 @@
       "events": []
     },
     "4": {
-      "status": "ongoing",
-      "event_id": null,
+      "status": "idle",
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": null,
-      "events": [
-        {
-          "event_id": "E184",
-          "event_name": "വട്ടപ്പാട്ട്",
-          "categories": [
-            "HS"
-          ],
-          "scheduled_start": "17:50",
-          "actual_start": "2026-11-04T15:10:46.177Z",
-          "delay_minutes": 171,
-          "combined_stages": null
-        }
-      ]
+      "idle_since": "2026-11-04T15:23:08.233Z",
+      "events": []
     },
     "5": {
       "status": "idle",
@@ -193,6 +180,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-04T15:23:08.233Z",
+      "text": "Results announced for Stage 4, വട്ടപ്പാട്ട് (HS)"
+    },
+    {
       "t": "2026-11-04T15:21:23.991Z",
       "text": "Stage 2: മോഹിനിയാട്ടം has started (281 min late)"
     },
@@ -307,13 +298,25 @@
     {
       "t": "2026-11-04T12:48:51.552Z",
       "text": "Stage 4: ഗസൽ ആലാപനം ഉറുദു has started (189 min late)"
-    },
-    {
-      "t": "2026-11-04T12:48:44.577Z",
-      "text": "Results announced for Stage 4, സംഘ ഗാനം ഉറുദു (HS)"
     }
   ],
   "recent_results": [
+    {
+      "event_id": "E184",
+      "event_name": "വട്ടപ്പാട്ട്",
+      "stage_id": 4,
+      "categories": [
+        "HS"
+      ],
+      "announced_at": "2026-11-04T15:23:08.233Z",
+      "results": {
+        "HS": {
+          "first": "17",
+          "second": "",
+          "third": ""
+        }
+      }
+    },
     {
       "event_id": "E155",
       "event_name": "മോഹിനിയാട്ടം",
@@ -457,22 +460,6 @@
           "third": ""
         }
       }
-    },
-    {
-      "event_id": "E180",
-      "event_name": "ഗസൽ ആലാപനം ഉറുദു",
-      "stage_id": 4,
-      "categories": [
-        "HS"
-      ],
-      "announced_at": "2026-11-04T13:45:13.555Z",
-      "results": {
-        "HS": {
-          "first": "29",
-          "second": "",
-          "third": ""
-        }
-      }
     }
   ],
   "completed_events": [
@@ -538,9 +525,10 @@
     "E191",
     "E156",
     "E183",
-    "E155"
+    "E155",
+    "E184"
   ],
-  "updated_at": "2026-11-04T15:21:23.991Z",
+  "updated_at": "2026-11-04T15:23:08.233Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
