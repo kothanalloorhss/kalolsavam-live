@@ -108,14 +108,27 @@
       ]
     },
     "5": {
-      "status": "idle",
+      "status": "ongoing",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": "2026-11-04T10:30:05.832Z",
-      "events": []
+      "idle_since": null,
+      "events": [
+        {
+          "event_id": "E189",
+          "event_name": "പ്രസംഗം മലയാളം ",
+          "categories": [
+            "UP"
+          ],
+          "scheduled_start": "14:00",
+          "actual_start": "2026-11-04T10:30:26.811Z",
+          "delay_minutes": 120,
+          "combined_stages": null
+        }
+      ]
     },
     "6": {
       "status": "idle",
@@ -239,6 +252,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-04T10:30:26.811Z",
+      "text": "Stage 5: പ്രസംഗം മലയാളം  has started (120 min late)"
+    },
+    {
       "t": "2026-11-04T10:30:05.832Z",
       "text": "Results announced for Stage 5, പ്രസംഗം മലയാളം  (LP)"
     },
@@ -353,10 +370,6 @@
     {
       "t": "2026-11-04T07:49:25.533Z",
       "text": "Results announced for Stage 7, പ്രസംഗം ഇംഗ്ലീഷ് (HS)"
-    },
-    {
-      "t": "2026-11-04T07:41:52.564Z",
-      "text": "Stage 1: നാടൻപ്പാട്ട് has started (112 min late)"
     }
   ],
   "recent_results": [
@@ -556,5 +569,5 @@
     "E197",
     "E188"
   ],
-  "updated_at": "2026-11-04T10:30:05.832Z"
+  "updated_at": "2026-11-04T10:30:26.811Z"
 }
