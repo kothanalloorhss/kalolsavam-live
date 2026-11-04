@@ -16,14 +16,27 @@
       "events": []
     },
     "2": {
-      "status": "idle",
+      "status": "ongoing",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": "2026-11-04T11:28:35.350Z",
-      "events": []
+      "idle_since": null,
+      "events": [
+        {
+          "event_id": "E152",
+          "event_name": "കുച്ചുപ്പുടി Boys",
+          "categories": [
+            "HSS"
+          ],
+          "scheduled_start": "13:40",
+          "actual_start": "2026-11-04T11:28:40.161Z",
+          "delay_minutes": 199,
+          "combined_stages": null
+        }
+      ]
     },
     "3": {
       "status": "ongoing",
@@ -227,6 +240,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-04T11:28:40.161Z",
+      "text": "Stage 2: കുച്ചുപ്പുടി Boys has started (199 min late)"
+    },
+    {
       "t": "2026-11-04T11:28:26.953Z",
       "text": "Stage 2: കുച്ചുപ്പുടി Boys has started (208 min late)"
     },
@@ -341,10 +358,6 @@
     {
       "t": "2026-11-04T09:35:29.594Z",
       "text": "Stage 7: പദ്യംചൊല്ലൽ ഇംഗ്ലീഷ് has started (130 min late)"
-    },
-    {
-      "t": "2026-11-04T09:13:32.903Z",
-      "text": "Results announced for Stage 6, സംഘ ഗാനം (LP)"
     }
   ],
   "recent_results": [
@@ -551,5 +564,5 @@
     "E149",
     "E150"
   ],
-  "updated_at": "2026-11-04T11:28:35.350Z"
+  "updated_at": "2026-11-04T11:28:40.161Z"
 }
