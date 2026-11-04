@@ -51,27 +51,14 @@
       ]
     },
     "3": {
-      "status": "ongoing",
-      "event_id": null,
+      "status": "idle",
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": null,
-      "events": [
-        {
-          "event_id": "E160",
-          "event_name": "ശാസ്ത്രീയ സംഗീതം",
-          "categories": [
-            "UP"
-          ],
-          "scheduled_start": "09:20",
-          "actual_start": "2026-11-04T05:32:55.026Z",
-          "delay_minutes": 103,
-          "combined_stages": null
-        }
-      ]
+      "idle_since": "2026-11-04T05:51:10.312Z",
+      "events": []
     },
     "4": {
       "status": "ongoing",
@@ -253,6 +240,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-04T05:51:10.312Z",
+      "text": "Results announced for Stage 3, ശാസ്ത്രീയ സംഗീതം (UP)"
+    },
+    {
       "t": "2026-11-04T05:32:55.026Z",
       "text": "Stage 3: ശാസ്ത്രീയ സംഗീതം has started (103 min late)"
     },
@@ -347,6 +338,22 @@
   ],
   "recent_results": [
     {
+      "event_id": "E160",
+      "event_name": "ശാസ്ത്രീയ സംഗീതം",
+      "stage_id": 3,
+      "categories": [
+        "UP"
+      ],
+      "announced_at": "2026-11-04T05:51:10.312Z",
+      "results": {
+        "UP": {
+          "first": "40",
+          "second": "",
+          "third": ""
+        }
+      }
+    },
+    {
       "event_id": "E159",
       "event_name": "ശാസ്ത്രീയ സംഗീതം",
       "stage_id": 3,
@@ -419,7 +426,8 @@
     "E133",
     "E138",
     "E169",
-    "E159"
+    "E159",
+    "E160"
   ],
-  "updated_at": "2026-11-04T05:32:55.026Z"
+  "updated_at": "2026-11-04T05:51:10.312Z"
 }
