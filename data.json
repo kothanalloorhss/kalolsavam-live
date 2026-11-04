@@ -131,14 +131,27 @@
       ]
     },
     "7": {
-      "status": "idle",
+      "status": "ongoing",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": "2026-11-04T07:49:25.533Z",
-      "events": []
+      "idle_since": null,
+      "events": [
+        {
+          "event_id": "E196",
+          "event_name": "പ്രസംഗം ഇംഗ്ലീഷ്",
+          "categories": [
+            "HSS"
+          ],
+          "scheduled_start": "11:00",
+          "actual_start": "2026-11-04T07:53:54.935Z",
+          "delay_minutes": 144,
+          "combined_stages": null
+        }
+      ]
     },
     "8": {
       "status": "idle",
@@ -227,6 +240,10 @@
     }
   },
   "ticker": [
+    {
+      "t": "2026-11-04T07:53:54.935Z",
+      "text": "Stage 7: പ്രസംഗം ഇംഗ്ലീഷ് has started (144 min late)"
+    },
     {
       "t": "2026-11-04T07:49:25.533Z",
       "text": "Results announced for Stage 7, പ്രസംഗം ഇംഗ്ലീഷ് (HS)"
@@ -342,10 +359,6 @@
     {
       "t": "2026-11-04T04:49:13.492Z",
       "text": "Results announced for Stage 1, തിരുവാതിര (UP)"
-    },
-    {
-      "t": "2026-11-04T04:36:42.927Z",
-      "text": "Stage 6: സംഘ ഗാനം has started (67 min late)"
     }
   ],
   "recent_results": [
@@ -528,5 +541,5 @@
     "E140",
     "E195"
   ],
-  "updated_at": "2026-11-04T07:49:25.533Z"
+  "updated_at": "2026-11-04T07:53:54.935Z"
 }
