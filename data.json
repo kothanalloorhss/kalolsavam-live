@@ -38,14 +38,27 @@
       "events": []
     },
     "4": {
-      "status": "idle",
+      "status": "ongoing",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": "2026-11-04T13:45:13.555Z",
-      "events": []
+      "idle_since": null,
+      "events": [
+        {
+          "event_id": "E181",
+          "event_name": "ഒപ്പന",
+          "categories": [
+            "UP"
+          ],
+          "scheduled_start": "16:30",
+          "actual_start": "2026-11-04T13:48:14.064Z",
+          "delay_minutes": 168,
+          "combined_stages": null
+        }
+      ]
     },
     "5": {
       "status": "ongoing",
@@ -192,6 +205,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-04T13:48:14.064Z",
+      "text": "Stage 4: ഒപ്പന has started (168 min late)"
+    },
+    {
       "t": "2026-11-04T13:45:13.555Z",
       "text": "Results announced for Stage 4, ഗസൽ ആലാപനം ഉറുദു (HS)"
     },
@@ -306,10 +323,6 @@
     {
       "t": "2026-11-04T11:28:26.953Z",
       "text": "Stage 2: കുച്ചുപ്പുടി Boys has started (208 min late)"
-    },
-    {
-      "t": "2026-11-04T11:28:18.704Z",
-      "text": "Results announced for Stage 2, കുച്ചുപ്പുടി Girls (UP)"
     }
   ],
   "recent_results": [
@@ -530,7 +543,7 @@
     "E168",
     "E180"
   ],
-  "updated_at": "2026-11-04T13:45:13.555Z",
+  "updated_at": "2026-11-04T13:48:14.064Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
