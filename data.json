@@ -131,15 +131,27 @@
       ]
     },
     "7": {
-      "status": "idle",
+      "status": "ongoing",
       "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": "2026-11-04T06:25:15.469Z",
-      "events": []
+      "idle_since": null,
+      "events": [
+        {
+          "event_id": "E195",
+          "event_name": "പ്രസംഗം ഇംഗ്ലീഷ്",
+          "categories": [
+            "HS"
+          ],
+          "scheduled_start": "10:30",
+          "actual_start": "2026-11-04T06:38:57.175Z",
+          "delay_minutes": 99,
+          "combined_stages": null
+        }
+      ]
     },
     "8": {
       "status": "idle",
@@ -228,6 +240,10 @@
     }
   },
   "ticker": [
+    {
+      "t": "2026-11-04T06:38:57.176Z",
+      "text": "Stage 7: പ്രസംഗം ഇംഗ്ലീഷ് has started (99 min late)"
+    },
     {
       "t": "2026-11-04T06:31:09.216Z",
       "text": "Stage 2: ഭരതനാട്യം has started (81 min late)"
@@ -343,10 +359,6 @@
     {
       "t": "2026-11-03T09:50:48.266Z",
       "text": "Stage 6: സമസ്യാപൂരണം സംസ്‌കൃതം has started (261 min late)"
-    },
-    {
-      "t": "2026-11-03T09:20:50.993Z",
-      "text": "Results, Stage 5, അഭിനയഗാനം മലയാളം: 1st 45, 2nd 66, 3rd 59"
     }
   ],
   "recent_results": [
@@ -516,5 +528,5 @@
     "E161",
     "E145"
   ],
-  "updated_at": "2026-11-04T06:31:09.216Z"
+  "updated_at": "2026-11-04T06:38:57.176Z"
 }
