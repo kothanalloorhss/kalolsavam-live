@@ -97,6 +97,7 @@
     },
     "6": {
       "status": "idle",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
@@ -106,15 +107,27 @@
       "events": []
     },
     "7": {
-      "status": "idle",
+      "status": "ongoing",
       "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": "2026-11-04T08:37:02.738Z",
-      "events": []
+      "idle_since": null,
+      "events": [
+        {
+          "event_id": "E198",
+          "event_name": "പദ്യംചൊല്ലൽ ഇംഗ്ലീഷ്",
+          "categories": [
+            "HSS"
+          ],
+          "scheduled_start": "12:55",
+          "actual_start": "2026-11-04T09:35:29.594Z",
+          "delay_minutes": 130,
+          "combined_stages": null
+        }
+      ]
     },
     "8": {
       "status": "idle",
@@ -203,6 +216,10 @@
     }
   },
   "ticker": [
+    {
+      "t": "2026-11-04T09:35:29.594Z",
+      "text": "Stage 7: പദ്യംചൊല്ലൽ ഇംഗ്ലീഷ് has started (130 min late)"
+    },
     {
       "t": "2026-11-04T09:13:32.903Z",
       "text": "Results announced for Stage 6, സംഘ ഗാനം (LP)"
@@ -318,10 +335,6 @@
     {
       "t": "2026-11-04T06:25:51.091Z",
       "text": "Stage 3: ശാസ്ത്രീയ സംഗീതം Boys has started (141 min late)"
-    },
-    {
-      "t": "2026-11-04T06:25:15.469Z",
-      "text": "Results announced for Stage 7, പ്രസംഗം ഇംഗ്ലീഷ് (UP)"
     }
   ],
   "recent_results": [
@@ -516,5 +529,5 @@
     "E172",
     "E192"
   ],
-  "updated_at": "2026-11-04T09:13:32.903Z"
+  "updated_at": "2026-11-04T09:35:29.594Z"
 }
