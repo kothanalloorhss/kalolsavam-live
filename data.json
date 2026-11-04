@@ -62,27 +62,14 @@
       ]
     },
     "4": {
-      "status": "ongoing",
-      "event_id": null,
+      "status": "idle",
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": null,
-      "events": [
-        {
-          "event_id": "E178",
-          "event_name": "സംഘ ഗാനം ഉറുദു",
-          "categories": [
-            "HS"
-          ],
-          "scheduled_start": "14:40",
-          "actual_start": "2026-11-04T11:47:12.221Z",
-          "delay_minutes": 157,
-          "combined_stages": null
-        }
-      ]
+      "idle_since": "2026-11-04T12:48:44.577Z",
+      "events": []
     },
     "5": {
       "status": "ongoing",
@@ -229,6 +216,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-04T12:48:44.577Z",
+      "text": "Results announced for Stage 4, സംഘ ഗാനം ഉറുദു (HS)"
+    },
+    {
       "t": "2026-11-04T12:46:22.904Z",
       "text": "Stage 7: പദ്യംചൊല്ലൽ ഇംഗ്ലീഷ് has started (211 min late)"
     },
@@ -343,13 +334,25 @@
     {
       "t": "2026-11-04T10:42:52.029Z",
       "text": "Stage 6: സംഘ ഗാനം has started (73 min late)"
-    },
-    {
-      "t": "2026-11-04T10:41:37.299Z",
-      "text": "Stage 2: കുച്ചുപ്പുടി Boys has started (152 min late)"
     }
   ],
   "recent_results": [
+    {
+      "event_id": "E178",
+      "event_name": "സംഘ ഗാനം ഉറുദു",
+      "stage_id": 4,
+      "categories": [
+        "HS"
+      ],
+      "announced_at": "2026-11-04T12:48:44.577Z",
+      "results": {
+        "HS": {
+          "first": "22",
+          "second": "",
+          "third": ""
+        }
+      }
+    },
     {
       "event_id": "E199",
       "event_name": "പദ്യംചൊല്ലൽ ഇംഗ്ലീഷ്",
@@ -493,22 +496,6 @@
           "third": ""
         }
       }
-    },
-    {
-      "event_id": "E141",
-      "event_name": "നാടൻപ്പാട്ട്",
-      "stage_id": 1,
-      "categories": [
-        "HS"
-      ],
-      "announced_at": "2026-11-04T10:34:58.833Z",
-      "results": {
-        "HS": {
-          "first": "14",
-          "second": "12",
-          "third": "13"
-        }
-      }
     }
   ],
   "completed_events": [
@@ -558,9 +545,10 @@
     "E176",
     "E142",
     "E153",
-    "E199"
+    "E199",
+    "E178"
   ],
-  "updated_at": "2026-11-04T12:46:22.904Z",
+  "updated_at": "2026-11-04T12:48:44.577Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
