@@ -85,14 +85,27 @@
       "events": []
     },
     "5": {
-      "status": "idle",
+      "status": "ongoing",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": "2026-11-04T07:57:51.721Z",
-      "events": []
+      "idle_since": null,
+      "events": [
+        {
+          "event_id": "E188",
+          "event_name": "പ്രസംഗം മലയാളം ",
+          "categories": [
+            "LP"
+          ],
+          "scheduled_start": "11:00",
+          "actual_start": "2026-11-04T07:57:54.652Z",
+          "delay_minutes": 148,
+          "combined_stages": null
+        }
+      ]
     },
     "6": {
       "status": "ongoing",
@@ -228,6 +241,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-04T07:57:54.652Z",
+      "text": "Stage 5: പ്രസംഗം മലയാളം  has started (148 min late)"
+    },
+    {
       "t": "2026-11-04T07:57:51.719Z",
       "text": "Stage 5: പദ്യംചൊല്ലൽ മലയാളം has finished"
     },
@@ -342,10 +359,6 @@
     {
       "t": "2026-11-04T04:58:03.796Z",
       "text": "Stage 4: മാപ്പിളപ്പാട്ട് Girls has started (58 min late)"
-    },
-    {
-      "t": "2026-11-04T04:57:58.443Z",
-      "text": "Results, Stage 4, മാപ്പിളപ്പാട്ട് Boys: 1st 13"
     }
   ],
   "recent_results": [
@@ -529,5 +542,5 @@
     "E195",
     "E187"
   ],
-  "updated_at": "2026-11-04T07:57:51.721Z"
+  "updated_at": "2026-11-04T07:57:54.652Z"
 }
