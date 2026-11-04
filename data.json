@@ -50,14 +50,27 @@
       "events": []
     },
     "4": {
-      "status": "idle",
+      "status": "ongoing",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": "2026-11-04T15:23:08.233Z",
-      "events": []
+      "idle_since": null,
+      "events": [
+        {
+          "event_id": "E185",
+          "event_name": "കോൽക്കളി",
+          "categories": [
+            "HS"
+          ],
+          "scheduled_start": "18:00",
+          "actual_start": "2026-11-04T15:23:13.265Z",
+          "delay_minutes": 173,
+          "combined_stages": null
+        }
+      ]
     },
     "5": {
       "status": "idle",
@@ -180,6 +193,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-04T15:23:13.265Z",
+      "text": "Stage 4: കോൽക്കളി has started (173 min late)"
+    },
+    {
       "t": "2026-11-04T15:23:08.233Z",
       "text": "Results announced for Stage 4, വട്ടപ്പാട്ട് (HS)"
     },
@@ -294,10 +311,6 @@
     {
       "t": "2026-11-04T12:59:35.168Z",
       "text": "Results announced for Stage 1, വഞ്ചിപ്പാട്ട് (HS)"
-    },
-    {
-      "t": "2026-11-04T12:48:51.552Z",
-      "text": "Stage 4: ഗസൽ ആലാപനം ഉറുദു has started (189 min late)"
     }
   ],
   "recent_results": [
@@ -528,7 +541,7 @@
     "E155",
     "E184"
   ],
-  "updated_at": "2026-11-04T15:23:08.233Z",
+  "updated_at": "2026-11-04T15:23:13.265Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
