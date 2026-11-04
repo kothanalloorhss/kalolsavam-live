@@ -433,10 +433,31 @@
       const q = input.value.trim();
       if (!q) { drop.hidden = true; if (clearBtn) clearBtn.hidden = true; list.innerHTML = ""; return; }
       if (clearBtn) clearBtn.hidden = false;
-      const qWords = q.toLowerCase().split(/\s+/).filter(Boolean);
-      const matches = getEffectiveSchedule().filter(ev => ev._search && qWords.every(word => ev._search.fullText.includes(word) || (normalizeFuzzy(word).length >= 2 && ev._search.fuzzyTokens.some(ft => ft.includes(normalizeFuzzy(word))))));
+      
+      const doneSet = new Set((S.data && S.data.completed_events ? S.data.completed_events : []).map(String));
+      const ongoingIds = new Set();
+      Object.values(S.data && S.data.stages ? S.data.stages : {}).forEach(st => {
+        getLiveEvents(st).forEach(e => ongoingIds.add(String(e.event_id)));
+      });
 
-      if (!matches.length) { list.innerHTML = `<li class="search-item search-empty">No events found matching "${esc(q)}".</li>`; drop.hidden = false; return; }
+      const qWords = q.toLowerCase().split(/\s+/).filter(Boolean);
+      const matches = getEffectiveSchedule().filter(ev => {
+        // Exclude events that are already completed or currently live
+        if (doneSet.has(String(ev.event_id)) || ongoingIds.has(String(ev.event_id))) return false;
+        
+        const s = ev._search;
+        if (!s) return false;
+        return qWords.every(word => {
+          if (s.fullText.includes(word)) return true;
+          const wFuzz = normalizeFuzzy(word);
+          if (wFuzz.length >= 2) {
+            return s.fuzzyTokens.some(ft => ft.includes(wFuzz));
+          }
+          return false;
+        });
+      });
+
+      if (!matches.length) { list.innerHTML = `<li class="search-item search-empty">No pending events found matching "${esc(q)}".</li>`; drop.hidden = false; return; }
       list.innerHTML = matches.slice(0, 15).map(ev => {
         const stg = getStageMeta(ev.stage_id);
         const cats = KL.cats(ev).map(c => `<span class="chip">${esc(c)}</span>`).join("");
