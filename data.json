@@ -150,6 +150,17 @@
           "actual_start": "2026-11-04T09:35:29.594Z",
           "delay_minutes": 130,
           "combined_stages": null
+        },
+        {
+          "event_id": "E197",
+          "event_name": "പദ്യംചൊല്ലൽ ഇംഗ്ലീഷ്",
+          "categories": [
+            "HS"
+          ],
+          "scheduled_start": "12:00",
+          "actual_start": "2026-11-04T10:03:12.545Z",
+          "delay_minutes": 213,
+          "combined_stages": null
         }
       ]
     },
@@ -240,6 +251,10 @@
     }
   },
   "ticker": [
+    {
+      "t": "2026-11-04T10:03:12.545Z",
+      "text": "Stage 7: പദ്യംചൊല്ലൽ ഇംഗ്ലീഷ് has started (213 min late)"
+    },
     {
       "t": "2026-11-04T09:45:52.885Z",
       "text": "Stage 2: ഭരതനാട്യം Girls has started (186 min late)"
@@ -355,10 +370,6 @@
     {
       "t": "2026-11-04T07:02:20.764Z",
       "text": "Stage 3: ശാസ്ത്രീയ സംഗീതം Boys has finished"
-    },
-    {
-      "t": "2026-11-04T07:02:17.016Z",
-      "text": "Stage 3: ശാസ്ത്രീയ സംഗീതം Boys has started (107 min late)"
     }
   ],
   "recent_results": [
@@ -555,5 +566,5 @@
     "E175",
     "E147"
   ],
-  "updated_at": "2026-11-04T09:45:52.885Z"
+  "updated_at": "2026-11-04T10:03:12.546Z"
 }
