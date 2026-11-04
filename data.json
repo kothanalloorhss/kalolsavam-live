@@ -51,15 +51,27 @@
       ]
     },
     "3": {
-      "status": "idle",
+      "status": "ongoing",
       "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": "2026-11-04T10:21:53.716Z",
-      "events": []
+      "idle_since": null,
+      "events": [
+        {
+          "event_id": "E167",
+          "event_name": "സംഘ ഗാനം",
+          "categories": [
+            "HS"
+          ],
+          "scheduled_start": "13:00",
+          "actual_start": "2026-11-04T10:28:45.549Z",
+          "delay_minutes": 179,
+          "combined_stages": null
+        }
+      ]
     },
     "4": {
       "status": "ongoing",
@@ -240,6 +252,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-04T10:28:45.549Z",
+      "text": "Stage 3: സംഘ ഗാനം has started (179 min late)"
+    },
+    {
       "t": "2026-11-04T10:22:06.660Z",
       "text": "Results announced for Stage 7, പദ്യംചൊല്ലൽ ഇംഗ്ലീഷ് (HS)"
     },
@@ -354,10 +370,6 @@
     {
       "t": "2026-11-04T07:31:12.331Z",
       "text": "Stage 3: ലളിതഗാനം Boys has started (116 min late)"
-    },
-    {
-      "t": "2026-11-04T07:29:51.832Z",
-      "text": "Results announced for Stage 1, തിരുവാതിര (HS)"
     }
   ],
   "recent_results": [
@@ -556,5 +568,5 @@
     "E166",
     "E197"
   ],
-  "updated_at": "2026-11-04T10:22:06.660Z"
+  "updated_at": "2026-11-04T10:28:45.549Z"
 }
