@@ -92,17 +92,6 @@
           "actual_start": "2026-11-04T10:15:13.290Z",
           "delay_minutes": 184,
           "combined_stages": null
-        },
-        {
-          "event_id": "E179",
-          "event_name": "ഗസൽ ആലാപനം ഉറുദു",
-          "categories": [
-            "HSS"
-          ],
-          "scheduled_start": "15:10",
-          "actual_start": "2026-11-04T11:46:47.354Z",
-          "delay_minutes": 127,
-          "combined_stages": null
         }
       ]
     },
@@ -577,7 +566,7 @@
     "E152",
     "E177"
   ],
-  "updated_at": "2026-11-04T11:46:47.354Z",
+  "updated_at": "2026-11-04T11:46:52.867Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
