@@ -16,27 +16,14 @@
       "events": []
     },
     "2": {
-      "status": "ongoing",
-      "event_id": null,
+      "status": "idle",
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": null,
-      "events": [
-        {
-          "event_id": "E150",
-          "event_name": "കുച്ചുപ്പുടി Girls",
-          "categories": [
-            "UP"
-          ],
-          "scheduled_start": "13:20",
-          "actual_start": "2026-11-04T11:16:12.995Z",
-          "delay_minutes": 206,
-          "combined_stages": null
-        }
-      ]
+      "idle_since": "2026-11-04T11:28:18.704Z",
+      "events": []
     },
     "3": {
       "status": "ongoing",
@@ -240,6 +227,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-04T11:28:18.704Z",
+      "text": "Results announced for Stage 2, കുച്ചുപ്പുടി Girls (UP)"
+    },
+    {
       "t": "2026-11-04T11:16:12.995Z",
       "text": "Stage 2: കുച്ചുപ്പുടി Girls has started (206 min late)"
     },
@@ -354,13 +345,25 @@
     {
       "t": "2026-11-04T08:59:02.254Z",
       "text": "Stage 3: ലളിതഗാനം Girls has started (164 min late)"
-    },
-    {
-      "t": "2026-11-04T08:55:35.399Z",
-      "text": "Stage 4: പദ്യംചൊല്ലൽ ഉറുദു has started (136 min late)"
     }
   ],
   "recent_results": [
+    {
+      "event_id": "E150",
+      "event_name": "കുച്ചുപ്പുടി Girls",
+      "stage_id": 2,
+      "categories": [
+        "UP"
+      ],
+      "announced_at": "2026-11-04T11:28:18.704Z",
+      "results": {
+        "UP": {
+          "first": "20",
+          "second": "",
+          "third": ""
+        }
+      }
+    },
     {
       "event_id": "E149",
       "event_name": "ഭരതനാട്യം Boys",
@@ -504,22 +507,6 @@
           "third": ""
         }
       }
-    },
-    {
-      "event_id": "E175",
-      "event_name": "പദ്യംചൊല്ലൽ ഉറുദു",
-      "stage_id": 4,
-      "categories": [
-        "HSS"
-      ],
-      "announced_at": "2026-11-04T09:38:51.531Z",
-      "results": {
-        "HSS": {
-          "first": "31",
-          "second": "",
-          "third": ""
-        }
-      }
     }
   ],
   "completed_events": [
@@ -561,7 +548,8 @@
     "E167",
     "E148",
     "E198",
-    "E149"
+    "E149",
+    "E150"
   ],
-  "updated_at": "2026-11-04T11:16:12.995Z"
+  "updated_at": "2026-11-04T11:28:18.704Z"
 }
