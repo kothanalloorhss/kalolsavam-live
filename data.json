@@ -6,6 +6,7 @@
   "stages": {
     "1": {
       "status": "idle",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
@@ -15,15 +16,27 @@
       "events": []
     },
     "2": {
-      "status": "idle",
+      "status": "ongoing",
       "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": "2026-11-04T12:35:08.405Z",
-      "events": []
+      "idle_since": null,
+      "events": [
+        {
+          "event_id": "E154",
+          "event_name": "കുച്ചുപ്പുടി Girls",
+          "categories": [
+            "HS"
+          ],
+          "scheduled_start": "14:20",
+          "actual_start": "2026-11-04T13:03:31.316Z",
+          "delay_minutes": 253,
+          "combined_stages": null
+        }
+      ]
     },
     "3": {
       "status": "ongoing",
@@ -216,6 +229,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-04T13:03:31.316Z",
+      "text": "Stage 2: കുച്ചുപ്പുടി Girls has started (253 min late)"
+    },
+    {
       "t": "2026-11-04T12:59:35.168Z",
       "text": "Results announced for Stage 1, വഞ്ചിപ്പാട്ട് (HS)"
     },
@@ -330,10 +347,6 @@
     {
       "t": "2026-11-04T10:53:28.886Z",
       "text": "Results announced for Stage 3, സംഘ ഗാനം (HS)"
-    },
-    {
-      "t": "2026-11-04T10:46:29.735Z",
-      "text": "Stage 2: ഭരതനാട്യം Boys has started (186 min late)"
     }
   ],
   "recent_results": [
@@ -549,7 +562,7 @@
     "E178",
     "E143"
   ],
-  "updated_at": "2026-11-04T12:59:35.168Z",
+  "updated_at": "2026-11-04T13:03:31.316Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
