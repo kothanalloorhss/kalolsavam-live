@@ -6,6 +6,7 @@
   "stages": {
     "1": {
       "status": "idle",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
@@ -239,6 +240,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-04T10:36:09.697Z",
+      "text": "Updated Result: നാടൻപ്പാട്ട് (HS)"
+    },
+    {
       "t": "2026-11-04T10:34:58.833Z",
       "text": "Results announced for Stage 1, നാടൻപ്പാട്ട് (HS)"
     },
@@ -353,10 +358,6 @@
     {
       "t": "2026-11-04T07:57:51.719Z",
       "text": "Stage 5: പദ്യംചൊല്ലൽ മലയാളം has finished"
-    },
-    {
-      "t": "2026-11-04T07:53:54.935Z",
-      "text": "Stage 7: പ്രസംഗം ഇംഗ്ലീഷ് has started (144 min late)"
     }
   ],
   "recent_results": [
@@ -371,8 +372,8 @@
       "results": {
         "HS": {
           "first": "18",
-          "second": "",
-          "third": ""
+          "second": "19",
+          "third": "13"
         }
       }
     },
@@ -557,5 +558,5 @@
     "E188",
     "E141"
   ],
-  "updated_at": "2026-11-04T10:34:58.833Z"
+  "updated_at": "2026-11-04T10:36:09.697Z"
 }
