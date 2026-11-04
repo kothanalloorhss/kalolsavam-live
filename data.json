@@ -35,6 +35,17 @@
           "actual_start": "2026-11-04T09:45:52.885Z",
           "delay_minutes": 186,
           "combined_stages": null
+        },
+        {
+          "event_id": "E149",
+          "event_name": "ഭരതനാട്യം Boys",
+          "categories": [
+            "HSS"
+          ],
+          "scheduled_start": "13:10",
+          "actual_start": "2026-11-04T10:46:29.735Z",
+          "delay_minutes": 186,
+          "combined_stages": null
         }
       ]
     },
@@ -240,6 +251,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-04T10:46:29.735Z",
+      "text": "Stage 2: ഭരതനാട്യം Boys has started (186 min late)"
+    },
+    {
       "t": "2026-11-04T10:44:05.350Z",
       "text": "Results announced for Stage 6, സംഘ ഗാനം (HSS)"
     },
@@ -354,10 +369,6 @@
     {
       "t": "2026-11-04T08:36:08.183Z",
       "text": "Results announced for Stage 3, ലളിതഗാനം Boys (HS)"
-    },
-    {
-      "t": "2026-11-04T08:35:24.229Z",
-      "text": "Results announced for Stage 4, പദ്യംചൊല്ലൽ ഉറുദു (UP)"
     }
   ],
   "recent_results": [
@@ -559,5 +570,5 @@
     "E141",
     "E193"
   ],
-  "updated_at": "2026-11-04T10:46:22.057Z"
+  "updated_at": "2026-11-04T10:46:29.735Z"
 }
