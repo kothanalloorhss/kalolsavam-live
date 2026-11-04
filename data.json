@@ -35,17 +35,6 @@
           "actual_start": "2026-11-04T13:55:53.765Z",
           "delay_minutes": 256,
           "combined_stages": null
-        },
-        {
-          "event_id": "E156",
-          "event_name": "മോഹിനിയാട്ടം",
-          "categories": [
-            "HS"
-          ],
-          "scheduled_start": "15:20",
-          "actual_start": "2026-11-04T15:03:05.177Z",
-          "delay_minutes": 313,
-          "combined_stages": null
         }
       ]
     },
@@ -204,6 +193,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-04T15:03:14.569Z",
+      "text": "Results announced for Stage 2, മോഹിനിയാട്ടം (HS)"
+    },
+    {
       "t": "2026-11-04T15:03:05.177Z",
       "text": "Stage 2: മോഹിനിയാട്ടം has started (313 min late)"
     },
@@ -318,13 +311,25 @@
     {
       "t": "2026-11-04T11:56:04.683Z",
       "text": "Stage 1: വഞ്ചിപ്പാട്ട് has started (226 min late)"
-    },
-    {
-      "t": "2026-11-04T11:56:01.014Z",
-      "text": "Stage 1: നാടൻപ്പാട്ട് has finished"
     }
   ],
   "recent_results": [
+    {
+      "event_id": "E156",
+      "event_name": "മോഹിനിയാട്ടം",
+      "stage_id": 2,
+      "categories": [
+        "HS"
+      ],
+      "announced_at": "2026-11-04T15:03:14.569Z",
+      "results": {
+        "HS": {
+          "first": "29",
+          "second": "",
+          "third": ""
+        }
+      }
+    },
     {
       "event_id": "E191",
       "event_name": "പ്രസംഗം മലയാളം ",
@@ -468,22 +473,6 @@
           "third": ""
         }
       }
-    },
-    {
-      "event_id": "E144",
-      "event_name": "വഞ്ചിപ്പാട്ട്",
-      "stage_id": 1,
-      "categories": [
-        "HSS"
-      ],
-      "announced_at": "2026-11-04T13:23:20.626Z",
-      "results": {
-        "HSS": {
-          "first": "16",
-          "second": "17",
-          "third": ""
-        }
-      }
     }
   ],
   "completed_events": [
@@ -546,9 +535,10 @@
     "E182",
     "E189",
     "E190",
-    "E191"
+    "E191",
+    "E156"
   ],
-  "updated_at": "2026-11-04T15:03:05.177Z",
+  "updated_at": "2026-11-04T15:03:14.569Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
