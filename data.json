@@ -6,6 +6,7 @@
   "stages": {
     "1": {
       "status": "idle",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
@@ -15,27 +16,14 @@
       "events": []
     },
     "2": {
-      "status": "ongoing",
-      "event_id": null,
+      "status": "idle",
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": null,
-      "events": [
-        {
-          "event_id": "E154",
-          "event_name": "കുച്ചുപ്പുടി Girls",
-          "categories": [
-            "HS"
-          ],
-          "scheduled_start": "14:20",
-          "actual_start": "2026-11-04T13:03:31.316Z",
-          "delay_minutes": 253,
-          "combined_stages": null
-        }
-      ]
+      "idle_since": "2026-11-04T13:44:43.896Z",
+      "events": []
     },
     "3": {
       "status": "ongoing",
@@ -228,6 +216,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-04T13:44:43.896Z",
+      "text": "Results announced for Stage 2, കുച്ചുപ്പുടി Girls (HS)"
+    },
+    {
       "t": "2026-11-04T13:23:20.626Z",
       "text": "Results announced for Stage 1, വഞ്ചിപ്പാട്ട് (HSS)"
     },
@@ -342,13 +334,25 @@
     {
       "t": "2026-11-04T11:16:04.627Z",
       "text": "Results announced for Stage 2, ഭരതനാട്യം Boys (HSS)"
-    },
-    {
-      "t": "2026-11-04T10:59:42.415Z",
-      "text": "Stage 7: പദ്യംചൊല്ലൽ ഇംഗ്ലീഷ് has started (165 min late)"
     }
   ],
   "recent_results": [
+    {
+      "event_id": "E154",
+      "event_name": "കുച്ചുപ്പുടി Girls",
+      "stage_id": 2,
+      "categories": [
+        "HS"
+      ],
+      "announced_at": "2026-11-04T13:44:43.896Z",
+      "results": {
+        "HS": {
+          "first": "20",
+          "second": "",
+          "third": ""
+        }
+      }
+    },
     {
       "event_id": "E144",
       "event_name": "വഞ്ചിപ്പാട്ട്",
@@ -492,22 +496,6 @@
           "third": ""
         }
       }
-    },
-    {
-      "event_id": "E149",
-      "event_name": "ഭരതനാട്യം Boys",
-      "stage_id": 2,
-      "categories": [
-        "HSS"
-      ],
-      "announced_at": "2026-11-04T11:16:04.627Z",
-      "results": {
-        "HSS": {
-          "first": "30",
-          "second": "",
-          "third": ""
-        }
-      }
     }
   ],
   "completed_events": [
@@ -561,9 +549,10 @@
     "E178",
     "E143",
     "E179",
-    "E144"
+    "E144",
+    "E154"
   ],
-  "updated_at": "2026-11-04T13:23:20.626Z",
+  "updated_at": "2026-11-04T13:44:43.896Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
