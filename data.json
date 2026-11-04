@@ -26,17 +26,6 @@
       "idle_since": null,
       "events": [
         {
-          "event_id": "E148",
-          "event_name": "ഭരതനാട്യം Girls",
-          "categories": [
-            "HSS"
-          ],
-          "scheduled_start": "12:10",
-          "actual_start": "2026-11-04T09:45:52.885Z",
-          "delay_minutes": 186,
-          "combined_stages": null
-        },
-        {
           "event_id": "E149",
           "event_name": "ഭരതനാട്യം Boys",
           "categories": [
@@ -251,6 +240,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-04T10:57:45.244Z",
+      "text": "Results announced for Stage 2, ഭരതനാട്യം Girls (HSS)"
+    },
+    {
       "t": "2026-11-04T10:57:30.040Z",
       "text": "Stage 3: സംഘ ഗാനം has started (157 min late)"
     },
@@ -365,13 +358,25 @@
     {
       "t": "2026-11-04T08:42:20.091Z",
       "text": "Stage 4: മാപ്പിളപ്പാട്ട് Boys has started (237 min late)"
-    },
-    {
-      "t": "2026-11-04T08:37:02.738Z",
-      "text": "Results announced for Stage 7, പ്രസംഗം ഇംഗ്ലീഷ് (HSS)"
     }
   ],
   "recent_results": [
+    {
+      "event_id": "E148",
+      "event_name": "ഭരതനാട്യം Girls",
+      "stage_id": 2,
+      "categories": [
+        "HSS"
+      ],
+      "announced_at": "2026-11-04T10:57:45.244Z",
+      "results": {
+        "HSS": {
+          "first": "26",
+          "second": "",
+          "third": ""
+        }
+      }
+    },
     {
       "event_id": "E167",
       "event_name": "സംഘ ഗാനം",
@@ -515,22 +520,6 @@
           "third": ""
         }
       }
-    },
-    {
-      "event_id": "E196",
-      "event_name": "പ്രസംഗം ഇംഗ്ലീഷ്",
-      "stage_id": 7,
-      "categories": [
-        "HSS"
-      ],
-      "announced_at": "2026-11-04T08:37:02.738Z",
-      "results": {
-        "HSS": {
-          "first": "38",
-          "second": "",
-          "third": ""
-        }
-      }
     }
   ],
   "completed_events": [
@@ -569,7 +558,8 @@
     "E188",
     "E141",
     "E193",
-    "E167"
+    "E167",
+    "E148"
   ],
-  "updated_at": "2026-11-04T10:57:30.040Z"
+  "updated_at": "2026-11-04T10:57:45.244Z"
 }
