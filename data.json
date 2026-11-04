@@ -51,27 +51,14 @@
       ]
     },
     "3": {
-      "status": "ongoing",
-      "event_id": null,
+      "status": "idle",
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": null,
-      "events": [
-        {
-          "event_id": "E162",
-          "event_name": "ശാസ്ത്രീയ സംഗീതം Girls",
-          "categories": [
-            "HS"
-          ],
-          "scheduled_start": "10:05",
-          "actual_start": "2026-11-04T06:20:22.786Z",
-          "delay_minutes": 105,
-          "combined_stages": null
-        }
-      ]
+      "idle_since": "2026-11-04T07:02:08.933Z",
+      "events": []
     },
     "4": {
       "status": "idle",
@@ -241,6 +228,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-04T07:02:08.933Z",
+      "text": "Stage 3: ശാസ്ത്രീയ സംഗീതം Girls has finished"
+    },
+    {
       "t": "2026-11-04T06:38:57.176Z",
       "text": "Stage 7: പ്രസംഗം ഇംഗ്ലീഷ് has started (99 min late)"
     },
@@ -355,10 +346,6 @@
     {
       "t": "2026-11-03T09:51:22.780Z",
       "text": "Results, Stage 6, സമസ്യാപൂരണം സംസ്‌കൃതം: 1st 180, 2nd 182, 3rd 183"
-    },
-    {
-      "t": "2026-11-03T09:50:48.266Z",
-      "text": "Stage 6: സമസ്യാപൂരണം സംസ്‌കൃതം has started (261 min late)"
     }
   ],
   "recent_results": [
@@ -526,7 +513,8 @@
     "E186",
     "E194",
     "E161",
-    "E145"
+    "E145",
+    "E162"
   ],
-  "updated_at": "2026-11-04T06:38:57.176Z"
+  "updated_at": "2026-11-04T07:02:08.933Z"
 }
