@@ -119,14 +119,27 @@
       "events": []
     },
     "7": {
-      "status": "idle",
+      "status": "ongoing",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": "2026-11-04T12:44:52.989Z",
-      "events": []
+      "idle_since": null,
+      "events": [
+        {
+          "event_id": "E200",
+          "event_name": "പദ്യംചൊല്ലൽ ഇംഗ്ലീഷ്",
+          "categories": [
+            "LP"
+          ],
+          "scheduled_start": "14:45",
+          "actual_start": "2026-11-04T12:46:22.904Z",
+          "delay_minutes": 211,
+          "combined_stages": null
+        }
+      ]
     },
     "8": {
       "status": "idle",
@@ -215,6 +228,10 @@
     }
   },
   "ticker": [
+    {
+      "t": "2026-11-04T12:46:22.904Z",
+      "text": "Stage 7: പദ്യംചൊല്ലൽ ഇംഗ്ലീഷ് has started (211 min late)"
+    },
     {
       "t": "2026-11-04T12:44:52.989Z",
       "text": "Results announced for Stage 7, പദ്യംചൊല്ലൽ ഇംഗ്ലീഷ് (UP)"
@@ -330,10 +347,6 @@
     {
       "t": "2026-11-04T10:41:37.299Z",
       "text": "Stage 2: കുച്ചുപ്പുടി Boys has started (152 min late)"
-    },
-    {
-      "t": "2026-11-04T10:36:09.697Z",
-      "text": "Updated Result: നാടൻപ്പാട്ട് (HS)"
     }
   ],
   "recent_results": [
@@ -547,7 +560,7 @@
     "E153",
     "E199"
   ],
-  "updated_at": "2026-11-04T12:44:52.989Z",
+  "updated_at": "2026-11-04T12:46:22.904Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
