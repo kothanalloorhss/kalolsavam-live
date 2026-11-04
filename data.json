@@ -93,6 +93,17 @@
           "actual_start": "2026-11-04T09:36:05.121Z",
           "delay_minutes": 176,
           "combined_stages": null
+        },
+        {
+          "event_id": "E176",
+          "event_name": "പ്രസംഗം ഉറുദു",
+          "categories": [
+            "Gen"
+          ],
+          "scheduled_start": "12:40",
+          "actual_start": "2026-11-04T10:15:13.290Z",
+          "delay_minutes": 184,
+          "combined_stages": null
         }
       ]
     },
@@ -252,6 +263,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-04T10:15:13.290Z",
+      "text": "Stage 4: പ്രസംഗം ഉറുദു has started (184 min late)"
+    },
+    {
       "t": "2026-11-04T10:03:12.545Z",
       "text": "Stage 7: പദ്യംചൊല്ലൽ ഇംഗ്ലീഷ് has started (213 min late)"
     },
@@ -366,10 +381,6 @@
     {
       "t": "2026-11-04T07:20:57.029Z",
       "text": "Stage 3: ശാസ്ത്രീയ സംഗീതം Girls has started (111 min late)"
-    },
-    {
-      "t": "2026-11-04T07:02:20.764Z",
-      "text": "Stage 3: ശാസ്ത്രീയ സംഗീതം Boys has finished"
     }
   ],
   "recent_results": [
@@ -566,5 +577,5 @@
     "E175",
     "E147"
   ],
-  "updated_at": "2026-11-04T10:03:12.546Z"
+  "updated_at": "2026-11-04T10:15:13.290Z"
 }
