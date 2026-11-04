@@ -16,14 +16,27 @@
       "events": []
     },
     "2": {
-      "status": "idle",
+      "status": "ongoing",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": "2026-11-04T11:39:25.231Z",
-      "events": []
+      "idle_since": null,
+      "events": [
+        {
+          "event_id": "E153",
+          "event_name": "കുച്ചുപ്പുടി Girls",
+          "categories": [
+            "HSS"
+          ],
+          "scheduled_start": "13:50",
+          "actual_start": "2026-11-04T11:43:07.505Z",
+          "delay_minutes": 203,
+          "combined_stages": null
+        }
+      ]
     },
     "3": {
       "status": "ongoing",
@@ -227,6 +240,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-04T11:43:07.505Z",
+      "text": "Stage 2: കുച്ചുപ്പുടി Girls has started (203 min late)"
+    },
+    {
       "t": "2026-11-04T11:39:25.231Z",
       "text": "Results announced for Stage 2, കുച്ചുപ്പുടി Boys (HSS)"
     },
@@ -341,10 +358,6 @@
     {
       "t": "2026-11-04T09:38:51.531Z",
       "text": "Results announced for Stage 4, പദ്യംചൊല്ലൽ ഉറുദു (HSS)"
-    },
-    {
-      "t": "2026-11-04T09:38:36.852Z",
-      "text": "Stage 4: പദ്യംചൊല്ലൽ ഉറുദു has started (153 min late)"
     }
   ],
   "recent_results": [
@@ -552,7 +565,7 @@
     "E150",
     "E152"
   ],
-  "updated_at": "2026-11-04T11:39:25.231Z",
+  "updated_at": "2026-11-04T11:43:07.505Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
