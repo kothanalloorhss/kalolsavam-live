@@ -51,27 +51,14 @@
       ]
     },
     "3": {
-      "status": "ongoing",
-      "event_id": null,
+      "status": "idle",
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": null,
-      "events": [
-        {
-          "event_id": "E166",
-          "event_name": "ലളിതഗാനം Girls",
-          "categories": [
-            "HS"
-          ],
-          "scheduled_start": "11:45",
-          "actual_start": "2026-11-04T08:59:02.254Z",
-          "delay_minutes": 164,
-          "combined_stages": null
-        }
-      ]
+      "idle_since": "2026-11-04T10:21:53.716Z",
+      "events": []
     },
     "4": {
       "status": "ongoing",
@@ -263,6 +250,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-04T10:21:53.716Z",
+      "text": "Results announced for Stage 3, ലളിതഗാനം Girls (HS)"
+    },
+    {
       "t": "2026-11-04T10:15:13.290Z",
       "text": "Stage 4: പ്രസംഗം ഉറുദു has started (184 min late)"
     },
@@ -377,13 +368,25 @@
     {
       "t": "2026-11-04T07:21:07.307Z",
       "text": "Results announced for Stage 3, ശാസ്ത്രീയ സംഗീതം Girls (HSS)"
-    },
-    {
-      "t": "2026-11-04T07:20:57.029Z",
-      "text": "Stage 3: ശാസ്ത്രീയ സംഗീതം Girls has started (111 min late)"
     }
   ],
   "recent_results": [
+    {
+      "event_id": "E166",
+      "event_name": "ലളിതഗാനം Girls",
+      "stage_id": 3,
+      "categories": [
+        "HS"
+      ],
+      "announced_at": "2026-11-04T10:21:53.716Z",
+      "results": {
+        "HS": {
+          "first": "22",
+          "second": "",
+          "third": ""
+        }
+      }
+    },
     {
       "event_id": "E147",
       "event_name": "ഭരതനാട്യം",
@@ -527,22 +530,6 @@
           "third": "18"
         }
       }
-    },
-    {
-      "event_id": "E164",
-      "event_name": "ശാസ്ത്രീയ സംഗീതം Girls",
-      "stage_id": 3,
-      "categories": [
-        "HSS"
-      ],
-      "announced_at": "2026-11-04T07:21:07.307Z",
-      "results": {
-        "HSS": {
-          "first": "32",
-          "second": "",
-          "third": ""
-        }
-      }
     }
   ],
   "completed_events": [
@@ -575,7 +562,8 @@
     "E172",
     "E192",
     "E175",
-    "E147"
+    "E147",
+    "E166"
   ],
-  "updated_at": "2026-11-04T10:15:13.290Z"
+  "updated_at": "2026-11-04T10:21:53.716Z"
 }
