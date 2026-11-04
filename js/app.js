@@ -310,6 +310,13 @@
 
   const delayClass = m => (m <= 5 ? "ok" : m <= 20 ? "warn" : "bad");
 
+  function directions(s) {
+    const map = s.is_external && s.map_url
+      ? `<a class="map-btn" href="${esc(s.map_url)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">Open in Google Maps</a>` : "";
+    const route = s.route_guide ? `<p class="route">${esc(s.route_guide)}</p>` : "";
+    return map || route ? `<footer class="stage-foot">${map}${route}</footer>` : "";
+  }
+
   function stageCard(s, i) {
     const v = stageView(s);
     let label = { live: "Live now", next: "Up next", done: "Finished for today", none: "No events today" }[v.mode];
@@ -344,19 +351,21 @@
       body = `<p class="muted">Nothing is scheduled here today.</p>`;
     }
 
-    const map = s.is_external && s.map_url ? `<a class="map-btn" href="${esc(s.map_url)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">Open in Google Maps</a>` : "";
-    const route = s.route_guide ? `<p class="route">${esc(s.route_guide)}</p>` : "";
-    const foot = map || route ? `<footer class="stage-foot">${map}${route}</footer>` : "";
-
     const progress = v.total ? `<p class="progress">${v.doneCount} of ${v.total} events done</p>` : "";
     const aos = S.animate ? ` data-aos="fade-up" data-aos-delay="${(i % 3) * 90}"` : "";
     return `<article class="stage-card is-${v.mode} is-clickable" data-stage-id="${esc(s.stage_id)}"${aos} role="button" tabindex="0" aria-label="View schedule and results for Stage ${esc(s.stage_id)}">
-      <header class="stage-head"><span class="stage-no">${s.stage_id}</span><div class="stage-title"><h3>${esc(s.stage_name)}</h3><p>${esc(s.venue_location)}</p></div></header>
+      <header class="stage-head">
+        <span class="stage-no" aria-label="Stage ${s.stage_id}">${s.stage_id}</span>
+        <div class="stage-title"><h3>${esc(s.stage_name)}</h3><p>${esc(s.venue_location)}</p></div>
+      </header>
       <div class="stage-body">
-        <div class="stage-status-row"><span class="status status-${v.mode}">${esc(label)}</span><span class="view-detail-hint">Details &rsaquo;</span></div>
+        <div class="stage-status-row">
+          <span class="status status-${v.mode}">${esc(label)}</span>
+          <span class="view-detail-hint">Details &rsaquo;</span>
+        </div>
         ${body}${pill}${progress}
       </div>
-      ${foot}
+      ${directions(s)}
     </article>`;
   }
 
@@ -376,11 +385,21 @@
     if (!list.length) return;
     $("resultList").innerHTML = list.map(r => {
       const fresh = KL.minutesAgo(r.announced_at) < C.freshResultMinutes;
-      const rank = (label, n) => n ? `<span class="rank"><b>${label}</b> ${esc(n)}</span>` : "";
+      // Handle Multi-Category or Legacy Structure safely
+      const resObj = r.results || ( (r.first || r.second || r.third) ? { "General": { first: r.first, second: r.second, third: r.third } } : {} );
+      
+      let ranksHtml = Object.entries(resObj).map(([cat, ranks]) => {
+        const r1 = ranks.first ? `<span class="rank"><b>1st</b> ${esc(ranks.first)}</span>` : "";
+        const r2 = ranks.second ? `<span class="rank"><b>2nd</b> ${esc(ranks.second)}</span>` : "";
+        const r3 = ranks.third ? `<span class="rank"><b>3rd</b> ${esc(ranks.third)}</span>` : "";
+        const catBadge = cat !== "General" ? `<span class="res-cat-badge">${esc(cat)}</span>` : "";
+        return `<div class="cat-result-row">${catBadge} <div class="ranks" style="margin:0">${r1}${r2}${r3}</div></div>`;
+      }).join("");
+
       return `<li class="${fresh ? "is-fresh" : ""}">
         <div class="res-head"><span class="res-name" lang="ml">${esc(r.event_name)}</span>
         <span class="res-meta">Stage ${esc(r.stage_id)}, ${KL.agoText(r.announced_at)}</span></div>
-        <div class="ranks">${rank("1st", r.first)}${rank("2nd", r.second)}${rank("3rd", r.third)}</div></li>`;
+        ${ranksHtml}</li>`;
     }).join("");
   }
 
@@ -494,11 +513,25 @@
       completedHtml += `<ul class="modal-completed-list">${completed.map(e => {
         const res = findResultForEvent(stageId, e);
         const chips = KL.cats(e).map(c => `<span class="chip">${esc(c)}</span>`).join("");
+        
         let resHtml = `<p class="muted-small">Result awaited</p>`;
-        if (res && (res.first || res.second || res.third)) {
-          const badge = (lbl, val) => val ? `<span class="rank"><b>${lbl}:</b> ${esc(val)}</span>` : "";
-          resHtml = `<div class="modal-ranks">${badge("1st", res.first)}${badge("2nd", res.second)}${badge("3rd", res.third)}</div>`;
+        if (res) {
+          const resObj = res.results || ( (res.first || res.second || res.third) ? { "General": { first: res.first, second: res.second, third: res.third } } : {} );
+          // Only show ranks if there's actual data in the result object
+          const hasRanks = Object.values(resObj).some(ranks => ranks.first || ranks.second || ranks.third);
+          
+          if (hasRanks) {
+            resHtml = Object.entries(resObj).map(([cat, ranks]) => {
+              if(!ranks.first && !ranks.second && !ranks.third) return ""; // Skip empty categories
+              const r1 = ranks.first ? `<span class="rank"><b>1st:</b> ${esc(ranks.first)}</span>` : "";
+              const r2 = ranks.second ? `<span class="rank"><b>2nd:</b> ${esc(ranks.second)}</span>` : "";
+              const r3 = ranks.third ? `<span class="rank"><b>3rd:</b> ${esc(ranks.third)}</span>` : "";
+              const catBadge = cat !== "General" ? `<span class="res-cat-badge">${esc(cat)}</span>` : "";
+              return `<div class="cat-result-row">${catBadge} <div class="modal-ranks" style="margin:0">${r1}${r2}${r3}</div></div>`;
+            }).join("");
+          }
         }
+        
         return `<li><div class="completed-head"><span class="ev-name" lang="ml">${esc(e.event_name)}</span><div class="chips">${chips}</div></div>${resHtml}</li>`;
       }).join("")}</ul></div>`;
     } else completedHtml += `<p class="muted">No events completed yet on this stage today.</p></div>`;
