@@ -130,27 +130,14 @@
       ]
     },
     "6": {
-      "status": "ongoing",
-      "event_id": null,
+      "status": "idle",
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": null,
-      "events": [
-        {
-          "event_id": "E193",
-          "event_name": "സംഘ ഗാനം",
-          "categories": [
-            "HSS"
-          ],
-          "scheduled_start": "15:00",
-          "actual_start": "2026-11-04T10:42:52.029Z",
-          "delay_minutes": 73,
-          "combined_stages": null
-        }
-      ]
+      "idle_since": "2026-11-04T10:44:05.350Z",
+      "events": []
     },
     "7": {
       "status": "ongoing",
@@ -262,6 +249,10 @@
     }
   },
   "ticker": [
+    {
+      "t": "2026-11-04T10:44:05.350Z",
+      "text": "Results announced for Stage 6, സംഘ ഗാനം (HSS)"
+    },
     {
       "t": "2026-11-04T10:42:52.029Z",
       "text": "Stage 6: സംഘ ഗാനം has started (73 min late)"
@@ -377,13 +368,25 @@
     {
       "t": "2026-11-04T08:35:24.229Z",
       "text": "Results announced for Stage 4, പദ്യംചൊല്ലൽ ഉറുദു (UP)"
-    },
-    {
-      "t": "2026-11-04T08:35:14.585Z",
-      "text": "Stage 4: പദ്യംചൊല്ലൽ ഉറുദു has started (175 min late)"
     }
   ],
   "recent_results": [
+    {
+      "event_id": "E193",
+      "event_name": "സംഘ ഗാനം",
+      "stage_id": 6,
+      "categories": [
+        "HSS"
+      ],
+      "announced_at": "2026-11-04T10:44:05.350Z",
+      "results": {
+        "HSS": {
+          "first": "47",
+          "second": "",
+          "third": ""
+        }
+      }
+    },
     {
       "event_id": "E141",
       "event_name": "നാടൻപ്പാട്ട്",
@@ -527,22 +530,6 @@
           "third": "28"
         }
       }
-    },
-    {
-      "event_id": "E165",
-      "event_name": "ലളിതഗാനം Boys",
-      "stage_id": 3,
-      "categories": [
-        "HS"
-      ],
-      "announced_at": "2026-11-04T08:36:08.183Z",
-      "results": {
-        "HS": {
-          "first": "26",
-          "second": "",
-          "third": ""
-        }
-      }
     }
   ],
   "completed_events": [
@@ -579,7 +566,8 @@
     "E166",
     "E197",
     "E188",
-    "E141"
+    "E141",
+    "E193"
   ],
-  "updated_at": "2026-11-04T10:42:52.029Z"
+  "updated_at": "2026-11-04T10:44:05.350Z"
 }
