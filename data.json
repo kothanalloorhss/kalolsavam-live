@@ -6,6 +6,7 @@
   "stages": {
     "1": {
       "status": "idle",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
@@ -61,27 +62,14 @@
       ]
     },
     "4": {
-      "status": "ongoing",
-      "event_id": null,
+      "status": "idle",
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": null,
-      "events": [
-        {
-          "event_id": "E169",
-          "event_name": "മാപ്പിളപ്പാട്ട് Boys",
-          "categories": [
-            "HS"
-          ],
-          "scheduled_start": "09:00",
-          "actual_start": "2026-11-04T04:10:59.131Z",
-          "delay_minutes": 41,
-          "combined_stages": null
-        }
-      ]
+      "idle_since": "2026-11-04T04:57:58.444Z",
+      "events": []
     },
     "5": {
       "status": "ongoing",
@@ -226,6 +214,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-04T04:57:58.443Z",
+      "text": "Results, Stage 4, മാപ്പിളപ്പാട്ട് Boys: 1st 13"
+    },
+    {
       "t": "2026-11-04T04:49:13.492Z",
       "text": "Results announced for Stage 1, തിരുവാതിര (UP)"
     },
@@ -296,6 +288,18 @@
   ],
   "recent_results": [
     {
+      "event_id": "E169",
+      "event_name": "മാപ്പിളപ്പാട്ട് Boys",
+      "stage_id": 4,
+      "categories": [
+        "HS"
+      ],
+      "announced_at": "2026-11-04T04:57:58.443Z",
+      "first": "13",
+      "second": "",
+      "third": ""
+    },
+    {
       "event_id": "E138",
       "event_name": "തിരുവാതിര",
       "stage_id": 1,
@@ -342,7 +346,8 @@
     "E114",
     "E108",
     "E133",
-    "E138"
+    "E138",
+    "E169"
   ],
-  "updated_at": "2026-11-04T04:49:13.492Z"
+  "updated_at": "2026-11-04T04:57:58.444Z"
 }
