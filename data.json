@@ -28,27 +28,14 @@
       ]
     },
     "2": {
-      "status": "ongoing",
-      "event_id": null,
+      "status": "idle",
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": null,
-      "events": [
-        {
-          "event_id": "E145",
-          "event_name": "ഭരതനാട്യം Girls",
-          "categories": [
-            "HS"
-          ],
-          "scheduled_start": "09:00",
-          "actual_start": "2026-11-04T04:33:28.989Z",
-          "delay_minutes": 63,
-          "combined_stages": null
-        }
-      ]
+      "idle_since": "2026-11-04T06:31:02.175Z",
+      "events": []
     },
     "3": {
       "status": "ongoing",
@@ -229,6 +216,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-04T06:31:02.175Z",
+      "text": "Stage 2: ഭരതനാട്യം Girls has finished"
+    },
+    {
       "t": "2026-11-04T06:25:58.879Z",
       "text": "Results announced for Stage 3, ശാസ്ത്രീയ സംഗീതം Boys (HS)"
     },
@@ -343,10 +334,6 @@
     {
       "t": "2026-11-03T08:24:20.817Z",
       "text": "Stage 1: ചെണ്ട/ തായമ്പക has finished"
-    },
-    {
-      "t": "2026-11-03T07:51:20.810Z",
-      "text": "Stage 5: അഭിനയഗാനം മലയാളം has started (261 min late)"
     }
   ],
   "recent_results": [
@@ -513,7 +500,8 @@
     "E170",
     "E186",
     "E194",
-    "E161"
+    "E161",
+    "E145"
   ],
-  "updated_at": "2026-11-04T06:25:58.879Z"
+  "updated_at": "2026-11-04T06:31:02.175Z"
 }
