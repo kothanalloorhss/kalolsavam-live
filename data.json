@@ -28,30 +28,18 @@
       ]
     },
     "2": {
-      "status": "ongoing",
-      "event_id": null,
+      "status": "idle",
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": null,
-      "events": [
-        {
-          "event_id": "E146",
-          "event_name": "ഭരതനാട്യം",
-          "categories": [
-            "LP"
-          ],
-          "scheduled_start": "10:40",
-          "actual_start": "2026-11-04T06:31:09.216Z",
-          "delay_minutes": 81,
-          "combined_stages": null
-        }
-      ]
+      "idle_since": "2026-11-04T08:36:26.742Z",
+      "events": []
     },
     "3": {
       "status": "idle",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
@@ -228,6 +216,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-04T08:36:26.742Z",
+      "text": "Results announced for Stage 2, ഭരതനാട്യം (LP)"
+    },
+    {
       "t": "2026-11-04T08:36:08.183Z",
       "text": "Results announced for Stage 3, ലളിതഗാനം Boys (HS)"
     },
@@ -342,13 +334,25 @@
     {
       "t": "2026-11-04T05:32:55.026Z",
       "text": "Stage 3: ശാസ്ത്രീയ സംഗീതം has started (103 min late)"
-    },
-    {
-      "t": "2026-11-04T05:13:54.933Z",
-      "text": "Stage 1: തിരുവാതിര has started (64 min late)"
     }
   ],
   "recent_results": [
+    {
+      "event_id": "E146",
+      "event_name": "ഭരതനാട്യം",
+      "stage_id": 2,
+      "categories": [
+        "LP"
+      ],
+      "announced_at": "2026-11-04T08:36:26.741Z",
+      "results": {
+        "LP": {
+          "first": "29",
+          "second": "27",
+          "third": "28"
+        }
+      }
+    },
     {
       "event_id": "E165",
       "event_name": "ലളിതഗാനം Boys",
@@ -492,22 +496,6 @@
           "third": ""
         }
       }
-    },
-    {
-      "event_id": "E139",
-      "event_name": "തിരുവാതിര",
-      "stage_id": 1,
-      "categories": [
-        "HSS"
-      ],
-      "announced_at": "2026-11-04T05:53:53.429Z",
-      "results": {
-        "HSS": {
-          "first": "14",
-          "second": "15",
-          "third": "13"
-        }
-      }
     }
   ],
   "completed_events": [
@@ -533,7 +521,8 @@
     "E195",
     "E187",
     "E173",
-    "E165"
+    "E165",
+    "E146"
   ],
-  "updated_at": "2026-11-04T08:36:08.183Z"
+  "updated_at": "2026-11-04T08:36:26.742Z"
 }
