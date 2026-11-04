@@ -16,14 +16,27 @@
       "events": []
     },
     "2": {
-      "status": "idle",
+      "status": "ongoing",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": "2026-11-04T11:28:18.704Z",
-      "events": []
+      "idle_since": null,
+      "events": [
+        {
+          "event_id": "E151",
+          "event_name": "കുച്ചുപ്പുടി Boys",
+          "categories": [
+            "HS"
+          ],
+          "scheduled_start": "13:30",
+          "actual_start": "2026-11-04T11:28:26.953Z",
+          "delay_minutes": 208,
+          "combined_stages": null
+        }
+      ]
     },
     "3": {
       "status": "ongoing",
@@ -227,6 +240,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-04T11:28:26.953Z",
+      "text": "Stage 2: കുച്ചുപ്പുടി Boys has started (208 min late)"
+    },
+    {
       "t": "2026-11-04T11:28:18.704Z",
       "text": "Results announced for Stage 2, കുച്ചുപ്പുടി Girls (UP)"
     },
@@ -341,10 +358,6 @@
     {
       "t": "2026-11-04T09:13:32.903Z",
       "text": "Results announced for Stage 6, സംഘ ഗാനം (LP)"
-    },
-    {
-      "t": "2026-11-04T08:59:02.254Z",
-      "text": "Stage 3: ലളിതഗാനം Girls has started (164 min late)"
     }
   ],
   "recent_results": [
@@ -551,5 +564,5 @@
     "E149",
     "E150"
   ],
-  "updated_at": "2026-11-04T11:28:18.704Z"
+  "updated_at": "2026-11-04T11:28:26.953Z"
 }
