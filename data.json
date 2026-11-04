@@ -85,27 +85,14 @@
       "events": []
     },
     "5": {
-      "status": "ongoing",
-      "event_id": null,
+      "status": "idle",
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": null,
-      "events": [
-        {
-          "event_id": "E186",
-          "event_name": "പദ്യംചൊല്ലൽ മലയാളം",
-          "categories": [
-            "HS"
-          ],
-          "scheduled_start": "09:00",
-          "actual_start": "2026-11-04T04:30:55.638Z",
-          "delay_minutes": 61,
-          "combined_stages": null
-        }
-      ]
+      "idle_since": "2026-11-04T06:21:16.803Z",
+      "events": []
     },
     "6": {
       "status": "ongoing",
@@ -241,6 +228,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-04T06:21:16.803Z",
+      "text": "Results announced for Stage 5, പദ്യംചൊല്ലൽ മലയാളം (HS)"
+    },
+    {
       "t": "2026-11-04T06:20:34.767Z",
       "text": "Stage 1: തിരുവാതിര has started (91 min late)"
     },
@@ -354,6 +345,22 @@
     }
   ],
   "recent_results": [
+    {
+      "event_id": "E186",
+      "event_name": "പദ്യംചൊല്ലൽ മലയാളം",
+      "stage_id": 5,
+      "categories": [
+        "HS"
+      ],
+      "announced_at": "2026-11-04T06:21:16.803Z",
+      "results": {
+        "HS": {
+          "first": "23",
+          "second": "",
+          "third": ""
+        }
+      }
+    },
     {
       "event_id": "E170",
       "event_name": "മാപ്പിളപ്പാട്ട് Girls",
@@ -478,7 +485,8 @@
     "E159",
     "E160",
     "E139",
-    "E170"
+    "E170",
+    "E186"
   ],
-  "updated_at": "2026-11-04T06:20:34.767Z"
+  "updated_at": "2026-11-04T06:21:16.803Z"
 }
