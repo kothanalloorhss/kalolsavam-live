@@ -50,27 +50,14 @@
       "events": []
     },
     "4": {
-      "status": "ongoing",
-      "event_id": null,
+      "status": "idle",
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": null,
-      "events": [
-        {
-          "event_id": "E185",
-          "event_name": "കോൽക്കളി",
-          "categories": [
-            "HS"
-          ],
-          "scheduled_start": "18:00",
-          "actual_start": "2026-11-04T15:23:13.265Z",
-          "delay_minutes": 173,
-          "combined_stages": null
-        }
-      ]
+      "idle_since": "2026-11-04T15:35:07.446Z",
+      "events": []
     },
     "5": {
       "status": "idle",
@@ -193,6 +180,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-04T15:35:07.446Z",
+      "text": "Results announced for Stage 4, കോൽക്കളി (HS)"
+    },
+    {
       "t": "2026-11-04T15:23:13.265Z",
       "text": "Stage 4: കോൽക്കളി has started (173 min late)"
     },
@@ -307,13 +298,25 @@
     {
       "t": "2026-11-04T13:03:31.316Z",
       "text": "Stage 2: കുച്ചുപ്പുടി Girls has started (253 min late)"
-    },
-    {
-      "t": "2026-11-04T12:59:35.168Z",
-      "text": "Results announced for Stage 1, വഞ്ചിപ്പാട്ട് (HS)"
     }
   ],
   "recent_results": [
+    {
+      "event_id": "E185",
+      "event_name": "കോൽക്കളി",
+      "stage_id": 4,
+      "categories": [
+        "HS"
+      ],
+      "announced_at": "2026-11-04T15:35:07.446Z",
+      "results": {
+        "HS": {
+          "first": "15",
+          "second": "",
+          "third": ""
+        }
+      }
+    },
     {
       "event_id": "E184",
       "event_name": "വട്ടപ്പാട്ട്",
@@ -457,22 +460,6 @@
           "third": ""
         }
       }
-    },
-    {
-      "event_id": "E181",
-      "event_name": "ഒപ്പന",
-      "stage_id": 4,
-      "categories": [
-        "UP"
-      ],
-      "announced_at": "2026-11-04T13:58:14.717Z",
-      "results": {
-        "UP": {
-          "first": "14",
-          "second": "",
-          "third": ""
-        }
-      }
     }
   ],
   "completed_events": [
@@ -539,9 +526,10 @@
     "E156",
     "E183",
     "E155",
-    "E184"
+    "E184",
+    "E185"
   ],
-  "updated_at": "2026-11-04T15:23:13.265Z",
+  "updated_at": "2026-11-04T15:35:07.446Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
