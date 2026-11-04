@@ -81,17 +81,6 @@
           "actual_start": "2026-11-04T09:36:05.121Z",
           "delay_minutes": 176,
           "combined_stages": null
-        },
-        {
-          "event_id": "E175",
-          "event_name": "പദ്യംചൊല്ലൽ ഉറുദു",
-          "categories": [
-            "HSS"
-          ],
-          "scheduled_start": "12:35",
-          "actual_start": "2026-11-04T09:38:36.852Z",
-          "delay_minutes": 153,
-          "combined_stages": null
         }
       ]
     },
@@ -240,6 +229,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-04T09:38:51.531Z",
+      "text": "Results announced for Stage 4, പദ്യംചൊല്ലൽ ഉറുദു (HSS)"
+    },
+    {
       "t": "2026-11-04T09:38:36.852Z",
       "text": "Stage 4: പദ്യംചൊല്ലൽ ഉറുദു has started (153 min late)"
     },
@@ -354,13 +347,25 @@
     {
       "t": "2026-11-04T06:31:09.216Z",
       "text": "Stage 2: ഭരതനാട്യം has started (81 min late)"
-    },
-    {
-      "t": "2026-11-04T06:31:02.175Z",
-      "text": "Stage 2: ഭരതനാട്യം Girls has finished"
     }
   ],
   "recent_results": [
+    {
+      "event_id": "E175",
+      "event_name": "പദ്യംചൊല്ലൽ ഉറുദു",
+      "stage_id": 4,
+      "categories": [
+        "HSS"
+      ],
+      "announced_at": "2026-11-04T09:38:51.531Z",
+      "results": {
+        "HSS": {
+          "first": "31",
+          "second": "",
+          "third": ""
+        }
+      }
+    },
     {
       "event_id": "E192",
       "event_name": "സംഘ ഗാനം",
@@ -504,22 +509,6 @@
           "third": ""
         }
       }
-    },
-    {
-      "event_id": "E194",
-      "event_name": "പ്രസംഗം ഇംഗ്ലീഷ്",
-      "stage_id": 7,
-      "categories": [
-        "UP"
-      ],
-      "announced_at": "2026-11-04T06:25:15.469Z",
-      "results": {
-        "UP": {
-          "first": "23",
-          "second": "",
-          "third": ""
-        }
-      }
     }
   ],
   "completed_events": [
@@ -550,7 +539,8 @@
     "E196",
     "E171",
     "E172",
-    "E192"
+    "E192",
+    "E175"
   ],
-  "updated_at": "2026-11-04T09:38:36.852Z"
+  "updated_at": "2026-11-04T09:38:51.531Z"
 }
