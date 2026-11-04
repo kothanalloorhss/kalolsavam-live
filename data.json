@@ -85,27 +85,14 @@
       "events": []
     },
     "5": {
-      "status": "ongoing",
-      "event_id": null,
+      "status": "idle",
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": null,
-      "events": [
-        {
-          "event_id": "E187",
-          "event_name": "പദ്യംചൊല്ലൽ മലയാളം",
-          "categories": [
-            "HSS"
-          ],
-          "scheduled_start": "10:20",
-          "actual_start": "2026-11-04T06:22:09.407Z",
-          "delay_minutes": 92,
-          "combined_stages": null
-        }
-      ]
+      "idle_since": "2026-11-04T07:57:51.721Z",
+      "events": []
     },
     "6": {
       "status": "ongoing",
@@ -241,6 +228,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-04T07:57:51.719Z",
+      "text": "Stage 5: പദ്യംചൊല്ലൽ മലയാളം has finished"
+    },
+    {
       "t": "2026-11-04T07:53:54.935Z",
       "text": "Stage 7: പ്രസംഗം ഇംഗ്ലീഷ് has started (144 min late)"
     },
@@ -355,10 +346,6 @@
     {
       "t": "2026-11-04T04:57:58.443Z",
       "text": "Results, Stage 4, മാപ്പിളപ്പാട്ട് Boys: 1st 13"
-    },
-    {
-      "t": "2026-11-04T04:49:13.492Z",
-      "text": "Results announced for Stage 1, തിരുവാതിര (UP)"
     }
   ],
   "recent_results": [
@@ -539,7 +526,8 @@
     "E163",
     "E164",
     "E140",
-    "E195"
+    "E195",
+    "E187"
   ],
-  "updated_at": "2026-11-04T07:53:54.935Z"
+  "updated_at": "2026-11-04T07:57:51.721Z"
 }
