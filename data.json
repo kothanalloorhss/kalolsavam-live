@@ -50,15 +50,27 @@
       "events": []
     },
     "4": {
-      "status": "idle",
+      "status": "ongoing",
       "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": "2026-11-04T15:08:00.180Z",
-      "events": []
+      "idle_since": null,
+      "events": [
+        {
+          "event_id": "E184",
+          "event_name": "വട്ടപ്പാട്ട്",
+          "categories": [
+            "HS"
+          ],
+          "scheduled_start": "17:50",
+          "actual_start": "2026-11-04T15:10:46.177Z",
+          "delay_minutes": 171,
+          "combined_stages": null
+        }
+      ]
     },
     "5": {
       "status": "idle",
@@ -181,6 +193,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-04T15:10:46.177Z",
+      "text": "Stage 4: വട്ടപ്പാട്ട് has started (171 min late)"
+    },
+    {
       "t": "2026-11-04T15:10:26.180Z",
       "text": "Stage 2: മോഹിനിയാട്ടം has started (330 min late)"
     },
@@ -295,10 +311,6 @@
     {
       "t": "2026-11-04T12:44:52.989Z",
       "text": "Results announced for Stage 7, പദ്യംചൊല്ലൽ ഇംഗ്ലീഷ് (UP)"
-    },
-    {
-      "t": "2026-11-04T12:35:08.405Z",
-      "text": "Results announced for Stage 2, കുച്ചുപ്പുടി Girls (HSS)"
     }
   ],
   "recent_results": [
@@ -527,7 +539,7 @@
     "E156",
     "E183"
   ],
-  "updated_at": "2026-11-04T15:10:26.180Z",
+  "updated_at": "2026-11-04T15:10:46.177Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
