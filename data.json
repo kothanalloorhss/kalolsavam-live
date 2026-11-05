@@ -28,6 +28,7 @@
     },
     "3": {
       "status": "idle",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
@@ -100,6 +101,17 @@
           "scheduled_start": "09:00",
           "actual_start": "2026-11-05T04:38:20.091Z",
           "delay_minutes": 68,
+          "combined_stages": null
+        },
+        {
+          "event_id": "E262",
+          "event_name": "പദ്യംചൊല്ലൽ അറബി",
+          "categories": [
+            "LP"
+          ],
+          "scheduled_start": "14:30",
+          "actual_start": "2026-11-05T11:48:53.491Z",
+          "delay_minutes": 169,
           "combined_stages": null
         }
       ]
@@ -207,6 +219,10 @@
     }
   },
   "ticker": [
+    {
+      "t": "2026-11-05T11:48:53.491Z",
+      "text": "Stage 7: പദ്യംചൊല്ലൽ അറബി has started (169 min late)"
+    },
     {
       "t": "2026-11-05T11:43:11.827Z",
       "text": "Results announced for Stage 3, ലളിതഗാനം Boys (HSS)"
@@ -322,10 +338,6 @@
     {
       "t": "2026-11-05T09:45:36.581Z",
       "text": "Stage 4: നാടകം has started (136 min late)"
-    },
-    {
-      "t": "2026-11-05T09:45:31.838Z",
-      "text": "Stage 6: വന്ദേമാതരം has started (86 min late)"
     }
   ],
   "recent_results": [
@@ -608,7 +620,7 @@
     "E227",
     "E228"
   ],
-  "updated_at": "2026-11-05T11:43:11.827Z",
+  "updated_at": "2026-11-05T11:48:53.491Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
