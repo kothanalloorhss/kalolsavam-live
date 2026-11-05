@@ -27,14 +27,27 @@
       "events": []
     },
     "3": {
-      "status": "idle",
+      "status": "ongoing",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": "2026-11-05T11:10:49.783Z",
-      "events": []
+      "idle_since": null,
+      "events": [
+        {
+          "event_id": "E228",
+          "event_name": "ലളിതഗാനം Boys",
+          "categories": [
+            "HSS"
+          ],
+          "scheduled_start": "16:00",
+          "actual_start": "2026-11-05T11:42:58.041Z",
+          "delay_minutes": 73,
+          "combined_stages": null
+        }
+      ]
     },
     "4": {
       "status": "idle",
@@ -208,6 +221,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-05T11:42:58.041Z",
+      "text": "Stage 3: ലളിതഗാനം Boys has started (73 min late)"
+    },
+    {
       "t": "2026-11-05T11:10:49.783Z",
       "text": "Results announced for Stage 3, ലളിതഗാനം Girls (HSS)"
     },
@@ -322,10 +339,6 @@
     {
       "t": "2026-11-05T09:45:26.754Z",
       "text": "Stage 6: വന്ദേമാതരം has started (95 min late)"
-    },
-    {
-      "t": "2026-11-05T09:45:23.485Z",
-      "text": "Results announced for Stage 6, സംഘഗാനം (HS)"
     }
   ],
   "recent_results": [
@@ -607,7 +620,7 @@
     "E207",
     "E227"
   ],
-  "updated_at": "2026-11-05T11:10:49.783Z",
+  "updated_at": "2026-11-05T11:42:58.041Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
