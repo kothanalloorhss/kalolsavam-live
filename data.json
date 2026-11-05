@@ -5,15 +5,27 @@
   },
   "stages": {
     "1": {
-      "status": "idle",
+      "status": "ongoing",
       "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": "2026-11-05T07:33:52.288Z",
-      "events": []
+      "idle_since": null,
+      "events": [
+        {
+          "event_id": "E204",
+          "event_name": "മലപ്പുലയആട്ടം",
+          "categories": [
+            "HS"
+          ],
+          "scheduled_start": "10:50",
+          "actual_start": "2026-11-05T07:49:21.463Z",
+          "delay_minutes": 149,
+          "combined_stages": null
+        }
+      ]
     },
     "2": {
       "status": "ongoing",
@@ -269,6 +281,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-05T07:49:21.463Z",
+      "text": "Stage 1: മലപ്പുലയആട്ടം has started (149 min late)"
+    },
+    {
       "t": "2026-11-05T07:34:12.697Z",
       "text": "Stage 6: ഗാനാലാപനം Girls has started (109 min late)"
     },
@@ -383,10 +399,6 @@
     {
       "t": "2026-11-05T06:19:34.176Z",
       "text": "Results announced for Stage 1, പണിയ നൃത്തം (HS)"
-    },
-    {
-      "t": "2026-11-05T06:19:25.926Z",
-      "text": "Stage 1: പണിയ നൃത്തം has started (119 min late)"
     }
   ],
   "recent_results": [
@@ -643,7 +655,7 @@
     "E203",
     "E251"
   ],
-  "updated_at": "2026-11-05T07:34:12.697Z",
+  "updated_at": "2026-11-05T07:49:21.463Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
