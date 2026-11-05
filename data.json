@@ -103,6 +103,17 @@
           "actual_start": "2026-11-05T10:07:32.481Z",
           "delay_minutes": 18,
           "combined_stages": null
+        },
+        {
+          "event_id": "E228",
+          "event_name": "ലളിതഗാനം Boys",
+          "categories": [
+            "HSS"
+          ],
+          "scheduled_start": "16:00",
+          "actual_start": "2026-11-05T10:07:36.096Z",
+          "delay_minutes": 0,
+          "combined_stages": null
         }
       ]
     },
@@ -301,6 +312,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-05T10:07:36.096Z",
+      "text": "Stage 3: ലളിതഗാനം Boys has started"
+    },
+    {
       "t": "2026-11-05T10:07:32.481Z",
       "text": "Stage 3: ലളിതഗാനം Girls has started (18 min late)"
     },
@@ -415,10 +430,6 @@
     {
       "t": "2026-11-05T07:59:58.566Z",
       "text": "Stage 1: പളിയ നൃത്തം has started (130 min late)"
-    },
-    {
-      "t": "2026-11-05T07:58:13.186Z",
-      "text": "Stage 6: ഗാനാലാപനം Girls has finished"
     }
   ],
   "recent_results": [
@@ -690,7 +701,7 @@
     "E271",
     "E258"
   ],
-  "updated_at": "2026-11-05T10:07:32.481Z",
+  "updated_at": "2026-11-05T10:07:36.096Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
