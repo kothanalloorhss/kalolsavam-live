@@ -75,6 +75,7 @@
     },
     "4": {
       "status": "idle",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
@@ -102,6 +103,17 @@
           "scheduled_start": "09:00",
           "actual_start": "2026-11-05T04:27:56.156Z",
           "delay_minutes": 58,
+          "combined_stages": null
+        },
+        {
+          "event_id": "E239",
+          "event_name": "ദേശഭക്തിഗാനം",
+          "categories": [
+            "HS"
+          ],
+          "scheduled_start": "11:00",
+          "actual_start": "2026-11-05T06:55:40.156Z",
+          "delay_minutes": 85,
           "combined_stages": null
         }
       ]
@@ -268,6 +280,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-05T06:55:40.157Z",
+      "text": "Stage 5: ദേശഭക്തിഗാനം has started (85 min late)"
+    },
+    {
       "t": "2026-11-05T06:43:07.590Z",
       "text": "Results announced for Stage 4, മൂകാഭിനയം (HSS)"
     },
@@ -382,10 +398,6 @@
     {
       "t": "2026-11-05T05:19:38.954Z",
       "text": "Stage 2: കേരളനടനം Girls has started (50 min late)"
-    },
-    {
-      "t": "2026-11-05T05:15:25.034Z",
-      "text": "Results announced for Stage 2, കേരളനടനം Girls (HS)"
     }
   ],
   "recent_results": [
@@ -636,7 +648,7 @@
     "E248",
     "E231"
   ],
-  "updated_at": "2026-11-05T06:43:07.590Z",
+  "updated_at": "2026-11-05T06:55:40.157Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
