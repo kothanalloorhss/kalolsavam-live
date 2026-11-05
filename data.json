@@ -92,6 +92,17 @@
           "actual_start": "2026-11-05T08:13:34.496Z",
           "delay_minutes": 64,
           "combined_stages": null
+        },
+        {
+          "event_id": "E227",
+          "event_name": "ലളിതഗാനം Girls",
+          "categories": [
+            "HSS"
+          ],
+          "scheduled_start": "15:20",
+          "actual_start": "2026-11-05T10:07:32.481Z",
+          "delay_minutes": 18,
+          "combined_stages": null
         }
       ]
     },
@@ -290,6 +301,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-05T10:07:32.481Z",
+      "text": "Stage 3: ലളിതഗാനം Girls has started (18 min late)"
+    },
+    {
       "t": "2026-11-05T10:06:10.956Z",
       "text": "Results announced for Stage 6, വന്ദേമാതരം (UP)"
     },
@@ -404,10 +419,6 @@
     {
       "t": "2026-11-05T07:58:13.186Z",
       "text": "Stage 6: ഗാനാലാപനം Girls has finished"
-    },
-    {
-      "t": "2026-11-05T07:58:09.057Z",
-      "text": "Stage 6: ഗാനാലാപനം Girls has started (103 min late)"
     }
   ],
   "recent_results": [
@@ -679,7 +690,7 @@
     "E271",
     "E258"
   ],
-  "updated_at": "2026-11-05T10:06:10.956Z",
+  "updated_at": "2026-11-05T10:07:32.481Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
