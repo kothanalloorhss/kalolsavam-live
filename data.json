@@ -28,15 +28,27 @@
       ]
     },
     "2": {
-      "status": "idle",
+      "status": "ongoing",
       "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": "2026-11-05T03:10:38.428Z",
-      "events": []
+      "idle_since": null,
+      "events": [
+        {
+          "event_id": "E213",
+          "event_name": "കേരളനടനം Girls",
+          "categories": [
+            "HS"
+          ],
+          "scheduled_start": "09:00",
+          "actual_start": "2026-11-05T04:26:34.068Z",
+          "delay_minutes": 57,
+          "combined_stages": null
+        }
+      ]
     },
     "3": {
       "status": "ongoing",
@@ -193,6 +205,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-05T04:26:34.068Z",
+      "text": "Stage 2: കേരളനടനം Girls has started (57 min late)"
+    },
+    {
       "t": "2026-11-05T04:26:24.489Z",
       "text": "Stage 1: മംഗലം കളി has started (56 min late)"
     },
@@ -307,10 +323,6 @@
     {
       "t": "2026-11-04T13:44:57.954Z",
       "text": "Results announced for Stage 3, സംഘ ഗാനം (UP)"
-    },
-    {
-      "t": "2026-11-04T13:44:43.896Z",
-      "text": "Results announced for Stage 2, കുച്ചുപ്പുടി Girls (HS)"
     }
   ],
   "recent_results": [
@@ -544,7 +556,7 @@
     "E157",
     "E158"
   ],
-  "updated_at": "2026-11-05T04:26:24.489Z",
+  "updated_at": "2026-11-05T04:26:34.068Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
