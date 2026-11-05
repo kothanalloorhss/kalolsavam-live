@@ -29,6 +29,7 @@
     },
     "2": {
       "status": "idle",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
@@ -47,17 +48,6 @@
       "delay_minutes": 0,
       "idle_since": null,
       "events": [
-        {
-          "event_id": "E226",
-          "event_name": "ലളിതഗാനം",
-          "categories": [
-            "UP"
-          ],
-          "scheduled_start": "12:40",
-          "actual_start": "2026-11-05T08:13:34.496Z",
-          "delay_minutes": 64,
-          "combined_stages": null
-        },
         {
           "event_id": "E227",
           "event_name": "ലളിതഗാനം Girls",
@@ -266,6 +256,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-05T10:29:53.209Z",
+      "text": "Results announced for Stage 3, ലളിതഗാനം (UP)"
+    },
+    {
       "t": "2026-11-05T10:29:27.940Z",
       "text": "Results announced for Stage 2, നാടോടിനൃത്തം Girls (HS)"
     },
@@ -380,13 +374,25 @@
     {
       "t": "2026-11-05T08:52:23.508Z",
       "text": "Stage 6: കഥാകഥനം has finished"
-    },
-    {
-      "t": "2026-11-05T08:52:12.992Z",
-      "text": "Stage 6: കഥാകഥനം has started (152 min late)"
     }
   ],
   "recent_results": [
+    {
+      "event_id": "E226",
+      "event_name": "ലളിതഗാനം",
+      "stage_id": 3,
+      "categories": [
+        "UP"
+      ],
+      "announced_at": "2026-11-05T10:29:53.209Z",
+      "results": {
+        "UP": {
+          "first": "33",
+          "second": "",
+          "third": ""
+        }
+      }
+    },
     {
       "event_id": "E218",
       "event_name": "നാടോടിനൃത്തം Girls",
@@ -530,22 +536,6 @@
           "third": ""
         }
       }
-    },
-    {
-      "event_id": "E256",
-      "event_name": "സംഘഗാനം",
-      "stage_id": 6,
-      "categories": [
-        "UP"
-      ],
-      "announced_at": "2026-11-05T09:45:14.347Z",
-      "results": {
-        "UP": {
-          "first": "32",
-          "second": "33",
-          "third": "31"
-        }
-      }
     }
   ],
   "completed_events": [
@@ -656,9 +646,10 @@
     "E258",
     "E206",
     "E234",
-    "E218"
+    "E218",
+    "E226"
   ],
-  "updated_at": "2026-11-05T10:29:27.940Z",
+  "updated_at": "2026-11-05T10:29:53.209Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
