@@ -24,6 +24,17 @@
           "actual_start": "2026-11-05T09:54:46.476Z",
           "delay_minutes": 195,
           "combined_stages": null
+        },
+        {
+          "event_id": "E206",
+          "event_name": "മാർഗ്ഗംകളി",
+          "categories": [
+            "HS"
+          ],
+          "scheduled_start": "11:40",
+          "actual_start": "2026-11-05T09:54:55.939Z",
+          "delay_minutes": 225,
+          "combined_stages": null
         }
       ]
     },
@@ -301,6 +312,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-05T09:54:55.939Z",
+      "text": "Stage 1: മാർഗ്ഗംകളി has started (225 min late)"
+    },
+    {
       "t": "2026-11-05T09:54:46.476Z",
       "text": "Stage 1: മാർഗ്ഗംകളി has started (195 min late)"
     },
@@ -415,10 +430,6 @@
     {
       "t": "2026-11-05T07:49:21.463Z",
       "text": "Stage 1: മലപ്പുലയആട്ടം has started (149 min late)"
-    },
-    {
-      "t": "2026-11-05T07:34:12.697Z",
-      "text": "Stage 6: ഗാനാലാപനം Girls has started (109 min late)"
     }
   ],
   "recent_results": [
@@ -688,7 +699,7 @@
     "E266",
     "E204"
   ],
-  "updated_at": "2026-11-05T09:54:46.476Z",
+  "updated_at": "2026-11-05T09:54:55.939Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
