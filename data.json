@@ -74,15 +74,27 @@
       ]
     },
     "4": {
-      "status": "idle",
+      "status": "ongoing",
       "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": "2026-11-04T15:35:07.446Z",
-      "events": []
+      "idle_since": null,
+      "events": [
+        {
+          "event_id": "E229",
+          "event_name": "കഥാപ്രസംഗം",
+          "categories": [
+            "UP"
+          ],
+          "scheduled_start": "09:00",
+          "actual_start": "2026-11-05T04:50:59.055Z",
+          "delay_minutes": 81,
+          "combined_stages": null
+        }
+      ]
     },
     "5": {
       "status": "ongoing",
@@ -269,6 +281,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-05T04:50:59.055Z",
+      "text": "Stage 4: കഥാപ്രസംഗം has started (81 min late)"
+    },
+    {
       "t": "2026-11-05T04:42:27.353Z",
       "text": "Stage 9: പദ്യംചൊല്ലൽ കന്നഡ has started (52 min late)"
     },
@@ -383,10 +399,6 @@
     {
       "t": "2026-11-04T14:31:14.518Z",
       "text": "Stage 4: ഒപ്പന has started (161 min late)"
-    },
-    {
-      "t": "2026-11-04T14:31:04.438Z",
-      "text": "Results announced for Stage 4, ഒപ്പന (HSS)"
     }
   ],
   "recent_results": [
@@ -621,7 +633,7 @@
     "E158",
     "E268"
   ],
-  "updated_at": "2026-11-05T04:42:27.353Z",
+  "updated_at": "2026-11-05T04:50:59.055Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
