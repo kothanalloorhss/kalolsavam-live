@@ -28,14 +28,27 @@
       ]
     },
     "2": {
-      "status": "idle",
+      "status": "ongoing",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": "2026-11-05T05:15:25.034Z",
-      "events": []
+      "idle_since": null,
+      "events": [
+        {
+          "event_id": "E215",
+          "event_name": "കേരളനടനം Girls",
+          "categories": [
+            "HSS"
+          ],
+          "scheduled_start": "10:00",
+          "actual_start": "2026-11-05T05:19:38.954Z",
+          "delay_minutes": 50,
+          "combined_stages": null
+        }
+      ]
     },
     "3": {
       "status": "ongoing",
@@ -268,6 +281,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-05T05:19:38.954Z",
+      "text": "Stage 2: കേരളനടനം Girls has started (50 min late)"
+    },
+    {
       "t": "2026-11-05T05:15:25.034Z",
       "text": "Results announced for Stage 2, കേരളനടനം Girls (HS)"
     },
@@ -382,10 +399,6 @@
     {
       "t": "2026-11-04T14:38:57.269Z",
       "text": "Results announced for Stage 5, പ്രസംഗം മലയാളം  (HSS)"
-    },
-    {
-      "t": "2026-11-04T14:38:50.265Z",
-      "text": "Stage 5: പ്രസംഗം മലയാളം  has started (179 min late)"
     }
   ],
   "recent_results": [
@@ -622,7 +635,7 @@
     "E269",
     "E213"
   ],
-  "updated_at": "2026-11-05T05:15:25.034Z",
+  "updated_at": "2026-11-05T05:19:38.955Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
