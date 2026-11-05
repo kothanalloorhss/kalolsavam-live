@@ -74,27 +74,14 @@
       ]
     },
     "4": {
-      "status": "ongoing",
-      "event_id": null,
+      "status": "idle",
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": null,
-      "events": [
-        {
-          "event_id": "E231",
-          "event_name": "മൂകാഭിനയം",
-          "categories": [
-            "HSS"
-          ],
-          "scheduled_start": "10:20",
-          "actual_start": "2026-11-05T06:21:01.308Z",
-          "delay_minutes": 91,
-          "combined_stages": null
-        }
-      ]
+      "idle_since": "2026-11-05T06:43:07.590Z",
+      "events": []
     },
     "5": {
       "status": "ongoing",
@@ -281,6 +268,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-05T06:43:07.590Z",
+      "text": "Results announced for Stage 4, മൂകാഭിനയം (HSS)"
+    },
+    {
       "t": "2026-11-05T06:42:07.361Z",
       "text": "Stage 6: പദ്യംചൊല്ലൽ Girls has started (107 min late)"
     },
@@ -395,13 +386,25 @@
     {
       "t": "2026-11-05T05:15:25.034Z",
       "text": "Results announced for Stage 2, കേരളനടനം Girls (HS)"
-    },
-    {
-      "t": "2026-11-05T05:14:39.591Z",
-      "text": "ഷെഡ്യൂൾ മാറ്റം: കേരളനടനം Boys വേദി 2-ലേക്ക് പുനഃക്രമീകരിച്ചു"
     }
   ],
   "recent_results": [
+    {
+      "event_id": "E231",
+      "event_name": "മൂകാഭിനയം",
+      "stage_id": 4,
+      "categories": [
+        "HSS"
+      ],
+      "announced_at": "2026-11-05T06:43:07.590Z",
+      "results": {
+        "HSS": {
+          "first": "15",
+          "second": "",
+          "third": ""
+        }
+      }
+    },
     {
       "event_id": "E248",
       "event_name": "പദ്യംചൊല്ലൽ Boys",
@@ -545,22 +548,6 @@
           "third": ""
         }
       }
-    },
-    {
-      "event_id": "E243",
-      "event_name": "പ്രശ്‌നോത്തരി",
-      "stage_id": 6,
-      "categories": [
-        "HS"
-      ],
-      "announced_at": "2026-11-05T05:29:23.553Z",
-      "results": {
-        "HS": {
-          "first": "35",
-          "second": "",
-          "third": ""
-        }
-      }
     }
   ],
   "completed_events": [
@@ -646,9 +633,10 @@
     "E230",
     "E242",
     "E245",
-    "E248"
+    "E248",
+    "E231"
   ],
-  "updated_at": "2026-11-05T06:42:07.361Z",
+  "updated_at": "2026-11-05T06:43:07.590Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
