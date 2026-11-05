@@ -62,27 +62,14 @@
       ]
     },
     "4": {
-      "status": "ongoing",
-      "event_id": null,
+      "status": "idle",
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": null,
-      "events": [
-        {
-          "event_id": "E230",
-          "event_name": "മിമിക്രി Boys",
-          "categories": [
-            "HS"
-          ],
-          "scheduled_start": "10:10",
-          "actual_start": "2026-11-05T06:20:50.836Z",
-          "delay_minutes": 101,
-          "combined_stages": null
-        }
-      ]
+      "idle_since": "2026-11-05T06:20:56.839Z",
+      "events": []
     },
     "5": {
       "status": "ongoing",
@@ -269,6 +256,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-05T06:20:56.839Z",
+      "text": "Results announced for Stage 4, മിമിക്രി Boys (HS)"
+    },
+    {
       "t": "2026-11-05T06:20:50.836Z",
       "text": "Stage 4: മിമിക്രി Boys has started (101 min late)"
     },
@@ -383,13 +374,25 @@
     {
       "t": "2026-11-05T04:38:20.091Z",
       "text": "Stage 7: മാപ്പിളപ്പാട്ട് has started (68 min late)"
-    },
-    {
-      "t": "2026-11-05T04:28:03.435Z",
-      "text": "Stage 8: പദ്യംചൊല്ലൽ മലയാളം has started (58 min late)"
     }
   ],
   "recent_results": [
+    {
+      "event_id": "E230",
+      "event_name": "മിമിക്രി Boys",
+      "stage_id": 4,
+      "categories": [
+        "HS"
+      ],
+      "announced_at": "2026-11-05T06:20:56.839Z",
+      "results": {
+        "HS": {
+          "first": "11",
+          "second": "",
+          "third": ""
+        }
+      }
+    },
     {
       "event_id": "E247",
       "event_name": "സിദ്ധരൂപോഛാരണം Girls",
@@ -533,22 +536,6 @@
           "third": ""
         }
       }
-    },
-    {
-      "event_id": "E269",
-      "event_name": "പദ്യംചൊല്ലൽ കന്നഡ",
-      "stage_id": 9,
-      "categories": [
-        "HSS"
-      ],
-      "announced_at": "2026-11-05T04:56:47.133Z",
-      "results": {
-        "HSS": {
-          "first": "15",
-          "second": "",
-          "third": ""
-        }
-      }
     }
   ],
   "completed_events": [
@@ -630,9 +617,10 @@
     "E201",
     "E202",
     "E246",
-    "E247"
+    "E247",
+    "E230"
   ],
-  "updated_at": "2026-11-05T06:20:50.836Z",
+  "updated_at": "2026-11-05T06:20:56.839Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
