@@ -28,14 +28,27 @@
       ]
     },
     "2": {
-      "status": "idle",
+      "status": "ongoing",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": "2026-11-05T05:35:03.431Z",
-      "events": []
+      "idle_since": null,
+      "events": [
+        {
+          "event_id": "E216",
+          "event_name": "കേരളനടനം Boys",
+          "categories": [
+            "HSS"
+          ],
+          "scheduled_start": "10:20",
+          "actual_start": "2026-11-05T05:35:12.386Z",
+          "delay_minutes": 45,
+          "combined_stages": null
+        }
+      ]
     },
     "3": {
       "status": "ongoing",
@@ -268,6 +281,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-05T05:35:12.386Z",
+      "text": "Stage 2: കേരളനടനം Boys has started (45 min late)"
+    },
+    {
       "t": "2026-11-05T05:35:03.431Z",
       "text": "Stage 2: കേരളനടനം Girls has finished"
     },
@@ -382,10 +399,6 @@
     {
       "t": "2026-11-04T15:21:19.177Z",
       "text": "Results announced for Stage 2, മോഹിനിയാട്ടം (UP)"
-    },
-    {
-      "t": "2026-11-04T15:10:46.177Z",
-      "text": "Stage 4: വട്ടപ്പാട്ട് has started (171 min late)"
     }
   ],
   "recent_results": [
@@ -625,7 +638,7 @@
     "E243",
     "E215"
   ],
-  "updated_at": "2026-11-05T05:35:03.431Z",
+  "updated_at": "2026-11-05T05:35:12.387Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
