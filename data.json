@@ -115,17 +115,6 @@
           "actual_start": "2026-11-05T04:38:26.223Z",
           "delay_minutes": 68,
           "combined_stages": null
-        },
-        {
-          "event_id": "E246",
-          "event_name": "സിദ്ധരൂപോഛാരണം Boys",
-          "categories": [
-            "UP"
-          ],
-          "scheduled_start": "09:30",
-          "actual_start": "2026-11-05T06:19:41.433Z",
-          "delay_minutes": 140,
-          "combined_stages": null
         }
       ]
     },
@@ -268,6 +257,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-05T06:19:48.964Z",
+      "text": "Results announced for Stage 6, സിദ്ധരൂപോഛാരണം Boys (UP)"
+    },
+    {
       "t": "2026-11-05T06:19:41.433Z",
       "text": "Stage 6: സിദ്ധരൂപോഛാരണം Boys has started (140 min late)"
     },
@@ -382,13 +375,25 @@
     {
       "t": "2026-11-05T04:09:28.185Z",
       "text": "Stage 3: ലളിതഗാനം has started (39 min late)"
-    },
-    {
-      "t": "2026-11-05T03:10:38.428Z",
-      "text": "Stage 2: സംഘ നൃത്തം has finished"
     }
   ],
   "recent_results": [
+    {
+      "event_id": "E246",
+      "event_name": "സിദ്ധരൂപോഛാരണം Boys",
+      "stage_id": 6,
+      "categories": [
+        "UP"
+      ],
+      "announced_at": "2026-11-05T06:19:48.964Z",
+      "results": {
+        "UP": {
+          "first": "30",
+          "second": "",
+          "third": ""
+        }
+      }
+    },
     {
       "event_id": "E202",
       "event_name": "പണിയ നൃത്തം",
@@ -532,22 +537,6 @@
           "third": ""
         }
       }
-    },
-    {
-      "event_id": "E185",
-      "event_name": "കോൽക്കളി",
-      "stage_id": 4,
-      "categories": [
-        "HS"
-      ],
-      "announced_at": "2026-11-04T15:35:07.446Z",
-      "results": {
-        "HS": {
-          "first": "15",
-          "second": "",
-          "third": ""
-        }
-      }
     }
   ],
   "completed_events": [
@@ -627,9 +616,10 @@
     "E229",
     "E216",
     "E201",
-    "E202"
+    "E202",
+    "E246"
   ],
-  "updated_at": "2026-11-05T06:19:41.433Z",
+  "updated_at": "2026-11-05T06:19:48.964Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
