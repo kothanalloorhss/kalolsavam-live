@@ -108,15 +108,27 @@
       ]
     },
     "6": {
-      "status": "idle",
+      "status": "ongoing",
       "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": "2026-11-04T10:44:05.350Z",
-      "events": []
+      "idle_since": null,
+      "events": [
+        {
+          "event_id": "E242",
+          "event_name": "പ്രഭാഷണം",
+          "categories": [
+            "UP"
+          ],
+          "scheduled_start": "09:00",
+          "actual_start": "2026-11-05T04:38:26.223Z",
+          "delay_minutes": 68,
+          "combined_stages": null
+        }
+      ]
     },
     "7": {
       "status": "ongoing",
@@ -243,6 +255,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-05T04:38:26.223Z",
+      "text": "Stage 6: പ്രഭാഷണം has started (68 min late)"
+    },
+    {
       "t": "2026-11-05T04:38:20.091Z",
       "text": "Stage 7: മാപ്പിളപ്പാട്ട് has started (68 min late)"
     },
@@ -357,10 +373,6 @@
     {
       "t": "2026-11-04T13:58:14.717Z",
       "text": "Results announced for Stage 4, ഒപ്പന (UP)"
-    },
-    {
-      "t": "2026-11-04T13:55:53.765Z",
-      "text": "Stage 2: മോഹിനിയാട്ടം has started (256 min late)"
     }
   ],
   "recent_results": [
@@ -594,7 +606,7 @@
     "E157",
     "E158"
   ],
-  "updated_at": "2026-11-05T04:38:20.091Z",
+  "updated_at": "2026-11-05T04:38:26.223Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
