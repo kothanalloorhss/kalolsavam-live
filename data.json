@@ -5,14 +5,27 @@
   },
   "stages": {
     "1": {
-      "status": "idle",
+      "status": "ongoing",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": "2026-11-05T09:54:06.962Z",
-      "events": []
+      "idle_since": null,
+      "events": [
+        {
+          "event_id": "E207",
+          "event_name": "മാർഗ്ഗംകളി",
+          "categories": [
+            "HSS"
+          ],
+          "scheduled_start": "12:10",
+          "actual_start": "2026-11-05T09:54:46.476Z",
+          "delay_minutes": 195,
+          "combined_stages": null
+        }
+      ]
     },
     "2": {
       "status": "ongoing",
@@ -288,6 +301,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-05T09:54:46.476Z",
+      "text": "Stage 1: മാർഗ്ഗംകളി has started (195 min late)"
+    },
+    {
       "t": "2026-11-05T09:54:06.962Z",
       "text": "Results announced for Stage 1, മലപ്പുലയആട്ടം (HS)"
     },
@@ -402,10 +419,6 @@
     {
       "t": "2026-11-05T07:34:12.697Z",
       "text": "Stage 6: ഗാനാലാപനം Girls has started (109 min late)"
-    },
-    {
-      "t": "2026-11-05T07:34:09.408Z",
-      "text": "Results announced for Stage 6, ഗാനാലാപനം Boys (UP)"
     }
   ],
   "recent_results": [
@@ -675,7 +688,7 @@
     "E266",
     "E204"
   ],
-  "updated_at": "2026-11-05T09:54:06.962Z",
+  "updated_at": "2026-11-05T09:54:46.476Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
