@@ -38,15 +38,27 @@
       "events": []
     },
     "4": {
-      "status": "idle",
+      "status": "ongoing",
       "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": "2026-11-05T10:12:35.939Z",
-      "events": []
+      "idle_since": null,
+      "events": [
+        {
+          "event_id": "E236",
+          "event_name": "സ്കിറ്റ് ഇംഗ്ലീഷ്",
+          "categories": [
+            "UP"
+          ],
+          "scheduled_start": "15:10",
+          "actual_start": "2026-11-05T12:03:00.877Z",
+          "delay_minutes": 143,
+          "combined_stages": null
+        }
+      ]
     },
     "5": {
       "status": "idle",
@@ -220,6 +232,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-05T12:03:00.877Z",
+      "text": "Stage 4: സ്കിറ്റ് ഇംഗ്ലീഷ് has started (143 min late)"
+    },
+    {
       "t": "2026-11-05T11:54:50.112Z",
       "text": "Stage 7: പദ്യംചൊല്ലൽ അറബി has started (125 min late)"
     },
@@ -334,10 +350,6 @@
     {
       "t": "2026-11-05T09:52:59.914Z",
       "text": "Stage 9: പ്രസംഗം കന്നഡ has started (103 min late)"
-    },
-    {
-      "t": "2026-11-05T09:52:43.102Z",
-      "text": "Results announced for Stage 8, പദ്യംചൊല്ലൽ മലയാളം (LP)"
     }
   ],
   "recent_results": [
@@ -621,7 +633,7 @@
     "E228",
     "E262"
   ],
-  "updated_at": "2026-11-05T11:54:50.112Z",
+  "updated_at": "2026-11-05T12:03:00.877Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
