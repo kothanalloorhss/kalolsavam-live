@@ -102,6 +102,17 @@
           "actual_start": "2026-11-05T04:38:20.091Z",
           "delay_minutes": 68,
           "combined_stages": null
+        },
+        {
+          "event_id": "E263",
+          "event_name": "പദ്യംചൊല്ലൽ അറബി",
+          "categories": [
+            "UP"
+          ],
+          "scheduled_start": "15:20",
+          "actual_start": "2026-11-05T11:54:50.112Z",
+          "delay_minutes": 125,
+          "combined_stages": null
         }
       ]
     },
@@ -208,6 +219,10 @@
     }
   },
   "ticker": [
+    {
+      "t": "2026-11-05T11:54:50.112Z",
+      "text": "Stage 7: പദ്യംചൊല്ലൽ അറബി has started (125 min late)"
+    },
     {
       "t": "2026-11-05T11:49:02.226Z",
       "text": "Results announced for Stage 7, പദ്യംചൊല്ലൽ അറബി (LP)"
@@ -323,10 +338,6 @@
     {
       "t": "2026-11-05T09:52:43.102Z",
       "text": "Results announced for Stage 8, പദ്യംചൊല്ലൽ മലയാളം (LP)"
-    },
-    {
-      "t": "2026-11-05T09:45:43.323Z",
-      "text": "Results announced for Stage 4, നാടകം (UP)"
     }
   ],
   "recent_results": [
@@ -610,7 +621,7 @@
     "E228",
     "E262"
   ],
-  "updated_at": "2026-11-05T11:49:02.226Z",
+  "updated_at": "2026-11-05T11:54:50.112Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
