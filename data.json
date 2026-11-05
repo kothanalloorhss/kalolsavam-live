@@ -127,6 +127,17 @@
           "actual_start": "2026-11-05T06:20:08.770Z",
           "delay_minutes": 100,
           "combined_stages": null
+        },
+        {
+          "event_id": "E245",
+          "event_name": "പ്രഭാഷണം",
+          "categories": [
+            "HS"
+          ],
+          "scheduled_start": "09:25",
+          "actual_start": "2026-11-05T06:22:25.778Z",
+          "delay_minutes": 147,
+          "combined_stages": null
         }
       ]
     },
@@ -269,6 +280,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-05T06:22:25.779Z",
+      "text": "Stage 6: പ്രഭാഷണം has started (147 min late)"
+    },
+    {
       "t": "2026-11-05T06:22:21.587Z",
       "text": "Results announced for Stage 6, പ്രഭാഷണം (UP)"
     },
@@ -383,10 +398,6 @@
     {
       "t": "2026-11-05T04:42:27.353Z",
       "text": "Stage 9: പദ്യംചൊല്ലൽ കന്നഡ has started (52 min late)"
-    },
-    {
-      "t": "2026-11-05T04:40:00.542Z",
-      "text": "Results announced for Stage 9, പദ്യംചൊല്ലൽ കന്നഡ (HS)"
     }
   ],
   "recent_results": [
@@ -634,7 +645,7 @@
     "E230",
     "E242"
   ],
-  "updated_at": "2026-11-05T06:22:21.587Z",
+  "updated_at": "2026-11-05T06:22:25.779Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
