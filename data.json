@@ -62,14 +62,27 @@
       ]
     },
     "4": {
-      "status": "idle",
+      "status": "ongoing",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": "2026-11-05T06:20:56.839Z",
-      "events": []
+      "idle_since": null,
+      "events": [
+        {
+          "event_id": "E231",
+          "event_name": "മൂകാഭിനയം",
+          "categories": [
+            "HSS"
+          ],
+          "scheduled_start": "10:20",
+          "actual_start": "2026-11-05T06:21:01.308Z",
+          "delay_minutes": 91,
+          "combined_stages": null
+        }
+      ]
     },
     "5": {
       "status": "ongoing",
@@ -256,6 +269,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-05T06:21:01.308Z",
+      "text": "Stage 4: മൂകാഭിനയം has started (91 min late)"
+    },
+    {
       "t": "2026-11-05T06:20:56.839Z",
       "text": "Results announced for Stage 4, മിമിക്രി Boys (HS)"
     },
@@ -370,10 +387,6 @@
     {
       "t": "2026-11-05T04:38:26.223Z",
       "text": "Stage 6: പ്രഭാഷണം has started (68 min late)"
-    },
-    {
-      "t": "2026-11-05T04:38:20.091Z",
-      "text": "Stage 7: മാപ്പിളപ്പാട്ട് has started (68 min late)"
     }
   ],
   "recent_results": [
@@ -620,7 +633,7 @@
     "E247",
     "E230"
   ],
-  "updated_at": "2026-11-05T06:20:56.839Z",
+  "updated_at": "2026-11-05T06:21:01.308Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
