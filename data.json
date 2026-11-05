@@ -85,15 +85,27 @@
       ]
     },
     "4": {
-      "status": "idle",
+      "status": "ongoing",
       "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": "2026-11-05T09:45:43.323Z",
-      "events": []
+      "idle_since": null,
+      "events": [
+        {
+          "event_id": "E234",
+          "event_name": "നാടകം",
+          "categories": [
+            "HSS"
+          ],
+          "scheduled_start": "13:30",
+          "actual_start": "2026-11-05T10:12:30.026Z",
+          "delay_minutes": 132,
+          "combined_stages": null
+        }
+      ]
     },
     "5": {
       "status": "idle",
@@ -279,6 +291,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-05T10:12:30.026Z",
+      "text": "Stage 4: നാടകം has started (132 min late)"
+    },
+    {
       "t": "2026-11-05T10:11:03.317Z",
       "text": "Stage 3: ലളിതഗാനം Girls has started (21 min late)"
     },
@@ -393,10 +409,6 @@
     {
       "t": "2026-11-05T08:13:34.496Z",
       "text": "Stage 3: ലളിതഗാനം has started (64 min late)"
-    },
-    {
-      "t": "2026-11-05T08:13:22.908Z",
-      "text": "Results announced for Stage 2, നാടോടിനൃത്തം (LP)"
     }
   ],
   "recent_results": [
@@ -669,7 +681,7 @@
     "E258",
     "E206"
   ],
-  "updated_at": "2026-11-05T10:11:03.317Z",
+  "updated_at": "2026-11-05T10:12:30.026Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
