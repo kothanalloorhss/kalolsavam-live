@@ -102,17 +102,6 @@
           "actual_start": "2026-11-05T04:38:20.091Z",
           "delay_minutes": 68,
           "combined_stages": null
-        },
-        {
-          "event_id": "E262",
-          "event_name": "പദ്യംചൊല്ലൽ അറബി",
-          "categories": [
-            "LP"
-          ],
-          "scheduled_start": "14:30",
-          "actual_start": "2026-11-05T11:48:53.491Z",
-          "delay_minutes": 169,
-          "combined_stages": null
         }
       ]
     },
@@ -219,6 +208,10 @@
     }
   },
   "ticker": [
+    {
+      "t": "2026-11-05T11:49:02.226Z",
+      "text": "Results announced for Stage 7, പദ്യംചൊല്ലൽ അറബി (LP)"
+    },
     {
       "t": "2026-11-05T11:48:53.491Z",
       "text": "Stage 7: പദ്യംചൊല്ലൽ അറബി has started (169 min late)"
@@ -334,13 +327,25 @@
     {
       "t": "2026-11-05T09:45:43.323Z",
       "text": "Results announced for Stage 4, നാടകം (UP)"
-    },
-    {
-      "t": "2026-11-05T09:45:36.581Z",
-      "text": "Stage 4: നാടകം has started (136 min late)"
     }
   ],
   "recent_results": [
+    {
+      "event_id": "E262",
+      "event_name": "പദ്യംചൊല്ലൽ അറബി",
+      "stage_id": 7,
+      "categories": [
+        "LP"
+      ],
+      "announced_at": "2026-11-05T11:49:02.226Z",
+      "results": {
+        "LP": {
+          "first": "31",
+          "second": "",
+          "third": ""
+        }
+      }
+    },
     {
       "event_id": "E228",
       "event_name": "ലളിതഗാനം Boys",
@@ -484,22 +489,6 @@
           "third": ""
         }
       }
-    },
-    {
-      "event_id": "E234",
-      "event_name": "നാടകം",
-      "stage_id": 4,
-      "categories": [
-        "HSS"
-      ],
-      "announced_at": "2026-11-05T10:12:35.939Z",
-      "results": {
-        "HSS": {
-          "first": "19",
-          "second": "",
-          "third": ""
-        }
-      }
     }
   ],
   "completed_events": [
@@ -618,9 +607,10 @@
     "E273",
     "E207",
     "E227",
-    "E228"
+    "E228",
+    "E262"
   ],
-  "updated_at": "2026-11-05T11:48:53.491Z",
+  "updated_at": "2026-11-05T11:49:02.226Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
