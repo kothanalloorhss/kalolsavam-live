@@ -5,15 +5,27 @@
   },
   "stages": {
     "1": {
-      "status": "idle",
+      "status": "ongoing",
       "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": "2026-11-04T13:23:20.626Z",
-      "events": []
+      "idle_since": null,
+      "events": [
+        {
+          "event_id": "E201",
+          "event_name": "മംഗലം കളി",
+          "categories": [
+            "HS"
+          ],
+          "scheduled_start": "09:00",
+          "actual_start": "2026-11-05T04:26:24.489Z",
+          "delay_minutes": 56,
+          "combined_stages": null
+        }
+      ]
     },
     "2": {
       "status": "idle",
@@ -181,6 +193,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-05T04:26:24.489Z",
+      "text": "Stage 1: മംഗലം കളി has started (56 min late)"
+    },
+    {
       "t": "2026-11-05T04:09:28.185Z",
       "text": "Stage 3: ലളിതഗാനം has started (39 min late)"
     },
@@ -295,10 +311,6 @@
     {
       "t": "2026-11-04T13:44:43.896Z",
       "text": "Results announced for Stage 2, കുച്ചുപ്പുടി Girls (HS)"
-    },
-    {
-      "t": "2026-11-04T13:23:20.626Z",
-      "text": "Results announced for Stage 1, വഞ്ചിപ്പാട്ട് (HSS)"
     }
   ],
   "recent_results": [
@@ -532,7 +544,7 @@
     "E157",
     "E158"
   ],
-  "updated_at": "2026-11-05T04:09:28.185Z",
+  "updated_at": "2026-11-05T04:26:24.489Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
