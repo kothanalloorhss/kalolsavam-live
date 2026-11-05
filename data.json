@@ -28,27 +28,14 @@
       ]
     },
     "2": {
-      "status": "ongoing",
-      "event_id": null,
+      "status": "idle",
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": null,
-      "events": [
-        {
-          "event_id": "E216",
-          "event_name": "കേരളനടനം Boys",
-          "categories": [
-            "HSS"
-          ],
-          "scheduled_start": "10:20",
-          "actual_start": "2026-11-05T05:35:12.386Z",
-          "delay_minutes": 45,
-          "combined_stages": null
-        }
-      ]
+      "idle_since": "2026-11-05T06:19:01.461Z",
+      "events": []
     },
     "3": {
       "status": "ongoing",
@@ -75,6 +62,7 @@
     },
     "4": {
       "status": "idle",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
@@ -268,6 +256,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-05T06:19:01.461Z",
+      "text": "Results announced for Stage 2, കേരളനടനം Boys (HSS)"
+    },
+    {
       "t": "2026-11-05T06:09:35.008Z",
       "text": "Results announced for Stage 4, കഥാപ്രസംഗം (UP)"
     },
@@ -382,13 +374,25 @@
     {
       "t": "2026-11-04T15:23:08.233Z",
       "text": "Results announced for Stage 4, വട്ടപ്പാട്ട് (HS)"
-    },
-    {
-      "t": "2026-11-04T15:21:23.991Z",
-      "text": "Stage 2: മോഹിനിയാട്ടം has started (281 min late)"
     }
   ],
   "recent_results": [
+    {
+      "event_id": "E216",
+      "event_name": "കേരളനടനം Boys",
+      "stage_id": 2,
+      "categories": [
+        "HSS"
+      ],
+      "announced_at": "2026-11-05T06:19:01.461Z",
+      "results": {
+        "HSS": {
+          "first": "34",
+          "second": "",
+          "third": ""
+        }
+      }
+    },
     {
       "event_id": "E229",
       "event_name": "കഥാപ്രസംഗം",
@@ -532,22 +536,6 @@
           "third": ""
         }
       }
-    },
-    {
-      "event_id": "E183",
-      "event_name": "ഒപ്പന",
-      "stage_id": 4,
-      "categories": [
-        "HS"
-      ],
-      "announced_at": "2026-11-04T15:08:00.180Z",
-      "results": {
-        "HS": {
-          "first": "29",
-          "second": "",
-          "third": ""
-        }
-      }
     }
   ],
   "completed_events": [
@@ -624,9 +612,10 @@
     "E244",
     "E243",
     "E215",
-    "E229"
+    "E229",
+    "E216"
   ],
-  "updated_at": "2026-11-05T06:09:35.008Z",
+  "updated_at": "2026-11-05T06:19:01.461Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
