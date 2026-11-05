@@ -28,15 +28,27 @@
       ]
     },
     "2": {
-      "status": "idle",
+      "status": "ongoing",
       "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": "2026-11-05T08:13:22.908Z",
-      "events": []
+      "idle_since": null,
+      "events": [
+        {
+          "event_id": "E218",
+          "event_name": "നാടോടിനൃത്തം Girls",
+          "categories": [
+            "HS"
+          ],
+          "scheduled_start": "12:20",
+          "actual_start": "2026-11-05T08:59:45.941Z",
+          "delay_minutes": 130,
+          "combined_stages": null
+        }
+      ]
     },
     "3": {
       "status": "ongoing",
@@ -279,6 +291,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-05T08:59:45.942Z",
+      "text": "Stage 2: നാടോടിനൃത്തം Girls has started (130 min late)"
+    },
+    {
       "t": "2026-11-05T08:52:26.533Z",
       "text": "Stage 6: ഗദ്യപാരായണം has started (127 min late)"
     },
@@ -393,10 +409,6 @@
     {
       "t": "2026-11-05T06:26:34.274Z",
       "text": "Stage 1: ഇരുള നൃത്തം has started (107 min late)"
-    },
-    {
-      "t": "2026-11-05T06:22:30.488Z",
-      "text": "Stage 6: പ്രഭാഷണം has finished"
     }
   ],
   "recent_results": [
@@ -659,7 +671,7 @@
     "E239",
     "E254"
   ],
-  "updated_at": "2026-11-05T08:52:26.533Z",
+  "updated_at": "2026-11-05T08:59:45.942Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
