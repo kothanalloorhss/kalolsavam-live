@@ -139,6 +139,17 @@
           "actual_start": "2026-11-05T04:38:26.223Z",
           "delay_minutes": 68,
           "combined_stages": null
+        },
+        {
+          "event_id": "E244",
+          "event_name": "പ്രശ്‌നോത്തരി",
+          "categories": [
+            "UP"
+          ],
+          "scheduled_start": "09:00",
+          "actual_start": "2026-11-05T05:28:48.595Z",
+          "delay_minutes": 119,
+          "combined_stages": null
         }
       ]
     },
@@ -281,6 +292,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-05T05:28:48.595Z",
+      "text": "Stage 6: പ്രശ്‌നോത്തരി has started (119 min late)"
+    },
+    {
       "t": "2026-11-05T05:19:38.954Z",
       "text": "Stage 2: കേരളനടനം Girls has started (50 min late)"
     },
@@ -395,10 +410,6 @@
     {
       "t": "2026-11-04T15:03:05.177Z",
       "text": "Stage 2: മോഹിനിയാട്ടം has started (313 min late)"
-    },
-    {
-      "t": "2026-11-04T14:38:57.269Z",
-      "text": "Results announced for Stage 5, പ്രസംഗം മലയാളം  (HSS)"
     }
   ],
   "recent_results": [
@@ -635,7 +646,7 @@
     "E269",
     "E213"
   ],
-  "updated_at": "2026-11-05T05:19:38.955Z",
+  "updated_at": "2026-11-05T05:28:48.595Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
