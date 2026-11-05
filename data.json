@@ -74,15 +74,27 @@
       ]
     },
     "4": {
-      "status": "idle",
+      "status": "ongoing",
       "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": "2026-11-05T06:43:07.590Z",
-      "events": []
+      "idle_since": null,
+      "events": [
+        {
+          "event_id": "E232",
+          "event_name": "നാടകം",
+          "categories": [
+            "HS"
+          ],
+          "scheduled_start": "10:50",
+          "actual_start": "2026-11-05T07:33:28.728Z",
+          "delay_minutes": 133,
+          "combined_stages": null
+        }
+      ]
     },
     "5": {
       "status": "ongoing",
@@ -109,6 +121,7 @@
     },
     "6": {
       "status": "idle",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
@@ -256,6 +269,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-05T07:33:28.728Z",
+      "text": "Stage 4: നാടകം has started (133 min late)"
+    },
+    {
       "t": "2026-11-05T07:15:11.830Z",
       "text": "Results announced for Stage 6, പദ്യംചൊല്ലൽ Girls (HS)"
     },
@@ -370,10 +387,6 @@
     {
       "t": "2026-11-05T06:09:35.008Z",
       "text": "Results announced for Stage 4, കഥാപ്രസംഗം (UP)"
-    },
-    {
-      "t": "2026-11-05T05:35:12.386Z",
-      "text": "Stage 2: കേരളനടനം Boys has started (45 min late)"
     }
   ],
   "recent_results": [
@@ -628,7 +641,7 @@
     "E238",
     "E250"
   ],
-  "updated_at": "2026-11-05T07:15:11.830Z",
+  "updated_at": "2026-11-05T07:33:28.728Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
