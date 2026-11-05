@@ -120,14 +120,27 @@
       ]
     },
     "6": {
-      "status": "idle",
+      "status": "ongoing",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": "2026-11-05T06:40:38.834Z",
-      "events": []
+      "idle_since": null,
+      "events": [
+        {
+          "event_id": "E249",
+          "event_name": "പദ്യംചൊല്ലൽ Girls",
+          "categories": [
+            "UP"
+          ],
+          "scheduled_start": "10:25",
+          "actual_start": "2026-11-05T06:42:07.361Z",
+          "delay_minutes": 107,
+          "combined_stages": null
+        }
+      ]
     },
     "7": {
       "status": "ongoing",
@@ -268,6 +281,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-05T06:42:07.361Z",
+      "text": "Stage 6: പദ്യംചൊല്ലൽ Girls has started (107 min late)"
+    },
+    {
       "t": "2026-11-05T06:40:38.834Z",
       "text": "Results announced for Stage 6, പദ്യംചൊല്ലൽ Boys (UP)"
     },
@@ -382,10 +399,6 @@
     {
       "t": "2026-11-05T05:14:39.591Z",
       "text": "ഷെഡ്യൂൾ മാറ്റം: കേരളനടനം Boys വേദി 2-ലേക്ക് പുനഃക്രമീകരിച്ചു"
-    },
-    {
-      "t": "2026-11-05T04:56:50.352Z",
-      "text": "Stage 9: പദ്യംചൊല്ലൽ കന്നഡ has started (57 min late)"
     }
   ],
   "recent_results": [
@@ -635,7 +648,7 @@
     "E245",
     "E248"
   ],
-  "updated_at": "2026-11-05T06:40:38.834Z",
+  "updated_at": "2026-11-05T06:42:07.361Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
