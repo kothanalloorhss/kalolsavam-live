@@ -70,6 +70,17 @@
           "actual_start": "2026-11-05T08:13:34.496Z",
           "delay_minutes": 64,
           "combined_stages": null
+        },
+        {
+          "event_id": "E227",
+          "event_name": "ലളിതഗാനം Girls",
+          "categories": [
+            "HSS"
+          ],
+          "scheduled_start": "15:20",
+          "actual_start": "2026-11-05T10:11:03.317Z",
+          "delay_minutes": 21,
+          "combined_stages": null
         }
       ]
     },
@@ -268,6 +279,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-05T10:11:03.317Z",
+      "text": "Stage 3: ലളിതഗാനം Girls has started (21 min late)"
+    },
+    {
       "t": "2026-11-05T10:08:51.357Z",
       "text": "Results announced for Stage 1, മാർഗ്ഗംകളി (HS)"
     },
@@ -382,10 +397,6 @@
     {
       "t": "2026-11-05T08:13:22.908Z",
       "text": "Results announced for Stage 2, നാടോടിനൃത്തം (LP)"
-    },
-    {
-      "t": "2026-11-05T08:12:08.590Z",
-      "text": "Stage 7: മാപ്പിളപ്പാട്ട് has started (102 min late)"
     }
   ],
   "recent_results": [
@@ -658,7 +669,7 @@
     "E258",
     "E206"
   ],
-  "updated_at": "2026-11-05T10:08:51.357Z",
+  "updated_at": "2026-11-05T10:11:03.317Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
