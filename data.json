@@ -281,6 +281,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-05T05:14:39.591Z",
+      "text": "ഷെഡ്യൂൾ മാറ്റം: കേരളനടനം Boys വേദി 2-ലേക്ക് പുനഃക്രമീകരിച്ചു"
+    },
+    {
       "t": "2026-11-05T04:56:50.352Z",
       "text": "Stage 9: പദ്യംചൊല്ലൽ കന്നഡ has started (57 min late)"
     },
@@ -395,10 +399,6 @@
     {
       "t": "2026-11-04T14:38:47.181Z",
       "text": "Results announced for Stage 5, പ്രസംഗം മലയാളം  (HS)"
-    },
-    {
-      "t": "2026-11-04T14:38:34.316Z",
-      "text": "Stage 5: പ്രസംഗം മലയാളം  has started (249 min late)"
     }
   ],
   "recent_results": [
@@ -634,13 +634,19 @@
     "E268",
     "E269"
   ],
-  "updated_at": "2026-11-05T04:56:50.352Z",
+  "updated_at": "2026-11-05T05:14:39.592Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
       "stage_id": "2",
       "status": "cancelled",
       "updated_at": "2026-11-04T11:28:48.661Z"
+    },
+    "E214": {
+      "start_time": "09:40:00",
+      "stage_id": "2",
+      "status": "cancelled",
+      "updated_at": "2026-11-05T05:14:39.591Z"
     }
   }
 }
