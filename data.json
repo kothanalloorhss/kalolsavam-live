@@ -29,6 +29,7 @@
     },
     "2": {
       "status": "idle",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
@@ -152,27 +153,14 @@
       ]
     },
     "9": {
-      "status": "ongoing",
-      "event_id": null,
+      "status": "idle",
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": null,
-      "events": [
-        {
-          "event_id": "E273",
-          "event_name": "പ്രസംഗം കന്നഡ",
-          "categories": [
-            "UP"
-          ],
-          "scheduled_start": "14:25",
-          "actual_start": "2026-11-05T10:39:10.710Z",
-          "delay_minutes": 104,
-          "combined_stages": null
-        }
-      ]
+      "idle_since": "2026-11-05T11:00:27.286Z",
+      "events": []
     },
     "10": {
       "status": "idle",
@@ -243,6 +231,10 @@
     }
   },
   "ticker": [
+    {
+      "t": "2026-11-05T11:00:27.286Z",
+      "text": "Results announced for Stage 9, പ്രസംഗം കന്നഡ (UP)"
+    },
     {
       "t": "2026-11-05T10:59:24.535Z",
       "text": "Results announced for Stage 2, നാടോടിനൃത്തം Boys (HS)"
@@ -358,13 +350,25 @@
     {
       "t": "2026-11-05T09:37:19.175Z",
       "text": "Stage 6: സംഘഗാനം has started (97 min late)"
-    },
-    {
-      "t": "2026-11-05T09:19:14.198Z",
-      "text": "Results announced for Stage 4, നാടകം (HS)"
     }
   ],
   "recent_results": [
+    {
+      "event_id": "E273",
+      "event_name": "പ്രസംഗം കന്നഡ",
+      "stage_id": 9,
+      "categories": [
+        "UP"
+      ],
+      "announced_at": "2026-11-05T11:00:27.286Z",
+      "results": {
+        "UP": {
+          "first": "18",
+          "second": "",
+          "third": ""
+        }
+      }
+    },
     {
       "event_id": "E219",
       "event_name": "നാടോടിനൃത്തം Boys",
@@ -508,22 +512,6 @@
           "third": ""
         }
       }
-    },
-    {
-      "event_id": "E204",
-      "event_name": "മലപ്പുലയആട്ടം",
-      "stage_id": 1,
-      "categories": [
-        "HS"
-      ],
-      "announced_at": "2026-11-05T09:54:06.962Z",
-      "results": {
-        "HS": {
-          "first": "40",
-          "second": "39",
-          "third": ""
-        }
-      }
     }
   ],
   "completed_events": [
@@ -638,9 +626,10 @@
     "E226",
     "E272",
     "E261",
-    "E219"
+    "E219",
+    "E273"
   ],
-  "updated_at": "2026-11-05T10:59:24.535Z",
+  "updated_at": "2026-11-05T11:00:27.286Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
