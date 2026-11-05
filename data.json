@@ -108,14 +108,27 @@
       ]
     },
     "6": {
-      "status": "idle",
+      "status": "ongoing",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": "2026-11-05T07:34:09.408Z",
-      "events": []
+      "idle_since": null,
+      "events": [
+        {
+          "event_id": "E252",
+          "event_name": "ഗാനാലാപനം Girls",
+          "categories": [
+            "UP"
+          ],
+          "scheduled_start": "11:15",
+          "actual_start": "2026-11-05T07:34:12.697Z",
+          "delay_minutes": 109,
+          "combined_stages": null
+        }
+      ]
     },
     "7": {
       "status": "ongoing",
@@ -256,6 +269,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-05T07:34:12.697Z",
+      "text": "Stage 6: ഗാനാലാപനം Girls has started (109 min late)"
+    },
+    {
       "t": "2026-11-05T07:34:09.408Z",
       "text": "Results announced for Stage 6, ഗാനാലാപനം Boys (UP)"
     },
@@ -370,10 +387,6 @@
     {
       "t": "2026-11-05T06:19:25.926Z",
       "text": "Stage 1: പണിയ നൃത്തം has started (119 min late)"
-    },
-    {
-      "t": "2026-11-05T06:19:22.169Z",
-      "text": "Results announced for Stage 1, മംഗലം കളി (HS)"
     }
   ],
   "recent_results": [
@@ -630,7 +643,7 @@
     "E203",
     "E251"
   ],
-  "updated_at": "2026-11-05T07:34:09.408Z",
+  "updated_at": "2026-11-05T07:34:12.697Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
