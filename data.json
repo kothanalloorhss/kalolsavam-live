@@ -126,6 +126,17 @@
           "actual_start": "2026-11-05T09:45:26.754Z",
           "delay_minutes": 95,
           "combined_stages": null
+        },
+        {
+          "event_id": "E259",
+          "event_name": "വന്ദേമാതരം",
+          "categories": [
+            "HS"
+          ],
+          "scheduled_start": "13:50",
+          "actual_start": "2026-11-05T09:45:31.838Z",
+          "delay_minutes": 86,
+          "combined_stages": null
         }
       ]
     },
@@ -279,6 +290,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-05T09:45:31.838Z",
+      "text": "Stage 6: വന്ദേമാതരം has started (86 min late)"
+    },
+    {
       "t": "2026-11-05T09:45:26.754Z",
       "text": "Stage 6: വന്ദേമാതരം has started (95 min late)"
     },
@@ -393,10 +408,6 @@
     {
       "t": "2026-11-05T07:09:29.427Z",
       "text": "Results announced for Stage 9, പദ്യംചൊല്ലൽ കന്നഡ (UP)"
-    },
-    {
-      "t": "2026-11-05T07:03:03.718Z",
-      "text": "Stage 6: പദ്യംചൊല്ലൽ Girls has started (103 min late)"
     }
   ],
   "recent_results": [
@@ -663,7 +674,7 @@
     "E256",
     "E257"
   ],
-  "updated_at": "2026-11-05T09:45:26.754Z",
+  "updated_at": "2026-11-05T09:45:31.838Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
