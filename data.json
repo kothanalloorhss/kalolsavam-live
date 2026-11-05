@@ -106,17 +106,6 @@
       "idle_since": null,
       "events": [
         {
-          "event_id": "E242",
-          "event_name": "പ്രഭാഷണം",
-          "categories": [
-            "UP"
-          ],
-          "scheduled_start": "09:00",
-          "actual_start": "2026-11-05T04:38:26.223Z",
-          "delay_minutes": 68,
-          "combined_stages": null
-        },
-        {
           "event_id": "E248",
           "event_name": "പദ്യംചൊല്ലൽ Boys",
           "categories": [
@@ -631,7 +620,7 @@
     "E246",
     "E247"
   ],
-  "updated_at": "2026-11-05T06:20:08.770Z",
+  "updated_at": "2026-11-05T06:20:15.683Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
