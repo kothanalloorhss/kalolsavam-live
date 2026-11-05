@@ -115,17 +115,6 @@
           "actual_start": "2026-11-05T04:38:26.223Z",
           "delay_minutes": 68,
           "combined_stages": null
-        },
-        {
-          "event_id": "E247",
-          "event_name": "സിദ്ധരൂപോഛാരണം Girls",
-          "categories": [
-            "UP"
-          ],
-          "scheduled_start": "09:50",
-          "actual_start": "2026-11-05T06:19:53.410Z",
-          "delay_minutes": 120,
-          "combined_stages": null
         }
       ]
     },
@@ -268,6 +257,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-05T06:20:03.902Z",
+      "text": "Results announced for Stage 6, സിദ്ധരൂപോഛാരണം Girls (UP)"
+    },
+    {
       "t": "2026-11-05T06:19:53.411Z",
       "text": "Stage 6: സിദ്ധരൂപോഛാരണം Girls has started (120 min late)"
     },
@@ -382,13 +375,25 @@
     {
       "t": "2026-11-05T04:26:34.068Z",
       "text": "Stage 2: കേരളനടനം Girls has started (57 min late)"
-    },
-    {
-      "t": "2026-11-05T04:26:24.489Z",
-      "text": "Stage 1: മംഗലം കളി has started (56 min late)"
     }
   ],
   "recent_results": [
+    {
+      "event_id": "E247",
+      "event_name": "സിദ്ധരൂപോഛാരണം Girls",
+      "stage_id": 6,
+      "categories": [
+        "UP"
+      ],
+      "announced_at": "2026-11-05T06:20:03.902Z",
+      "results": {
+        "UP": {
+          "first": "36",
+          "second": "37",
+          "third": ""
+        }
+      }
+    },
     {
       "event_id": "E246",
       "event_name": "സിദ്ധരൂപോഛാരണം Boys",
@@ -532,22 +537,6 @@
           "third": ""
         }
       }
-    },
-    {
-      "event_id": "E268",
-      "event_name": "പദ്യംചൊല്ലൽ കന്നഡ",
-      "stage_id": 9,
-      "categories": [
-        "HS"
-      ],
-      "announced_at": "2026-11-05T04:40:00.542Z",
-      "results": {
-        "HS": {
-          "first": "14",
-          "second": "",
-          "third": ""
-        }
-      }
     }
   ],
   "completed_events": [
@@ -628,9 +617,10 @@
     "E216",
     "E201",
     "E202",
-    "E246"
+    "E246",
+    "E247"
   ],
-  "updated_at": "2026-11-05T06:19:53.411Z",
+  "updated_at": "2026-11-05T06:20:03.902Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
