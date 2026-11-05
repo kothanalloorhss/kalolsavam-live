@@ -29,6 +29,7 @@
     },
     "2": {
       "status": "idle",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
@@ -56,6 +57,17 @@
           "scheduled_start": "09:00",
           "actual_start": "2026-11-05T04:09:28.185Z",
           "delay_minutes": 39,
+          "combined_stages": null
+        },
+        {
+          "event_id": "E226",
+          "event_name": "ലളിതഗാനം",
+          "categories": [
+            "UP"
+          ],
+          "scheduled_start": "12:40",
+          "actual_start": "2026-11-05T08:13:34.496Z",
+          "delay_minutes": 64,
           "combined_stages": null
         }
       ]
@@ -267,6 +279,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-05T08:13:34.496Z",
+      "text": "Stage 3: ലളിതഗാനം has started (64 min late)"
+    },
+    {
       "t": "2026-11-05T08:13:22.908Z",
       "text": "Results announced for Stage 2, നാടോടിനൃത്തം (LP)"
     },
@@ -381,10 +397,6 @@
     {
       "t": "2026-11-05T06:21:01.308Z",
       "text": "Stage 4: മൂകാഭിനയം has started (91 min late)"
-    },
-    {
-      "t": "2026-11-05T06:20:56.839Z",
-      "text": "Results announced for Stage 4, മിമിക്രി Boys (HS)"
     }
   ],
   "recent_results": [
@@ -645,7 +657,7 @@
     "E205",
     "E217"
   ],
-  "updated_at": "2026-11-05T08:13:22.908Z",
+  "updated_at": "2026-11-05T08:13:34.496Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
