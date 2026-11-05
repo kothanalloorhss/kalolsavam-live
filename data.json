@@ -150,6 +150,17 @@
           "actual_start": "2026-11-05T04:38:20.091Z",
           "delay_minutes": 68,
           "combined_stages": null
+        },
+        {
+          "event_id": "E261",
+          "event_name": "മാപ്പിളപ്പാട്ട്",
+          "categories": [
+            "UP"
+          ],
+          "scheduled_start": "12:00",
+          "actual_start": "2026-11-05T08:12:08.589Z",
+          "delay_minutes": 102,
+          "combined_stages": null
         }
       ]
     },
@@ -269,6 +280,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-05T08:12:08.590Z",
+      "text": "Stage 7: മാപ്പിളപ്പാട്ട് has started (102 min late)"
+    },
+    {
       "t": "2026-11-05T08:00:05.548Z",
       "text": "Results announced for Stage 1, പളിയ നൃത്തം (HS)"
     },
@@ -383,10 +398,6 @@
     {
       "t": "2026-11-05T06:20:50.836Z",
       "text": "Stage 4: മിമിക്രി Boys has started (101 min late)"
-    },
-    {
-      "t": "2026-11-05T06:20:08.770Z",
-      "text": "Stage 6: പദ്യംചൊല്ലൽ Boys has started (100 min late)"
     }
   ],
   "recent_results": [
@@ -646,7 +657,7 @@
     "E253",
     "E205"
   ],
-  "updated_at": "2026-11-05T08:00:05.548Z",
+  "updated_at": "2026-11-05T08:12:08.590Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
