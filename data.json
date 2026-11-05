@@ -24,17 +24,6 @@
           "actual_start": "2026-11-05T07:49:21.463Z",
           "delay_minutes": 149,
           "combined_stages": null
-        },
-        {
-          "event_id": "E205",
-          "event_name": "പളിയ നൃത്തം",
-          "categories": [
-            "HS"
-          ],
-          "scheduled_start": "11:20",
-          "actual_start": "2026-11-05T07:59:58.566Z",
-          "delay_minutes": 130,
-          "combined_stages": null
         }
       ]
     },
@@ -280,6 +269,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-05T08:00:05.548Z",
+      "text": "Results announced for Stage 1, പളിയ നൃത്തം (HS)"
+    },
+    {
       "t": "2026-11-05T07:59:58.566Z",
       "text": "Stage 1: പളിയ നൃത്തം has started (130 min late)"
     },
@@ -394,13 +387,25 @@
     {
       "t": "2026-11-05T06:20:08.770Z",
       "text": "Stage 6: പദ്യംചൊല്ലൽ Boys has started (100 min late)"
-    },
-    {
-      "t": "2026-11-05T06:20:03.902Z",
-      "text": "Results announced for Stage 6, സിദ്ധരൂപോഛാരണം Girls (UP)"
     }
   ],
   "recent_results": [
+    {
+      "event_id": "E205",
+      "event_name": "പളിയ നൃത്തം",
+      "stage_id": 1,
+      "categories": [
+        "HS"
+      ],
+      "announced_at": "2026-11-05T08:00:05.548Z",
+      "results": {
+        "HS": {
+          "first": "36",
+          "second": "",
+          "third": ""
+        }
+      }
+    },
     {
       "event_id": "E252",
       "event_name": "ഗാനാലാപനം Girls",
@@ -544,22 +549,6 @@
           "third": ""
         }
       }
-    },
-    {
-      "event_id": "E230",
-      "event_name": "മിമിക്രി Boys",
-      "stage_id": 4,
-      "categories": [
-        "HS"
-      ],
-      "announced_at": "2026-11-05T06:20:56.839Z",
-      "results": {
-        "HS": {
-          "first": "11",
-          "second": "",
-          "third": ""
-        }
-      }
     }
   ],
   "completed_events": [
@@ -654,9 +643,10 @@
     "E203",
     "E251",
     "E252",
-    "E253"
+    "E253",
+    "E205"
   ],
-  "updated_at": "2026-11-05T07:59:58.566Z",
+  "updated_at": "2026-11-05T08:00:05.548Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
