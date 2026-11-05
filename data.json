@@ -81,17 +81,6 @@
           "actual_start": "2026-11-05T08:13:34.496Z",
           "delay_minutes": 64,
           "combined_stages": null
-        },
-        {
-          "event_id": "E228",
-          "event_name": "ലളിതഗാനം Boys",
-          "categories": [
-            "HSS"
-          ],
-          "scheduled_start": "16:00",
-          "actual_start": "2026-11-05T10:07:36.096Z",
-          "delay_minutes": 0,
-          "combined_stages": null
         }
       ]
     },
@@ -680,7 +669,7 @@
     "E258",
     "E225"
   ],
-  "updated_at": "2026-11-05T10:07:54.473Z",
+  "updated_at": "2026-11-05T10:07:59.718Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
