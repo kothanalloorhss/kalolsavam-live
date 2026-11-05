@@ -117,17 +117,6 @@
       "idle_since": null,
       "events": [
         {
-          "event_id": "E256",
-          "event_name": "സംഘഗാനം",
-          "categories": [
-            "UP"
-          ],
-          "scheduled_start": "12:45",
-          "actual_start": "2026-11-05T09:14:12.448Z",
-          "delay_minutes": 119,
-          "combined_stages": null
-        },
-        {
           "event_id": "E257",
           "event_name": "സംഘഗാനം",
           "categories": [
@@ -290,6 +279,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-05T09:45:14.347Z",
+      "text": "Results announced for Stage 6, സംഘഗാനം (UP)"
+    },
+    {
       "t": "2026-11-05T09:37:19.175Z",
       "text": "Stage 6: സംഘഗാനം has started (97 min late)"
     },
@@ -404,13 +397,25 @@
     {
       "t": "2026-11-05T07:00:46.594Z",
       "text": "Stage 9: പദ്യംചൊല്ലൽ കന്നഡ has started (86 min late)"
-    },
-    {
-      "t": "2026-11-05T06:55:40.157Z",
-      "text": "Stage 5: ദേശഭക്തിഗാനം has started (85 min late)"
     }
   ],
   "recent_results": [
+    {
+      "event_id": "E256",
+      "event_name": "സംഘഗാനം",
+      "stage_id": 6,
+      "categories": [
+        "UP"
+      ],
+      "announced_at": "2026-11-05T09:45:14.347Z",
+      "results": {
+        "UP": {
+          "first": "32",
+          "second": "33",
+          "third": "31"
+        }
+      }
+    },
     {
       "event_id": "E232",
       "event_name": "നാടകം",
@@ -554,22 +559,6 @@
           "third": ""
         }
       }
-    },
-    {
-      "event_id": "E270",
-      "event_name": "പദ്യംചൊല്ലൽ കന്നഡ",
-      "stage_id": 9,
-      "categories": [
-        "UP"
-      ],
-      "announced_at": "2026-11-05T07:09:29.427Z",
-      "results": {
-        "UP": {
-          "first": "15",
-          "second": "",
-          "third": ""
-        }
-      }
     }
   ],
   "completed_events": [
@@ -670,9 +659,10 @@
     "E239",
     "E254",
     "E255",
-    "E232"
+    "E232",
+    "E256"
   ],
-  "updated_at": "2026-11-05T09:37:19.175Z",
+  "updated_at": "2026-11-05T09:45:14.347Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
