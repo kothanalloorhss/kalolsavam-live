@@ -189,14 +189,27 @@
       ]
     },
     "9": {
-      "status": "idle",
+      "status": "ongoing",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": "2026-11-05T04:56:47.133Z",
-      "events": []
+      "idle_since": null,
+      "events": [
+        {
+          "event_id": "E270",
+          "event_name": "പദ്യംചൊല്ലൽ കന്നഡ",
+          "categories": [
+            "UP"
+          ],
+          "scheduled_start": "09:30",
+          "actual_start": "2026-11-05T04:56:50.352Z",
+          "delay_minutes": 57,
+          "combined_stages": null
+        }
+      ]
     },
     "10": {
       "status": "idle",
@@ -267,6 +280,10 @@
     }
   },
   "ticker": [
+    {
+      "t": "2026-11-05T04:56:50.352Z",
+      "text": "Stage 9: പദ്യംചൊല്ലൽ കന്നഡ has started (57 min late)"
+    },
     {
       "t": "2026-11-05T04:56:47.133Z",
       "text": "Results announced for Stage 9, പദ്യംചൊല്ലൽ കന്നഡ (HSS)"
@@ -382,10 +399,6 @@
     {
       "t": "2026-11-04T14:38:34.316Z",
       "text": "Stage 5: പ്രസംഗം മലയാളം  has started (249 min late)"
-    },
-    {
-      "t": "2026-11-04T14:38:28.814Z",
-      "text": "Results announced for Stage 5, പ്രസംഗം മലയാളം  (UP)"
     }
   ],
   "recent_results": [
@@ -621,7 +634,7 @@
     "E268",
     "E269"
   ],
-  "updated_at": "2026-11-05T04:56:47.133Z",
+  "updated_at": "2026-11-05T04:56:50.352Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
