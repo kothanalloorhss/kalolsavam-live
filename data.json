@@ -119,14 +119,27 @@
       "events": []
     },
     "6": {
-      "status": "idle",
+      "status": "ongoing",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": "2026-11-05T09:07:29.560Z",
-      "events": []
+      "idle_since": null,
+      "events": [
+        {
+          "event_id": "E256",
+          "event_name": "സംഘഗാനം",
+          "categories": [
+            "UP"
+          ],
+          "scheduled_start": "12:45",
+          "actual_start": "2026-11-05T09:14:12.448Z",
+          "delay_minutes": 119,
+          "combined_stages": null
+        }
+      ]
     },
     "7": {
       "status": "ongoing",
@@ -278,6 +291,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-05T09:14:12.448Z",
+      "text": "Stage 6: സംഘഗാനം has started (119 min late)"
+    },
+    {
       "t": "2026-11-05T09:07:29.560Z",
       "text": "Results announced for Stage 6, ഗദ്യപാരായണം (UP)"
     },
@@ -392,10 +409,6 @@
     {
       "t": "2026-11-05T06:42:07.361Z",
       "text": "Stage 6: പദ്യംചൊല്ലൽ Girls has started (107 min late)"
-    },
-    {
-      "t": "2026-11-05T06:40:38.834Z",
-      "text": "Results announced for Stage 6, പദ്യംചൊല്ലൽ Boys (UP)"
     }
   ],
   "recent_results": [
@@ -659,7 +672,7 @@
     "E254",
     "E255"
   ],
-  "updated_at": "2026-11-05T09:07:29.560Z",
+  "updated_at": "2026-11-05T09:14:12.448Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
