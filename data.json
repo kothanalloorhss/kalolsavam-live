@@ -120,27 +120,14 @@
       ]
     },
     "6": {
-      "status": "ongoing",
-      "event_id": null,
+      "status": "idle",
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": null,
-      "events": [
-        {
-          "event_id": "E248",
-          "event_name": "പദ്യംചൊല്ലൽ Boys",
-          "categories": [
-            "UP"
-          ],
-          "scheduled_start": "10:10",
-          "actual_start": "2026-11-05T06:20:08.770Z",
-          "delay_minutes": 100,
-          "combined_stages": null
-        }
-      ]
+      "idle_since": "2026-11-05T06:40:38.834Z",
+      "events": []
     },
     "7": {
       "status": "ongoing",
@@ -281,6 +268,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-05T06:40:38.834Z",
+      "text": "Results announced for Stage 6, പദ്യംചൊല്ലൽ Boys (UP)"
+    },
+    {
       "t": "2026-11-05T06:26:34.274Z",
       "text": "Stage 1: ഇരുള നൃത്തം has started (107 min late)"
     },
@@ -395,13 +386,25 @@
     {
       "t": "2026-11-05T04:56:50.352Z",
       "text": "Stage 9: പദ്യംചൊല്ലൽ കന്നഡ has started (57 min late)"
-    },
-    {
-      "t": "2026-11-05T04:56:47.133Z",
-      "text": "Results announced for Stage 9, പദ്യംചൊല്ലൽ കന്നഡ (HSS)"
     }
   ],
   "recent_results": [
+    {
+      "event_id": "E248",
+      "event_name": "പദ്യംചൊല്ലൽ Boys",
+      "stage_id": 6,
+      "categories": [
+        "UP"
+      ],
+      "announced_at": "2026-11-05T06:40:38.834Z",
+      "results": {
+        "UP": {
+          "first": "31",
+          "second": "33",
+          "third": "30"
+        }
+      }
+    },
     {
       "event_id": "E242",
       "event_name": "പ്രഭാഷണം",
@@ -545,22 +548,6 @@
           "third": ""
         }
       }
-    },
-    {
-      "event_id": "E244",
-      "event_name": "പ്രശ്‌നോത്തരി",
-      "stage_id": 6,
-      "categories": [
-        "UP"
-      ],
-      "announced_at": "2026-11-05T05:29:00.901Z",
-      "results": {
-        "UP": {
-          "first": "33",
-          "second": "30",
-          "third": ""
-        }
-      }
     }
   ],
   "completed_events": [
@@ -645,9 +632,10 @@
     "E247",
     "E230",
     "E242",
-    "E245"
+    "E245",
+    "E248"
   ],
-  "updated_at": "2026-11-05T06:26:34.274Z",
+  "updated_at": "2026-11-05T06:40:38.834Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
