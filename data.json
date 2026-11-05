@@ -5,27 +5,14 @@
   },
   "stages": {
     "1": {
-      "status": "ongoing",
-      "event_id": null,
+      "status": "idle",
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": null,
-      "events": [
-        {
-          "event_id": "E202",
-          "event_name": "പണിയ നൃത്തം",
-          "categories": [
-            "HS"
-          ],
-          "scheduled_start": "09:50",
-          "actual_start": "2026-11-05T06:19:25.926Z",
-          "delay_minutes": 119,
-          "combined_stages": null
-        }
-      ]
+      "idle_since": "2026-11-05T06:19:34.176Z",
+      "events": []
     },
     "2": {
       "status": "ongoing",
@@ -269,6 +256,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-05T06:19:34.176Z",
+      "text": "Results announced for Stage 1, പണിയ നൃത്തം (HS)"
+    },
+    {
       "t": "2026-11-05T06:19:25.926Z",
       "text": "Stage 1: പണിയ നൃത്തം has started (119 min late)"
     },
@@ -383,13 +374,25 @@
     {
       "t": "2026-11-04T15:50:24.840Z",
       "text": "Stage 2: സംഘ നൃത്തം has started (290 min late)"
-    },
-    {
-      "t": "2026-11-04T15:50:20.881Z",
-      "text": "Stage 2: മോഹിനിയാട്ടം has finished"
     }
   ],
   "recent_results": [
+    {
+      "event_id": "E202",
+      "event_name": "പണിയ നൃത്തം",
+      "stage_id": 1,
+      "categories": [
+        "HS"
+      ],
+      "announced_at": "2026-11-05T06:19:34.176Z",
+      "results": {
+        "HS": {
+          "first": "36",
+          "second": "",
+          "third": ""
+        }
+      }
+    },
     {
       "event_id": "E201",
       "event_name": "മംഗലം കളി",
@@ -533,22 +536,6 @@
           "third": ""
         }
       }
-    },
-    {
-      "event_id": "E184",
-      "event_name": "വട്ടപ്പാട്ട്",
-      "stage_id": 4,
-      "categories": [
-        "HS"
-      ],
-      "announced_at": "2026-11-04T15:23:08.233Z",
-      "results": {
-        "HS": {
-          "first": "17",
-          "second": "",
-          "third": ""
-        }
-      }
     }
   ],
   "completed_events": [
@@ -627,9 +614,10 @@
     "E215",
     "E229",
     "E216",
-    "E201"
+    "E201",
+    "E202"
   ],
-  "updated_at": "2026-11-05T06:19:25.926Z",
+  "updated_at": "2026-11-05T06:19:34.176Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
