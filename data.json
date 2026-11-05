@@ -28,27 +28,14 @@
       ]
     },
     "2": {
-      "status": "ongoing",
-      "event_id": null,
+      "status": "idle",
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": null,
-      "events": [
-        {
-          "event_id": "E215",
-          "event_name": "കേരളനടനം Girls",
-          "categories": [
-            "HSS"
-          ],
-          "scheduled_start": "10:00",
-          "actual_start": "2026-11-05T05:19:38.954Z",
-          "delay_minutes": 50,
-          "combined_stages": null
-        }
-      ]
+      "idle_since": "2026-11-05T05:35:03.431Z",
+      "events": []
     },
     "3": {
       "status": "ongoing",
@@ -281,6 +268,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-05T05:35:03.431Z",
+      "text": "Stage 2: കേരളനടനം Girls has finished"
+    },
+    {
       "t": "2026-11-05T05:29:23.553Z",
       "text": "Results announced for Stage 6, പ്രശ്‌നോത്തരി (HS)"
     },
@@ -395,10 +386,6 @@
     {
       "t": "2026-11-04T15:10:46.177Z",
       "text": "Stage 4: വട്ടപ്പാട്ട് has started (171 min late)"
-    },
-    {
-      "t": "2026-11-04T15:10:26.180Z",
-      "text": "Stage 2: മോഹിനിയാട്ടം has started (330 min late)"
     }
   ],
   "recent_results": [
@@ -635,9 +622,10 @@
     "E269",
     "E213",
     "E244",
-    "E243"
+    "E243",
+    "E215"
   ],
-  "updated_at": "2026-11-05T05:29:23.553Z",
+  "updated_at": "2026-11-05T05:35:03.431Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
