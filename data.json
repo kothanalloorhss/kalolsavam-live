@@ -219,17 +219,6 @@
       "idle_since": null,
       "events": [
         {
-          "event_id": "E271",
-          "event_name": "പദ്യംചൊല്ലൽ കന്നഡ",
-          "categories": [
-            "LP"
-          ],
-          "scheduled_start": "11:05",
-          "actual_start": "2026-11-05T07:00:46.594Z",
-          "delay_minutes": 86,
-          "combined_stages": null
-        },
-        {
           "event_id": "E272",
           "event_name": "പ്രസംഗം കന്നഡ",
           "categories": [
@@ -311,6 +300,10 @@
     }
   },
   "ticker": [
+    {
+      "t": "2026-11-05T10:05:51.826Z",
+      "text": "Results announced for Stage 9, പദ്യംചൊല്ലൽ കന്നഡ (LP)"
+    },
     {
       "t": "2026-11-05T09:54:55.939Z",
       "text": "Stage 1: മാർഗ്ഗംകളി has started (225 min late)"
@@ -426,13 +419,25 @@
     {
       "t": "2026-11-05T07:56:38.115Z",
       "text": "Results announced for Stage 6, ഗാനാലാപനം Girls (UP)"
-    },
-    {
-      "t": "2026-11-05T07:49:21.463Z",
-      "text": "Stage 1: മലപ്പുലയആട്ടം has started (149 min late)"
     }
   ],
   "recent_results": [
+    {
+      "event_id": "E271",
+      "event_name": "പദ്യംചൊല്ലൽ കന്നഡ",
+      "stage_id": 9,
+      "categories": [
+        "LP"
+      ],
+      "announced_at": "2026-11-05T10:05:51.826Z",
+      "results": {
+        "LP": {
+          "first": "25",
+          "second": "",
+          "third": ""
+        }
+      }
+    },
     {
       "event_id": "E204",
       "event_name": "മലപ്പുലയആട്ടം",
@@ -576,22 +581,6 @@
           "third": "45"
         }
       }
-    },
-    {
-      "event_id": "E205",
-      "event_name": "പളിയ നൃത്തം",
-      "stage_id": 1,
-      "categories": [
-        "HS"
-      ],
-      "announced_at": "2026-11-05T08:00:05.548Z",
-      "results": {
-        "HS": {
-          "first": "36",
-          "second": "",
-          "third": ""
-        }
-      }
     }
   ],
   "completed_events": [
@@ -697,9 +686,10 @@
     "E257",
     "E233",
     "E266",
-    "E204"
+    "E204",
+    "E271"
   ],
-  "updated_at": "2026-11-05T09:54:55.939Z",
+  "updated_at": "2026-11-05T10:05:51.826Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
