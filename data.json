@@ -28,15 +28,27 @@
       ]
     },
     "2": {
-      "status": "idle",
+      "status": "ongoing",
       "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": "2026-11-05T10:29:27.940Z",
-      "events": []
+      "idle_since": null,
+      "events": [
+        {
+          "event_id": "E219",
+          "event_name": "നാടോടിനൃത്തം Boys",
+          "categories": [
+            "HS"
+          ],
+          "scheduled_start": "13:15",
+          "actual_start": "2026-11-05T10:59:02.447Z",
+          "delay_minutes": 194,
+          "combined_stages": null
+        }
+      ]
     },
     "3": {
       "status": "ongoing",
@@ -245,6 +257,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-05T10:59:02.448Z",
+      "text": "Stage 2: നാടോടിനൃത്തം Boys has started (194 min late)"
+    },
+    {
       "t": "2026-11-05T10:39:23.610Z",
       "text": "Results announced for Stage 7, മാപ്പിളപ്പാട്ട് (UP)"
     },
@@ -359,10 +375,6 @@
     {
       "t": "2026-11-05T09:14:12.448Z",
       "text": "Stage 6: സംഘഗാനം has started (119 min late)"
-    },
-    {
-      "t": "2026-11-05T09:07:29.560Z",
-      "text": "Results announced for Stage 6, ഗദ്യപാരായണം (UP)"
     }
   ],
   "recent_results": [
@@ -640,7 +652,7 @@
     "E272",
     "E261"
   ],
-  "updated_at": "2026-11-05T10:39:23.610Z",
+  "updated_at": "2026-11-05T10:59:02.448Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
