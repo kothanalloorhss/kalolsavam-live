@@ -176,6 +176,7 @@
     },
     "8": {
       "status": "idle",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
@@ -203,6 +204,17 @@
           "scheduled_start": "11:05",
           "actual_start": "2026-11-05T07:00:46.594Z",
           "delay_minutes": 86,
+          "combined_stages": null
+        },
+        {
+          "event_id": "E272",
+          "event_name": "പ്രസംഗം കന്നഡ",
+          "categories": [
+            "LP"
+          ],
+          "scheduled_start": "13:40",
+          "actual_start": "2026-11-05T09:52:59.914Z",
+          "delay_minutes": 103,
           "combined_stages": null
         }
       ]
@@ -276,6 +288,10 @@
     }
   },
   "ticker": [
+    {
+      "t": "2026-11-05T09:52:59.914Z",
+      "text": "Stage 9: പ്രസംഗം കന്നഡ has started (103 min late)"
+    },
     {
       "t": "2026-11-05T09:52:43.102Z",
       "text": "Results announced for Stage 8, പദ്യംചൊല്ലൽ മലയാളം (LP)"
@@ -391,10 +407,6 @@
     {
       "t": "2026-11-05T07:33:39.345Z",
       "text": "Stage 6: ഗാനാലാപനം Boys has started (129 min late)"
-    },
-    {
-      "t": "2026-11-05T07:33:28.728Z",
-      "text": "Stage 4: നാടകം has started (133 min late)"
     }
   ],
   "recent_results": [
@@ -663,7 +675,7 @@
     "E233",
     "E266"
   ],
-  "updated_at": "2026-11-05T09:52:43.102Z",
+  "updated_at": "2026-11-05T09:52:59.914Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
