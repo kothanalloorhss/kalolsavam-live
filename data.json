@@ -5,15 +5,27 @@
   },
   "stages": {
     "1": {
-      "status": "idle",
+      "status": "ongoing",
       "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": "2026-11-05T06:19:34.176Z",
-      "events": []
+      "idle_since": null,
+      "events": [
+        {
+          "event_id": "E203",
+          "event_name": "ഇരുള നൃത്തം",
+          "categories": [
+            "HS"
+          ],
+          "scheduled_start": "10:10",
+          "actual_start": "2026-11-05T06:26:34.274Z",
+          "delay_minutes": 107,
+          "combined_stages": null
+        }
+      ]
     },
     "2": {
       "status": "ongoing",
@@ -269,6 +281,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-05T06:26:34.274Z",
+      "text": "Stage 1: ഇരുള നൃത്തം has started (107 min late)"
+    },
+    {
       "t": "2026-11-05T06:22:30.488Z",
       "text": "Stage 6: പ്രഭാഷണം has finished"
     },
@@ -383,10 +399,6 @@
     {
       "t": "2026-11-05T04:56:47.133Z",
       "text": "Results announced for Stage 9, പദ്യംചൊല്ലൽ കന്നഡ (HSS)"
-    },
-    {
-      "t": "2026-11-05T04:50:59.055Z",
-      "text": "Stage 4: കഥാപ്രസംഗം has started (81 min late)"
     }
   ],
   "recent_results": [
@@ -635,7 +647,7 @@
     "E242",
     "E245"
   ],
-  "updated_at": "2026-11-05T06:22:30.488Z",
+  "updated_at": "2026-11-05T06:26:34.274Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
