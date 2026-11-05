@@ -86,6 +86,7 @@
     },
     "4": {
       "status": "idle",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
@@ -174,27 +175,14 @@
       ]
     },
     "8": {
-      "status": "ongoing",
-      "event_id": null,
+      "status": "idle",
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": null,
-      "events": [
-        {
-          "event_id": "E266",
-          "event_name": "പദ്യംചൊല്ലൽ മലയാളം",
-          "categories": [
-            "LP"
-          ],
-          "scheduled_start": "09:00",
-          "actual_start": "2026-11-05T04:28:03.435Z",
-          "delay_minutes": 58,
-          "combined_stages": null
-        }
-      ]
+      "idle_since": "2026-11-05T09:52:43.102Z",
+      "events": []
     },
     "9": {
       "status": "ongoing",
@@ -288,6 +276,10 @@
     }
   },
   "ticker": [
+    {
+      "t": "2026-11-05T09:52:43.102Z",
+      "text": "Results announced for Stage 8, പദ്യംചൊല്ലൽ മലയാളം (LP)"
+    },
     {
       "t": "2026-11-05T09:45:43.323Z",
       "text": "Results announced for Stage 4, നാടകം (UP)"
@@ -403,13 +395,25 @@
     {
       "t": "2026-11-05T07:33:28.728Z",
       "text": "Stage 4: നാടകം has started (133 min late)"
-    },
-    {
-      "t": "2026-11-05T07:15:11.830Z",
-      "text": "Results announced for Stage 6, പദ്യംചൊല്ലൽ Girls (HS)"
     }
   ],
   "recent_results": [
+    {
+      "event_id": "E266",
+      "event_name": "പദ്യംചൊല്ലൽ മലയാളം",
+      "stage_id": 8,
+      "categories": [
+        "LP"
+      ],
+      "announced_at": "2026-11-05T09:52:43.101Z",
+      "results": {
+        "LP": {
+          "first": "43",
+          "second": "",
+          "third": ""
+        }
+      }
+    },
     {
       "event_id": "E233",
       "event_name": "നാടകം",
@@ -553,22 +557,6 @@
           "third": "33"
         }
       }
-    },
-    {
-      "event_id": "E251",
-      "event_name": "ഗാനാലാപനം Boys",
-      "stage_id": 6,
-      "categories": [
-        "UP"
-      ],
-      "announced_at": "2026-11-05T07:34:09.407Z",
-      "results": {
-        "UP": {
-          "first": "31",
-          "second": "30",
-          "third": ""
-        }
-      }
     }
   ],
   "completed_events": [
@@ -672,9 +660,10 @@
     "E232",
     "E256",
     "E257",
-    "E233"
+    "E233",
+    "E266"
   ],
-  "updated_at": "2026-11-05T09:45:43.323Z",
+  "updated_at": "2026-11-05T09:52:43.102Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
