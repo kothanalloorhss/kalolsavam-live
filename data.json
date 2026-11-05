@@ -28,14 +28,27 @@
       ]
     },
     "2": {
-      "status": "idle",
+      "status": "ongoing",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": "2026-11-05T06:19:01.461Z",
-      "events": []
+      "idle_since": null,
+      "events": [
+        {
+          "event_id": "E217",
+          "event_name": "നാടോടിനൃത്തം",
+          "categories": [
+            "LP"
+          ],
+          "scheduled_start": "10:40",
+          "actual_start": "2026-11-05T06:19:05.926Z",
+          "delay_minutes": 69,
+          "combined_stages": null
+        }
+      ]
     },
     "3": {
       "status": "ongoing",
@@ -256,6 +269,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-05T06:19:05.926Z",
+      "text": "Stage 2: നാടോടിനൃത്തം has started (69 min late)"
+    },
+    {
       "t": "2026-11-05T06:19:01.461Z",
       "text": "Results announced for Stage 2, കേരളനടനം Boys (HSS)"
     },
@@ -370,10 +387,6 @@
     {
       "t": "2026-11-04T15:23:13.265Z",
       "text": "Stage 4: കോൽക്കളി has started (173 min late)"
-    },
-    {
-      "t": "2026-11-04T15:23:08.233Z",
-      "text": "Results announced for Stage 4, വട്ടപ്പാട്ട് (HS)"
     }
   ],
   "recent_results": [
@@ -615,7 +628,7 @@
     "E229",
     "E216"
   ],
-  "updated_at": "2026-11-05T06:19:01.461Z",
+  "updated_at": "2026-11-05T06:19:05.926Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
