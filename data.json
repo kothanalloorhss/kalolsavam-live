@@ -5,27 +5,14 @@
   },
   "stages": {
     "1": {
-      "status": "ongoing",
-      "event_id": null,
+      "status": "idle",
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": null,
-      "events": [
-        {
-          "event_id": "E207",
-          "event_name": "മാർഗ്ഗംകളി",
-          "categories": [
-            "HSS"
-          ],
-          "scheduled_start": "12:10",
-          "actual_start": "2026-11-05T09:54:46.476Z",
-          "delay_minutes": 195,
-          "combined_stages": null
-        }
-      ]
+      "idle_since": "2026-11-05T11:00:57.934Z",
+      "events": []
     },
     "2": {
       "status": "idle",
@@ -154,6 +141,7 @@
     },
     "9": {
       "status": "idle",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
@@ -231,6 +219,10 @@
     }
   },
   "ticker": [
+    {
+      "t": "2026-11-05T11:00:57.933Z",
+      "text": "Results announced for Stage 1, മാർഗ്ഗംകളി (HSS)"
+    },
     {
       "t": "2026-11-05T11:00:27.286Z",
       "text": "Results announced for Stage 9, പ്രസംഗം കന്നഡ (UP)"
@@ -346,13 +338,25 @@
     {
       "t": "2026-11-05T09:45:14.347Z",
       "text": "Results announced for Stage 6, സംഘഗാനം (UP)"
-    },
-    {
-      "t": "2026-11-05T09:37:19.175Z",
-      "text": "Stage 6: സംഘഗാനം has started (97 min late)"
     }
   ],
   "recent_results": [
+    {
+      "event_id": "E207",
+      "event_name": "മാർഗ്ഗംകളി",
+      "stage_id": 1,
+      "categories": [
+        "HSS"
+      ],
+      "announced_at": "2026-11-05T11:00:57.933Z",
+      "results": {
+        "HSS": {
+          "first": "38",
+          "second": "",
+          "third": ""
+        }
+      }
+    },
     {
       "event_id": "E273",
       "event_name": "പ്രസംഗം കന്നഡ",
@@ -496,22 +500,6 @@
           "third": "36"
         }
       }
-    },
-    {
-      "event_id": "E271",
-      "event_name": "പദ്യംചൊല്ലൽ കന്നഡ",
-      "stage_id": 9,
-      "categories": [
-        "LP"
-      ],
-      "announced_at": "2026-11-05T10:05:51.826Z",
-      "results": {
-        "LP": {
-          "first": "25",
-          "second": "",
-          "third": ""
-        }
-      }
     }
   ],
   "completed_events": [
@@ -627,9 +615,10 @@
     "E272",
     "E261",
     "E219",
-    "E273"
+    "E273",
+    "E207"
   ],
-  "updated_at": "2026-11-05T11:00:27.286Z",
+  "updated_at": "2026-11-05T11:00:57.934Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
