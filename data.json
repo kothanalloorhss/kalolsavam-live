@@ -57,17 +57,6 @@
           "actual_start": "2026-11-05T12:03:00.877Z",
           "delay_minutes": 143,
           "combined_stages": null
-        },
-        {
-          "event_id": "E235",
-          "event_name": "സ്കിറ്റ് ഇംഗ്ലീഷ്",
-          "categories": [
-            "HS"
-          ],
-          "scheduled_start": "14:00",
-          "actual_start": "2026-11-05T12:06:18.019Z",
-          "delay_minutes": 216,
-          "combined_stages": null
         }
       ]
     },
@@ -243,6 +232,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-05T12:06:25.996Z",
+      "text": "Results announced for Stage 4, സ്കിറ്റ് ഇംഗ്ലീഷ് (HS)"
+    },
+    {
       "t": "2026-11-05T12:06:18.019Z",
       "text": "Stage 4: സ്കിറ്റ് ഇംഗ്ലീഷ് has started (216 min late)"
     },
@@ -357,13 +350,25 @@
     {
       "t": "2026-11-05T09:54:06.962Z",
       "text": "Results announced for Stage 1, മലപ്പുലയആട്ടം (HS)"
-    },
-    {
-      "t": "2026-11-05T09:53:10.212Z",
-      "text": "Stage 8: പദ്യംചൊല്ലൽ മലയാളം has started (113 min late)"
     }
   ],
   "recent_results": [
+    {
+      "event_id": "E235",
+      "event_name": "സ്കിറ്റ് ഇംഗ്ലീഷ്",
+      "stage_id": 4,
+      "categories": [
+        "HS"
+      ],
+      "announced_at": "2026-11-05T12:06:25.996Z",
+      "results": {
+        "HS": {
+          "first": "13",
+          "second": "",
+          "third": ""
+        }
+      }
+    },
     {
       "event_id": "E262",
       "event_name": "പദ്യംചൊല്ലൽ അറബി",
@@ -507,22 +512,6 @@
           "third": ""
         }
       }
-    },
-    {
-      "event_id": "E218",
-      "event_name": "നാടോടിനൃത്തം Girls",
-      "stage_id": 2,
-      "categories": [
-        "HS"
-      ],
-      "announced_at": "2026-11-05T10:29:27.940Z",
-      "results": {
-        "HS": {
-          "first": "47",
-          "second": "",
-          "third": ""
-        }
-      }
     }
   ],
   "completed_events": [
@@ -642,9 +631,10 @@
     "E207",
     "E227",
     "E228",
-    "E262"
+    "E262",
+    "E235"
   ],
-  "updated_at": "2026-11-05T12:06:18.019Z",
+  "updated_at": "2026-11-05T12:06:25.996Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
