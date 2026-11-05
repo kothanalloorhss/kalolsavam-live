@@ -72,17 +72,6 @@
       "idle_since": null,
       "events": [
         {
-          "event_id": "E225",
-          "event_name": "ലളിതഗാനം",
-          "categories": [
-            "LP"
-          ],
-          "scheduled_start": "09:00",
-          "actual_start": "2026-11-05T04:09:28.185Z",
-          "delay_minutes": 39,
-          "combined_stages": null
-        },
-        {
           "event_id": "E226",
           "event_name": "ലളിതഗാനം",
           "categories": [
@@ -312,6 +301,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-05T10:07:43.616Z",
+      "text": "Stage 3: ലളിതഗാനം has finished"
+    },
+    {
       "t": "2026-11-05T10:07:36.096Z",
       "text": "Stage 3: ലളിതഗാനം Boys has started"
     },
@@ -426,10 +419,6 @@
     {
       "t": "2026-11-05T08:00:05.548Z",
       "text": "Results announced for Stage 1, പളിയ നൃത്തം (HS)"
-    },
-    {
-      "t": "2026-11-05T07:59:58.566Z",
-      "text": "Stage 1: പളിയ നൃത്തം has started (130 min late)"
     }
   ],
   "recent_results": [
@@ -699,9 +688,10 @@
     "E266",
     "E204",
     "E271",
-    "E258"
+    "E258",
+    "E225"
   ],
-  "updated_at": "2026-11-05T10:07:36.096Z",
+  "updated_at": "2026-11-05T10:07:43.616Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
