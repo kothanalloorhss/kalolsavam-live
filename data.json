@@ -6,6 +6,7 @@
   "stages": {
     "1": {
       "status": "idle",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
@@ -107,27 +108,14 @@
       ]
     },
     "6": {
-      "status": "ongoing",
-      "event_id": null,
+      "status": "idle",
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": null,
-      "events": [
-        {
-          "event_id": "E251",
-          "event_name": "ഗാനാലാപനം Boys",
-          "categories": [
-            "UP"
-          ],
-          "scheduled_start": "10:55",
-          "actual_start": "2026-11-05T07:33:39.345Z",
-          "delay_minutes": 129,
-          "combined_stages": null
-        }
-      ]
+      "idle_since": "2026-11-05T07:34:09.408Z",
+      "events": []
     },
     "7": {
       "status": "ongoing",
@@ -268,6 +256,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-05T07:34:09.408Z",
+      "text": "Results announced for Stage 6, ഗാനാലാപനം Boys (UP)"
+    },
+    {
       "t": "2026-11-05T07:33:52.288Z",
       "text": "Results announced for Stage 1, ഇരുള നൃത്തം (HS)"
     },
@@ -382,13 +374,25 @@
     {
       "t": "2026-11-05T06:19:22.169Z",
       "text": "Results announced for Stage 1, മംഗലം കളി (HS)"
-    },
-    {
-      "t": "2026-11-05T06:19:05.926Z",
-      "text": "Stage 2: നാടോടിനൃത്തം has started (69 min late)"
     }
   ],
   "recent_results": [
+    {
+      "event_id": "E251",
+      "event_name": "ഗാനാലാപനം Boys",
+      "stage_id": 6,
+      "categories": [
+        "UP"
+      ],
+      "announced_at": "2026-11-05T07:34:09.407Z",
+      "results": {
+        "UP": {
+          "first": "31",
+          "second": "30",
+          "third": ""
+        }
+      }
+    },
     {
       "event_id": "E203",
       "event_name": "ഇരുള നൃത്തം",
@@ -532,22 +536,6 @@
           "third": ""
         }
       }
-    },
-    {
-      "event_id": "E246",
-      "event_name": "സിദ്ധരൂപോഛാരണം Boys",
-      "stage_id": 6,
-      "categories": [
-        "UP"
-      ],
-      "announced_at": "2026-11-05T06:19:48.964Z",
-      "results": {
-        "UP": {
-          "first": "30",
-          "second": "",
-          "third": ""
-        }
-      }
     }
   ],
   "completed_events": [
@@ -639,9 +627,10 @@
     "E270",
     "E238",
     "E250",
-    "E203"
+    "E203",
+    "E251"
   ],
-  "updated_at": "2026-11-05T07:33:52.288Z",
+  "updated_at": "2026-11-05T07:34:09.408Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
