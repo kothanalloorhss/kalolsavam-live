@@ -62,15 +62,27 @@
       ]
     },
     "4": {
-      "status": "idle",
+      "status": "ongoing",
       "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": "2026-11-05T06:09:35.008Z",
-      "events": []
+      "idle_since": null,
+      "events": [
+        {
+          "event_id": "E230",
+          "event_name": "മിമിക്രി Boys",
+          "categories": [
+            "HS"
+          ],
+          "scheduled_start": "10:10",
+          "actual_start": "2026-11-05T06:20:50.836Z",
+          "delay_minutes": 101,
+          "combined_stages": null
+        }
+      ]
     },
     "5": {
       "status": "ongoing",
@@ -257,6 +269,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-05T06:20:50.836Z",
+      "text": "Stage 4: മിമിക്രി Boys has started (101 min late)"
+    },
+    {
       "t": "2026-11-05T06:20:08.770Z",
       "text": "Stage 6: പദ്യംചൊല്ലൽ Boys has started (100 min late)"
     },
@@ -371,10 +387,6 @@
     {
       "t": "2026-11-05T04:28:03.435Z",
       "text": "Stage 8: പദ്യംചൊല്ലൽ മലയാളം has started (58 min late)"
-    },
-    {
-      "t": "2026-11-05T04:27:56.156Z",
-      "text": "Stage 5: ദേശഭക്തിഗാനം has started (58 min late)"
     }
   ],
   "recent_results": [
@@ -620,7 +632,7 @@
     "E246",
     "E247"
   ],
-  "updated_at": "2026-11-05T06:20:15.683Z",
+  "updated_at": "2026-11-05T06:20:50.836Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
