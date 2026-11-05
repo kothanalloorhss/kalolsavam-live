@@ -120,27 +120,14 @@
       ]
     },
     "6": {
-      "status": "ongoing",
-      "event_id": null,
+      "status": "idle",
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": null,
-      "events": [
-        {
-          "event_id": "E253",
-          "event_name": "ഗാനാലാപനം Girls",
-          "categories": [
-            "HS"
-          ],
-          "scheduled_start": "11:45",
-          "actual_start": "2026-11-05T07:58:09.057Z",
-          "delay_minutes": 103,
-          "combined_stages": null
-        }
-      ]
+      "idle_since": "2026-11-05T07:58:13.186Z",
+      "events": []
     },
     "7": {
       "status": "ongoing",
@@ -281,6 +268,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-05T07:58:13.186Z",
+      "text": "Stage 6: ഗാനാലാപനം Girls has finished"
+    },
+    {
       "t": "2026-11-05T07:58:09.057Z",
       "text": "Stage 6: ഗാനാലാപനം Girls has started (103 min late)"
     },
@@ -395,10 +386,6 @@
     {
       "t": "2026-11-05T06:19:53.411Z",
       "text": "Stage 6: സിദ്ധരൂപോഛാരണം Girls has started (120 min late)"
-    },
-    {
-      "t": "2026-11-05T06:19:48.964Z",
-      "text": "Results announced for Stage 6, സിദ്ധരൂപോഛാരണം Boys (UP)"
     }
   ],
   "recent_results": [
@@ -654,9 +641,10 @@
     "E250",
     "E203",
     "E251",
-    "E252"
+    "E252",
+    "E253"
   ],
-  "updated_at": "2026-11-05T07:58:09.057Z",
+  "updated_at": "2026-11-05T07:58:13.186Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
