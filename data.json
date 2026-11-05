@@ -119,27 +119,14 @@
       "events": []
     },
     "6": {
-      "status": "ongoing",
-      "event_id": null,
+      "status": "idle",
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": null,
-      "events": [
-        {
-          "event_id": "E255",
-          "event_name": "ഗദ്യപാരായണം",
-          "categories": [
-            "UP"
-          ],
-          "scheduled_start": "12:15",
-          "actual_start": "2026-11-05T08:52:26.533Z",
-          "delay_minutes": 127,
-          "combined_stages": null
-        }
-      ]
+      "idle_since": "2026-11-05T09:07:29.560Z",
+      "events": []
     },
     "7": {
       "status": "ongoing",
@@ -291,6 +278,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-05T09:07:29.560Z",
+      "text": "Results announced for Stage 6, ഗദ്യപാരായണം (UP)"
+    },
+    {
       "t": "2026-11-05T08:59:45.942Z",
       "text": "Stage 2: നാടോടിനൃത്തം Girls has started (130 min late)"
     },
@@ -405,13 +396,25 @@
     {
       "t": "2026-11-05T06:40:38.834Z",
       "text": "Results announced for Stage 6, പദ്യംചൊല്ലൽ Boys (UP)"
-    },
-    {
-      "t": "2026-11-05T06:26:34.274Z",
-      "text": "Stage 1: ഇരുള നൃത്തം has started (107 min late)"
     }
   ],
   "recent_results": [
+    {
+      "event_id": "E255",
+      "event_name": "ഗദ്യപാരായണം",
+      "stage_id": 6,
+      "categories": [
+        "UP"
+      ],
+      "announced_at": "2026-11-05T09:07:29.559Z",
+      "results": {
+        "UP": {
+          "first": "35",
+          "second": "",
+          "third": ""
+        }
+      }
+    },
     {
       "event_id": "E239",
       "event_name": "ദേശഭക്തിഗാനം",
@@ -555,22 +558,6 @@
           "third": "36"
         }
       }
-    },
-    {
-      "event_id": "E231",
-      "event_name": "മൂകാഭിനയം",
-      "stage_id": 4,
-      "categories": [
-        "HSS"
-      ],
-      "announced_at": "2026-11-05T06:43:07.590Z",
-      "results": {
-        "HSS": {
-          "first": "15",
-          "second": "",
-          "third": ""
-        }
-      }
     }
   ],
   "completed_events": [
@@ -669,9 +656,10 @@
     "E205",
     "E217",
     "E239",
-    "E254"
+    "E254",
+    "E255"
   ],
-  "updated_at": "2026-11-05T08:59:45.942Z",
+  "updated_at": "2026-11-05T09:07:29.560Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
