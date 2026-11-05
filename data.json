@@ -17,6 +17,7 @@
     },
     "2": {
       "status": "idle",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
@@ -26,15 +27,27 @@
       "events": []
     },
     "3": {
-      "status": "idle",
+      "status": "ongoing",
       "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": "2026-11-04T13:44:57.954Z",
-      "events": []
+      "idle_since": null,
+      "events": [
+        {
+          "event_id": "E225",
+          "event_name": "ലളിതഗാനം",
+          "categories": [
+            "LP"
+          ],
+          "scheduled_start": "09:00",
+          "actual_start": "2026-11-05T04:09:28.185Z",
+          "delay_minutes": 39,
+          "combined_stages": null
+        }
+      ]
     },
     "4": {
       "status": "idle",
@@ -168,6 +181,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-05T04:09:28.185Z",
+      "text": "Stage 3: ലളിതഗാനം has started (39 min late)"
+    },
+    {
       "t": "2026-11-05T03:10:38.428Z",
       "text": "Stage 2: സംഘ നൃത്തം has finished"
     },
@@ -282,10 +299,6 @@
     {
       "t": "2026-11-04T13:23:20.626Z",
       "text": "Results announced for Stage 1, വഞ്ചിപ്പാട്ട് (HSS)"
-    },
-    {
-      "t": "2026-11-04T13:13:43.457Z",
-      "text": "Stage 4: ഗസൽ ആലാപനം ഉറുദു has started (184 min late)"
     }
   ],
   "recent_results": [
@@ -519,7 +532,7 @@
     "E157",
     "E158"
   ],
-  "updated_at": "2026-11-05T03:10:38.428Z",
+  "updated_at": "2026-11-05T04:09:28.185Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
