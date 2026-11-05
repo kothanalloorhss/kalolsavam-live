@@ -28,27 +28,14 @@
       ]
     },
     "2": {
-      "status": "ongoing",
-      "event_id": null,
+      "status": "idle",
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": null,
-      "events": [
-        {
-          "event_id": "E213",
-          "event_name": "കേരളനടനം Girls",
-          "categories": [
-            "HS"
-          ],
-          "scheduled_start": "09:00",
-          "actual_start": "2026-11-05T04:26:34.068Z",
-          "delay_minutes": 57,
-          "combined_stages": null
-        }
-      ]
+      "idle_since": "2026-11-05T05:15:25.034Z",
+      "events": []
     },
     "3": {
       "status": "ongoing",
@@ -281,6 +268,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-05T05:15:25.034Z",
+      "text": "Results announced for Stage 2, കേരളനടനം Girls (HS)"
+    },
+    {
       "t": "2026-11-05T05:14:39.591Z",
       "text": "ഷെഡ്യൂൾ മാറ്റം: കേരളനടനം Boys വേദി 2-ലേക്ക് പുനഃക്രമീകരിച്ചു"
     },
@@ -395,13 +386,25 @@
     {
       "t": "2026-11-04T14:38:50.265Z",
       "text": "Stage 5: പ്രസംഗം മലയാളം  has started (179 min late)"
-    },
-    {
-      "t": "2026-11-04T14:38:47.181Z",
-      "text": "Results announced for Stage 5, പ്രസംഗം മലയാളം  (HS)"
     }
   ],
   "recent_results": [
+    {
+      "event_id": "E213",
+      "event_name": "കേരളനടനം Girls",
+      "stage_id": 2,
+      "categories": [
+        "HS"
+      ],
+      "announced_at": "2026-11-05T05:15:25.034Z",
+      "results": {
+        "HS": {
+          "first": "31",
+          "second": "",
+          "third": ""
+        }
+      }
+    },
     {
       "event_id": "E269",
       "event_name": "പദ്യംചൊല്ലൽ കന്നഡ",
@@ -545,22 +548,6 @@
           "third": ""
         }
       }
-    },
-    {
-      "event_id": "E189",
-      "event_name": "പ്രസംഗം മലയാളം ",
-      "stage_id": 5,
-      "categories": [
-        "UP"
-      ],
-      "announced_at": "2026-11-04T14:38:28.814Z",
-      "results": {
-        "UP": {
-          "first": "14",
-          "second": "",
-          "third": ""
-        }
-      }
     }
   ],
   "completed_events": [
@@ -632,9 +619,10 @@
     "E157",
     "E158",
     "E268",
-    "E269"
+    "E269",
+    "E213"
   ],
-  "updated_at": "2026-11-05T05:14:39.592Z",
+  "updated_at": "2026-11-05T05:15:25.034Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
