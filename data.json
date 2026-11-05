@@ -177,14 +177,27 @@
       ]
     },
     "9": {
-      "status": "idle",
+      "status": "ongoing",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": "2026-11-05T04:40:00.542Z",
-      "events": []
+      "idle_since": null,
+      "events": [
+        {
+          "event_id": "E269",
+          "event_name": "പദ്യംചൊല്ലൽ കന്നഡ",
+          "categories": [
+            "HSS"
+          ],
+          "scheduled_start": "09:20",
+          "actual_start": "2026-11-05T04:42:27.353Z",
+          "delay_minutes": 52,
+          "combined_stages": null
+        }
+      ]
     },
     "10": {
       "status": "idle",
@@ -255,6 +268,10 @@
     }
   },
   "ticker": [
+    {
+      "t": "2026-11-05T04:42:27.353Z",
+      "text": "Stage 9: പദ്യംചൊല്ലൽ കന്നഡ has started (52 min late)"
+    },
     {
       "t": "2026-11-05T04:40:00.542Z",
       "text": "Results announced for Stage 9, പദ്യംചൊല്ലൽ കന്നഡ (HS)"
@@ -370,10 +387,6 @@
     {
       "t": "2026-11-04T14:31:04.438Z",
       "text": "Results announced for Stage 4, ഒപ്പന (HSS)"
-    },
-    {
-      "t": "2026-11-04T14:30:47.375Z",
-      "text": "Results announced for Stage 7, പദ്യംചൊല്ലൽ ഇംഗ്ലീഷ് (LP)"
     }
   ],
   "recent_results": [
@@ -608,7 +621,7 @@
     "E158",
     "E268"
   ],
-  "updated_at": "2026-11-05T04:40:00.542Z",
+  "updated_at": "2026-11-05T04:42:27.353Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
