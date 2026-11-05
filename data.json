@@ -107,27 +107,14 @@
       "events": []
     },
     "6": {
-      "status": "ongoing",
-      "event_id": null,
+      "status": "idle",
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": null,
-      "events": [
-        {
-          "event_id": "E254",
-          "event_name": "കഥാകഥനം",
-          "categories": [
-            "UP"
-          ],
-          "scheduled_start": "11:50",
-          "actual_start": "2026-11-05T08:52:12.992Z",
-          "delay_minutes": 152,
-          "combined_stages": null
-        }
-      ]
+      "idle_since": "2026-11-05T08:52:23.508Z",
+      "events": []
     },
     "7": {
       "status": "ongoing",
@@ -279,6 +266,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-05T08:52:23.508Z",
+      "text": "Stage 6: കഥാകഥനം has finished"
+    },
+    {
       "t": "2026-11-05T08:52:12.992Z",
       "text": "Stage 6: കഥാകഥനം has started (152 min late)"
     },
@@ -393,10 +384,6 @@
     {
       "t": "2026-11-05T06:22:25.779Z",
       "text": "Stage 6: പ്രഭാഷണം has started (147 min late)"
-    },
-    {
-      "t": "2026-11-05T06:22:21.587Z",
-      "text": "Results announced for Stage 6, പ്രഭാഷണം (UP)"
     }
   ],
   "recent_results": [
@@ -656,9 +643,10 @@
     "E253",
     "E205",
     "E217",
-    "E239"
+    "E239",
+    "E254"
   ],
-  "updated_at": "2026-11-05T08:52:12.992Z",
+  "updated_at": "2026-11-05T08:52:23.508Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
