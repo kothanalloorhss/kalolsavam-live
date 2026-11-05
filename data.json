@@ -127,6 +127,17 @@
           "actual_start": "2026-11-05T06:20:08.770Z",
           "delay_minutes": 100,
           "combined_stages": null
+        },
+        {
+          "event_id": "E242",
+          "event_name": "പ്രഭാഷണം",
+          "categories": [
+            "UP"
+          ],
+          "scheduled_start": "09:00",
+          "actual_start": "2026-11-05T06:22:07.224Z",
+          "delay_minutes": 172,
+          "combined_stages": null
         }
       ]
     },
@@ -269,6 +280,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-05T06:22:07.224Z",
+      "text": "Stage 6: പ്രഭാഷണം has started (172 min late)"
+    },
+    {
       "t": "2026-11-05T06:21:01.308Z",
       "text": "Stage 4: മൂകാഭിനയം has started (91 min late)"
     },
@@ -383,10 +398,6 @@
     {
       "t": "2026-11-05T04:39:54.425Z",
       "text": "Stage 9: പദ്യംചൊല്ലൽ കന്നഡ has started (70 min late)"
-    },
-    {
-      "t": "2026-11-05T04:38:26.223Z",
-      "text": "Stage 6: പ്രഭാഷണം has started (68 min late)"
     }
   ],
   "recent_results": [
@@ -633,7 +644,7 @@
     "E247",
     "E230"
   ],
-  "updated_at": "2026-11-05T06:21:01.308Z",
+  "updated_at": "2026-11-05T06:22:07.224Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
