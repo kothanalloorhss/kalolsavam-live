@@ -83,17 +83,6 @@
           "combined_stages": null
         },
         {
-          "event_id": "E227",
-          "event_name": "ലളിതഗാനം Girls",
-          "categories": [
-            "HSS"
-          ],
-          "scheduled_start": "15:20",
-          "actual_start": "2026-11-05T10:07:32.481Z",
-          "delay_minutes": 18,
-          "combined_stages": null
-        },
-        {
           "event_id": "E228",
           "event_name": "ലളിതഗാനം Boys",
           "categories": [
@@ -691,7 +680,7 @@
     "E258",
     "E225"
   ],
-  "updated_at": "2026-11-05T10:07:43.616Z",
+  "updated_at": "2026-11-05T10:07:54.473Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
