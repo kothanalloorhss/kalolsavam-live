@@ -120,27 +120,14 @@
       ]
     },
     "6": {
-      "status": "ongoing",
-      "event_id": null,
+      "status": "idle",
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": null,
-      "events": [
-        {
-          "event_id": "E252",
-          "event_name": "ഗാനാലാപനം Girls",
-          "categories": [
-            "UP"
-          ],
-          "scheduled_start": "11:15",
-          "actual_start": "2026-11-05T07:34:12.697Z",
-          "delay_minutes": 109,
-          "combined_stages": null
-        }
-      ]
+      "idle_since": "2026-11-05T07:56:38.115Z",
+      "events": []
     },
     "7": {
       "status": "ongoing",
@@ -281,6 +268,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-05T07:56:38.115Z",
+      "text": "Results announced for Stage 6, ഗാനാലാപനം Girls (UP)"
+    },
+    {
       "t": "2026-11-05T07:49:21.463Z",
       "text": "Stage 1: മലപ്പുലയആട്ടം has started (149 min late)"
     },
@@ -395,13 +386,25 @@
     {
       "t": "2026-11-05T06:19:41.433Z",
       "text": "Stage 6: സിദ്ധരൂപോഛാരണം Boys has started (140 min late)"
-    },
-    {
-      "t": "2026-11-05T06:19:34.176Z",
-      "text": "Results announced for Stage 1, പണിയ നൃത്തം (HS)"
     }
   ],
   "recent_results": [
+    {
+      "event_id": "E252",
+      "event_name": "ഗാനാലാപനം Girls",
+      "stage_id": 6,
+      "categories": [
+        "UP"
+      ],
+      "announced_at": "2026-11-05T07:56:38.115Z",
+      "results": {
+        "UP": {
+          "first": "32",
+          "second": "34",
+          "third": "33"
+        }
+      }
+    },
     {
       "event_id": "E251",
       "event_name": "ഗാനാലാപനം Boys",
@@ -545,22 +548,6 @@
           "third": ""
         }
       }
-    },
-    {
-      "event_id": "E247",
-      "event_name": "സിദ്ധരൂപോഛാരണം Girls",
-      "stage_id": 6,
-      "categories": [
-        "UP"
-      ],
-      "announced_at": "2026-11-05T06:20:03.902Z",
-      "results": {
-        "UP": {
-          "first": "36",
-          "second": "37",
-          "third": ""
-        }
-      }
     }
   ],
   "completed_events": [
@@ -653,9 +640,10 @@
     "E238",
     "E250",
     "E203",
-    "E251"
+    "E251",
+    "E252"
   ],
-  "updated_at": "2026-11-05T07:49:21.463Z",
+  "updated_at": "2026-11-05T07:56:38.115Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
