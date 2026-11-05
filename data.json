@@ -107,14 +107,27 @@
       "events": []
     },
     "6": {
-      "status": "idle",
+      "status": "ongoing",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": "2026-11-05T08:52:23.508Z",
-      "events": []
+      "idle_since": null,
+      "events": [
+        {
+          "event_id": "E255",
+          "event_name": "ഗദ്യപാരായണം",
+          "categories": [
+            "UP"
+          ],
+          "scheduled_start": "12:15",
+          "actual_start": "2026-11-05T08:52:26.533Z",
+          "delay_minutes": 127,
+          "combined_stages": null
+        }
+      ]
     },
     "7": {
       "status": "ongoing",
@@ -266,6 +279,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-05T08:52:26.533Z",
+      "text": "Stage 6: ഗദ്യപാരായണം has started (127 min late)"
+    },
+    {
       "t": "2026-11-05T08:52:23.508Z",
       "text": "Stage 6: കഥാകഥനം has finished"
     },
@@ -380,10 +397,6 @@
     {
       "t": "2026-11-05T06:22:30.488Z",
       "text": "Stage 6: പ്രഭാഷണം has finished"
-    },
-    {
-      "t": "2026-11-05T06:22:25.779Z",
-      "text": "Stage 6: പ്രഭാഷണം has started (147 min late)"
     }
   ],
   "recent_results": [
@@ -646,7 +659,7 @@
     "E239",
     "E254"
   ],
-  "updated_at": "2026-11-05T08:52:23.508Z",
+  "updated_at": "2026-11-05T08:52:26.533Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
