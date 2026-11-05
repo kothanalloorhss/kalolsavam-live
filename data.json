@@ -95,17 +95,6 @@
       "idle_since": null,
       "events": [
         {
-          "event_id": "E238",
-          "event_name": "ദേശഭക്തിഗാനം",
-          "categories": [
-            "UP"
-          ],
-          "scheduled_start": "09:00",
-          "actual_start": "2026-11-05T04:27:56.156Z",
-          "delay_minutes": 58,
-          "combined_stages": null
-        },
-        {
           "event_id": "E239",
           "event_name": "ദേശഭക്തിഗാനം",
           "categories": [
@@ -280,6 +269,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-05T07:10:45.758Z",
+      "text": "Stage 5: ദേശഭക്തിഗാനം has finished"
+    },
+    {
       "t": "2026-11-05T07:09:29.427Z",
       "text": "Results announced for Stage 9, പദ്യംചൊല്ലൽ കന്നഡ (UP)"
     },
@@ -394,10 +387,6 @@
     {
       "t": "2026-11-05T05:35:03.431Z",
       "text": "Stage 2: കേരളനടനം Girls has finished"
-    },
-    {
-      "t": "2026-11-05T05:29:23.553Z",
-      "text": "Results announced for Stage 6, പ്രശ്‌നോത്തരി (HS)"
     }
   ],
   "recent_results": [
@@ -648,9 +637,10 @@
     "E248",
     "E231",
     "E249",
-    "E270"
+    "E270",
+    "E238"
   ],
-  "updated_at": "2026-11-05T07:09:29.427Z",
+  "updated_at": "2026-11-05T07:10:45.758Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
