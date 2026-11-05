@@ -6,6 +6,7 @@
   "stages": {
     "1": {
       "status": "idle",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
@@ -26,27 +27,14 @@
       "events": []
     },
     "3": {
-      "status": "ongoing",
-      "event_id": null,
+      "status": "idle",
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": null,
-      "events": [
-        {
-          "event_id": "E227",
-          "event_name": "ലളിതഗാനം Girls",
-          "categories": [
-            "HSS"
-          ],
-          "scheduled_start": "15:20",
-          "actual_start": "2026-11-05T10:11:03.317Z",
-          "delay_minutes": 21,
-          "combined_stages": null
-        }
-      ]
+      "idle_since": "2026-11-05T11:10:49.783Z",
+      "events": []
     },
     "4": {
       "status": "idle",
@@ -220,6 +208,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-05T11:10:49.783Z",
+      "text": "Results announced for Stage 3, ലളിതഗാനം Girls (HSS)"
+    },
+    {
       "t": "2026-11-05T11:00:57.933Z",
       "text": "Results announced for Stage 1, മാർഗ്ഗംകളി (HSS)"
     },
@@ -334,13 +326,25 @@
     {
       "t": "2026-11-05T09:45:23.485Z",
       "text": "Results announced for Stage 6, സംഘഗാനം (HS)"
-    },
-    {
-      "t": "2026-11-05T09:45:14.347Z",
-      "text": "Results announced for Stage 6, സംഘഗാനം (UP)"
     }
   ],
   "recent_results": [
+    {
+      "event_id": "E227",
+      "event_name": "ലളിതഗാനം Girls",
+      "stage_id": 3,
+      "categories": [
+        "HSS"
+      ],
+      "announced_at": "2026-11-05T11:10:49.783Z",
+      "results": {
+        "HSS": {
+          "first": "16",
+          "second": "",
+          "third": ""
+        }
+      }
+    },
     {
       "event_id": "E207",
       "event_name": "മാർഗ്ഗംകളി",
@@ -484,22 +488,6 @@
           "third": ""
         }
       }
-    },
-    {
-      "event_id": "E258",
-      "event_name": "വന്ദേമാതരം",
-      "stage_id": 6,
-      "categories": [
-        "UP"
-      ],
-      "announced_at": "2026-11-05T10:06:10.956Z",
-      "results": {
-        "UP": {
-          "first": "35",
-          "second": "37",
-          "third": "36"
-        }
-      }
     }
   ],
   "completed_events": [
@@ -616,9 +604,10 @@
     "E261",
     "E219",
     "E273",
-    "E207"
+    "E207",
+    "E227"
   ],
-  "updated_at": "2026-11-05T11:00:57.934Z",
+  "updated_at": "2026-11-05T11:10:49.783Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
