@@ -120,15 +120,27 @@
       ]
     },
     "6": {
-      "status": "idle",
+      "status": "ongoing",
       "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": "2026-11-05T07:15:11.830Z",
-      "events": []
+      "idle_since": null,
+      "events": [
+        {
+          "event_id": "E251",
+          "event_name": "ഗാനാലാപനം Boys",
+          "categories": [
+            "UP"
+          ],
+          "scheduled_start": "10:55",
+          "actual_start": "2026-11-05T07:33:39.345Z",
+          "delay_minutes": 129,
+          "combined_stages": null
+        }
+      ]
     },
     "7": {
       "status": "ongoing",
@@ -269,6 +281,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-05T07:33:39.345Z",
+      "text": "Stage 6: ഗാനാലാപനം Boys has started (129 min late)"
+    },
+    {
       "t": "2026-11-05T07:33:28.728Z",
       "text": "Stage 4: നാടകം has started (133 min late)"
     },
@@ -383,10 +399,6 @@
     {
       "t": "2026-11-05T06:19:01.461Z",
       "text": "Results announced for Stage 2, കേരളനടനം Boys (HSS)"
-    },
-    {
-      "t": "2026-11-05T06:09:35.008Z",
-      "text": "Results announced for Stage 4, കഥാപ്രസംഗം (UP)"
     }
   ],
   "recent_results": [
@@ -641,7 +653,7 @@
     "E238",
     "E250"
   ],
-  "updated_at": "2026-11-05T07:33:28.728Z",
+  "updated_at": "2026-11-05T07:33:39.345Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
