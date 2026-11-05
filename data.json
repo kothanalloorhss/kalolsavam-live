@@ -130,13 +130,27 @@
       "events": []
     },
     "8": {
-      "status": "idle",
+      "status": "ongoing",
       "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
-      "delay_minutes": 0
+      "delay_minutes": 0,
+      "idle_since": null,
+      "events": [
+        {
+          "event_id": "E266",
+          "event_name": "പദ്യംചൊല്ലൽ മലയാളം",
+          "categories": [
+            "LP"
+          ],
+          "scheduled_start": "09:00",
+          "actual_start": "2026-11-05T04:28:03.435Z",
+          "delay_minutes": 58,
+          "combined_stages": null
+        }
+      ]
     },
     "9": {
       "status": "idle",
@@ -216,6 +230,10 @@
     }
   },
   "ticker": [
+    {
+      "t": "2026-11-05T04:28:03.435Z",
+      "text": "Stage 8: പദ്യംചൊല്ലൽ മലയാളം has started (58 min late)"
+    },
     {
       "t": "2026-11-05T04:27:56.156Z",
       "text": "Stage 5: ദേശഭക്തിഗാനം has started (58 min late)"
@@ -331,10 +349,6 @@
     {
       "t": "2026-11-04T13:48:14.064Z",
       "text": "Stage 4: ഒപ്പന has started (168 min late)"
-    },
-    {
-      "t": "2026-11-04T13:45:13.555Z",
-      "text": "Results announced for Stage 4, ഗസൽ ആലാപനം ഉറുദു (HS)"
     }
   ],
   "recent_results": [
@@ -568,7 +582,7 @@
     "E157",
     "E158"
   ],
-  "updated_at": "2026-11-05T04:27:56.156Z",
+  "updated_at": "2026-11-05T04:28:03.435Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
