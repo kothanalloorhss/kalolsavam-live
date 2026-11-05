@@ -115,6 +115,17 @@
           "actual_start": "2026-11-05T04:38:26.223Z",
           "delay_minutes": 68,
           "combined_stages": null
+        },
+        {
+          "event_id": "E247",
+          "event_name": "സിദ്ധരൂപോഛാരണം Girls",
+          "categories": [
+            "UP"
+          ],
+          "scheduled_start": "09:50",
+          "actual_start": "2026-11-05T06:19:53.410Z",
+          "delay_minutes": 120,
+          "combined_stages": null
         }
       ]
     },
@@ -257,6 +268,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-05T06:19:53.411Z",
+      "text": "Stage 6: സിദ്ധരൂപോഛാരണം Girls has started (120 min late)"
+    },
+    {
       "t": "2026-11-05T06:19:48.964Z",
       "text": "Results announced for Stage 6, സിദ്ധരൂപോഛാരണം Boys (UP)"
     },
@@ -371,10 +386,6 @@
     {
       "t": "2026-11-05T04:26:24.489Z",
       "text": "Stage 1: മംഗലം കളി has started (56 min late)"
-    },
-    {
-      "t": "2026-11-05T04:09:28.185Z",
-      "text": "Stage 3: ലളിതഗാനം has started (39 min late)"
     }
   ],
   "recent_results": [
@@ -619,7 +630,7 @@
     "E202",
     "E246"
   ],
-  "updated_at": "2026-11-05T06:19:48.964Z",
+  "updated_at": "2026-11-05T06:19:53.411Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
