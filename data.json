@@ -177,27 +177,14 @@
       ]
     },
     "9": {
-      "status": "ongoing",
-      "event_id": null,
+      "status": "idle",
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": null,
-      "events": [
-        {
-          "event_id": "E268",
-          "event_name": "പദ്യംചൊല്ലൽ കന്നഡ",
-          "categories": [
-            "HS"
-          ],
-          "scheduled_start": "09:00",
-          "actual_start": "2026-11-05T04:39:54.425Z",
-          "delay_minutes": 70,
-          "combined_stages": null
-        }
-      ]
+      "idle_since": "2026-11-05T04:40:00.542Z",
+      "events": []
     },
     "10": {
       "status": "idle",
@@ -268,6 +255,10 @@
     }
   },
   "ticker": [
+    {
+      "t": "2026-11-05T04:40:00.542Z",
+      "text": "Results announced for Stage 9, പദ്യംചൊല്ലൽ കന്നഡ (HS)"
+    },
     {
       "t": "2026-11-05T04:39:54.425Z",
       "text": "Stage 9: പദ്യംചൊല്ലൽ കന്നഡ has started (70 min late)"
@@ -383,13 +374,25 @@
     {
       "t": "2026-11-04T14:30:47.375Z",
       "text": "Results announced for Stage 7, പദ്യംചൊല്ലൽ ഇംഗ്ലീഷ് (LP)"
-    },
-    {
-      "t": "2026-11-04T13:58:20.036Z",
-      "text": "Stage 4: ഒപ്പന has started (168 min late)"
     }
   ],
   "recent_results": [
+    {
+      "event_id": "E268",
+      "event_name": "പദ്യംചൊല്ലൽ കന്നഡ",
+      "stage_id": 9,
+      "categories": [
+        "HS"
+      ],
+      "announced_at": "2026-11-05T04:40:00.542Z",
+      "results": {
+        "HS": {
+          "first": "14",
+          "second": "",
+          "third": ""
+        }
+      }
+    },
     {
       "event_id": "E185",
       "event_name": "കോൽക്കളി",
@@ -533,22 +536,6 @@
           "third": ""
         }
       }
-    },
-    {
-      "event_id": "E200",
-      "event_name": "പദ്യംചൊല്ലൽ ഇംഗ്ലീഷ്",
-      "stage_id": 7,
-      "categories": [
-        "LP"
-      ],
-      "announced_at": "2026-11-04T14:30:47.375Z",
-      "results": {
-        "LP": {
-          "first": "23",
-          "second": "",
-          "third": ""
-        }
-      }
     }
   ],
   "completed_events": [
@@ -618,9 +605,10 @@
     "E184",
     "E185",
     "E157",
-    "E158"
+    "E158",
+    "E268"
   ],
-  "updated_at": "2026-11-05T04:39:54.425Z",
+  "updated_at": "2026-11-05T04:40:00.542Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
