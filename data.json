@@ -6,6 +6,7 @@
   "stages": {
     "1": {
       "status": "idle",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
@@ -113,6 +114,17 @@
           "scheduled_start": "09:00",
           "actual_start": "2026-11-05T04:38:26.223Z",
           "delay_minutes": 68,
+          "combined_stages": null
+        },
+        {
+          "event_id": "E246",
+          "event_name": "സിദ്ധരൂപോഛാരണം Boys",
+          "categories": [
+            "UP"
+          ],
+          "scheduled_start": "09:30",
+          "actual_start": "2026-11-05T06:19:41.433Z",
+          "delay_minutes": 140,
           "combined_stages": null
         }
       ]
@@ -256,6 +268,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-05T06:19:41.433Z",
+      "text": "Stage 6: സിദ്ധരൂപോഛാരണം Boys has started (140 min late)"
+    },
+    {
       "t": "2026-11-05T06:19:34.176Z",
       "text": "Results announced for Stage 1, പണിയ നൃത്തം (HS)"
     },
@@ -370,10 +386,6 @@
     {
       "t": "2026-11-05T03:10:38.428Z",
       "text": "Stage 2: സംഘ നൃത്തം has finished"
-    },
-    {
-      "t": "2026-11-04T15:50:24.840Z",
-      "text": "Stage 2: സംഘ നൃത്തം has started (290 min late)"
     }
   ],
   "recent_results": [
@@ -617,7 +629,7 @@
     "E201",
     "E202"
   ],
-  "updated_at": "2026-11-05T06:19:34.176Z",
+  "updated_at": "2026-11-05T06:19:41.433Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
