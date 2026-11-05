@@ -128,17 +128,6 @@
       "idle_since": null,
       "events": [
         {
-          "event_id": "E258",
-          "event_name": "വന്ദേമാതരം",
-          "categories": [
-            "UP"
-          ],
-          "scheduled_start": "13:40",
-          "actual_start": "2026-11-05T09:45:26.754Z",
-          "delay_minutes": 95,
-          "combined_stages": null
-        },
-        {
           "event_id": "E259",
           "event_name": "വന്ദേമാതരം",
           "categories": [
@@ -301,6 +290,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-05T10:06:10.956Z",
+      "text": "Results announced for Stage 6, വന്ദേമാതരം (UP)"
+    },
+    {
       "t": "2026-11-05T10:05:51.826Z",
       "text": "Results announced for Stage 9, പദ്യംചൊല്ലൽ കന്നഡ (LP)"
     },
@@ -415,13 +408,25 @@
     {
       "t": "2026-11-05T07:58:09.057Z",
       "text": "Stage 6: ഗാനാലാപനം Girls has started (103 min late)"
-    },
-    {
-      "t": "2026-11-05T07:56:38.115Z",
-      "text": "Results announced for Stage 6, ഗാനാലാപനം Girls (UP)"
     }
   ],
   "recent_results": [
+    {
+      "event_id": "E258",
+      "event_name": "വന്ദേമാതരം",
+      "stage_id": 6,
+      "categories": [
+        "UP"
+      ],
+      "announced_at": "2026-11-05T10:06:10.956Z",
+      "results": {
+        "UP": {
+          "first": "35",
+          "second": "37",
+          "third": "36"
+        }
+      }
+    },
     {
       "event_id": "E271",
       "event_name": "പദ്യംചൊല്ലൽ കന്നഡ",
@@ -565,22 +570,6 @@
           "third": ""
         }
       }
-    },
-    {
-      "event_id": "E217",
-      "event_name": "നാടോടിനൃത്തം",
-      "stage_id": 2,
-      "categories": [
-        "LP"
-      ],
-      "announced_at": "2026-11-05T08:13:22.908Z",
-      "results": {
-        "LP": {
-          "first": "50",
-          "second": "46",
-          "third": "45"
-        }
-      }
     }
   ],
   "completed_events": [
@@ -687,9 +676,10 @@
     "E233",
     "E266",
     "E204",
-    "E271"
+    "E271",
+    "E258"
   ],
-  "updated_at": "2026-11-05T10:05:51.826Z",
+  "updated_at": "2026-11-05T10:06:10.956Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
