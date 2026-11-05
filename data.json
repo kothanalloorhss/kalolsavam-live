@@ -139,17 +139,6 @@
           "actual_start": "2026-11-05T04:38:26.223Z",
           "delay_minutes": 68,
           "combined_stages": null
-        },
-        {
-          "event_id": "E244",
-          "event_name": "പ്രശ്‌നോത്തരി",
-          "categories": [
-            "UP"
-          ],
-          "scheduled_start": "09:00",
-          "actual_start": "2026-11-05T05:28:48.595Z",
-          "delay_minutes": 119,
-          "combined_stages": null
         }
       ]
     },
@@ -292,6 +281,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-05T05:29:00.901Z",
+      "text": "Results announced for Stage 6, പ്രശ്‌നോത്തരി (UP)"
+    },
+    {
       "t": "2026-11-05T05:28:48.595Z",
       "text": "Stage 6: പ്രശ്‌നോത്തരി has started (119 min late)"
     },
@@ -406,13 +399,25 @@
     {
       "t": "2026-11-04T15:03:14.569Z",
       "text": "Results announced for Stage 2, മോഹിനിയാട്ടം (HS)"
-    },
-    {
-      "t": "2026-11-04T15:03:05.177Z",
-      "text": "Stage 2: മോഹിനിയാട്ടം has started (313 min late)"
     }
   ],
   "recent_results": [
+    {
+      "event_id": "E244",
+      "event_name": "പ്രശ്‌നോത്തരി",
+      "stage_id": 6,
+      "categories": [
+        "UP"
+      ],
+      "announced_at": "2026-11-05T05:29:00.901Z",
+      "results": {
+        "UP": {
+          "first": "33",
+          "second": "30",
+          "third": ""
+        }
+      }
+    },
     {
       "event_id": "E213",
       "event_name": "കേരളനടനം Girls",
@@ -556,22 +561,6 @@
           "third": ""
         }
       }
-    },
-    {
-      "event_id": "E190",
-      "event_name": "പ്രസംഗം മലയാളം ",
-      "stage_id": 5,
-      "categories": [
-        "HS"
-      ],
-      "announced_at": "2026-11-04T14:38:47.181Z",
-      "results": {
-        "HS": {
-          "first": "35",
-          "second": "",
-          "third": ""
-        }
-      }
     }
   ],
   "completed_events": [
@@ -644,9 +633,10 @@
     "E158",
     "E268",
     "E269",
-    "E213"
+    "E213",
+    "E244"
   ],
-  "updated_at": "2026-11-05T05:28:48.595Z",
+  "updated_at": "2026-11-05T05:29:00.901Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
