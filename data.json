@@ -57,6 +57,17 @@
           "actual_start": "2026-11-05T12:03:00.877Z",
           "delay_minutes": 143,
           "combined_stages": null
+        },
+        {
+          "event_id": "E235",
+          "event_name": "സ്കിറ്റ് ഇംഗ്ലീഷ്",
+          "categories": [
+            "HS"
+          ],
+          "scheduled_start": "14:00",
+          "actual_start": "2026-11-05T12:06:18.019Z",
+          "delay_minutes": 216,
+          "combined_stages": null
         }
       ]
     },
@@ -232,6 +243,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-05T12:06:18.019Z",
+      "text": "Stage 4: സ്കിറ്റ് ഇംഗ്ലീഷ് has started (216 min late)"
+    },
+    {
       "t": "2026-11-05T12:03:00.877Z",
       "text": "Stage 4: സ്കിറ്റ് ഇംഗ്ലീഷ് has started (143 min late)"
     },
@@ -346,10 +361,6 @@
     {
       "t": "2026-11-05T09:53:10.212Z",
       "text": "Stage 8: പദ്യംചൊല്ലൽ മലയാളം has started (113 min late)"
-    },
-    {
-      "t": "2026-11-05T09:52:59.914Z",
-      "text": "Stage 9: പ്രസംഗം കന്നഡ has started (103 min late)"
     }
   ],
   "recent_results": [
@@ -633,7 +644,7 @@
     "E228",
     "E262"
   ],
-  "updated_at": "2026-11-05T12:03:00.877Z",
+  "updated_at": "2026-11-05T12:06:18.019Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
