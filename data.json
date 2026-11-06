@@ -28,27 +28,14 @@
       ]
     },
     "2": {
-      "status": "ongoing",
-      "event_id": null,
+      "status": "idle",
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": null,
-      "events": [
-        {
-          "event_id": "E284",
-          "event_name": "കഥകളി Girls",
-          "categories": [
-            "HS"
-          ],
-          "scheduled_start": "10:20",
-          "actual_start": "2026-11-06T06:02:35.316Z",
-          "delay_minutes": 73,
-          "combined_stages": null
-        }
-      ]
+      "idle_since": "2026-11-06T06:02:42.524Z",
+      "events": []
     },
     "3": {
       "status": "ongoing",
@@ -245,6 +232,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-06T06:02:42.524Z",
+      "text": "Results announced for Stage 2, കഥകളി Girls (HS)"
+    },
+    {
       "t": "2026-11-06T06:02:35.316Z",
       "text": "Stage 2: കഥകളി Girls has started (73 min late)"
     },
@@ -359,13 +350,25 @@
     {
       "t": "2026-11-06T01:57:19.607Z",
       "text": "Stage 5: ദേശഭക്തിഗാനം has finished"
-    },
-    {
-      "t": "2026-11-06T01:57:16.200Z",
-      "text": "Stage 5: ദേശഭക്തിഗാനം has started (1147 min late)"
     }
   ],
   "recent_results": [
+    {
+      "event_id": "E284",
+      "event_name": "കഥകളി Girls",
+      "stage_id": 2,
+      "categories": [
+        "HS"
+      ],
+      "announced_at": "2026-11-06T06:02:42.524Z",
+      "results": {
+        "HS": {
+          "first": "18",
+          "second": "",
+          "third": ""
+        }
+      }
+    },
     {
       "event_id": "E274",
       "event_name": "കഥാപ്രസംഗം",
@@ -507,22 +510,6 @@
           "first": "11",
           "second": "16",
           "third": "12"
-        }
-      }
-    },
-    {
-      "event_id": "E227",
-      "event_name": "ലളിതഗാനം Girls",
-      "stage_id": 3,
-      "categories": [
-        "HSS"
-      ],
-      "announced_at": "2026-11-05T11:10:49.783Z",
-      "results": {
-        "HSS": {
-          "first": "16",
-          "second": "",
-          "third": ""
         }
       }
     }
@@ -672,9 +659,10 @@
     "E282",
     "E283",
     "E289",
-    "E274"
+    "E274",
+    "E284"
   ],
-  "updated_at": "2026-11-06T06:02:35.316Z",
+  "updated_at": "2026-11-06T06:02:42.524Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
