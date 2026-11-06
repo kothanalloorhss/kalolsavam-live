@@ -62,14 +62,27 @@
       ]
     },
     "3": {
-      "status": "idle",
+      "status": "ongoing",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": "2026-11-06T05:04:03.262Z",
-      "events": []
+      "idle_since": null,
+      "events": [
+        {
+          "event_id": "E289",
+          "event_name": "വയലിൻ പാശ്ചാത്യം",
+          "categories": [
+            "HS"
+          ],
+          "scheduled_start": "10:10",
+          "actual_start": "2026-11-06T05:05:56.769Z",
+          "delay_minutes": 26,
+          "combined_stages": null
+        }
+      ]
     },
     "4": {
       "status": "idle",
@@ -231,6 +244,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-06T05:05:56.769Z",
+      "text": "Stage 3: വയലിൻ പാശ്ചാത്യം has started (26 min late)"
+    },
+    {
       "t": "2026-11-06T05:04:03.262Z",
       "text": "Results announced for Stage 3, വയലിൻ ഓറിയന്റൽ (HSS)"
     },
@@ -345,10 +362,6 @@
     {
       "t": "2026-11-06T01:56:46.018Z",
       "text": "Stage 2: സംഘ നൃത്തം has finished"
-    },
-    {
-      "t": "2026-11-06T01:56:42.948Z",
-      "text": "Stage 2: സംഘ നൃത്തം has started (932 min late)"
     }
   ],
   "recent_results": [
@@ -656,7 +669,7 @@
     "E287",
     "E288"
   ],
-  "updated_at": "2026-11-06T05:04:03.262Z",
+  "updated_at": "2026-11-06T05:05:56.769Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
