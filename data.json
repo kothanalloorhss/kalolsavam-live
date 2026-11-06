@@ -5,14 +5,27 @@
   },
   "stages": {
     "1": {
-      "status": "idle",
+      "status": "ongoing",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": "2026-11-06T05:48:46.515Z",
-      "events": []
+      "idle_since": null,
+      "events": [
+        {
+          "event_id": "E275",
+          "event_name": "കഥാപ്രസംഗം",
+          "categories": [
+            "HSS"
+          ],
+          "scheduled_start": "10:30",
+          "actual_start": "2026-11-06T05:48:48.916Z",
+          "delay_minutes": 49,
+          "combined_stages": null
+        }
+      ]
     },
     "2": {
       "status": "idle",
@@ -220,6 +233,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-06T05:48:48.916Z",
+      "text": "Stage 1: കഥാപ്രസംഗം has started (49 min late)"
+    },
+    {
       "t": "2026-11-06T05:48:46.515Z",
       "text": "Results announced for Stage 1, കഥാപ്രസംഗം (HS)"
     },
@@ -334,10 +351,6 @@
     {
       "t": "2026-11-06T01:57:11.636Z",
       "text": "Stage 4: സ്കിറ്റ് ഇംഗ്ലീഷ് has finished"
-    },
-    {
-      "t": "2026-11-06T01:57:08.445Z",
-      "text": "Stage 4: സ്കിറ്റ് ഇംഗ്ലീഷ് has started (917 min late)"
     }
   ],
   "recent_results": [
@@ -649,7 +662,7 @@
     "E289",
     "E274"
   ],
-  "updated_at": "2026-11-06T05:48:46.515Z",
+  "updated_at": "2026-11-06T05:48:48.916Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
