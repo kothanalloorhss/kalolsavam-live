@@ -38,27 +38,14 @@
       "events": []
     },
     "4": {
-      "status": "ongoing",
-      "event_id": null,
+      "status": "idle",
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": null,
-      "events": [
-        {
-          "event_id": "E237",
-          "event_name": "സ്കിറ്റ് ഇംഗ്ലീഷ്",
-          "categories": [
-            "HSS"
-          ],
-          "scheduled_start": "16:10",
-          "actual_start": "2026-11-06T01:57:08.445Z",
-          "delay_minutes": 917,
-          "combined_stages": null
-        }
-      ]
+      "idle_since": "2026-11-06T01:57:11.636Z",
+      "events": []
     },
     "5": {
       "status": "idle",
@@ -232,6 +219,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-06T01:57:11.636Z",
+      "text": "Stage 4: സ്കിറ്റ് ഇംഗ്ലീഷ് has finished"
+    },
+    {
       "t": "2026-11-06T01:57:08.445Z",
       "text": "Stage 4: സ്കിറ്റ് ഇംഗ്ലീഷ് has started (917 min late)"
     },
@@ -346,10 +337,6 @@
     {
       "t": "2026-11-05T11:49:02.226Z",
       "text": "Results announced for Stage 7, പദ്യംചൊല്ലൽ അറബി (LP)"
-    },
-    {
-      "t": "2026-11-05T11:48:53.491Z",
-      "text": "Stage 7: പദ്യംചൊല്ലൽ അറബി has started (169 min late)"
     }
   ],
   "recent_results": [
@@ -644,9 +631,10 @@
     "E223",
     "E224",
     "E225",
-    "E236"
+    "E236",
+    "E237"
   ],
-  "updated_at": "2026-11-06T01:57:08.445Z",
+  "updated_at": "2026-11-06T01:57:11.636Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
