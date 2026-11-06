@@ -61,6 +61,7 @@
     },
     "6": {
       "status": "idle",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
@@ -79,17 +80,6 @@
       "delay_minutes": 0,
       "idle_since": null,
       "events": [
-        {
-          "event_id": "E260",
-          "event_name": "മാപ്പിളപ്പാട്ട്",
-          "categories": [
-            "LP"
-          ],
-          "scheduled_start": "09:00",
-          "actual_start": "2026-11-05T04:38:20.091Z",
-          "delay_minutes": 68,
-          "combined_stages": null
-        },
         {
           "event_id": "E263",
           "event_name": "പദ്യംചൊല്ലൽ അറബി",
@@ -207,6 +197,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-06T01:57:35.478Z",
+      "text": "Stage 7: മാപ്പിളപ്പാട്ട് has finished"
+    },
+    {
       "t": "2026-11-06T01:57:30.459Z",
       "text": "Stage 6: വന്ദേമാതരം has finished"
     },
@@ -321,10 +315,6 @@
     {
       "t": "2026-11-06T01:55:50.821Z",
       "text": "Stage 1: ചവിട്ടുനാടകം has finished"
-    },
-    {
-      "t": "2026-11-06T01:55:47.119Z",
-      "text": "Stage 1: ചവിട്ടുനാടകം has started (1126 min late)"
     }
   ],
   "recent_results": [
@@ -623,9 +613,10 @@
     "E237",
     "E240",
     "E241",
-    "E259"
+    "E259",
+    "E260"
   ],
-  "updated_at": "2026-11-06T01:57:30.459Z",
+  "updated_at": "2026-11-06T01:57:35.478Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
