@@ -16,14 +16,27 @@
       "events": []
     },
     "2": {
-      "status": "idle",
+      "status": "ongoing",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": "2026-11-06T01:56:40.797Z",
-      "events": []
+      "idle_since": null,
+      "events": [
+        {
+          "event_id": "E223",
+          "event_name": "സംഘ നൃത്തം",
+          "categories": [
+            "LP"
+          ],
+          "scheduled_start": "15:55",
+          "actual_start": "2026-11-06T01:56:42.948Z",
+          "delay_minutes": 932,
+          "combined_stages": null
+        }
+      ]
     },
     "3": {
       "status": "idle",
@@ -231,6 +244,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-06T01:56:42.948Z",
+      "text": "Stage 2: സംഘ നൃത്തം has started (932 min late)"
+    },
+    {
       "t": "2026-11-06T01:56:40.797Z",
       "text": "Stage 2: നാടോടിനൃത്തം Girls has finished"
     },
@@ -345,10 +362,6 @@
     {
       "t": "2026-11-05T10:59:02.448Z",
       "text": "Stage 2: നാടോടിനൃത്തം Boys has started (194 min late)"
-    },
-    {
-      "t": "2026-11-05T10:39:23.610Z",
-      "text": "Results announced for Stage 7, മാപ്പിളപ്പാട്ട് (UP)"
     }
   ],
   "recent_results": [
@@ -641,7 +654,7 @@
     "E221",
     "E222"
   ],
-  "updated_at": "2026-11-06T01:56:40.797Z",
+  "updated_at": "2026-11-06T01:56:42.948Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
