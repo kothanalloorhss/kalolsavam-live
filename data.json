@@ -57,17 +57,6 @@
           "actual_start": "2026-11-06T07:45:03.778Z",
           "delay_minutes": 65,
           "combined_stages": null
-        },
-        {
-          "event_id": "E299",
-          "event_name": "വീണ",
-          "categories": [
-            "HS"
-          ],
-          "scheduled_start": "13:50",
-          "actual_start": "2026-11-06T09:10:29.202Z",
-          "delay_minutes": 50,
-          "combined_stages": null
         }
       ]
     },
@@ -219,6 +208,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-06T09:10:34.640Z",
+      "text": "Results announced for Stage 3, വീണ (HS)"
+    },
+    {
       "t": "2026-11-06T09:10:29.202Z",
       "text": "Stage 3: വീണ has started (50 min late)"
     },
@@ -333,13 +326,25 @@
     {
       "t": "2026-11-06T06:21:36.120Z",
       "text": "Results announced for Stage 7, പദ്യംചൊല്ലൽ തമിഴ് (HS)"
-    },
-    {
-      "t": "2026-11-06T06:21:14.835Z",
-      "text": "Stage 1: മോണോ ആക്ട് has started (51 min late)"
     }
   ],
   "recent_results": [
+    {
+      "event_id": "E299",
+      "event_name": "വീണ",
+      "stage_id": 3,
+      "categories": [
+        "HS"
+      ],
+      "announced_at": "2026-11-06T09:10:34.640Z",
+      "results": {
+        "HS": {
+          "first": "52",
+          "second": "",
+          "third": ""
+        }
+      }
+    },
     {
       "event_id": "E297",
       "event_name": "ക്ലാർനെറ്റ്/ ബ്യൂഗിൾ",
@@ -486,22 +491,6 @@
         "HSS": {
           "first": "53",
           "second": "52",
-          "third": ""
-        }
-      }
-    },
-    {
-      "event_id": "E286",
-      "event_name": "ഓട്ടൻ തുള്ളൽ",
-      "stage_id": 2,
-      "categories": [
-        "HSS"
-      ],
-      "announced_at": "2026-11-06T06:33:49.277Z",
-      "results": {
-        "HSS": {
-          "first": "16",
-          "second": "17",
           "third": ""
         }
       }
@@ -668,9 +657,10 @@
     "E300",
     "E305",
     "E304",
-    "E297"
+    "E297",
+    "E299"
   ],
-  "updated_at": "2026-11-06T09:10:29.202Z",
+  "updated_at": "2026-11-06T09:10:34.640Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
