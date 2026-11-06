@@ -5,14 +5,27 @@
   },
   "stages": {
     "1": {
-      "status": "idle",
+      "status": "ongoing",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": "2026-11-06T01:55:57.579Z",
-      "events": []
+      "idle_since": null,
+      "events": [
+        {
+          "event_id": "E210",
+          "event_name": "പരിചമുട്ട്",
+          "categories": [
+            "HS"
+          ],
+          "scheduled_start": "13:20",
+          "actual_start": "2026-11-06T01:56:00.663Z",
+          "delay_minutes": 1086,
+          "combined_stages": null
+        }
+      ]
     },
     "2": {
       "status": "idle",
@@ -231,6 +244,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-06T01:56:00.663Z",
+      "text": "Stage 1: പരിചമുട്ട് has started (1086 min late)"
+    },
+    {
       "t": "2026-11-06T01:55:57.579Z",
       "text": "Stage 1: ചവിട്ടുനാടകം has finished"
     },
@@ -345,10 +362,6 @@
     {
       "t": "2026-11-05T10:07:32.481Z",
       "text": "Stage 3: ലളിതഗാനം Girls has started (18 min late)"
-    },
-    {
-      "t": "2026-11-05T10:06:10.956Z",
-      "text": "Results announced for Stage 6, വന്ദേമാതരം (UP)"
     }
   ],
   "recent_results": [
@@ -635,7 +648,7 @@
     "E208",
     "E209"
   ],
-  "updated_at": "2026-11-06T01:55:57.579Z",
+  "updated_at": "2026-11-06T01:56:00.663Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
