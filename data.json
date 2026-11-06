@@ -6,6 +6,7 @@
   "stages": {
     "1": {
       "status": "idle",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
@@ -15,15 +16,27 @@
       "events": []
     },
     "2": {
-      "status": "idle",
+      "status": "ongoing",
       "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": "2026-11-05T10:59:24.535Z",
-      "events": []
+      "idle_since": null,
+      "events": [
+        {
+          "event_id": "E220",
+          "event_name": "നാടോടിനൃത്തം",
+          "categories": [
+            "UP"
+          ],
+          "scheduled_start": "13:25",
+          "actual_start": "2026-11-06T01:56:25.947Z",
+          "delay_minutes": 1081,
+          "combined_stages": null
+        }
+      ]
     },
     "3": {
       "status": "idle",
@@ -231,6 +244,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-06T01:56:25.947Z",
+      "text": "Stage 2: നാടോടിനൃത്തം has started (1081 min late)"
+    },
+    {
       "t": "2026-11-06T01:56:17.652Z",
       "text": "Stage 1: പൂരക്കളി has finished"
     },
@@ -345,10 +362,6 @@
     {
       "t": "2026-11-05T10:12:35.939Z",
       "text": "Results announced for Stage 4, നാടകം (HSS)"
-    },
-    {
-      "t": "2026-11-05T10:12:30.026Z",
-      "text": "Stage 4: നാടകം has started (132 min late)"
     }
   ],
   "recent_results": [
@@ -638,7 +651,7 @@
     "E211",
     "E212"
   ],
-  "updated_at": "2026-11-06T01:56:17.652Z",
+  "updated_at": "2026-11-06T01:56:25.947Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
