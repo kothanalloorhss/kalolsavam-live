@@ -62,27 +62,14 @@
       ]
     },
     "3": {
-      "status": "ongoing",
-      "event_id": null,
+      "status": "idle",
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": null,
-      "events": [
-        {
-          "event_id": "E288",
-          "event_name": "വയലിൻ ഓറിയന്റൽ",
-          "categories": [
-            "HSS"
-          ],
-          "scheduled_start": "09:50",
-          "actual_start": "2026-11-06T04:53:47.744Z",
-          "delay_minutes": 34,
-          "combined_stages": null
-        }
-      ]
+      "idle_since": "2026-11-06T05:04:03.262Z",
+      "events": []
     },
     "4": {
       "status": "idle",
@@ -244,6 +231,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-06T05:04:03.262Z",
+      "text": "Results announced for Stage 3, വയലിൻ ഓറിയന്റൽ (HSS)"
+    },
+    {
       "t": "2026-11-06T04:53:56.609Z",
       "text": "Stage 2: കഥകളി സംഗീതം Girls has started (34 min late)"
     },
@@ -358,13 +349,25 @@
     {
       "t": "2026-11-06T01:56:42.948Z",
       "text": "Stage 2: സംഘ നൃത്തം has started (932 min late)"
-    },
-    {
-      "t": "2026-11-06T01:56:40.797Z",
-      "text": "Stage 2: നാടോടിനൃത്തം Girls has finished"
     }
   ],
   "recent_results": [
+    {
+      "event_id": "E288",
+      "event_name": "വയലിൻ ഓറിയന്റൽ",
+      "stage_id": 3,
+      "categories": [
+        "HSS"
+      ],
+      "announced_at": "2026-11-06T05:04:03.262Z",
+      "results": {
+        "HSS": {
+          "first": "52",
+          "second": "51",
+          "third": ""
+        }
+      }
+    },
     {
       "event_id": "E287",
       "event_name": "വയലിൻ പൗരസ്ത്യം",
@@ -504,22 +507,6 @@
       "results": {
         "UP": {
           "first": "48",
-          "second": "",
-          "third": ""
-        }
-      }
-    },
-    {
-      "event_id": "E272",
-      "event_name": "പ്രസംഗം കന്നഡ",
-      "stage_id": 9,
-      "categories": [
-        "LP"
-      ],
-      "announced_at": "2026-11-05T10:39:04.186Z",
-      "results": {
-        "LP": {
-          "first": "34",
           "second": "",
           "third": ""
         }
@@ -666,9 +653,10 @@
     "E264",
     "E265",
     "E267",
-    "E287"
+    "E287",
+    "E288"
   ],
-  "updated_at": "2026-11-06T04:53:56.609Z",
+  "updated_at": "2026-11-06T05:04:03.262Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
