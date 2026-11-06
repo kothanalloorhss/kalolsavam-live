@@ -73,14 +73,27 @@
       "events": []
     },
     "5": {
-      "status": "idle",
+      "status": "ongoing",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": "2026-11-06T06:52:52.406Z",
-      "events": []
+      "idle_since": null,
+      "events": [
+        {
+          "event_id": "E303",
+          "event_name": "പദ്യംചൊല്ലൽ ഹിന്ദി",
+          "categories": [
+            "HSS"
+          ],
+          "scheduled_start": "12:00",
+          "actual_start": "2026-11-06T07:07:54.613Z",
+          "delay_minutes": 38,
+          "combined_stages": null
+        }
+      ]
     },
     "6": {
       "status": "ongoing",
@@ -220,6 +233,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-06T07:07:54.613Z",
+      "text": "Stage 5: പദ്യംചൊല്ലൽ ഹിന്ദി has started (38 min late)"
+    },
+    {
       "t": "2026-11-06T06:52:52.406Z",
       "text": "Results announced for Stage 5, പദ്യംചൊല്ലൽ ഹിന്ദി (HS)"
     },
@@ -334,10 +351,6 @@
     {
       "t": "2026-11-06T04:53:56.609Z",
       "text": "Stage 2: കഥകളി സംഗീതം Girls has started (34 min late)"
-    },
-    {
-      "t": "2026-11-06T04:53:47.744Z",
-      "text": "Stage 3: വയലിൻ ഓറിയന്റൽ has started (34 min late)"
     }
   ],
   "recent_results": [
@@ -658,7 +671,7 @@
     "E292",
     "E302"
   ],
-  "updated_at": "2026-11-06T06:52:52.406Z",
+  "updated_at": "2026-11-06T07:07:54.613Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
