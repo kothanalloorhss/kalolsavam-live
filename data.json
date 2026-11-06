@@ -69,17 +69,6 @@
           "actual_start": "2026-11-06T07:45:03.778Z",
           "delay_minutes": 65,
           "combined_stages": null
-        },
-        {
-          "event_id": "E295",
-          "event_name": "മൃദംഗം ",
-          "categories": [
-            "HSS"
-          ],
-          "scheduled_start": "12:50",
-          "actual_start": "2026-11-06T08:15:07.756Z",
-          "delay_minutes": 55,
-          "combined_stages": null
         }
       ]
     },
@@ -231,6 +220,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-06T08:15:17.827Z",
+      "text": "Results announced for Stage 3, മൃദംഗം  (HSS)"
+    },
+    {
       "t": "2026-11-06T08:15:07.756Z",
       "text": "Stage 3: മൃദംഗം  has started (55 min late)"
     },
@@ -345,13 +338,25 @@
     {
       "t": "2026-11-06T05:29:53.820Z",
       "text": "Stage 7: പദ്യംചൊല്ലൽ തമിഴ് has started (120 min late)"
-    },
-    {
-      "t": "2026-11-06T05:18:19.230Z",
-      "text": "Results announced for Stage 2, കഥകളി സംഗീതം Girls (HSS)"
     }
   ],
   "recent_results": [
+    {
+      "event_id": "E295",
+      "event_name": "മൃദംഗം ",
+      "stage_id": 3,
+      "categories": [
+        "HSS"
+      ],
+      "announced_at": "2026-11-06T08:15:17.827Z",
+      "results": {
+        "HSS": {
+          "first": "53",
+          "second": "54",
+          "third": ""
+        }
+      }
+    },
     {
       "event_id": "E303",
       "event_name": "പദ്യംചൊല്ലൽ ഹിന്ദി",
@@ -492,22 +497,6 @@
         "HS": {
           "first": "52",
           "second": "53",
-          "third": ""
-        }
-      }
-    },
-    {
-      "event_id": "E290",
-      "event_name": "വയലിൻ വെസ്റ്റേൺ",
-      "stage_id": 3,
-      "categories": [
-        "HSS"
-      ],
-      "announced_at": "2026-11-06T06:03:37.721Z",
-      "results": {
-        "HSS": {
-          "first": "53",
-          "second": "52",
           "third": ""
         }
       }
@@ -669,9 +658,10 @@
     "E292",
     "E302",
     "E307",
-    "E303"
+    "E303",
+    "E295"
   ],
-  "updated_at": "2026-11-06T08:15:07.756Z",
+  "updated_at": "2026-11-06T08:15:17.827Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
