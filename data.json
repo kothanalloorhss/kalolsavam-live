@@ -69,18 +69,6 @@
           "actual_start": "2026-11-06T07:45:03.778Z",
           "delay_minutes": 65,
           "combined_stages": null
-        },
-        {
-          "event_id": "E300",
-          "event_name": "ഓടക്കുഴൽ",
-          "categories": [
-            "HS",
-            "HSS"
-          ],
-          "scheduled_start": "14:00",
-          "actual_start": "2026-11-06T09:03:40.746Z",
-          "delay_minutes": 34,
-          "combined_stages": null
         }
       ]
     },
@@ -232,6 +220,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-06T09:03:55.659Z",
+      "text": "Results announced for Stage 3, ഓടക്കുഴൽ (HS, HSS)"
+    },
+    {
       "t": "2026-11-06T09:03:40.746Z",
       "text": "Stage 3: ഓടക്കുഴൽ has started (34 min late)"
     },
@@ -346,13 +338,31 @@
     {
       "t": "2026-11-06T05:47:27.742Z",
       "text": "Stage 3: വയലിൻ വെസ്റ്റേൺ has started (47 min late)"
-    },
-    {
-      "t": "2026-11-06T05:47:21.458Z",
-      "text": "Results announced for Stage 3, വയലിൻ പാശ്ചാത്യം (HS)"
     }
   ],
   "recent_results": [
+    {
+      "event_id": "E300",
+      "event_name": "ഓടക്കുഴൽ",
+      "stage_id": 3,
+      "categories": [
+        "HS",
+        "HSS"
+      ],
+      "announced_at": "2026-11-06T09:03:55.659Z",
+      "results": {
+        "HS": {
+          "first": "53",
+          "second": "",
+          "third": ""
+        },
+        "HSS": {
+          "first": "51",
+          "second": "",
+          "third": ""
+        }
+      }
+    },
     {
       "event_id": "E295",
       "event_name": "മൃദംഗം ",
@@ -493,22 +503,6 @@
         "UP": {
           "first": "36",
           "second": "",
-          "third": ""
-        }
-      }
-    },
-    {
-      "event_id": "E291",
-      "event_name": "ഗിറ്റാർ പാശ്ചാത്യം",
-      "stage_id": 3,
-      "categories": [
-        "HS"
-      ],
-      "announced_at": "2026-11-06T06:05:25.224Z",
-      "results": {
-        "HS": {
-          "first": "52",
-          "second": "53",
           "third": ""
         }
       }
@@ -671,9 +665,10 @@
     "E302",
     "E307",
     "E303",
-    "E295"
+    "E295",
+    "E300"
   ],
-  "updated_at": "2026-11-06T09:03:40.746Z",
+  "updated_at": "2026-11-06T09:03:55.659Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
