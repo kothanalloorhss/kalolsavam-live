@@ -130,15 +130,27 @@
       ]
     },
     "7": {
-      "status": "idle",
+      "status": "ongoing",
       "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": "2026-11-06T06:21:36.120Z",
-      "events": []
+      "idle_since": null,
+      "events": [
+        {
+          "event_id": "E309",
+          "event_name": "പദ്യംചൊല്ലൽ തമിഴ്",
+          "categories": [
+            "UP"
+          ],
+          "scheduled_start": "09:50",
+          "actual_start": "2026-11-06T06:34:49.796Z",
+          "delay_minutes": 135,
+          "combined_stages": null
+        }
+      ]
     },
     "8": {
       "status": "idle",
@@ -231,6 +243,10 @@
     }
   },
   "ticker": [
+    {
+      "t": "2026-11-06T06:34:49.796Z",
+      "text": "Stage 7: പദ്യംചൊല്ലൽ തമിഴ് has started (135 min late)"
+    },
     {
       "t": "2026-11-06T06:34:40.065Z",
       "text": "ഷെഡ്യൂൾ മാറ്റം: ഓട്ടൻ തുള്ളൽ വേദി 2-ലേക്ക് പുനഃക്രമീകരിച്ചു"
@@ -346,10 +362,6 @@
     {
       "t": "2026-11-06T04:38:05.198Z",
       "text": "Stage 2: കഥകളി സംഗീതം Girls has started (68 min late)"
-    },
-    {
-      "t": "2026-11-06T04:24:03.353Z",
-      "text": "Stage 3: വയലിൻ പൗരസ്ത്യം has started (54 min late)"
     }
   ],
   "recent_results": [
@@ -668,7 +680,7 @@
     "E308",
     "E286"
   ],
-  "updated_at": "2026-11-06T06:34:40.065Z",
+  "updated_at": "2026-11-06T06:34:49.796Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
