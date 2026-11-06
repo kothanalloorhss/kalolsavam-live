@@ -28,15 +28,27 @@
       ]
     },
     "2": {
-      "status": "idle",
+      "status": "ongoing",
       "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": "2026-11-06T01:56:52.162Z",
-      "events": []
+      "idle_since": null,
+      "events": [
+        {
+          "event_id": "E282",
+          "event_name": "കഥകളി സംഗീതം Girls",
+          "categories": [
+            "HS"
+          ],
+          "scheduled_start": "09:00",
+          "actual_start": "2026-11-06T04:38:05.197Z",
+          "delay_minutes": 68,
+          "combined_stages": null
+        }
+      ]
     },
     "3": {
       "status": "ongoing",
@@ -221,6 +233,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-06T04:38:05.198Z",
+      "text": "Stage 2: കഥകളി സംഗീതം Girls has started (68 min late)"
+    },
+    {
       "t": "2026-11-06T04:24:03.353Z",
       "text": "Stage 3: വയലിൻ പൗരസ്ത്യം has started (54 min late)"
     },
@@ -335,10 +351,6 @@
     {
       "t": "2026-11-06T01:56:32.095Z",
       "text": "Stage 2: നാടോടിനൃത്തം Boys has started (967 min late)"
-    },
-    {
-      "t": "2026-11-06T01:56:28.934Z",
-      "text": "Stage 2: നാടോടിനൃത്തം has finished"
     }
   ],
   "recent_results": [
@@ -644,7 +656,7 @@
     "E265",
     "E267"
   ],
-  "updated_at": "2026-11-06T04:24:03.353Z",
+  "updated_at": "2026-11-06T04:38:05.198Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
