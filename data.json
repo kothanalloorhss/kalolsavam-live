@@ -39,6 +39,7 @@
     },
     "4": {
       "status": "idle",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
@@ -48,15 +49,27 @@
       "events": []
     },
     "5": {
-      "status": "idle",
+      "status": "ongoing",
       "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": "2026-11-05T08:52:08.445Z",
-      "events": []
+      "idle_since": null,
+      "events": [
+        {
+          "event_id": "E240",
+          "event_name": "ദേശഭക്തിഗാനം",
+          "categories": [
+            "LP"
+          ],
+          "scheduled_start": "12:20",
+          "actual_start": "2026-11-06T01:57:16.200Z",
+          "delay_minutes": 1147,
+          "combined_stages": null
+        }
+      ]
     },
     "6": {
       "status": "ongoing",
@@ -219,6 +232,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-06T01:57:16.200Z",
+      "text": "Stage 5: ദേശഭക്തിഗാനം has started (1147 min late)"
+    },
+    {
       "t": "2026-11-06T01:57:11.636Z",
       "text": "Stage 4: സ്കിറ്റ് ഇംഗ്ലീഷ് has finished"
     },
@@ -333,10 +350,6 @@
     {
       "t": "2026-11-05T11:54:50.112Z",
       "text": "Stage 7: പദ്യംചൊല്ലൽ അറബി has started (125 min late)"
-    },
-    {
-      "t": "2026-11-05T11:49:02.226Z",
-      "text": "Results announced for Stage 7, പദ്യംചൊല്ലൽ അറബി (LP)"
     }
   ],
   "recent_results": [
@@ -634,7 +647,7 @@
     "E236",
     "E237"
   ],
-  "updated_at": "2026-11-06T01:57:11.636Z",
+  "updated_at": "2026-11-06T01:57:16.200Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
