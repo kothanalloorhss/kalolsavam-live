@@ -5,27 +5,14 @@
   },
   "stages": {
     "1": {
-      "status": "ongoing",
-      "event_id": null,
+      "status": "idle",
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": null,
-      "events": [
-        {
-          "event_id": "E276",
-          "event_name": "മോണോ ആക്ട്",
-          "categories": [
-            "LP"
-          ],
-          "scheduled_start": "11:00",
-          "actual_start": "2026-11-06T06:21:14.835Z",
-          "delay_minutes": 51,
-          "combined_stages": null
-        }
-      ]
+      "idle_since": "2026-11-06T09:06:33.538Z",
+      "events": []
     },
     "2": {
       "status": "idle",
@@ -668,7 +655,7 @@
     "E295",
     "E300"
   ],
-  "updated_at": "2026-11-06T09:03:55.659Z",
+  "updated_at": "2026-11-06T09:06:33.538Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
