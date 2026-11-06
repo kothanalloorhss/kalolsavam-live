@@ -71,14 +71,27 @@
       "events": []
     },
     "7": {
-      "status": "idle",
+      "status": "ongoing",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": "2026-11-06T01:57:45.206Z",
-      "events": []
+      "idle_since": null,
+      "events": [
+        {
+          "event_id": "E265",
+          "event_name": "പദ്യംചൊല്ലൽ അറബി",
+          "categories": [
+            "HSS"
+          ],
+          "scheduled_start": "16:30",
+          "actual_start": "2026-11-06T01:57:47.663Z",
+          "delay_minutes": 898,
+          "combined_stages": null
+        }
+      ]
     },
     "8": {
       "status": "ongoing",
@@ -183,6 +196,10 @@
     }
   },
   "ticker": [
+    {
+      "t": "2026-11-06T01:57:47.663Z",
+      "text": "Stage 7: പദ്യംചൊല്ലൽ അറബി has started (898 min late)"
+    },
     {
       "t": "2026-11-06T01:57:45.205Z",
       "text": "Stage 7: പദ്യംചൊല്ലൽ അറബി has finished"
@@ -298,10 +315,6 @@
     {
       "t": "2026-11-06T01:56:04.849Z",
       "text": "Stage 1: പരിചമുട്ട് has finished"
-    },
-    {
-      "t": "2026-11-06T01:56:00.663Z",
-      "text": "Stage 1: പരിചമുട്ട് has started (1086 min late)"
     }
   ],
   "recent_results": [
@@ -605,7 +618,7 @@
     "E263",
     "E264"
   ],
-  "updated_at": "2026-11-06T01:57:45.206Z",
+  "updated_at": "2026-11-06T01:57:47.663Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
