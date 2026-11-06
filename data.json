@@ -28,15 +28,27 @@
       ]
     },
     "2": {
-      "status": "idle",
+      "status": "ongoing",
       "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": "2026-11-06T05:18:19.230Z",
-      "events": []
+      "idle_since": null,
+      "events": [
+        {
+          "event_id": "E284",
+          "event_name": "കഥകളി Girls",
+          "categories": [
+            "HS"
+          ],
+          "scheduled_start": "10:20",
+          "actual_start": "2026-11-06T06:02:35.316Z",
+          "delay_minutes": 73,
+          "combined_stages": null
+        }
+      ]
     },
     "3": {
       "status": "ongoing",
@@ -233,6 +245,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-06T06:02:35.316Z",
+      "text": "Stage 2: കഥകളി Girls has started (73 min late)"
+    },
+    {
       "t": "2026-11-06T05:48:48.916Z",
       "text": "Stage 1: കഥാപ്രസംഗം has started (49 min late)"
     },
@@ -347,10 +363,6 @@
     {
       "t": "2026-11-06T01:57:16.200Z",
       "text": "Stage 5: ദേശഭക്തിഗാനം has started (1147 min late)"
-    },
-    {
-      "t": "2026-11-06T01:57:11.636Z",
-      "text": "Stage 4: സ്കിറ്റ് ഇംഗ്ലീഷ് has finished"
     }
   ],
   "recent_results": [
@@ -662,7 +674,7 @@
     "E289",
     "E274"
   ],
-  "updated_at": "2026-11-06T05:48:48.916Z",
+  "updated_at": "2026-11-06T06:02:35.316Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
