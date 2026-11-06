@@ -57,17 +57,6 @@
           "actual_start": "2026-11-06T07:45:03.778Z",
           "delay_minutes": 65,
           "combined_stages": null
-        },
-        {
-          "event_id": "E296",
-          "event_name": "മൃദംഗം/ ഗിഞ്ചറ/ ഘടം",
-          "categories": [
-            "HS"
-          ],
-          "scheduled_start": "13:10",
-          "actual_start": "2026-11-06T09:10:42.615Z",
-          "delay_minutes": 91,
-          "combined_stages": null
         }
       ]
     },
@@ -219,6 +208,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-06T09:10:46.712Z",
+      "text": "Results announced for Stage 3, മൃദംഗം/ ഗിഞ്ചറ/ ഘടം (HS)"
+    },
+    {
       "t": "2026-11-06T09:10:42.615Z",
       "text": "Stage 3: മൃദംഗം/ ഗിഞ്ചറ/ ഘടം has started (91 min late)"
     },
@@ -333,13 +326,25 @@
     {
       "t": "2026-11-06T06:33:36.352Z",
       "text": "Stage 2: ഓട്ടൻ തുള്ളൽ has started (84 min late)"
-    },
-    {
-      "t": "2026-11-06T06:26:44.104Z",
-      "text": "Stage 3: തബല has started (17 min late)"
     }
   ],
   "recent_results": [
+    {
+      "event_id": "E296",
+      "event_name": "മൃദംഗം/ ഗിഞ്ചറ/ ഘടം",
+      "stage_id": 3,
+      "categories": [
+        "HS"
+      ],
+      "announced_at": "2026-11-06T09:10:46.712Z",
+      "results": {
+        "HS": {
+          "first": "52",
+          "second": "",
+          "third": ""
+        }
+      }
+    },
     {
       "event_id": "E299",
       "event_name": "വീണ",
@@ -486,22 +491,6 @@
         "HS": {
           "first": "48",
           "second": "",
-          "third": ""
-        }
-      }
-    },
-    {
-      "event_id": "E292",
-      "event_name": "ഗിറ്റാർ വെസ്റ്റേൺ",
-      "stage_id": 3,
-      "categories": [
-        "HSS"
-      ],
-      "announced_at": "2026-11-06T06:52:19.089Z",
-      "results": {
-        "HSS": {
-          "first": "53",
-          "second": "52",
           "third": ""
         }
       }
@@ -669,9 +658,10 @@
     "E305",
     "E304",
     "E297",
-    "E299"
+    "E299",
+    "E296"
   ],
-  "updated_at": "2026-11-06T09:10:42.615Z",
+  "updated_at": "2026-11-06T09:10:46.712Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
