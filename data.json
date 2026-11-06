@@ -50,6 +50,7 @@
     },
     "5": {
       "status": "idle",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
@@ -59,27 +60,14 @@
       "events": []
     },
     "6": {
-      "status": "ongoing",
-      "event_id": null,
+      "status": "idle",
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": null,
-      "events": [
-        {
-          "event_id": "E259",
-          "event_name": "വന്ദേമാതരം",
-          "categories": [
-            "HS"
-          ],
-          "scheduled_start": "13:50",
-          "actual_start": "2026-11-05T09:45:31.838Z",
-          "delay_minutes": 86,
-          "combined_stages": null
-        }
-      ]
+      "idle_since": "2026-11-06T01:57:30.459Z",
+      "events": []
     },
     "7": {
       "status": "ongoing",
@@ -219,6 +207,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-06T01:57:30.459Z",
+      "text": "Stage 6: വന്ദേമാതരം has finished"
+    },
+    {
       "t": "2026-11-06T01:57:25.341Z",
       "text": "Stage 5: ദേശഭക്തിഗാനം has finished"
     },
@@ -333,10 +325,6 @@
     {
       "t": "2026-11-06T01:55:47.119Z",
       "text": "Stage 1: ചവിട്ടുനാടകം has started (1126 min late)"
-    },
-    {
-      "t": "2026-11-05T12:06:25.996Z",
-      "text": "Results announced for Stage 4, സ്കിറ്റ് ഇംഗ്ലീഷ് (HS)"
     }
   ],
   "recent_results": [
@@ -634,9 +622,10 @@
     "E236",
     "E237",
     "E240",
-    "E241"
+    "E241",
+    "E259"
   ],
-  "updated_at": "2026-11-06T01:57:25.341Z",
+  "updated_at": "2026-11-06T01:57:30.459Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
