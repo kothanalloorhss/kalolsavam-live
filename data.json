@@ -5,14 +5,27 @@
   },
   "stages": {
     "1": {
-      "status": "idle",
+      "status": "ongoing",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": "2026-11-06T01:55:50.821Z",
-      "events": []
+      "idle_since": null,
+      "events": [
+        {
+          "event_id": "E209",
+          "event_name": "ചവിട്ടുനാടകം",
+          "categories": [
+            "HSS"
+          ],
+          "scheduled_start": "13:00",
+          "actual_start": "2026-11-06T01:55:54.509Z",
+          "delay_minutes": 1106,
+          "combined_stages": null
+        }
+      ]
     },
     "2": {
       "status": "idle",
@@ -231,6 +244,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-06T01:55:54.509Z",
+      "text": "Stage 1: ചവിട്ടുനാടകം has started (1106 min late)"
+    },
+    {
       "t": "2026-11-06T01:55:50.821Z",
       "text": "Stage 1: ചവിട്ടുനാടകം has finished"
     },
@@ -345,10 +362,6 @@
     {
       "t": "2026-11-05T10:05:51.826Z",
       "text": "Results announced for Stage 9, പദ്യംചൊല്ലൽ കന്നഡ (LP)"
-    },
-    {
-      "t": "2026-11-05T09:54:55.939Z",
-      "text": "Stage 1: മാർഗ്ഗംകളി has started (225 min late)"
     }
   ],
   "recent_results": [
@@ -634,7 +647,7 @@
     "E235",
     "E208"
   ],
-  "updated_at": "2026-11-06T01:55:50.821Z",
+  "updated_at": "2026-11-06T01:55:54.509Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
