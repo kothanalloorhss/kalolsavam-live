@@ -47,6 +47,17 @@
           "actual_start": "2026-11-06T04:38:05.197Z",
           "delay_minutes": 68,
           "combined_stages": null
+        },
+        {
+          "event_id": "E283",
+          "event_name": "കഥകളി സംഗീതം Girls",
+          "categories": [
+            "HSS"
+          ],
+          "scheduled_start": "09:50",
+          "actual_start": "2026-11-06T04:53:56.609Z",
+          "delay_minutes": 34,
+          "combined_stages": null
         }
       ]
     },
@@ -233,6 +244,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-06T04:53:56.609Z",
+      "text": "Stage 2: കഥകളി സംഗീതം Girls has started (34 min late)"
+    },
+    {
       "t": "2026-11-06T04:53:47.744Z",
       "text": "Stage 3: വയലിൻ ഓറിയന്റൽ has started (34 min late)"
     },
@@ -347,10 +362,6 @@
     {
       "t": "2026-11-06T01:56:40.797Z",
       "text": "Stage 2: നാടോടിനൃത്തം Girls has finished"
-    },
-    {
-      "t": "2026-11-06T01:56:37.060Z",
-      "text": "Stage 2: നാടോടിനൃത്തം Girls has started (962 min late)"
     }
   ],
   "recent_results": [
@@ -657,7 +668,7 @@
     "E267",
     "E287"
   ],
-  "updated_at": "2026-11-06T04:53:47.744Z",
+  "updated_at": "2026-11-06T04:53:56.609Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
