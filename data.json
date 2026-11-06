@@ -60,15 +60,27 @@
       "events": []
     },
     "6": {
-      "status": "idle",
+      "status": "ongoing",
       "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": "2026-11-06T01:57:30.459Z",
-      "events": []
+      "idle_since": null,
+      "events": [
+        {
+          "event_id": "E307",
+          "event_name": "അഭിനയഗാനം ഇംഗ്ലീഷ്",
+          "categories": [
+            "Gen"
+          ],
+          "scheduled_start": "09:00",
+          "actual_start": "2026-11-06T04:07:10.706Z",
+          "delay_minutes": 37,
+          "combined_stages": null
+        }
+      ]
     },
     "7": {
       "status": "idle",
@@ -83,6 +95,7 @@
     },
     "8": {
       "status": "idle",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
@@ -171,6 +184,10 @@
     }
   },
   "ticker": [
+    {
+      "t": "2026-11-06T04:07:10.707Z",
+      "text": "Stage 6: അഭിനയഗാനം ഇംഗ്ലീഷ് has started (37 min late)"
+    },
     {
       "t": "2026-11-06T01:57:55.083Z",
       "text": "Stage 8: പദ്യംചൊല്ലൽ മലയാളം has finished"
@@ -286,10 +303,6 @@
     {
       "t": "2026-11-06T01:56:13.355Z",
       "text": "Stage 1: പൂരക്കളി has started (1026 min late)"
-    },
-    {
-      "t": "2026-11-06T01:56:11.040Z",
-      "text": "Stage 1: പരിചമുട്ട് has finished"
     }
   ],
   "recent_results": [
@@ -595,7 +608,7 @@
     "E265",
     "E267"
   ],
-  "updated_at": "2026-11-06T01:57:55.083Z",
+  "updated_at": "2026-11-06T04:07:10.707Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
