@@ -5,14 +5,27 @@
   },
   "stages": {
     "1": {
-      "status": "idle",
+      "status": "ongoing",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": "2026-11-06T01:56:11.040Z",
-      "events": []
+      "idle_since": null,
+      "events": [
+        {
+          "event_id": "E212",
+          "event_name": "പൂരക്കളി",
+          "categories": [
+            "HS"
+          ],
+          "scheduled_start": "14:20",
+          "actual_start": "2026-11-06T01:56:13.355Z",
+          "delay_minutes": 1026,
+          "combined_stages": null
+        }
+      ]
     },
     "2": {
       "status": "idle",
@@ -231,6 +244,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-06T01:56:13.355Z",
+      "text": "Stage 1: പൂരക്കളി has started (1026 min late)"
+    },
+    {
       "t": "2026-11-06T01:56:11.040Z",
       "text": "Stage 1: പരിചമുട്ട് has finished"
     },
@@ -345,10 +362,6 @@
     {
       "t": "2026-11-05T10:11:03.317Z",
       "text": "Stage 3: ലളിതഗാനം Girls has started (21 min late)"
-    },
-    {
-      "t": "2026-11-05T10:08:51.357Z",
-      "text": "Results announced for Stage 1, മാർഗ്ഗംകളി (HS)"
     }
   ],
   "recent_results": [
@@ -637,7 +650,7 @@
     "E210",
     "E211"
   ],
-  "updated_at": "2026-11-06T01:56:11.040Z",
+  "updated_at": "2026-11-06T01:56:13.355Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
