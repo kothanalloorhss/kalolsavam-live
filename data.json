@@ -84,27 +84,14 @@
       "events": []
     },
     "5": {
-      "status": "ongoing",
-      "event_id": null,
+      "status": "idle",
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": null,
-      "events": [
-        {
-          "event_id": "E303",
-          "event_name": "പദ്യംചൊല്ലൽ ഹിന്ദി",
-          "categories": [
-            "HSS"
-          ],
-          "scheduled_start": "12:00",
-          "actual_start": "2026-11-06T07:07:54.613Z",
-          "delay_minutes": 38,
-          "combined_stages": null
-        }
-      ]
+      "idle_since": "2026-11-06T07:45:15.472Z",
+      "events": []
     },
     "6": {
       "status": "idle",
@@ -232,6 +219,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-06T07:45:15.472Z",
+      "text": "Results announced for Stage 5, പദ്യംചൊല്ലൽ ഹിന്ദി (HSS)"
+    },
+    {
       "t": "2026-11-06T07:45:03.778Z",
       "text": "Stage 3: തബല has started (65 min late)"
     },
@@ -346,13 +337,25 @@
     {
       "t": "2026-11-06T05:06:17.531Z",
       "text": "Results announced for Stage 2, കഥകളി സംഗീതം Girls (HS)"
-    },
-    {
-      "t": "2026-11-06T05:05:56.769Z",
-      "text": "Stage 3: വയലിൻ പാശ്ചാത്യം has started (26 min late)"
     }
   ],
   "recent_results": [
+    {
+      "event_id": "E303",
+      "event_name": "പദ്യംചൊല്ലൽ ഹിന്ദി",
+      "stage_id": 5,
+      "categories": [
+        "HSS"
+      ],
+      "announced_at": "2026-11-06T07:45:15.472Z",
+      "results": {
+        "HSS": {
+          "first": "56",
+          "second": "",
+          "third": ""
+        }
+      }
+    },
     {
       "event_id": "E307",
       "event_name": "അഭിനയഗാനം ഇംഗ്ലീഷ്",
@@ -493,22 +496,6 @@
         "HSS": {
           "first": "53",
           "second": "52",
-          "third": ""
-        }
-      }
-    },
-    {
-      "event_id": "E284",
-      "event_name": "കഥകളി Girls",
-      "stage_id": 2,
-      "categories": [
-        "HS"
-      ],
-      "announced_at": "2026-11-06T06:02:42.524Z",
-      "results": {
-        "HS": {
-          "first": "18",
-          "second": "",
           "third": ""
         }
       }
@@ -669,9 +656,10 @@
     "E286",
     "E292",
     "E302",
-    "E307"
+    "E307",
+    "E303"
   ],
-  "updated_at": "2026-11-06T07:45:03.778Z",
+  "updated_at": "2026-11-06T07:45:15.472Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
