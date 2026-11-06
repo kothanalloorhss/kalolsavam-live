@@ -39,14 +39,27 @@
       "events": []
     },
     "3": {
-      "status": "idle",
+      "status": "ongoing",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": "2026-11-06T06:03:37.722Z",
-      "events": []
+      "idle_since": null,
+      "events": [
+        {
+          "event_id": "E291",
+          "event_name": "ഗിറ്റാർ പാശ്ചാത്യം",
+          "categories": [
+            "HS"
+          ],
+          "scheduled_start": "10:40",
+          "actual_start": "2026-11-06T06:05:06.200Z",
+          "delay_minutes": 55,
+          "combined_stages": null
+        }
+      ]
     },
     "4": {
       "status": "idle",
@@ -220,6 +233,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-06T06:05:06.200Z",
+      "text": "Stage 3: ഗിറ്റാർ പാശ്ചാത്യം has started (55 min late)"
+    },
+    {
       "t": "2026-11-06T06:03:37.721Z",
       "text": "Results announced for Stage 3, വയലിൻ വെസ്റ്റേൺ (HSS)"
     },
@@ -334,10 +351,6 @@
     {
       "t": "2026-11-06T01:57:25.341Z",
       "text": "Stage 5: ദേശഭക്തിഗാനം has finished"
-    },
-    {
-      "t": "2026-11-06T01:57:21.858Z",
-      "text": "Stage 5: ദേശഭക്തിഗാനം has started (937 min late)"
     }
   ],
   "recent_results": [
@@ -651,7 +664,7 @@
     "E284",
     "E290"
   ],
-  "updated_at": "2026-11-06T06:03:37.722Z",
+  "updated_at": "2026-11-06T06:05:06.200Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
