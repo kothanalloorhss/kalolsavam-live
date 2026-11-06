@@ -5,15 +5,27 @@
   },
   "stages": {
     "1": {
-      "status": "idle",
+      "status": "ongoing",
       "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": "2026-11-06T01:56:17.652Z",
-      "events": []
+      "idle_since": null,
+      "events": [
+        {
+          "event_id": "E274",
+          "event_name": "കഥാപ്രസംഗം",
+          "categories": [
+            "HS"
+          ],
+          "scheduled_start": "09:00",
+          "actual_start": "2026-11-06T04:07:29.098Z",
+          "delay_minutes": 37,
+          "combined_stages": null
+        }
+      ]
     },
     "2": {
       "status": "idle",
@@ -185,6 +197,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-06T04:07:29.098Z",
+      "text": "Stage 1: കഥാപ്രസംഗം has started (37 min late)"
+    },
+    {
       "t": "2026-11-06T04:07:10.707Z",
       "text": "Stage 6: അഭിനയഗാനം ഇംഗ്ലീഷ് has started (37 min late)"
     },
@@ -299,10 +315,6 @@
     {
       "t": "2026-11-06T01:56:17.652Z",
       "text": "Stage 1: പൂരക്കളി has finished"
-    },
-    {
-      "t": "2026-11-06T01:56:13.355Z",
-      "text": "Stage 1: പൂരക്കളി has started (1026 min late)"
     }
   ],
   "recent_results": [
@@ -608,7 +620,7 @@
     "E265",
     "E267"
   ],
-  "updated_at": "2026-11-06T04:07:10.707Z",
+  "updated_at": "2026-11-06T04:07:29.098Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
