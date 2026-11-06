@@ -5,27 +5,14 @@
   },
   "stages": {
     "1": {
-      "status": "ongoing",
-      "event_id": null,
+      "status": "idle",
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": null,
-      "events": [
-        {
-          "event_id": "E208",
-          "event_name": "ചവിട്ടുനാടകം",
-          "categories": [
-            "HS"
-          ],
-          "scheduled_start": "12:40",
-          "actual_start": "2026-11-06T01:55:47.118Z",
-          "delay_minutes": 1126,
-          "combined_stages": null
-        }
-      ]
+      "idle_since": "2026-11-06T01:55:50.821Z",
+      "events": []
     },
     "2": {
       "status": "idle",
@@ -244,6 +231,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-06T01:55:50.821Z",
+      "text": "Stage 1: ചവിട്ടുനാടകം has finished"
+    },
+    {
       "t": "2026-11-06T01:55:47.119Z",
       "text": "Stage 1: ചവിട്ടുനാടകം has started (1126 min late)"
     },
@@ -358,10 +349,6 @@
     {
       "t": "2026-11-05T09:54:55.939Z",
       "text": "Stage 1: മാർഗ്ഗംകളി has started (225 min late)"
-    },
-    {
-      "t": "2026-11-05T09:54:46.476Z",
-      "text": "Stage 1: മാർഗ്ഗംകളി has started (195 min late)"
     }
   ],
   "recent_results": [
@@ -644,9 +631,10 @@
     "E227",
     "E228",
     "E262",
-    "E235"
+    "E235",
+    "E208"
   ],
-  "updated_at": "2026-11-06T01:55:47.119Z",
+  "updated_at": "2026-11-06T01:55:50.821Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
