@@ -27,27 +27,14 @@
       "events": []
     },
     "3": {
-      "status": "ongoing",
-      "event_id": null,
+      "status": "idle",
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": null,
-      "events": [
-        {
-          "event_id": "E225",
-          "event_name": "ലളിതഗാനം",
-          "categories": [
-            "LP"
-          ],
-          "scheduled_start": "09:00",
-          "actual_start": "2026-11-06T01:56:56.476Z",
-          "delay_minutes": 1347,
-          "combined_stages": null
-        }
-      ]
+      "idle_since": "2026-11-06T01:56:59.686Z",
+      "events": []
     },
     "4": {
       "status": "ongoing",
@@ -244,6 +231,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-06T01:56:59.686Z",
+      "text": "Stage 3: ലളിതഗാനം has finished"
+    },
+    {
       "t": "2026-11-06T01:56:56.476Z",
       "text": "Stage 3: ലളിതഗാനം has started (1347 min late)"
     },
@@ -358,10 +349,6 @@
     {
       "t": "2026-11-05T11:42:58.041Z",
       "text": "Stage 3: ലളിതഗാനം Boys has started (73 min late)"
-    },
-    {
-      "t": "2026-11-05T11:10:49.783Z",
-      "text": "Results announced for Stage 3, ലളിതഗാനം Girls (HSS)"
     }
   ],
   "recent_results": [
@@ -654,9 +641,10 @@
     "E221",
     "E222",
     "E223",
-    "E224"
+    "E224",
+    "E225"
   ],
-  "updated_at": "2026-11-06T01:56:56.476Z",
+  "updated_at": "2026-11-06T01:56:59.686Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
