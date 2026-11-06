@@ -5,27 +5,14 @@
   },
   "stages": {
     "1": {
-      "status": "ongoing",
-      "event_id": null,
+      "status": "idle",
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": null,
-      "events": [
-        {
-          "event_id": "E274",
-          "event_name": "കഥാപ്രസംഗം",
-          "categories": [
-            "HS"
-          ],
-          "scheduled_start": "09:00",
-          "actual_start": "2026-11-06T04:07:29.098Z",
-          "delay_minutes": 37,
-          "combined_stages": null
-        }
-      ]
+      "idle_since": "2026-11-06T05:48:46.515Z",
+      "events": []
     },
     "2": {
       "status": "idle",
@@ -233,6 +220,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-06T05:48:46.515Z",
+      "text": "Results announced for Stage 1, കഥാപ്രസംഗം (HS)"
+    },
+    {
       "t": "2026-11-06T05:47:27.742Z",
       "text": "Stage 3: വയലിൻ വെസ്റ്റേൺ has started (47 min late)"
     },
@@ -347,13 +338,25 @@
     {
       "t": "2026-11-06T01:57:08.445Z",
       "text": "Stage 4: സ്കിറ്റ് ഇംഗ്ലീഷ് has started (917 min late)"
-    },
-    {
-      "t": "2026-11-06T01:57:05.363Z",
-      "text": "Stage 4: സ്കിറ്റ് ഇംഗ്ലീഷ് has finished"
     }
   ],
   "recent_results": [
+    {
+      "event_id": "E274",
+      "event_name": "കഥാപ്രസംഗം",
+      "stage_id": 1,
+      "categories": [
+        "HS"
+      ],
+      "announced_at": "2026-11-06T05:48:46.515Z",
+      "results": {
+        "HS": {
+          "first": "18",
+          "second": "",
+          "third": ""
+        }
+      }
+    },
     {
       "event_id": "E289",
       "event_name": "വയലിൻ പാശ്ചാത്യം",
@@ -493,22 +496,6 @@
       "results": {
         "HSS": {
           "first": "16",
-          "second": "",
-          "third": ""
-        }
-      }
-    },
-    {
-      "event_id": "E207",
-      "event_name": "മാർഗ്ഗംകളി",
-      "stage_id": 1,
-      "categories": [
-        "HSS"
-      ],
-      "announced_at": "2026-11-05T11:00:57.933Z",
-      "results": {
-        "HSS": {
-          "first": "38",
           "second": "",
           "third": ""
         }
@@ -659,9 +646,10 @@
     "E288",
     "E282",
     "E283",
-    "E289"
+    "E289",
+    "E274"
   ],
-  "updated_at": "2026-11-06T05:47:27.742Z",
+  "updated_at": "2026-11-06T05:48:46.515Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
