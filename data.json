@@ -39,27 +39,14 @@
       "events": []
     },
     "3": {
-      "status": "ongoing",
-      "event_id": null,
+      "status": "idle",
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": null,
-      "events": [
-        {
-          "event_id": "E289",
-          "event_name": "വയലിൻ പാശ്ചാത്യം",
-          "categories": [
-            "HS"
-          ],
-          "scheduled_start": "10:10",
-          "actual_start": "2026-11-06T05:05:56.769Z",
-          "delay_minutes": 26,
-          "combined_stages": null
-        }
-      ]
+      "idle_since": "2026-11-06T05:47:21.458Z",
+      "events": []
     },
     "4": {
       "status": "idle",
@@ -233,6 +220,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-06T05:47:21.458Z",
+      "text": "Results announced for Stage 3, വയലിൻ പാശ്ചാത്യം (HS)"
+    },
+    {
       "t": "2026-11-06T05:29:53.820Z",
       "text": "Stage 7: പദ്യംചൊല്ലൽ തമിഴ് has started (120 min late)"
     },
@@ -347,13 +338,25 @@
     {
       "t": "2026-11-06T01:56:59.686Z",
       "text": "Stage 3: ലളിതഗാനം has finished"
-    },
-    {
-      "t": "2026-11-06T01:56:56.476Z",
-      "text": "Stage 3: ലളിതഗാനം has started (1347 min late)"
     }
   ],
   "recent_results": [
+    {
+      "event_id": "E289",
+      "event_name": "വയലിൻ പാശ്ചാത്യം",
+      "stage_id": 3,
+      "categories": [
+        "HS"
+      ],
+      "announced_at": "2026-11-06T05:47:21.457Z",
+      "results": {
+        "HS": {
+          "first": "54",
+          "second": "53",
+          "third": "55"
+        }
+      }
+    },
     {
       "event_id": "E283",
       "event_name": "കഥകളി സംഗീതം Girls",
@@ -493,22 +496,6 @@
       "results": {
         "HSS": {
           "first": "38",
-          "second": "",
-          "third": ""
-        }
-      }
-    },
-    {
-      "event_id": "E273",
-      "event_name": "പ്രസംഗം കന്നഡ",
-      "stage_id": 9,
-      "categories": [
-        "UP"
-      ],
-      "announced_at": "2026-11-05T11:00:27.286Z",
-      "results": {
-        "UP": {
-          "first": "18",
           "second": "",
           "third": ""
         }
@@ -658,9 +645,10 @@
     "E287",
     "E288",
     "E282",
-    "E283"
+    "E283",
+    "E289"
   ],
-  "updated_at": "2026-11-06T05:29:53.820Z",
+  "updated_at": "2026-11-06T05:47:21.458Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
