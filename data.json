@@ -28,27 +28,14 @@
       ]
     },
     "2": {
-      "status": "ongoing",
-      "event_id": null,
+      "status": "idle",
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": null,
-      "events": [
-        {
-          "event_id": "E283",
-          "event_name": "കഥകളി സംഗീതം Girls",
-          "categories": [
-            "HSS"
-          ],
-          "scheduled_start": "09:50",
-          "actual_start": "2026-11-06T04:53:56.609Z",
-          "delay_minutes": 34,
-          "combined_stages": null
-        }
-      ]
+      "idle_since": "2026-11-06T05:18:19.230Z",
+      "events": []
     },
     "3": {
       "status": "ongoing",
@@ -233,6 +220,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-06T05:18:19.230Z",
+      "text": "Results announced for Stage 2, കഥകളി സംഗീതം Girls (HSS)"
+    },
+    {
       "t": "2026-11-06T05:06:17.531Z",
       "text": "Results announced for Stage 2, കഥകളി സംഗീതം Girls (HS)"
     },
@@ -347,13 +338,25 @@
     {
       "t": "2026-11-06T01:56:52.162Z",
       "text": "Stage 2: സംഘ നൃത്തം has finished"
-    },
-    {
-      "t": "2026-11-06T01:56:48.477Z",
-      "text": "Stage 2: സംഘ നൃത്തം has started (862 min late)"
     }
   ],
   "recent_results": [
+    {
+      "event_id": "E283",
+      "event_name": "കഥകളി സംഗീതം Girls",
+      "stage_id": 2,
+      "categories": [
+        "HSS"
+      ],
+      "announced_at": "2026-11-06T05:18:19.229Z",
+      "results": {
+        "HSS": {
+          "first": "18",
+          "second": "17",
+          "third": ""
+        }
+      }
+    },
     {
       "event_id": "E282",
       "event_name": "കഥകളി സംഗീതം Girls",
@@ -493,22 +496,6 @@
       "results": {
         "UP": {
           "first": "18",
-          "second": "",
-          "third": ""
-        }
-      }
-    },
-    {
-      "event_id": "E219",
-      "event_name": "നാടോടിനൃത്തം Boys",
-      "stage_id": 2,
-      "categories": [
-        "HS"
-      ],
-      "announced_at": "2026-11-05T10:59:24.535Z",
-      "results": {
-        "HS": {
-          "first": "35",
           "second": "",
           "third": ""
         }
@@ -657,9 +644,10 @@
     "E267",
     "E287",
     "E288",
-    "E282"
+    "E282",
+    "E283"
   ],
-  "updated_at": "2026-11-06T05:06:17.531Z",
+  "updated_at": "2026-11-06T05:18:19.230Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
