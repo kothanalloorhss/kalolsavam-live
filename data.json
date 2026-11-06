@@ -27,27 +27,14 @@
       "events": []
     },
     "3": {
-      "status": "ongoing",
-      "event_id": null,
+      "status": "idle",
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": null,
-      "events": [
-        {
-          "event_id": "E294",
-          "event_name": "തബല",
-          "categories": [
-            "HSS"
-          ],
-          "scheduled_start": "12:10",
-          "actual_start": "2026-11-06T07:45:03.778Z",
-          "delay_minutes": 65,
-          "combined_stages": null
-        }
-      ]
+      "idle_since": "2026-11-06T10:36:19.202Z",
+      "events": []
     },
     "4": {
       "status": "idle",
@@ -197,6 +184,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-06T10:36:19.202Z",
+      "text": "Stage 3: തബല has finished"
+    },
+    {
       "t": "2026-11-06T10:36:14.929Z",
       "text": "Stage 3: തബല has finished"
     },
@@ -311,10 +302,6 @@
     {
       "t": "2026-11-06T06:34:49.796Z",
       "text": "Stage 7: പദ്യംചൊല്ലൽ തമിഴ് has started (135 min late)"
-    },
-    {
-      "t": "2026-11-06T06:34:40.065Z",
-      "text": "ഷെഡ്യൂൾ മാറ്റം: ഓട്ടൻ തുള്ളൽ വേദി 2-ലേക്ക് പുനഃക്രമീകരിച്ചു"
     }
   ],
   "recent_results": [
@@ -649,9 +636,10 @@
     "E297",
     "E299",
     "E296",
-    "E293"
+    "E293",
+    "E294"
   ],
-  "updated_at": "2026-11-06T10:36:14.929Z",
+  "updated_at": "2026-11-06T10:36:19.202Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
