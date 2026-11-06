@@ -29,6 +29,7 @@
     },
     "2": {
       "status": "idle",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
@@ -118,15 +119,27 @@
       ]
     },
     "7": {
-      "status": "idle",
+      "status": "ongoing",
       "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": "2026-11-06T01:57:50.637Z",
-      "events": []
+      "idle_since": null,
+      "events": [
+        {
+          "event_id": "E308",
+          "event_name": "പദ്യംചൊല്ലൽ തമിഴ്",
+          "categories": [
+            "HS"
+          ],
+          "scheduled_start": "09:00",
+          "actual_start": "2026-11-06T05:29:53.820Z",
+          "delay_minutes": 120,
+          "combined_stages": null
+        }
+      ]
     },
     "8": {
       "status": "idle",
@@ -219,6 +232,10 @@
     }
   },
   "ticker": [
+    {
+      "t": "2026-11-06T05:29:53.820Z",
+      "text": "Stage 7: പദ്യംചൊല്ലൽ തമിഴ് has started (120 min late)"
+    },
     {
       "t": "2026-11-06T05:18:19.230Z",
       "text": "Results announced for Stage 2, കഥകളി സംഗീതം Girls (HSS)"
@@ -334,10 +351,6 @@
     {
       "t": "2026-11-06T01:56:56.476Z",
       "text": "Stage 3: ലളിതഗാനം has started (1347 min late)"
-    },
-    {
-      "t": "2026-11-06T01:56:52.162Z",
-      "text": "Stage 2: സംഘ നൃത്തം has finished"
     }
   ],
   "recent_results": [
@@ -647,7 +660,7 @@
     "E282",
     "E283"
   ],
-  "updated_at": "2026-11-06T05:18:19.230Z",
+  "updated_at": "2026-11-06T05:29:53.820Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
