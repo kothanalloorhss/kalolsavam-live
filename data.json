@@ -51,14 +51,27 @@
       ]
     },
     "3": {
-      "status": "idle",
+      "status": "ongoing",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": "2026-11-06T04:53:11.443Z",
-      "events": []
+      "idle_since": null,
+      "events": [
+        {
+          "event_id": "E288",
+          "event_name": "വയലിൻ ഓറിയന്റൽ",
+          "categories": [
+            "HSS"
+          ],
+          "scheduled_start": "09:50",
+          "actual_start": "2026-11-06T04:53:47.744Z",
+          "delay_minutes": 34,
+          "combined_stages": null
+        }
+      ]
     },
     "4": {
       "status": "idle",
@@ -220,6 +233,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-06T04:53:47.744Z",
+      "text": "Stage 3: വയലിൻ ഓറിയന്റൽ has started (34 min late)"
+    },
+    {
       "t": "2026-11-06T04:53:11.443Z",
       "text": "Results announced for Stage 3, വയലിൻ പൗരസ്ത്യം (HS)"
     },
@@ -334,10 +351,6 @@
     {
       "t": "2026-11-06T01:56:37.060Z",
       "text": "Stage 2: നാടോടിനൃത്തം Girls has started (962 min late)"
-    },
-    {
-      "t": "2026-11-06T01:56:34.947Z",
-      "text": "Stage 2: നാടോടിനൃത്തം Boys has finished"
     }
   ],
   "recent_results": [
@@ -644,7 +657,7 @@
     "E267",
     "E287"
   ],
-  "updated_at": "2026-11-06T04:53:11.443Z",
+  "updated_at": "2026-11-06T04:53:47.744Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
