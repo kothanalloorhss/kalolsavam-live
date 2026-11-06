@@ -16,27 +16,14 @@
       "events": []
     },
     "2": {
-      "status": "ongoing",
-      "event_id": null,
+      "status": "idle",
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": null,
-      "events": [
-        {
-          "event_id": "E222",
-          "event_name": "നാടോടിനൃത്തം Girls",
-          "categories": [
-            "HSS"
-          ],
-          "scheduled_start": "15:25",
-          "actual_start": "2026-11-06T01:56:37.060Z",
-          "delay_minutes": 962,
-          "combined_stages": null
-        }
-      ]
+      "idle_since": "2026-11-06T01:56:40.797Z",
+      "events": []
     },
     "3": {
       "status": "idle",
@@ -244,6 +231,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-06T01:56:40.797Z",
+      "text": "Stage 2: നാടോടിനൃത്തം Girls has finished"
+    },
+    {
       "t": "2026-11-06T01:56:37.060Z",
       "text": "Stage 2: നാടോടിനൃത്തം Girls has started (962 min late)"
     },
@@ -358,10 +349,6 @@
     {
       "t": "2026-11-05T10:39:23.610Z",
       "text": "Results announced for Stage 7, മാപ്പിളപ്പാട്ട് (UP)"
-    },
-    {
-      "t": "2026-11-05T10:39:10.710Z",
-      "text": "Stage 9: പ്രസംഗം കന്നഡ has started (104 min late)"
     }
   ],
   "recent_results": [
@@ -651,9 +638,10 @@
     "E211",
     "E212",
     "E220",
-    "E221"
+    "E221",
+    "E222"
   ],
-  "updated_at": "2026-11-06T01:56:37.060Z",
+  "updated_at": "2026-11-06T01:56:40.797Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
