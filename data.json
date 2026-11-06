@@ -28,27 +28,14 @@
       ]
     },
     "2": {
-      "status": "ongoing",
-      "event_id": null,
+      "status": "idle",
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": null,
-      "events": [
-        {
-          "event_id": "E285",
-          "event_name": "ഓട്ടൻ തുള്ളൽ",
-          "categories": [
-            "HS"
-          ],
-          "scheduled_start": "10:30",
-          "actual_start": "2026-11-06T06:14:09.723Z",
-          "delay_minutes": 74,
-          "combined_stages": null
-        }
-      ]
+      "idle_since": "2026-11-06T06:34:22.394Z",
+      "events": []
     },
     "3": {
       "status": "ongoing",
@@ -680,7 +667,7 @@
     "E308",
     "E286"
   ],
-  "updated_at": "2026-11-06T06:33:49.277Z",
+  "updated_at": "2026-11-06T06:34:22.394Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
