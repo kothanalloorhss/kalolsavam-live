@@ -72,27 +72,14 @@
       "events": []
     },
     "5": {
-      "status": "ongoing",
-      "event_id": null,
+      "status": "idle",
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": null,
-      "events": [
-        {
-          "event_id": "E304",
-          "event_name": "പ്രസംഗം  ഹിന്ദി",
-          "categories": [
-            "HSS"
-          ],
-          "scheduled_start": "12:30",
-          "actual_start": "2026-11-06T09:09:59.459Z",
-          "delay_minutes": 130,
-          "combined_stages": null
-        }
-      ]
+      "idle_since": "2026-11-06T09:10:06.804Z",
+      "events": []
     },
     "6": {
       "status": "idle",
@@ -220,6 +207,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-06T09:10:06.804Z",
+      "text": "Results announced for Stage 5, പ്രസംഗം  ഹിന്ദി (HSS)"
+    },
+    {
       "t": "2026-11-06T09:09:59.459Z",
       "text": "Stage 5: പ്രസംഗം  ഹിന്ദി has started (130 min late)"
     },
@@ -334,13 +325,25 @@
     {
       "t": "2026-11-06T06:12:46.139Z",
       "text": "Stage 5: പദ്യംചൊല്ലൽ ഹിന്ദി has started (28 min late)"
-    },
-    {
-      "t": "2026-11-06T06:09:53.555Z",
-      "text": "Results announced for Stage 5, പദ്യംചൊല്ലൽ ഹിന്ദി (UP)"
     }
   ],
   "recent_results": [
+    {
+      "event_id": "E304",
+      "event_name": "പ്രസംഗം  ഹിന്ദി",
+      "stage_id": 5,
+      "categories": [
+        "HSS"
+      ],
+      "announced_at": "2026-11-06T09:10:06.804Z",
+      "results": {
+        "HSS": {
+          "first": "53",
+          "second": "",
+          "third": ""
+        }
+      }
+    },
     {
       "event_id": "E305",
       "event_name": "പ്രസംഗം  ഹിന്ദി",
@@ -487,22 +490,6 @@
         "HS": {
           "first": "11",
           "second": "12",
-          "third": ""
-        }
-      }
-    },
-    {
-      "event_id": "E275",
-      "event_name": "കഥാപ്രസംഗം",
-      "stage_id": 1,
-      "categories": [
-        "HSS"
-      ],
-      "announced_at": "2026-11-06T06:21:11.129Z",
-      "results": {
-        "HSS": {
-          "first": "20",
-          "second": "",
           "third": ""
         }
       }
@@ -667,9 +654,10 @@
     "E303",
     "E295",
     "E300",
-    "E305"
+    "E305",
+    "E304"
   ],
-  "updated_at": "2026-11-06T09:09:59.459Z",
+  "updated_at": "2026-11-06T09:10:06.804Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
