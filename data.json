@@ -96,27 +96,14 @@
       ]
     },
     "6": {
-      "status": "ongoing",
-      "event_id": null,
+      "status": "idle",
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": null,
-      "events": [
-        {
-          "event_id": "E307",
-          "event_name": "അഭിനയഗാനം ഇംഗ്ലീഷ്",
-          "categories": [
-            "Gen"
-          ],
-          "scheduled_start": "09:00",
-          "actual_start": "2026-11-06T04:07:10.706Z",
-          "delay_minutes": 37,
-          "combined_stages": null
-        }
-      ]
+      "idle_since": "2026-11-06T07:32:48.927Z",
+      "events": []
     },
     "7": {
       "status": "ongoing",
@@ -233,6 +220,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-06T07:32:48.927Z",
+      "text": "Results announced for Stage 6, അഭിനയഗാനം ഇംഗ്ലീഷ് (Gen)"
+    },
+    {
       "t": "2026-11-06T07:07:54.613Z",
       "text": "Stage 5: പദ്യംചൊല്ലൽ ഹിന്ദി has started (38 min late)"
     },
@@ -347,13 +338,25 @@
     {
       "t": "2026-11-06T05:04:03.262Z",
       "text": "Results announced for Stage 3, വയലിൻ ഓറിയന്റൽ (HSS)"
-    },
-    {
-      "t": "2026-11-06T04:53:56.609Z",
-      "text": "Stage 2: കഥകളി സംഗീതം Girls has started (34 min late)"
     }
   ],
   "recent_results": [
+    {
+      "event_id": "E307",
+      "event_name": "അഭിനയഗാനം ഇംഗ്ലീഷ്",
+      "stage_id": 6,
+      "categories": [
+        "Gen"
+      ],
+      "announced_at": "2026-11-06T07:32:48.927Z",
+      "results": {
+        "Gen": {
+          "first": "43",
+          "second": "",
+          "third": ""
+        }
+      }
+    },
     {
       "event_id": "E302",
       "event_name": "പദ്യംചൊല്ലൽ ഹിന്ദി",
@@ -490,22 +493,6 @@
         "HS"
       ],
       "announced_at": "2026-11-06T06:02:42.524Z",
-      "results": {
-        "HS": {
-          "first": "18",
-          "second": "",
-          "third": ""
-        }
-      }
-    },
-    {
-      "event_id": "E274",
-      "event_name": "കഥാപ്രസംഗം",
-      "stage_id": 1,
-      "categories": [
-        "HS"
-      ],
-      "announced_at": "2026-11-06T05:48:46.515Z",
       "results": {
         "HS": {
           "first": "18",
@@ -669,9 +656,10 @@
     "E308",
     "E286",
     "E292",
-    "E302"
+    "E302",
+    "E307"
   ],
-  "updated_at": "2026-11-06T07:07:54.613Z",
+  "updated_at": "2026-11-06T07:32:48.927Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
