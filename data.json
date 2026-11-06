@@ -29,6 +29,7 @@
     },
     "2": {
       "status": "idle",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
@@ -38,27 +39,14 @@
       "events": []
     },
     "3": {
-      "status": "ongoing",
-      "event_id": null,
+      "status": "idle",
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": null,
-      "events": [
-        {
-          "event_id": "E290",
-          "event_name": "വയലിൻ വെസ്റ്റേൺ",
-          "categories": [
-            "HSS"
-          ],
-          "scheduled_start": "10:30",
-          "actual_start": "2026-11-06T05:47:27.742Z",
-          "delay_minutes": 47,
-          "combined_stages": null
-        }
-      ]
+      "idle_since": "2026-11-06T06:03:37.722Z",
+      "events": []
     },
     "4": {
       "status": "idle",
@@ -232,6 +220,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-06T06:03:37.721Z",
+      "text": "Results announced for Stage 3, വയലിൻ വെസ്റ്റേൺ (HSS)"
+    },
+    {
       "t": "2026-11-06T06:02:42.524Z",
       "text": "Results announced for Stage 2, കഥകളി Girls (HS)"
     },
@@ -346,13 +338,25 @@
     {
       "t": "2026-11-06T01:57:21.858Z",
       "text": "Stage 5: ദേശഭക്തിഗാനം has started (937 min late)"
-    },
-    {
-      "t": "2026-11-06T01:57:19.607Z",
-      "text": "Stage 5: ദേശഭക്തിഗാനം has finished"
     }
   ],
   "recent_results": [
+    {
+      "event_id": "E290",
+      "event_name": "വയലിൻ വെസ്റ്റേൺ",
+      "stage_id": 3,
+      "categories": [
+        "HSS"
+      ],
+      "announced_at": "2026-11-06T06:03:37.721Z",
+      "results": {
+        "HSS": {
+          "first": "53",
+          "second": "52",
+          "third": ""
+        }
+      }
+    },
     {
       "event_id": "E284",
       "event_name": "കഥകളി Girls",
@@ -494,22 +498,6 @@
           "first": "31",
           "second": "",
           "third": ""
-        }
-      }
-    },
-    {
-      "event_id": "E228",
-      "event_name": "ലളിതഗാനം Boys",
-      "stage_id": 3,
-      "categories": [
-        "HSS"
-      ],
-      "announced_at": "2026-11-05T11:43:11.827Z",
-      "results": {
-        "HSS": {
-          "first": "11",
-          "second": "16",
-          "third": "12"
         }
       }
     }
@@ -660,9 +648,10 @@
     "E283",
     "E289",
     "E274",
-    "E284"
+    "E284",
+    "E290"
   ],
-  "updated_at": "2026-11-06T06:02:42.524Z",
+  "updated_at": "2026-11-06T06:03:37.722Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
