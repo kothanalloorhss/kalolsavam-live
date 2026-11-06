@@ -16,14 +16,27 @@
       "events": []
     },
     "2": {
-      "status": "idle",
+      "status": "ongoing",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": "2026-11-06T01:56:28.934Z",
-      "events": []
+      "idle_since": null,
+      "events": [
+        {
+          "event_id": "E221",
+          "event_name": "നാടോടിനൃത്തം Boys",
+          "categories": [
+            "HSS"
+          ],
+          "scheduled_start": "15:20",
+          "actual_start": "2026-11-06T01:56:32.095Z",
+          "delay_minutes": 967,
+          "combined_stages": null
+        }
+      ]
     },
     "3": {
       "status": "idle",
@@ -231,6 +244,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-06T01:56:32.095Z",
+      "text": "Stage 2: നാടോടിനൃത്തം Boys has started (967 min late)"
+    },
+    {
       "t": "2026-11-06T01:56:28.934Z",
       "text": "Stage 2: നാടോടിനൃത്തം has finished"
     },
@@ -345,10 +362,6 @@
     {
       "t": "2026-11-05T10:29:53.209Z",
       "text": "Results announced for Stage 3, ലളിതഗാനം (UP)"
-    },
-    {
-      "t": "2026-11-05T10:29:27.940Z",
-      "text": "Results announced for Stage 2, നാടോടിനൃത്തം Girls (HS)"
     }
   ],
   "recent_results": [
@@ -639,7 +652,7 @@
     "E212",
     "E220"
   ],
-  "updated_at": "2026-11-06T01:56:28.934Z",
+  "updated_at": "2026-11-06T01:56:32.095Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
