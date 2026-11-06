@@ -16,27 +16,14 @@
       "events": []
     },
     "2": {
-      "status": "ongoing",
-      "event_id": null,
+      "status": "idle",
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": null,
-      "events": [
-        {
-          "event_id": "E223",
-          "event_name": "സംഘ നൃത്തം",
-          "categories": [
-            "LP"
-          ],
-          "scheduled_start": "15:55",
-          "actual_start": "2026-11-06T01:56:42.948Z",
-          "delay_minutes": 932,
-          "combined_stages": null
-        }
-      ]
+      "idle_since": "2026-11-06T01:56:46.018Z",
+      "events": []
     },
     "3": {
       "status": "idle",
@@ -244,6 +231,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-06T01:56:46.018Z",
+      "text": "Stage 2: സംഘ നൃത്തം has finished"
+    },
+    {
       "t": "2026-11-06T01:56:42.948Z",
       "text": "Stage 2: സംഘ നൃത്തം has started (932 min late)"
     },
@@ -358,10 +349,6 @@
     {
       "t": "2026-11-05T10:59:24.535Z",
       "text": "Results announced for Stage 2, നാടോടിനൃത്തം Boys (HS)"
-    },
-    {
-      "t": "2026-11-05T10:59:02.448Z",
-      "text": "Stage 2: നാടോടിനൃത്തം Boys has started (194 min late)"
     }
   ],
   "recent_results": [
@@ -652,9 +639,10 @@
     "E212",
     "E220",
     "E221",
-    "E222"
+    "E222",
+    "E223"
   ],
-  "updated_at": "2026-11-06T01:56:42.948Z",
+  "updated_at": "2026-11-06T01:56:46.018Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
