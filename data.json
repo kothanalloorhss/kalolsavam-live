@@ -28,6 +28,7 @@
     },
     "3": {
       "status": "idle",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
@@ -70,27 +71,14 @@
       "events": []
     },
     "7": {
-      "status": "ongoing",
-      "event_id": null,
+      "status": "idle",
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": null,
-      "events": [
-        {
-          "event_id": "E309",
-          "event_name": "പദ്യംചൊല്ലൽ തമിഴ്",
-          "categories": [
-            "UP"
-          ],
-          "scheduled_start": "09:50",
-          "actual_start": "2026-11-06T06:34:49.796Z",
-          "delay_minutes": 135,
-          "combined_stages": null
-        }
-      ]
+      "idle_since": "2026-11-06T10:36:49.883Z",
+      "events": []
     },
     "8": {
       "status": "idle",
@@ -183,6 +171,10 @@
     }
   },
   "ticker": [
+    {
+      "t": "2026-11-06T10:36:49.883Z",
+      "text": "Results announced for Stage 7, പദ്യംചൊല്ലൽ തമിഴ് (UP)"
+    },
     {
       "t": "2026-11-06T10:36:19.202Z",
       "text": "Stage 3: തബല has finished"
@@ -298,13 +290,25 @@
     {
       "t": "2026-11-06T06:52:19.091Z",
       "text": "Results announced for Stage 3, ഗിറ്റാർ വെസ്റ്റേൺ (HSS)"
-    },
-    {
-      "t": "2026-11-06T06:34:49.796Z",
-      "text": "Stage 7: പദ്യംചൊല്ലൽ തമിഴ് has started (135 min late)"
     }
   ],
   "recent_results": [
+    {
+      "event_id": "E309",
+      "event_name": "പദ്യംചൊല്ലൽ തമിഴ്",
+      "stage_id": 7,
+      "categories": [
+        "UP"
+      ],
+      "announced_at": "2026-11-06T10:36:49.883Z",
+      "results": {
+        "UP": {
+          "first": "12",
+          "second": "15",
+          "third": ""
+        }
+      }
+    },
     {
       "event_id": "E296",
       "event_name": "മൃദംഗം/ ഗിഞ്ചറ/ ഘടം",
@@ -450,22 +454,6 @@
       "results": {
         "Gen": {
           "first": "43",
-          "second": "",
-          "third": ""
-        }
-      }
-    },
-    {
-      "event_id": "E302",
-      "event_name": "പദ്യംചൊല്ലൽ ഹിന്ദി",
-      "stage_id": 5,
-      "categories": [
-        "HS"
-      ],
-      "announced_at": "2026-11-06T06:52:52.406Z",
-      "results": {
-        "HS": {
-          "first": "48",
           "second": "",
           "third": ""
         }
@@ -637,9 +625,10 @@
     "E299",
     "E296",
     "E293",
-    "E294"
+    "E294",
+    "E309"
   ],
-  "updated_at": "2026-11-06T10:36:19.202Z",
+  "updated_at": "2026-11-06T10:36:49.883Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
