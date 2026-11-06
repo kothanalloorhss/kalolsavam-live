@@ -5,27 +5,14 @@
   },
   "stages": {
     "1": {
-      "status": "ongoing",
-      "event_id": null,
+      "status": "idle",
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": null,
-      "events": [
-        {
-          "event_id": "E211",
-          "event_name": "പരിചമുട്ട്",
-          "categories": [
-            "HSS"
-          ],
-          "scheduled_start": "13:50",
-          "actual_start": "2026-11-06T01:56:07.372Z",
-          "delay_minutes": 1056,
-          "combined_stages": null
-        }
-      ]
+      "idle_since": "2026-11-06T01:56:11.040Z",
+      "events": []
     },
     "2": {
       "status": "idle",
@@ -244,6 +231,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-06T01:56:11.040Z",
+      "text": "Stage 1: പരിചമുട്ട് has finished"
+    },
+    {
       "t": "2026-11-06T01:56:07.372Z",
       "text": "Stage 1: പരിചമുട്ട് has started (1056 min late)"
     },
@@ -358,10 +349,6 @@
     {
       "t": "2026-11-05T10:08:51.357Z",
       "text": "Results announced for Stage 1, മാർഗ്ഗംകളി (HS)"
-    },
-    {
-      "t": "2026-11-05T10:07:43.616Z",
-      "text": "Stage 3: ലളിതഗാനം has finished"
     }
   ],
   "recent_results": [
@@ -647,9 +634,10 @@
     "E235",
     "E208",
     "E209",
-    "E210"
+    "E210",
+    "E211"
   ],
-  "updated_at": "2026-11-06T01:56:07.372Z",
+  "updated_at": "2026-11-06T01:56:11.040Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
