@@ -57,6 +57,17 @@
           "actual_start": "2026-11-06T07:45:03.778Z",
           "delay_minutes": 65,
           "combined_stages": null
+        },
+        {
+          "event_id": "E296",
+          "event_name": "മൃദംഗം/ ഗിഞ്ചറ/ ഘടം",
+          "categories": [
+            "HS"
+          ],
+          "scheduled_start": "13:10",
+          "actual_start": "2026-11-06T09:10:42.615Z",
+          "delay_minutes": 91,
+          "combined_stages": null
         }
       ]
     },
@@ -208,6 +219,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-06T09:10:42.615Z",
+      "text": "Stage 3: മൃദംഗം/ ഗിഞ്ചറ/ ഘടം has started (91 min late)"
+    },
+    {
       "t": "2026-11-06T09:10:34.640Z",
       "text": "Results announced for Stage 3, വീണ (HS)"
     },
@@ -322,10 +337,6 @@
     {
       "t": "2026-11-06T06:26:44.104Z",
       "text": "Stage 3: തബല has started (17 min late)"
-    },
-    {
-      "t": "2026-11-06T06:21:36.120Z",
-      "text": "Results announced for Stage 7, പദ്യംചൊല്ലൽ തമിഴ് (HS)"
     }
   ],
   "recent_results": [
@@ -660,7 +671,7 @@
     "E297",
     "E299"
   ],
-  "updated_at": "2026-11-06T09:10:34.640Z",
+  "updated_at": "2026-11-06T09:10:42.615Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
