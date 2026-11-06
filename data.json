@@ -29,6 +29,7 @@
     },
     "2": {
       "status": "idle",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
@@ -231,6 +232,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-06T06:34:40.065Z",
+      "text": "ഷെഡ്യൂൾ മാറ്റം: ഓട്ടൻ തുള്ളൽ വേദി 2-ലേക്ക് പുനഃക്രമീകരിച്ചു"
+    },
+    {
       "t": "2026-11-06T06:33:49.277Z",
       "text": "Results announced for Stage 2, ഓട്ടൻ തുള്ളൽ (HSS)"
     },
@@ -345,10 +350,6 @@
     {
       "t": "2026-11-06T04:24:03.353Z",
       "text": "Stage 3: വയലിൻ പൗരസ്ത്യം has started (54 min late)"
-    },
-    {
-      "t": "2026-11-06T04:09:24.323Z",
-      "text": "Stage 5: പദ്യംചൊല്ലൽ ഹിന്ദി has started (39 min late)"
     }
   ],
   "recent_results": [
@@ -667,7 +668,7 @@
     "E308",
     "E286"
   ],
-  "updated_at": "2026-11-06T06:34:22.394Z",
+  "updated_at": "2026-11-06T06:34:40.065Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
@@ -680,6 +681,12 @@
       "stage_id": "2",
       "status": "cancelled",
       "updated_at": "2026-11-05T05:14:39.591Z"
+    },
+    "E285": {
+      "start_time": "10:30:00",
+      "stage_id": "2",
+      "status": "cancelled",
+      "updated_at": "2026-11-06T06:34:40.065Z"
     }
   }
 }
