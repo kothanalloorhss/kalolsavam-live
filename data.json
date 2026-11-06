@@ -61,15 +61,27 @@
       "events": []
     },
     "5": {
-      "status": "idle",
+      "status": "ongoing",
       "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": "2026-11-06T01:57:25.341Z",
-      "events": []
+      "idle_since": null,
+      "events": [
+        {
+          "event_id": "E301",
+          "event_name": "പദ്യംചൊല്ലൽ ഹിന്ദി",
+          "categories": [
+            "UP"
+          ],
+          "scheduled_start": "09:00",
+          "actual_start": "2026-11-06T04:09:24.323Z",
+          "delay_minutes": 39,
+          "combined_stages": null
+        }
+      ]
     },
     "6": {
       "status": "ongoing",
@@ -197,6 +209,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-06T04:09:24.323Z",
+      "text": "Stage 5: പദ്യംചൊല്ലൽ ഹിന്ദി has started (39 min late)"
+    },
+    {
       "t": "2026-11-06T04:07:29.098Z",
       "text": "Stage 1: കഥാപ്രസംഗം has started (37 min late)"
     },
@@ -311,10 +327,6 @@
     {
       "t": "2026-11-06T01:56:25.947Z",
       "text": "Stage 2: നാടോടിനൃത്തം has started (1081 min late)"
-    },
-    {
-      "t": "2026-11-06T01:56:17.652Z",
-      "text": "Stage 1: പൂരക്കളി has finished"
     }
   ],
   "recent_results": [
@@ -620,7 +632,7 @@
     "E265",
     "E267"
   ],
-  "updated_at": "2026-11-06T04:07:29.098Z",
+  "updated_at": "2026-11-06T04:09:24.323Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
