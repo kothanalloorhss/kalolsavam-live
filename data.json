@@ -38,17 +38,6 @@
       "idle_since": null,
       "events": [
         {
-          "event_id": "E282",
-          "event_name": "കഥകളി സംഗീതം Girls",
-          "categories": [
-            "HS"
-          ],
-          "scheduled_start": "09:00",
-          "actual_start": "2026-11-06T04:38:05.197Z",
-          "delay_minutes": 68,
-          "combined_stages": null
-        },
-        {
           "event_id": "E283",
           "event_name": "കഥകളി സംഗീതം Girls",
           "categories": [
@@ -244,6 +233,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-06T05:06:17.531Z",
+      "text": "Results announced for Stage 2, കഥകളി സംഗീതം Girls (HS)"
+    },
+    {
       "t": "2026-11-06T05:05:56.769Z",
       "text": "Stage 3: വയലിൻ പാശ്ചാത്യം has started (26 min late)"
     },
@@ -358,13 +351,25 @@
     {
       "t": "2026-11-06T01:56:48.477Z",
       "text": "Stage 2: സംഘ നൃത്തം has started (862 min late)"
-    },
-    {
-      "t": "2026-11-06T01:56:46.018Z",
-      "text": "Stage 2: സംഘ നൃത്തം has finished"
     }
   ],
   "recent_results": [
+    {
+      "event_id": "E282",
+      "event_name": "കഥകളി സംഗീതം Girls",
+      "stage_id": 2,
+      "categories": [
+        "HS"
+      ],
+      "announced_at": "2026-11-06T05:06:17.531Z",
+      "results": {
+        "HS": {
+          "first": "16",
+          "second": "",
+          "third": ""
+        }
+      }
+    },
     {
       "event_id": "E288",
       "event_name": "വയലിൻ ഓറിയന്റൽ",
@@ -504,22 +509,6 @@
       "results": {
         "HS": {
           "first": "35",
-          "second": "",
-          "third": ""
-        }
-      }
-    },
-    {
-      "event_id": "E261",
-      "event_name": "മാപ്പിളപ്പാട്ട്",
-      "stage_id": 7,
-      "categories": [
-        "UP"
-      ],
-      "announced_at": "2026-11-05T10:39:23.610Z",
-      "results": {
-        "UP": {
-          "first": "48",
           "second": "",
           "third": ""
         }
@@ -667,9 +656,10 @@
     "E265",
     "E267",
     "E287",
-    "E288"
+    "E288",
+    "E282"
   ],
-  "updated_at": "2026-11-06T05:05:56.769Z",
+  "updated_at": "2026-11-06T05:06:17.531Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
