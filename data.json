@@ -5,27 +5,14 @@
   },
   "stages": {
     "1": {
-      "status": "ongoing",
-      "event_id": null,
+      "status": "idle",
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": null,
-      "events": [
-        {
-          "event_id": "E210",
-          "event_name": "പരിചമുട്ട്",
-          "categories": [
-            "HS"
-          ],
-          "scheduled_start": "13:20",
-          "actual_start": "2026-11-06T01:56:00.663Z",
-          "delay_minutes": 1086,
-          "combined_stages": null
-        }
-      ]
+      "idle_since": "2026-11-06T01:56:04.849Z",
+      "events": []
     },
     "2": {
       "status": "idle",
@@ -244,6 +231,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-06T01:56:04.849Z",
+      "text": "Stage 1: പരിചമുട്ട് has finished"
+    },
+    {
       "t": "2026-11-06T01:56:00.663Z",
       "text": "Stage 1: പരിചമുട്ട് has started (1086 min late)"
     },
@@ -358,10 +349,6 @@
     {
       "t": "2026-11-05T10:07:36.096Z",
       "text": "Stage 3: ലളിതഗാനം Boys has started"
-    },
-    {
-      "t": "2026-11-05T10:07:32.481Z",
-      "text": "Stage 3: ലളിതഗാനം Girls has started (18 min late)"
     }
   ],
   "recent_results": [
@@ -646,9 +633,10 @@
     "E262",
     "E235",
     "E208",
-    "E209"
+    "E209",
+    "E210"
   ],
-  "updated_at": "2026-11-06T01:56:00.663Z",
+  "updated_at": "2026-11-06T01:56:04.849Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
