@@ -72,15 +72,27 @@
       "events": []
     },
     "5": {
-      "status": "idle",
+      "status": "ongoing",
       "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": "2026-11-06T07:45:15.472Z",
-      "events": []
+      "idle_since": null,
+      "events": [
+        {
+          "event_id": "E305",
+          "event_name": "പ്രസംഗം  ഹിന്ദി",
+          "categories": [
+            "HS"
+          ],
+          "scheduled_start": "13:00",
+          "actual_start": "2026-11-06T09:09:35.116Z",
+          "delay_minutes": 100,
+          "combined_stages": null
+        }
+      ]
     },
     "6": {
       "status": "idle",
@@ -208,6 +220,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-06T09:09:35.116Z",
+      "text": "Stage 5: പ്രസംഗം  ഹിന്ദി has started (100 min late)"
+    },
+    {
       "t": "2026-11-06T09:07:19.581Z",
       "text": "ഷെഡ്യൂൾ മാറ്റം: മോണോ ആക്ട് Boys വേദി 6-ലേക്ക് പുനഃക്രമീകരിച്ചു"
     },
@@ -322,10 +338,6 @@
     {
       "t": "2026-11-06T06:05:25.224Z",
       "text": "Results announced for Stage 3, ഗിറ്റാർ പാശ്ചാത്യം (HS)"
-    },
-    {
-      "t": "2026-11-06T06:05:06.200Z",
-      "text": "Stage 3: ഗിറ്റാർ പാശ്ചാത്യം has started (55 min late)"
     }
   ],
   "recent_results": [
@@ -656,7 +668,7 @@
     "E295",
     "E300"
   ],
-  "updated_at": "2026-11-06T09:07:19.581Z",
+  "updated_at": "2026-11-06T09:09:35.116Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
