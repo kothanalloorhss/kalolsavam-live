@@ -49,17 +49,6 @@
       "idle_since": null,
       "events": [
         {
-          "event_id": "E292",
-          "event_name": "ഗിറ്റാർ വെസ്റ്റേൺ",
-          "categories": [
-            "HSS"
-          ],
-          "scheduled_start": "11:10",
-          "actual_start": "2026-11-06T06:09:39.484Z",
-          "delay_minutes": 30,
-          "combined_stages": null
-        },
-        {
           "event_id": "E293",
           "event_name": "തബല",
           "categories": [
@@ -244,6 +233,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-06T06:52:19.091Z",
+      "text": "Results announced for Stage 3, ഗിറ്റാർ വെസ്റ്റേൺ (HSS)"
+    },
+    {
       "t": "2026-11-06T06:34:49.796Z",
       "text": "Stage 7: പദ്യംചൊല്ലൽ തമിഴ് has started (135 min late)"
     },
@@ -358,13 +351,25 @@
     {
       "t": "2026-11-06T04:53:11.443Z",
       "text": "Results announced for Stage 3, വയലിൻ പൗരസ്ത്യം (HS)"
-    },
-    {
-      "t": "2026-11-06T04:38:05.198Z",
-      "text": "Stage 2: കഥകളി സംഗീതം Girls has started (68 min late)"
     }
   ],
   "recent_results": [
+    {
+      "event_id": "E292",
+      "event_name": "ഗിറ്റാർ വെസ്റ്റേൺ",
+      "stage_id": 3,
+      "categories": [
+        "HSS"
+      ],
+      "announced_at": "2026-11-06T06:52:19.089Z",
+      "results": {
+        "HSS": {
+          "first": "53",
+          "second": "52",
+          "third": ""
+        }
+      }
+    },
     {
       "event_id": "E286",
       "event_name": "ഓട്ടൻ തുള്ളൽ",
@@ -506,22 +511,6 @@
           "first": "54",
           "second": "53",
           "third": "55"
-        }
-      }
-    },
-    {
-      "event_id": "E283",
-      "event_name": "കഥകളി സംഗീതം Girls",
-      "stage_id": 2,
-      "categories": [
-        "HSS"
-      ],
-      "announced_at": "2026-11-06T05:18:19.229Z",
-      "results": {
-        "HSS": {
-          "first": "18",
-          "second": "17",
-          "third": ""
         }
       }
     }
@@ -678,9 +667,10 @@
     "E301",
     "E275",
     "E308",
-    "E286"
+    "E286",
+    "E292"
   ],
-  "updated_at": "2026-11-06T06:34:49.796Z",
+  "updated_at": "2026-11-06T06:52:19.091Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
