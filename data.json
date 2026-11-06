@@ -16,27 +16,14 @@
       "events": []
     },
     "2": {
-      "status": "ongoing",
-      "event_id": null,
+      "status": "idle",
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": null,
-      "events": [
-        {
-          "event_id": "E220",
-          "event_name": "നാടോടിനൃത്തം",
-          "categories": [
-            "UP"
-          ],
-          "scheduled_start": "13:25",
-          "actual_start": "2026-11-06T01:56:25.947Z",
-          "delay_minutes": 1081,
-          "combined_stages": null
-        }
-      ]
+      "idle_since": "2026-11-06T01:56:28.934Z",
+      "events": []
     },
     "3": {
       "status": "idle",
@@ -244,6 +231,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-06T01:56:28.934Z",
+      "text": "Stage 2: നാടോടിനൃത്തം has finished"
+    },
+    {
       "t": "2026-11-06T01:56:25.947Z",
       "text": "Stage 2: നാടോടിനൃത്തം has started (1081 min late)"
     },
@@ -358,10 +349,6 @@
     {
       "t": "2026-11-05T10:29:27.940Z",
       "text": "Results announced for Stage 2, നാടോടിനൃത്തം Girls (HS)"
-    },
-    {
-      "t": "2026-11-05T10:12:35.939Z",
-      "text": "Results announced for Stage 4, നാടകം (HSS)"
     }
   ],
   "recent_results": [
@@ -649,9 +636,10 @@
     "E209",
     "E210",
     "E211",
-    "E212"
+    "E212",
+    "E220"
   ],
-  "updated_at": "2026-11-06T01:56:25.947Z",
+  "updated_at": "2026-11-06T01:56:28.934Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
