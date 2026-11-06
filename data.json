@@ -49,14 +49,27 @@
       "events": []
     },
     "5": {
-      "status": "idle",
+      "status": "ongoing",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": "2026-11-06T01:57:19.607Z",
-      "events": []
+      "idle_since": null,
+      "events": [
+        {
+          "event_id": "E241",
+          "event_name": "ദേശഭക്തിഗാനം",
+          "categories": [
+            "HSS"
+          ],
+          "scheduled_start": "15:50",
+          "actual_start": "2026-11-06T01:57:21.858Z",
+          "delay_minutes": 937,
+          "combined_stages": null
+        }
+      ]
     },
     "6": {
       "status": "ongoing",
@@ -219,6 +232,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-06T01:57:21.858Z",
+      "text": "Stage 5: ദേശഭക്തിഗാനം has started (937 min late)"
+    },
+    {
       "t": "2026-11-06T01:57:19.607Z",
       "text": "Stage 5: ദേശഭക്തിഗാനം has finished"
     },
@@ -333,10 +350,6 @@
     {
       "t": "2026-11-05T12:06:18.019Z",
       "text": "Stage 4: സ്കിറ്റ് ഇംഗ്ലീഷ് has started (216 min late)"
-    },
-    {
-      "t": "2026-11-05T12:03:00.877Z",
-      "text": "Stage 4: സ്കിറ്റ് ഇംഗ്ലീഷ് has started (143 min late)"
     }
   ],
   "recent_results": [
@@ -635,7 +648,7 @@
     "E237",
     "E240"
   ],
-  "updated_at": "2026-11-06T01:57:19.607Z",
+  "updated_at": "2026-11-06T01:57:21.858Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
