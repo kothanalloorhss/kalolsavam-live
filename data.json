@@ -72,27 +72,14 @@
       "events": []
     },
     "5": {
-      "status": "ongoing",
-      "event_id": null,
+      "status": "idle",
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": null,
-      "events": [
-        {
-          "event_id": "E305",
-          "event_name": "പ്രസംഗം  ഹിന്ദി",
-          "categories": [
-            "HS"
-          ],
-          "scheduled_start": "13:00",
-          "actual_start": "2026-11-06T09:09:35.116Z",
-          "delay_minutes": 100,
-          "combined_stages": null
-        }
-      ]
+      "idle_since": "2026-11-06T09:09:40.741Z",
+      "events": []
     },
     "6": {
       "status": "idle",
@@ -220,6 +207,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-06T09:09:40.741Z",
+      "text": "Results announced for Stage 5, പ്രസംഗം  ഹിന്ദി (HS)"
+    },
+    {
       "t": "2026-11-06T09:09:35.116Z",
       "text": "Stage 5: പ്രസംഗം  ഹിന്ദി has started (100 min late)"
     },
@@ -334,13 +325,25 @@
     {
       "t": "2026-11-06T06:09:39.484Z",
       "text": "Stage 3: ഗിറ്റാർ വെസ്റ്റേൺ has started (30 min late)"
-    },
-    {
-      "t": "2026-11-06T06:05:25.224Z",
-      "text": "Results announced for Stage 3, ഗിറ്റാർ പാശ്ചാത്യം (HS)"
     }
   ],
   "recent_results": [
+    {
+      "event_id": "E305",
+      "event_name": "പ്രസംഗം  ഹിന്ദി",
+      "stage_id": 5,
+      "categories": [
+        "HS"
+      ],
+      "announced_at": "2026-11-06T09:09:40.741Z",
+      "results": {
+        "HS": {
+          "first": "57",
+          "second": "",
+          "third": ""
+        }
+      }
+    },
     {
       "event_id": "E300",
       "event_name": "ഓടക്കുഴൽ",
@@ -486,22 +489,6 @@
       "results": {
         "HSS": {
           "first": "20",
-          "second": "",
-          "third": ""
-        }
-      }
-    },
-    {
-      "event_id": "E301",
-      "event_name": "പദ്യംചൊല്ലൽ ഹിന്ദി",
-      "stage_id": 5,
-      "categories": [
-        "UP"
-      ],
-      "announced_at": "2026-11-06T06:09:53.555Z",
-      "results": {
-        "UP": {
-          "first": "36",
           "second": "",
           "third": ""
         }
@@ -666,9 +653,10 @@
     "E307",
     "E303",
     "E295",
-    "E300"
+    "E300",
+    "E305"
   ],
-  "updated_at": "2026-11-06T09:09:35.116Z",
+  "updated_at": "2026-11-06T09:09:40.741Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
