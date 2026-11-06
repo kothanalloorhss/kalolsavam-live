@@ -39,14 +39,27 @@
       "events": []
     },
     "3": {
-      "status": "idle",
+      "status": "ongoing",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": "2026-11-06T05:47:21.458Z",
-      "events": []
+      "idle_since": null,
+      "events": [
+        {
+          "event_id": "E290",
+          "event_name": "വയലിൻ വെസ്റ്റേൺ",
+          "categories": [
+            "HSS"
+          ],
+          "scheduled_start": "10:30",
+          "actual_start": "2026-11-06T05:47:27.742Z",
+          "delay_minutes": 47,
+          "combined_stages": null
+        }
+      ]
     },
     "4": {
       "status": "idle",
@@ -220,6 +233,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-06T05:47:27.742Z",
+      "text": "Stage 3: വയലിൻ വെസ്റ്റേൺ has started (47 min late)"
+    },
+    {
       "t": "2026-11-06T05:47:21.458Z",
       "text": "Results announced for Stage 3, വയലിൻ പാശ്ചാത്യം (HS)"
     },
@@ -334,10 +351,6 @@
     {
       "t": "2026-11-06T01:57:05.363Z",
       "text": "Stage 4: സ്കിറ്റ് ഇംഗ്ലീഷ് has finished"
-    },
-    {
-      "t": "2026-11-06T01:56:59.686Z",
-      "text": "Stage 3: ലളിതഗാനം has finished"
     }
   ],
   "recent_results": [
@@ -648,7 +661,7 @@
     "E283",
     "E289"
   ],
-  "updated_at": "2026-11-06T05:47:21.458Z",
+  "updated_at": "2026-11-06T05:47:27.742Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
