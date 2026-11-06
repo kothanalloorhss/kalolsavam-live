@@ -16,14 +16,27 @@
       "events": []
     },
     "2": {
-      "status": "idle",
+      "status": "ongoing",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": "2026-11-06T01:56:46.018Z",
-      "events": []
+      "idle_since": null,
+      "events": [
+        {
+          "event_id": "E224",
+          "event_name": "സംഘ നൃത്തം",
+          "categories": [
+            "HS"
+          ],
+          "scheduled_start": "17:05",
+          "actual_start": "2026-11-06T01:56:48.477Z",
+          "delay_minutes": 862,
+          "combined_stages": null
+        }
+      ]
     },
     "3": {
       "status": "idle",
@@ -231,6 +244,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-06T01:56:48.477Z",
+      "text": "Stage 2: സംഘ നൃത്തം has started (862 min late)"
+    },
+    {
       "t": "2026-11-06T01:56:46.018Z",
       "text": "Stage 2: സംഘ നൃത്തം has finished"
     },
@@ -345,10 +362,6 @@
     {
       "t": "2026-11-05T11:00:27.286Z",
       "text": "Results announced for Stage 9, പ്രസംഗം കന്നഡ (UP)"
-    },
-    {
-      "t": "2026-11-05T10:59:24.535Z",
-      "text": "Results announced for Stage 2, നാടോടിനൃത്തം Boys (HS)"
     }
   ],
   "recent_results": [
@@ -642,7 +655,7 @@
     "E222",
     "E223"
   ],
-  "updated_at": "2026-11-06T01:56:46.018Z",
+  "updated_at": "2026-11-06T01:56:48.477Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
