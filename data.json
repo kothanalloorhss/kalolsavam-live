@@ -5,14 +5,27 @@
   },
   "stages": {
     "1": {
-      "status": "idle",
+      "status": "ongoing",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": "2026-11-06T06:21:11.129Z",
-      "events": []
+      "idle_since": null,
+      "events": [
+        {
+          "event_id": "E276",
+          "event_name": "മോണോ ആക്ട്",
+          "categories": [
+            "LP"
+          ],
+          "scheduled_start": "11:00",
+          "actual_start": "2026-11-06T06:21:14.835Z",
+          "delay_minutes": 51,
+          "combined_stages": null
+        }
+      ]
     },
     "2": {
       "status": "ongoing",
@@ -232,6 +245,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-06T06:21:14.835Z",
+      "text": "Stage 1: മോണോ ആക്ട് has started (51 min late)"
+    },
+    {
       "t": "2026-11-06T06:21:11.129Z",
       "text": "Results announced for Stage 1, കഥാപ്രസംഗം (HSS)"
     },
@@ -346,10 +363,6 @@
     {
       "t": "2026-11-06T01:57:50.637Z",
       "text": "Stage 7: പദ്യംചൊല്ലൽ അറബി has finished"
-    },
-    {
-      "t": "2026-11-06T01:57:47.663Z",
-      "text": "Stage 7: പദ്യംചൊല്ലൽ അറബി has started (898 min late)"
     }
   ],
   "recent_results": [
@@ -666,7 +679,7 @@
     "E301",
     "E275"
   ],
-  "updated_at": "2026-11-06T06:21:11.129Z",
+  "updated_at": "2026-11-06T06:21:14.835Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
