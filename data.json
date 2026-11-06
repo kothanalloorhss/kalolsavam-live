@@ -28,6 +28,7 @@
     },
     "3": {
       "status": "idle",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
@@ -37,27 +38,14 @@
       "events": []
     },
     "4": {
-      "status": "ongoing",
-      "event_id": null,
+      "status": "idle",
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": null,
-      "events": [
-        {
-          "event_id": "E236",
-          "event_name": "സ്കിറ്റ് ഇംഗ്ലീഷ്",
-          "categories": [
-            "UP"
-          ],
-          "scheduled_start": "15:10",
-          "actual_start": "2026-11-05T12:03:00.877Z",
-          "delay_minutes": 143,
-          "combined_stages": null
-        }
-      ]
+      "idle_since": "2026-11-06T01:57:05.363Z",
+      "events": []
     },
     "5": {
       "status": "idle",
@@ -231,6 +219,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-06T01:57:05.363Z",
+      "text": "Stage 4: സ്കിറ്റ് ഇംഗ്ലീഷ് has finished"
+    },
+    {
       "t": "2026-11-06T01:56:59.686Z",
       "text": "Stage 3: ലളിതഗാനം has finished"
     },
@@ -345,10 +337,6 @@
     {
       "t": "2026-11-05T11:43:11.827Z",
       "text": "Results announced for Stage 3, ലളിതഗാനം Boys (HSS)"
-    },
-    {
-      "t": "2026-11-05T11:42:58.041Z",
-      "text": "Stage 3: ലളിതഗാനം Boys has started (73 min late)"
     }
   ],
   "recent_results": [
@@ -642,9 +630,10 @@
     "E222",
     "E223",
     "E224",
-    "E225"
+    "E225",
+    "E236"
   ],
-  "updated_at": "2026-11-06T01:56:59.686Z",
+  "updated_at": "2026-11-06T01:57:05.363Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
