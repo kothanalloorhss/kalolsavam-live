@@ -37,17 +37,6 @@
       "idle_since": null,
       "events": [
         {
-          "event_id": "E293",
-          "event_name": "തബല",
-          "categories": [
-            "HS"
-          ],
-          "scheduled_start": "11:40",
-          "actual_start": "2026-11-06T06:26:44.104Z",
-          "delay_minutes": 17,
-          "combined_stages": null
-        },
-        {
           "event_id": "E294",
           "event_name": "തബല",
           "categories": [
@@ -208,6 +197,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-06T10:36:14.929Z",
+      "text": "Stage 3: തബല has finished"
+    },
+    {
       "t": "2026-11-06T09:11:09.327Z",
       "text": "ഷെഡ്യൂൾ മാറ്റം: ട്രിപ്പിൾ/ ജാസ് വേദി 3-ലേക്ക് പുനഃക്രമീകരിച്ചു"
     },
@@ -322,10 +315,6 @@
     {
       "t": "2026-11-06T06:34:40.065Z",
       "text": "ഷെഡ്യൂൾ മാറ്റം: ഓട്ടൻ തുള്ളൽ വേദി 2-ലേക്ക് പുനഃക്രമീകരിച്ചു"
-    },
-    {
-      "t": "2026-11-06T06:33:49.277Z",
-      "text": "Results announced for Stage 2, ഓട്ടൻ തുള്ളൽ (HSS)"
     }
   ],
   "recent_results": [
@@ -659,9 +648,10 @@
     "E304",
     "E297",
     "E299",
-    "E296"
+    "E296",
+    "E293"
   ],
-  "updated_at": "2026-11-06T09:11:09.327Z",
+  "updated_at": "2026-11-06T10:36:14.929Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
