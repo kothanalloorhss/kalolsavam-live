@@ -28,15 +28,27 @@
       ]
     },
     "2": {
-      "status": "idle",
+      "status": "ongoing",
       "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": "2026-11-06T06:02:42.524Z",
-      "events": []
+      "idle_since": null,
+      "events": [
+        {
+          "event_id": "E285",
+          "event_name": "ഓട്ടൻ തുള്ളൽ",
+          "categories": [
+            "HS"
+          ],
+          "scheduled_start": "10:30",
+          "actual_start": "2026-11-06T06:14:09.723Z",
+          "delay_minutes": 74,
+          "combined_stages": null
+        }
+      ]
     },
     "3": {
       "status": "ongoing",
@@ -233,6 +245,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-06T06:14:09.723Z",
+      "text": "Stage 2: ഓട്ടൻ തുള്ളൽ has started (74 min late)"
+    },
+    {
       "t": "2026-11-06T06:12:46.139Z",
       "text": "Stage 5: പദ്യംചൊല്ലൽ ഹിന്ദി has started (28 min late)"
     },
@@ -347,10 +363,6 @@
     {
       "t": "2026-11-06T01:57:45.205Z",
       "text": "Stage 7: പദ്യംചൊല്ലൽ അറബി has finished"
-    },
-    {
-      "t": "2026-11-06T01:57:41.927Z",
-      "text": "Stage 7: പദ്യംചൊല്ലൽ അറബി has started (908 min late)"
     }
   ],
   "recent_results": [
@@ -666,7 +678,7 @@
     "E291",
     "E301"
   ],
-  "updated_at": "2026-11-06T06:12:46.139Z",
+  "updated_at": "2026-11-06T06:14:09.724Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
