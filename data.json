@@ -39,14 +39,27 @@
       "events": []
     },
     "3": {
-      "status": "idle",
+      "status": "ongoing",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": "2026-11-06T06:05:25.225Z",
-      "events": []
+      "idle_since": null,
+      "events": [
+        {
+          "event_id": "E292",
+          "event_name": "ഗിറ്റാർ വെസ്റ്റേൺ",
+          "categories": [
+            "HSS"
+          ],
+          "scheduled_start": "11:10",
+          "actual_start": "2026-11-06T06:09:39.484Z",
+          "delay_minutes": 30,
+          "combined_stages": null
+        }
+      ]
     },
     "4": {
       "status": "idle",
@@ -220,6 +233,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-06T06:09:39.484Z",
+      "text": "Stage 3: ഗിറ്റാർ വെസ്റ്റേൺ has started (30 min late)"
+    },
+    {
       "t": "2026-11-06T06:05:25.224Z",
       "text": "Results announced for Stage 3, ഗിറ്റാർ പാശ്ചാത്യം (HS)"
     },
@@ -334,10 +351,6 @@
     {
       "t": "2026-11-06T01:57:35.478Z",
       "text": "Stage 7: മാപ്പിളപ്പാട്ട് has finished"
-    },
-    {
-      "t": "2026-11-06T01:57:30.459Z",
-      "text": "Stage 6: വന്ദേമാതരം has finished"
     }
   ],
   "recent_results": [
@@ -652,7 +665,7 @@
     "E290",
     "E291"
   ],
-  "updated_at": "2026-11-06T06:05:25.225Z",
+  "updated_at": "2026-11-06T06:09:39.484Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
