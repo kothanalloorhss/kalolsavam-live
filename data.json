@@ -6,6 +6,7 @@
   "stages": {
     "1": {
       "status": "idle",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
@@ -207,6 +208,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-06T09:06:42.767Z",
+      "text": "ഷെഡ്യൂൾ മാറ്റം: മോണോ ആക്ട് വേദി 6-ലേക്ക് പുനഃക്രമീകരിച്ചു"
+    },
+    {
       "t": "2026-11-06T09:03:55.659Z",
       "text": "Results announced for Stage 3, ഓടക്കുഴൽ (HS, HSS)"
     },
@@ -321,10 +326,6 @@
     {
       "t": "2026-11-06T05:48:46.515Z",
       "text": "Results announced for Stage 1, കഥാപ്രസംഗം (HS)"
-    },
-    {
-      "t": "2026-11-06T05:47:27.742Z",
-      "text": "Stage 3: വയലിൻ വെസ്റ്റേൺ has started (47 min late)"
     }
   ],
   "recent_results": [
@@ -655,7 +656,7 @@
     "E295",
     "E300"
   ],
-  "updated_at": "2026-11-06T09:06:33.538Z",
+  "updated_at": "2026-11-06T09:06:42.767Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
@@ -674,6 +675,12 @@
       "stage_id": "2",
       "status": "cancelled",
       "updated_at": "2026-11-06T06:34:40.065Z"
+    },
+    "E276": {
+      "start_time": "11:00:00",
+      "stage_id": "6",
+      "status": "active",
+      "updated_at": "2026-11-06T09:06:42.767Z"
     }
   }
 }
