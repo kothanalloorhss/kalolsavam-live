@@ -69,6 +69,18 @@
           "actual_start": "2026-11-06T07:45:03.778Z",
           "delay_minutes": 65,
           "combined_stages": null
+        },
+        {
+          "event_id": "E300",
+          "event_name": "ഓടക്കുഴൽ",
+          "categories": [
+            "HS",
+            "HSS"
+          ],
+          "scheduled_start": "14:00",
+          "actual_start": "2026-11-06T09:03:40.746Z",
+          "delay_minutes": 34,
+          "combined_stages": null
         }
       ]
     },
@@ -220,6 +232,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-06T09:03:40.746Z",
+      "text": "Stage 3: ഓടക്കുഴൽ has started (34 min late)"
+    },
+    {
       "t": "2026-11-06T08:15:17.827Z",
       "text": "Results announced for Stage 3, മൃദംഗം  (HSS)"
     },
@@ -334,10 +350,6 @@
     {
       "t": "2026-11-06T05:47:21.458Z",
       "text": "Results announced for Stage 3, വയലിൻ പാശ്ചാത്യം (HS)"
-    },
-    {
-      "t": "2026-11-06T05:29:53.820Z",
-      "text": "Stage 7: പദ്യംചൊല്ലൽ തമിഴ് has started (120 min late)"
     }
   ],
   "recent_results": [
@@ -661,7 +673,7 @@
     "E303",
     "E295"
   ],
-  "updated_at": "2026-11-06T08:15:17.827Z",
+  "updated_at": "2026-11-06T09:03:40.746Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
