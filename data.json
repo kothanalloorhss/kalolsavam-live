@@ -5,27 +5,14 @@
   },
   "stages": {
     "1": {
-      "status": "ongoing",
-      "event_id": null,
+      "status": "idle",
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": null,
-      "events": [
-        {
-          "event_id": "E275",
-          "event_name": "കഥാപ്രസംഗം",
-          "categories": [
-            "HSS"
-          ],
-          "scheduled_start": "10:30",
-          "actual_start": "2026-11-06T05:48:48.916Z",
-          "delay_minutes": 49,
-          "combined_stages": null
-        }
-      ]
+      "idle_since": "2026-11-06T06:21:11.129Z",
+      "events": []
     },
     "2": {
       "status": "ongoing",
@@ -245,6 +232,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-06T06:21:11.129Z",
+      "text": "Results announced for Stage 1, കഥാപ്രസംഗം (HSS)"
+    },
+    {
       "t": "2026-11-06T06:14:09.723Z",
       "text": "Stage 2: ഓട്ടൻ തുള്ളൽ has started (74 min late)"
     },
@@ -359,13 +350,25 @@
     {
       "t": "2026-11-06T01:57:47.663Z",
       "text": "Stage 7: പദ്യംചൊല്ലൽ അറബി has started (898 min late)"
-    },
-    {
-      "t": "2026-11-06T01:57:45.205Z",
-      "text": "Stage 7: പദ്യംചൊല്ലൽ അറബി has finished"
     }
   ],
   "recent_results": [
+    {
+      "event_id": "E275",
+      "event_name": "കഥാപ്രസംഗം",
+      "stage_id": 1,
+      "categories": [
+        "HSS"
+      ],
+      "announced_at": "2026-11-06T06:21:11.129Z",
+      "results": {
+        "HSS": {
+          "first": "20",
+          "second": "",
+          "third": ""
+        }
+      }
+    },
     {
       "event_id": "E301",
       "event_name": "പദ്യംചൊല്ലൽ ഹിന്ദി",
@@ -507,22 +510,6 @@
           "first": "52",
           "second": "51",
           "third": ""
-        }
-      }
-    },
-    {
-      "event_id": "E287",
-      "event_name": "വയലിൻ പൗരസ്ത്യം",
-      "stage_id": 3,
-      "categories": [
-        "HS"
-      ],
-      "announced_at": "2026-11-06T04:53:11.443Z",
-      "results": {
-        "HS": {
-          "first": "52",
-          "second": "53",
-          "third": "54"
         }
       }
     }
@@ -676,9 +663,10 @@
     "E284",
     "E290",
     "E291",
-    "E301"
+    "E301",
+    "E275"
   ],
-  "updated_at": "2026-11-06T06:14:09.724Z",
+  "updated_at": "2026-11-06T06:21:11.129Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
