@@ -39,27 +39,14 @@
       "events": []
     },
     "3": {
-      "status": "ongoing",
-      "event_id": null,
+      "status": "idle",
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
       "actual_start": null,
       "delay_minutes": 0,
-      "idle_since": null,
-      "events": [
-        {
-          "event_id": "E291",
-          "event_name": "ഗിറ്റാർ പാശ്ചാത്യം",
-          "categories": [
-            "HS"
-          ],
-          "scheduled_start": "10:40",
-          "actual_start": "2026-11-06T06:05:06.200Z",
-          "delay_minutes": 55,
-          "combined_stages": null
-        }
-      ]
+      "idle_since": "2026-11-06T06:05:25.225Z",
+      "events": []
     },
     "4": {
       "status": "idle",
@@ -233,6 +220,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-06T06:05:25.224Z",
+      "text": "Results announced for Stage 3, ഗിറ്റാർ പാശ്ചാത്യം (HS)"
+    },
+    {
       "t": "2026-11-06T06:05:06.200Z",
       "text": "Stage 3: ഗിറ്റാർ പാശ്ചാത്യം has started (55 min late)"
     },
@@ -347,13 +338,25 @@
     {
       "t": "2026-11-06T01:57:30.459Z",
       "text": "Stage 6: വന്ദേമാതരം has finished"
-    },
-    {
-      "t": "2026-11-06T01:57:25.341Z",
-      "text": "Stage 5: ദേശഭക്തിഗാനം has finished"
     }
   ],
   "recent_results": [
+    {
+      "event_id": "E291",
+      "event_name": "ഗിറ്റാർ പാശ്ചാത്യം",
+      "stage_id": 3,
+      "categories": [
+        "HS"
+      ],
+      "announced_at": "2026-11-06T06:05:25.224Z",
+      "results": {
+        "HS": {
+          "first": "52",
+          "second": "53",
+          "third": ""
+        }
+      }
+    },
     {
       "event_id": "E290",
       "event_name": "വയലിൻ വെസ്റ്റേൺ",
@@ -493,22 +496,6 @@
       "results": {
         "HS": {
           "first": "13",
-          "second": "",
-          "third": ""
-        }
-      }
-    },
-    {
-      "event_id": "E262",
-      "event_name": "പദ്യംചൊല്ലൽ അറബി",
-      "stage_id": 7,
-      "categories": [
-        "LP"
-      ],
-      "announced_at": "2026-11-05T11:49:02.226Z",
-      "results": {
-        "LP": {
-          "first": "31",
           "second": "",
           "third": ""
         }
@@ -662,9 +649,10 @@
     "E289",
     "E274",
     "E284",
-    "E290"
+    "E290",
+    "E291"
   ],
-  "updated_at": "2026-11-06T06:05:06.200Z",
+  "updated_at": "2026-11-06T06:05:25.225Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
