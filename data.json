@@ -57,6 +57,17 @@
           "actual_start": "2026-11-06T07:45:03.778Z",
           "delay_minutes": 65,
           "combined_stages": null
+        },
+        {
+          "event_id": "E299",
+          "event_name": "വീണ",
+          "categories": [
+            "HS"
+          ],
+          "scheduled_start": "13:50",
+          "actual_start": "2026-11-06T09:10:29.202Z",
+          "delay_minutes": 50,
+          "combined_stages": null
         }
       ]
     },
@@ -208,6 +219,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-06T09:10:29.202Z",
+      "text": "Stage 3: വീണ has started (50 min late)"
+    },
+    {
       "t": "2026-11-06T09:10:20.061Z",
       "text": "Results announced for Stage 3, ക്ലാർനെറ്റ്/ ബ്യൂഗിൾ (HSS)"
     },
@@ -322,10 +337,6 @@
     {
       "t": "2026-11-06T06:21:14.835Z",
       "text": "Stage 1: മോണോ ആക്ട് has started (51 min late)"
-    },
-    {
-      "t": "2026-11-06T06:21:11.129Z",
-      "text": "Results announced for Stage 1, കഥാപ്രസംഗം (HSS)"
     }
   ],
   "recent_results": [
@@ -659,7 +670,7 @@
     "E304",
     "E297"
   ],
-  "updated_at": "2026-11-06T09:10:20.061Z",
+  "updated_at": "2026-11-06T09:10:29.202Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
