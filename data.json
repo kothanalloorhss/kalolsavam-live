@@ -69,6 +69,17 @@
           "actual_start": "2026-11-06T07:45:03.778Z",
           "delay_minutes": 65,
           "combined_stages": null
+        },
+        {
+          "event_id": "E295",
+          "event_name": "മൃദംഗം ",
+          "categories": [
+            "HSS"
+          ],
+          "scheduled_start": "12:50",
+          "actual_start": "2026-11-06T08:15:07.756Z",
+          "delay_minutes": 55,
+          "combined_stages": null
         }
       ]
     },
@@ -85,6 +96,7 @@
     },
     "5": {
       "status": "idle",
+      "event_id": null,
       "event_name": null,
       "categories": [],
       "scheduled_start": null,
@@ -219,6 +231,10 @@
   },
   "ticker": [
     {
+      "t": "2026-11-06T08:15:07.756Z",
+      "text": "Stage 3: മൃദംഗം  has started (55 min late)"
+    },
+    {
       "t": "2026-11-06T07:45:15.472Z",
       "text": "Results announced for Stage 5, പദ്യംചൊല്ലൽ ഹിന്ദി (HSS)"
     },
@@ -333,10 +349,6 @@
     {
       "t": "2026-11-06T05:18:19.230Z",
       "text": "Results announced for Stage 2, കഥകളി സംഗീതം Girls (HSS)"
-    },
-    {
-      "t": "2026-11-06T05:06:17.531Z",
-      "text": "Results announced for Stage 2, കഥകളി സംഗീതം Girls (HS)"
     }
   ],
   "recent_results": [
@@ -659,7 +671,7 @@
     "E307",
     "E303"
   ],
-  "updated_at": "2026-11-06T07:45:15.472Z",
+  "updated_at": "2026-11-06T08:15:07.756Z",
   "schedule_overrides": {
     "E151": {
       "start_time": "13:30:00",
